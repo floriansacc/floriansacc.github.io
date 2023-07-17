@@ -1,0 +1,55 @@
+
+
+Feasability study of CO2 sequestration in tight sand reservoir through horizontal well treated by hydraulic fracturing.
+Analysis of the CO2 migration in the reservoir to access leakage risk.
+Influence of the different trapping mechanisms on CO2.
+
+
+
+
+TO ADD:
+media
+- width: 95% sur les paragraphes sur ecran trop petit (width: 300-500px)
+- augmenter font-size quand ecran trop petit
+- light/dark mode
+
+<a>
+- faire que quand c'est la bonne position dans la page, le mavigateur concerné s'eclaircisse automatiquement
+- transform pour que les boutons prennent une taille ?
+
+<a> bandeau
+- link language
+- different color for active
+
+
+background
+- cover?
+- set separate <div> for background image
+
+
+
+
+- text centered all the time with variable, width and left: calc(XXX)
+- shadow
+- vislibity: hidden instead of display: none
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
