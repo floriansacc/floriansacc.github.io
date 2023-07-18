@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   background: var(--background-all);
-  height: 100%;
+  height: 100vh;
   background-attachment: fixed;
   background-size: cover;
 }
@@ -95,6 +95,7 @@ a {
 }
 
 .b-gauche {
+  visibility: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -112,8 +113,6 @@ a {
   align-items: center;
   border-left: 1px solid gray;
 }
-
-
 
 .b-droite {
   display: flex;
@@ -141,6 +140,14 @@ a {
 
 .b-lang #active-page {
   color: #9c088f;
+}
+
+.b-lang #korean:hover {
+  background: url("./KakaoTalk_20230718_151629278.jpg");
+  background-size:contain;
+  background-position: center;
+  color: transparent;
+  background-repeat: no-repeat;
 }
 
 
@@ -208,6 +215,7 @@ a {
   margin-top: 5rem;
   padding: 1rem;
   min-width: 250px;
+  border: 1px solid coral;
 }
 
 .main h3,
@@ -231,11 +239,12 @@ a {
   text-align: left;
 }
 
-.content-1 h3 {
+.content-1 h1 {
   width: 90%;
   color: #fff;
   padding-left: 0.5rem;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .nom-et-photo {
@@ -271,11 +280,11 @@ a {
   margin: 0 1rem;
   opacity: 1.0;
   flex: 0 1;
+  transition: all  1s ease-out;
 }
 
 .nom-et-photo img:hover {
-  transition: linear 1s;
-  transform: rotate(3600deg);
+  transform: rotate(5deg);
 }
 
 .content-1 h2 {
@@ -367,10 +376,16 @@ a {
   width: 85%;
 }
 
-.project p {
-  padding: 0 1rem;
+.project li {
+  color: black;
+  line-height: 1.5rem;
+  margin: 0;
+  padding: 0.6rem 0.5rem;
 }
 
+.project #coming-soon {
+  font-weight: 600;
+}
 
 
 /* FOOTER */
@@ -429,16 +444,28 @@ footer span {
   padding: 0.6rem 0;
 }
 
+.footer-gauche .kakaoqr {
+  transition: all;
+  background: linear-gradient(to right, red, orange , yellow, green, cyan, blue, violet);
+  box-sizing: border-box;
+  padding: 2px;
+  height: 25px;
+  width: auto;
+  }
+
 .footer-gauche .kakaoqr:hover {
   height: 250px;
   position: absolute;
-  transform: translate(50%, -40%)
+  transform: translate(50%, -40%);
+  border: none;
+  padding: 2px;
+  box-sizing: border-box;
 }
 
 .footer-gauche img {
   height: 25px;
   width: auto;
-  padding: 0 10px;
+  margin: 0 10px;
 }
 
 .footer-droite {
@@ -471,7 +498,7 @@ footer span {
   .main .project {
     width: 100%;
   }
-  .project p {
+  .project li {
     padding: 0 0.5rem;
   }
 }
@@ -483,7 +510,8 @@ footer span {
     width: 100vw;
   }
   .main {
-    margin-top: 2rem;
+    margin-top: 1rem;
+    padding: 0;
   }
   .navigator {
     display: none;
@@ -492,12 +520,9 @@ footer span {
     font-size: 1.1rem;
   }
   #container {
-    padding: 0 5px;
+    padding: 0;
   }
-  .main .project,
-  .main .content-2 {
-    width: 100%;
-  }
+
   .b-gauche {
     display: none;
   }
@@ -515,6 +540,10 @@ footer span {
     justify-content: flex-end;
     width: 47vw;
   }
+  .content-1 {
+    box-sizing: border-box;
+  }
+
   .content-1 h2 {
     position: relative;
     width: 80%;
@@ -534,14 +563,18 @@ footer span {
     transition: all;
   }
   .footer-gauche .kakaoqr:hover {
-    transform: translate(-10%, -40%);
+    transform: translate(-15%, -40%);
     height: 150px;
     position: absolute;
   }
   .content-2,
   .content-3 {
     display: grid;
+    position: relative;
+    box-sizing: border-box;
     width: 100%;
+    padding: 0 0.5rem;
+    margin: 0 auto;
     grid-template-columns: 100%;
     grid-auto-rows: max-content;
     justify-content: stretch;
@@ -552,21 +585,28 @@ footer span {
     border-left: none;
     border-top-left-radius: 0.5rem;
     margin: 0.3rem 0 0 0;
-    padding: 1.5rem 0 0.5rem 1rem;
+    padding: 0.5rem;
   }
   .content-2 .school-major {
     border-left: none;
+    padding: 0 0 0.75rem 0.5rem;
+    margin-bottom: 0.5rem;
   }
   .content-2 li,
   .content-3 li {
-    padding: 0.3rem 0 0 1rem;
+    padding: 0.5rem;
   }
   .content-2 .lsy,
   .content-3 .lsy {
     white-space: wrap;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     justify-self: start;
     margin: 1rem 0 0 0;
     padding: 0;
+  }
+  .main .project {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0.5rem;
   }
 }
