@@ -215,7 +215,6 @@ a {
   margin-top: 5rem;
   padding: 1rem;
   min-width: 250px;
-  border: 1px solid coral;
 }
 
 .main h3,
@@ -232,7 +231,7 @@ a {
   height: auto;
   padding: 1.5rem 0;
   margin-bottom: 1rem;
-  background-image: url("https://media.istockphoto.com/id/471296532/ko/%EC%82%AC%EC%A7%84/%ED%96%89%EC%84%B1%EC%9E%85%EB%8B%88%EB%8B%A4-%EC%A7%80%EA%B5%AC%EB%B3%84-%EC%95%BC%EA%B0%84%EC%97%90%EB%A7%8C.jpg?s=612x612&w=0&k=20&c=rzcCGn5ISXHQuB7exbWDbT6kU9ddhUFRzdfd9GL4rFc=");
+  background: url("https://media.istockphoto.com/id/471296532/ko/%EC%82%AC%EC%A7%84/%ED%96%89%EC%84%B1%EC%9E%85%EB%8B%88%EB%8B%A4-%EC%A7%80%EA%B5%AC%EB%B3%84-%EC%95%BC%EA%B0%84%EC%97%90%EB%A7%8C.jpg?s=612x612&w=0&k=20&c=rzcCGn5ISXHQuB7exbWDbT6kU9ddhUFRzdfd9GL4rFc=");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -291,6 +290,7 @@ a {
   position: relative;
   left: 10%;
   width: 40%;
+  color: #ff8c00;
 }
 
 
@@ -395,7 +395,7 @@ footer {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: end;
-  background-color: coral;
+  background-color: #de6b18;
 }
 
 footer p,
