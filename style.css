@@ -225,17 +225,16 @@ a {
 .content-1 {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
   height: auto;
   padding: 1.5rem 0;
   margin-bottom: 1rem;
-  background: url("https://media.istockphoto.com/id/471296532/ko/%EC%82%AC%EC%A7%84/%ED%96%89%EC%84%B1%EC%9E%85%EB%8B%88%EB%8B%A4-%EC%A7%80%EA%B5%AC%EB%B3%84-%EC%95%BC%EA%B0%84%EC%97%90%EB%A7%8C.jpg?s=612x612&w=0&k=20&c=rzcCGn5ISXHQuB7exbWDbT6kU9ddhUFRzdfd9GL4rFc=");
+  background: linear-gradient(rgba(14, 164, 209, 0.5), rgba(5, 172, 33, 0.5)), url("https://media.istockphoto.com/id/471296532/ko/%EC%82%AC%EC%A7%84/%ED%96%89%EC%84%B1%EC%9E%85%EB%8B%88%EB%8B%A4-%EC%A7%80%EA%B5%AC%EB%B3%84-%EC%95%BC%EA%B0%84%EC%97%90%EB%A7%8C.jpg?s=612x612&w=0&k=20&c=rzcCGn5ISXHQuB7exbWDbT6kU9ddhUFRzdfd9GL4rFc=");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  text-align: left;
 }
 
 .content-1 h1 {
@@ -244,53 +243,63 @@ a {
   padding-left: 0.5rem;
   text-align: center;
   margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.content-1 #photo-filler {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  max-width: 900px;
+  height: 45rem;
+  overflow: hidden;
+  border-radius: 50px;
+  margin-left: 3rem;
 }
 
 .nom-et-photo {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: start;
   flex-flow: row wrap;
-  background-color: rgba(209, 209, 209, 0.7);
-  border-radius: 50px;
-  width: 90%;
-  max-width: 1000px;
-  max-height: 90%;
-  flex: 1 1;
-  margin: auto 1rem;
+  background: url('./KakaoTalk_20230721_161254019.jpg');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  transition: all 400ms ease-out;
+}
+
+.nom-et-photo:hover {
+  transform: scale(1.1);
 }
 
 .nom-et-photo .nom {
+  position: relative;
+  top: 5%;
   font-size: 25px;
+  padding: 0.2rem;
   margin: 0.5rem 1rem 0 1rem;
   border-bottom: 1px solid whitesmoke;
-
+  color: #fff;
+  font-weight: 500;
+  background-color: rgba(63, 63, 74, 0.7);
 }
+
+
 
 .nom-et-photo .nom span {
-  color: grey;
-}
-
-.nom-et-photo img {
-  display: inline-flex;
-  width: 80%;
-  height: auto;
-  max-height: 80%;
-  margin: 0 1rem;
-  opacity: 1.0;
-  flex: 0 1;
-  transition: all  1s ease-out;
-}
-
-.nom-et-photo img:hover {
-  transform: rotate(5deg);
+  font-weight: 600;
 }
 
 .content-1 h2 {
   position: relative;
+  margin: 1rem 0;
   left: 10%;
   width: 40%;
-  color: #ff8c00;
+  color: #fff;
+  font-weight: 500;
 }
 
 
@@ -395,12 +404,13 @@ footer {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: end;
-  background-color: #de6b18;
+  background-color: #117211;
 }
 
 footer p,
 footer span {
   font-size: 0.8rem;
+  color: #fff;
 }
 
 .footer-gauche {
@@ -479,6 +489,10 @@ footer span {
   padding: 10px 10px 0 0;
 }
 
+.footer-droite a {
+  color: rgb(255, 153, 36);
+}
+
 
 
 
@@ -491,6 +505,22 @@ footer span {
   #container {
     padding-right: 10px;
   }
+  .navigator {
+    display: none;
+  }
+  .content-1 {
+    box-sizing: border-box;
+    background-repeat: repeat;
+    align-items: center;
+    min-width: 500px;
+  }
+  .content-1 #photo-filler {
+    margin: auto 1rem;
+  }
+  .content-1 h2 {
+    left: 0%;
+    width: 80%;
+  }
   .content-2,
   .content-3 {
     width: 100%;
@@ -498,9 +528,7 @@ footer span {
   .main .project {
     width: 100%;
   }
-  .project li {
-    padding: 0 0.5rem;
-  }
+
 }
 
 /* MOBILE VIEW */
@@ -542,12 +570,30 @@ footer span {
   }
   .content-1 {
     box-sizing: border-box;
+    background-repeat: repeat;
+    align-items: center;
   }
-
-  .content-1 h2 {
+  .content-1 #photo-filler {
+    margin: auto 1rem;
+  }
+  .nom-et-photo {
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.25);
     position: relative;
+    width: 100%;
+  }
+  .nom-et-photo:hover {
+    transform: scale(1.25);
+  }
+  .nom-et-photo .nom {
+    transform: scale(0.8);
+    position: relative;
+    top: 15%;
+  }
+  .content-1 h2 {
+    left: 0%;
     width: 80%;
-    left: calc(50% - 80% / 2);
   }
   footer p {
     display: none;
