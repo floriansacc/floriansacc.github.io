@@ -1,0 +1,43 @@
+.divLogo {
+  display: flex;
+  flex-direction: column;
+  align-self: end;
+  align-items: end;
+  margin-left: 15%;
+  margin-right: 1%;
+  position: absolute;
+  height: 10rem;
+}
+
+.App-logo {
+  margin: 0;
+  padding: 0;
+  height: 3rem;
+  pointer-events: none;
+}
+
+.powered {
+  font-size: 0.8rem;
+  position: relative;
+  top: -5%;
+  color: var(--font-color)
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

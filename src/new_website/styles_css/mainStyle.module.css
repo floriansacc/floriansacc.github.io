@@ -1,0 +1,258 @@
+:root {
+    --font-color: #282828;
+    --font-color-reverse: #fff;
+    --background-container: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        url("./CBNUphoto_3936x2624_20230712164125.jpg");
+    --title-border-color: #d9d9d9;
+    --info-border-color: #282828;
+    --bandeau-color: whitesmoke;
+    --content1-background: linear-gradient(rgba(14, 164, 209, 0.7), rgba(6, 189, 36, 0.7));
+    ;
+    --logo-background: transparent;
+    --project-background-color: #fafafa;
+    --footer-background-color: #434343;
+}
+
+
+[data-theme="dark"] {
+    --font-color: #fff;
+    --font-color-reverse: #282828;
+    --background-container: linear-gradient(rgba(33, 33, 33, 0.7), rgba(33, 33, 33, 0.7)),
+        url("./CBNUphoto_3936x2624_20230712164125.jpg");
+    --title-border-color: #fff;
+    --info-border-color: #fff;
+    --bandeau-color: whitesmoke;
+    --content1-background: linear-gradient(rgba(14, 164, 209, 0.572), rgba(6, 189, 36, 0.459));
+    ;
+    --logo-background: #ebebeb;
+    --project-background-color: transparent;
+    --footer-background-color: #343539;
+}
+
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1;
+    margin-top: 5rem;
+    padding: 1rem;
+    min-width: 250px;
+}
+
+.titles {
+    font-size: 1.8rem;
+    margin: 5rem auto;
+    padding: 1rem 0;
+    color: var(--font-color);
+    border-bottom: 1px solid;
+    border-color: var(--title-border-color)
+}
+
+.content1 {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 1.5rem 0;
+    margin-bottom: 1rem;
+    background: var(--content1-background);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content1Title {
+    width: 90%;
+    color: #fff;
+    padding-left: 0.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 1rem auto;
+    padding: 1rem 0;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.content1H2 {
+    position: relative;
+    left: 10%;
+    margin: 1rem 0;
+    padding: 10px;
+    width: 70%;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.2rem;
+    height: 85px;
+}
+
+.content1Nom {
+    width: fit-content;
+    z-index: 1;
+    font-size: 25px;
+    padding: 0.2rem;
+    margin: 0.5rem 1rem 0 1rem;
+    border-bottom: 1px solid whitesmoke;
+    color: #fff;
+    font-weight: 500;
+    background-color: rgba(63, 63, 74, 0.7);
+    line-height: 1.7rem;
+}
+
+.content1PhotoBox {
+    position: relative;
+    margin: 2rem;
+    overflow: hidden;
+    width: 80%;
+    height: 35rem;
+    max-height: 35rem;
+    border-radius: 100px;
+    max-width: 900px;
+}
+
+.content1Photo {
+    position: absolute;
+    top: -10rem;
+    left: 0;
+    will-change: opacity;
+    transform: scale(1.4);
+    width: 100%;
+    height: auto;
+}
+
+.transitionTest {
+    transition: opacity 0.4s ease-in;
+    opacity: 0;
+    border: 10px solid red;
+}
+
+.bulletUL {
+    margin-top: 1rem;
+    display: inline-flex;
+    list-style: none;
+}
+
+.bulletLi {
+    font-size: 10px;
+    text-indent: -3000px;
+    display: inline-block;
+    position: relative;
+    border-radius: 10px;
+    width: 3px;
+    height: 3px;
+    margin: 0 3px;
+    cursor: pointer;
+    background: #fafafa;
+}
+
+.bulletLiOn {
+    background: #56296e;
+}
+
+.content2,
+.content3 {
+    display: grid;
+    width: 90%;
+    grid-template-columns: min-content auto;
+    grid-auto-rows: max-content;
+    justify-content: stretch;
+    margin-bottom: 2rem;
+}
+
+.ulSchoolWork {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    list-style: none;
+    margin-bottom: 1rem;
+    justify-self: stretch;
+}
+
+.pLsy {
+    text-align: end;
+    width: 150px;
+    margin-top: 1rem;
+    white-space: nowrap;
+    padding: 1.5rem 1rem;
+    font-size: 1.2rem;
+    color: var(--font-color);
+}
+
+.pLsyImg {
+    position: relative;
+    width: 80%;
+    background-color: var(--logo-background);
+    padding: 0.5rem;
+    border-radius: 15px;
+}
+
+.testDiv {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.liTitleSchool {
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    color: var(--font-color);
+    line-height: 1.5rem;
+    border-top: 1px solid var(--info-border-color);
+    border-left: 1px solid var(--info-border-color);
+    border-top-left-radius: 1.5rem;
+    margin: 1rem 0 0 0;
+    padding: 1.5rem 0 0.5rem 1rem;
+    font-weight: 600;
+    filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.5));
+}
+
+.liMajorSchool {
+    color: var(--font-color);
+    line-height: 1.5rem;
+    padding: 0 0 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-left: 1px solid var(--info-border-color);
+    font-weight: 600;
+    filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.3))
+}
+
+.liProf {
+    color: var(--font-color);
+    line-height: 1.5rem;
+    padding: 0 0 0.75rem 1rem;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 600;
+    filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.3));
+
+}
+
+.liSchool {
+    width: 70%;
+    text-align: left;
+    color: var(--font-color);
+    line-height: 1.5rem;
+    margin: 0;
+    padding: 0.3rem 0 0 1rem;
+}
+
+.liTitleWork {
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    color: var(--font-color);
+    line-height: 1.5rem;
+    border-top: 1px solid var(--info-border-color);
+    border-left: 1px solid var(--info-border-color);
+    border-top-left-radius: 1.5rem;
+    margin: 1rem 0 0 0;
+    padding: 1.5rem 0 0 1rem;
+    font-weight: 600;
+    filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.3))
+}
+
+.liDuree {
+    margin: 0.25rem 0 0 0;
+    padding: 0 0 0.75rem 1.5rem;
+    color: var(--font-color);
+    font-weight: 600;
+}
