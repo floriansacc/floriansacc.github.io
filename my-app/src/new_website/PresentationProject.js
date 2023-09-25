@@ -51,12 +51,16 @@ export default function PresentationProject(props) {
     e.target.style.color = "";
   };
 
+  const toStyleTitle = {
+    width: isPhone ? "95%" : "",
+  };
+
   const toStyleProject = {
     width: isPhone ? "100%" : "",
   };
 
   const toStyleProjectBox = {
-    width: isTablet ? "98%" : isPhone ? "99%" : "",
+    width: isTablet ? "98%" : isPhone ? "98%" : "",
   };
 
   const toStyleAllImgDiv = {
@@ -101,13 +105,18 @@ export default function PresentationProject(props) {
 
   return (
     <div style={toStyleProject} className={styles.project}>
-      <h3 className={styles.projectTitle}>
+      <h3 style={toStyleTitle} className={styles.projectTitle}>
         {projectDetails[`${props.lang}${props.name}`][0]}
       </h3>
       <ul style={toStyleProjectBox} className={styles.projectBox}>
         <div style={toStyleAllImgDiv} className={styles.projectAllImgDiv}>
-          <li style={toStylePhotoBox} className={styles.projectPhotoBox}>
+          <li
+            style={toStylePhotoBox}
+            className={styles.projectPhotoBox}
+            key="proj1"
+          >
             <img
+              alt={projectDetails[`descriptionPhoto`][`${props.lang}`][0]}
               className={styles.projectPhoto}
               src={projectDetails[`photo${props.name}`][0]}
             />
@@ -115,8 +124,13 @@ export default function PresentationProject(props) {
               {projectDetails[`descriptionPhoto`][`${props.lang}`][0]}
             </p>
           </li>
-          <li style={toStylePhotoBox} className={styles.projectPhotoBox}>
+          <li
+            style={toStylePhotoBox}
+            className={styles.projectPhotoBox}
+            key="proj2"
+          >
             <img
+              alt={projectDetails[`descriptionPhoto`][`${props.lang}`][1]}
               className={styles.projectPhoto}
               src={projectDetails[`photo${props.name}`][1]}
             />
@@ -138,7 +152,7 @@ export default function PresentationProject(props) {
             </li>
           )
         )}
-        <li className={styles.projectAbstractTitle}>
+        <li className={styles.projectAbstractTitle} key="proj3">
           {projectDetails[`abstract${props.lang}${props.name}`][0]}
         </li>
         <li
@@ -156,12 +170,18 @@ export default function PresentationProject(props) {
           onMouseEnter={handleMouseEnter}
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
+          key="proj4"
         >
           {projectDetails[`fold${props.lang}${props.name}`][0]}
         </li>
 
         {projectDetails[`abstract${props.lang}${props.name}`].map((x, i) => (
-          <li style={toStyleExpl} id={`abstractText${i}`} className={styles.projectAbstract}>
+          <li
+            style={toStyleExpl}
+            id={`abstractText${i}`}
+            className={styles.projectAbstract}
+            key={`abstract${props.lang}${i}`}
+          >
             {x}
           </li>
         ))}
@@ -173,6 +193,7 @@ export default function PresentationProject(props) {
           onMouseEnter={handleMouseEnter}
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
+          key="proj5"
         >
           {projectDetails[`fold${props.lang}${props.name}`][1]}
         </li>

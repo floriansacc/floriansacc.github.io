@@ -44,7 +44,7 @@ export default function PresentationWork(props) {
         <div style={toStyleContent3} className={styles.content3}>
             <div style={toStyleDivImg} className={styles.testDiv}>
                 <p style={toStyleLsy} className={styles.pLsy}>{workDetails[`${props.lang}${props.name}`][0]}</p>
-                <img style={toStyleImg} src={workDetails[`${props.name}image`]} className={styles.pLsyImg}/>
+                <img alt={workDetails[`${props.name}image`]} style={toStyleImg} src={workDetails[`${props.name}image`]} className={styles.pLsyImg}/>
             </div>
             <ul className={styles.ulSchoolWork}>
                 {workDetails[`${props.lang}${props.name}`].filter(x =>

@@ -102,12 +102,12 @@ export default function FooterInfo(props) {
                 <div style={toStyleDivImg} className={styles.divImgs}>
                     <div className={styles.footerSmallDiv}>
                         <p style={toStyleSubTitles} className={styles.footerP}>{footerInfo[`${props.lang}footer`][5]}</p>
-                        <img onMouseEnter={handleOnME} onClick={handleClick} name='kakao' className={styles.footerImg} src={footerInfo.kakaoImg} />
+                        <img alt="kakao QR code" onMouseEnter={handleOnME} onClick={handleClick} name='kakao' className={styles.footerImg} src={footerInfo.kakaoImg} />
                     </div>
                     <div className={styles.footerSmallDiv}>
                         <p id="toAppear" className={styles.toAppear}>{footerInfo[`${props.lang}Appear`]}</p>
                         <p style={toStyleSubTitles} className={styles.footerP}>{footerInfo[`${props.lang}footer`][6]}</p>
-                        <a href='https://www.instagram.com/floosaketi/' target='_blank'><img className={styles.footerImg} src={footerInfo.instaImg} /></a>
+                        <a href='https://www.instagram.com/floosaketi/' target='_blank'><img alt="Instagram" className={styles.footerImg} src={footerInfo.instaImg} /></a>
                     </div>
                 </div>
             </div>

@@ -35,6 +35,7 @@ export default function GlobalBody() {
             <LangButton getChange={handleLangChange} lang={lang} />
 
             <div className={styles.container}>
+                <div className={styles.imgBack}></div>
                 <ButtonNavigation lang={lang} />
                 <MainPresentation lang={lang} />
                 <FooterInfo lang={lang} />

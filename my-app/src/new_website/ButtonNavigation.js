@@ -110,8 +110,8 @@ export const ButtonNavigation = (props) => {
         }} className={styles.navigator}>
         <h2 style={{display: 'none'}} className={styles.h2Nav}>{scrollPosition}</h2>
             <h2 className={styles.h2Nav}>{titleListNavigation[props.lang]}</h2>
-            <ul className={styles.ulNav}>{listNavigation[props.lang].map(x => (
-                <li onMouseEnter={handleOnME} onMouseLeave={handleOnML} onClick={handleClick} className={ongletActif === x ? styles.liNavActif : styles.liNav}>{x}</li>
+            <ul className={styles.ulNav}>{listNavigation[props.lang].map((x,i) => (
+                <li onMouseEnter={handleOnME} onMouseLeave={handleOnML} onClick={handleClick} className={ongletActif === x ? styles.liNavActif : styles.liNav} key={`button${props.lang}${i}`}>{x}</li>
             ))}</ul>
         </div>
 

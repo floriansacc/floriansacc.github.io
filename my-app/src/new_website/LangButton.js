@@ -55,7 +55,7 @@ export const LangButton = (props) => {
                     backgroundColor: testSpring.backgroundColor
                 }} key='themeSwitch' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={onToggleTheme} className={styles.bTheme}>{isDarkTheme ? 'Light' : 'Dark'}</animated.p>
             </div>
-            <div classNAme={styles.bLangBox}>
+            <div className={styles.bLangBox}>
                 <button className={props.lang === 'fr' ? styles.bLangActive : styles.bLang} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} name="fr" onClick={props.getChange}>Francais</button>
                 <button className={props.lang === 'en' ? styles.bLangActive : styles.bLang} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} name="en" onClick={props.getChange}>Anglais</button>
                 <button className={props.lang === 'kr' ? styles.bLangActive : styles.bLang} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} name="kr" onClick={props.getChange}>한국어</button>

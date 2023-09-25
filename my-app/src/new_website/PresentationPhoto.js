@@ -54,7 +54,7 @@ export default function PresentationPhoto(props) {
             <p className={styles.content1Nom}>{presentation[props.lang].name}</p>
             <ul className={styles.bulletUL}>
                 {presentation[props.lang].src.map((x, i) => (
-                    <li onClick={handleBullet} className={`${styles.bulletLi} ${currentMe % presentation[props.lang].src.length === i ? styles.bulletLiOn : ''}`}>{i}</li>
+                    <li onClick={handleBullet} key={`photo${i}`} className={`${styles.bulletLi} ${currentMe % presentation[props.lang].src.length === i ? styles.bulletLiOn : ''}`}>{i}</li>
                 ))}
             </ul>
             <div style={toStyleContent1} id={`img${currentMe}`} className={styles.content1PhotoBox}>

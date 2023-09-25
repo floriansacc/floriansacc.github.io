@@ -56,7 +56,7 @@ export default function PresentationSchool(props) {
         <div style={toStyleContent2} className={styles.content2}>
             <div style={toStyleDivImg} className={styles.testDiv} >
                 <p style={toStyleLsy} className={styles.pLsy}>{schoolDetails[`${props.lang}${props.name}`][0]}</p>
-                <img style={toStyleImg} src={schoolDetails[`${props.name}img`]} className={styles.pLsyImg} />
+                <img alt={schoolDetails[`${props.name}img`]} style={toStyleImg} src={schoolDetails[`${props.name}img`]} className={styles.pLsyImg} />
             </div>
             <ul className={styles.ulSchoolWork}>
                 {schoolDetails[`${props.lang}${props.name}`].filter(x =>

@@ -3,9 +3,11 @@
   scroll-behavior: smooth;
   margin:0;
   padding:0;
+
 }
 
 header {
+
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +17,8 @@ header {
 
 body {
   overflow-x: hidden;
+  width: auto;
+  box-sizing: border-box;
   display:flex;
   flex-direction: column;
   align-items: center;

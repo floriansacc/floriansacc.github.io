@@ -11,6 +11,8 @@ body {
   height: 100vh;
   background-attachment: fixed;
   background-size: cover;
+
+  -moz-osx-font-smoothing: grayscale;
 }
 
 p {
