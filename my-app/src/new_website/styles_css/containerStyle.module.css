@@ -11,7 +11,8 @@
     background: var(--background-container);
     background-size: cover;
     position: fixed;
-    height: 100vh;
+    height: 105vh;
+    top: -5%;
     width: 100vw;
     z-index: -1;
 }
