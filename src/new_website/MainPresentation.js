@@ -3,6 +3,7 @@ import PresentationPhoto from "./PresentationPhoto";
 import PresentationSchool from "./PresentationSchool";
 import PresentationWork from "./PresentationWork";
 import PresentationProject from "./PresentationProject";
+import animateScrollTo from "animated-scroll-to";
 import { listNavigation } from "./data";
 import { useEffect, useContext, useRef, useState } from "react";
 import { QueryContext } from "./GlobalBody";
@@ -17,16 +18,16 @@ export default function MainPresentation(props) {
     let elementToGo = document.querySelectorAll("h1")[myRef.current];
     document.addEventListener("scrollend", () => {
       scrollingRef.current = false;
+      window.console.log("scroll end");
     });
     if (e.deltaY < 0 && myRef.current !== 0 && scrollingRef.current === false) {
       myRef.current -= 1;
       window.console.log(myRef.current);
       elementToGo = document.querySelectorAll("h1")[myRef.current];
       scrollingRef.current = true;
-      elementToGo.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest",
+      animateScrollTo(elementToGo, {
+        cancelOnUserAction: false,
+        minDuration: 1500,
       });
     } else if (
       e.deltaY > 0 &&
@@ -37,10 +38,9 @@ export default function MainPresentation(props) {
       window.console.log(myRef.current);
       elementToGo = document.querySelectorAll("h1")[myRef.current];
       scrollingRef.current = true;
-      elementToGo.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest",
+      animateScrollTo(elementToGo, {
+        cancelOnUserAction: false,
+        minDuration: 1500,
       });
     }
   };
