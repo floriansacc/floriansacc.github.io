@@ -4,17 +4,53 @@ import PresentationSchool from "./PresentationSchool";
 import PresentationWork from "./PresentationWork";
 import PresentationProject from "./PresentationProject";
 import { listNavigation } from "./data";
-import { useContext } from "react";
+import { useEffect, useContext, useRef, useState } from "react";
 import { QueryContext } from "./GlobalBody";
 import { ReactLogo } from "./ReactLogo";
 
 export default function MainPresentation(props) {
   const { isPhone, isTablet, lang } = useContext(QueryContext);
+  const myRef = useRef(0);
+  const scrollingRef = useRef(false);
+
+  const handleScrollSection = (e) => {
+    let elementToGo = document.querySelectorAll("h1")[myRef.current];
+    document.addEventListener("scrollend", () => {
+      scrollingRef.current = false;
+    });
+    if (e.deltaY < 0 && myRef.current !== 0 && scrollingRef.current === false) {
+      myRef.current -= 1;
+      window.console.log(myRef.current);
+      elementToGo = document.querySelectorAll("h1")[myRef.current];
+      scrollingRef.current = true;
+      elementToGo.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    } else if (
+      e.deltaY > 0 &&
+      myRef.current < 3 &&
+      scrollingRef.current === false
+    ) {
+      myRef.current += 1;
+      window.console.log(myRef.current);
+      elementToGo = document.querySelectorAll("h1")[myRef.current];
+      scrollingRef.current = true;
+      elementToGo.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }
+  };
 
   return (
     <div
+      onWheel={handleScrollSection}
       style={{ padding: isTablet ? "0" : isPhone ? "0" : "" }}
       className={styles.main}
+      id="startId"
     >
       <ReactLogo />
       <PresentationPhoto lang={lang} />

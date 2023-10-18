@@ -1,14 +1,12 @@
 * {
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
-  margin:0;
-  padding:0;
-
+  margin: 0;
+  padding: 0;
 }
 
 header {
-
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
@@ -17,9 +15,10 @@ header {
 
 body {
   overflow-x: hidden;
+  overflow-y: hidden;
   width: auto;
   box-sizing: border-box;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);

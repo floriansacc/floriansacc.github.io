@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import styles from "./styles_css/buttonStyle.module.css";
 import { titleListNavigation, listNavigation, presentation } from "./data";
-import { useContext } from "react";
 
 import { QueryContext } from "./GlobalBody";
 
@@ -28,22 +27,6 @@ export const ButtonNavigation = (props) => {
     e.target.style.backgroundColor = "";
     e.target.style.color = "";
     e.target.style.transform = "scale(1)";
-  };
-
-  const testValue = () => {
-    if (lang === "fr") {
-      if (scrollPosition > 195) {
-        setOngletActif("Présentation");
-      } else if (scrollPosition > 1366) {
-        setOngletActif("Education");
-      } else if (scrollPosition > 2649) {
-        setOngletActif("Expérience Professionnelle");
-      } else if (scrollPosition > 3627) {
-        setOngletActif("Projets");
-      } else {
-        setOngletActif("");
-      }
-    }
   };
 
   const handleScroll = () => {
