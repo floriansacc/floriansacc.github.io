@@ -9,7 +9,7 @@ import { QueryContext } from "./GlobalBody";
 import { ReactLogo } from "./ReactLogo";
 
 export default function MainPresentation(props) {
-  const { isPhone, isTablet } = useContext(QueryContext);
+  const { isPhone, isTablet, lang } = useContext(QueryContext);
 
   return (
     <div
@@ -17,29 +17,26 @@ export default function MainPresentation(props) {
       className={styles.main}
     >
       <ReactLogo />
-      <PresentationPhoto lang={props.lang} />
-      <h1 id={listNavigation.entrySchool[props.lang]} className={styles.titles}>
-        {listNavigation.entrySchool[props.lang]}
+      <PresentationPhoto lang={lang} />
+      <h1 id={listNavigation.entrySchool[lang]} className={styles.titles}>
+        {listNavigation.entrySchool[lang]}
       </h1>
-      <PresentationSchool name="jbnu" lang={props.lang} />
-      <PresentationSchool name="jbnuExchange" lang={props.lang} />
-      <PresentationSchool name="utbm" lang={props.lang} />
-      <PresentationSchool name="lyon" lang={props.lang} />
+      <PresentationSchool name="jbnu" lang={lang} />
+      <PresentationSchool name="jbnuExchange" lang={lang} />
+      <PresentationSchool name="utbm" lang={lang} />
+      <PresentationSchool name="lyon" lang={lang} />
 
-      <h1 id={listNavigation.entryWork[props.lang]} className={styles.titles}>
-        {listNavigation.entryWork[props.lang]}
+      <h1 id={listNavigation.entryWork[lang]} className={styles.titles}>
+        {listNavigation.entryWork[lang]}
       </h1>
-      <PresentationWork name="edf" lang={props.lang} />
-      <PresentationWork name="enedis" lang={props.lang} />
-      <PresentationWork name="suez" lang={props.lang} />
+      <PresentationWork name="edf" lang={lang} />
+      <PresentationWork name="enedis" lang={lang} />
+      <PresentationWork name="suez" lang={lang} />
 
-      <h1
-        id={listNavigation.entryProject[props.lang]}
-        className={styles.titles}
-      >
-        {listNavigation.entryProject[props.lang]}
+      <h1 id={listNavigation.entryProject[lang]} className={styles.titles}>
+        {listNavigation.entryProject[lang]}
       </h1>
-      <PresentationProject name="proj1" lang={props.lang} />
+      <PresentationProject name="proj1" lang={lang} />
     </div>
   );
 }

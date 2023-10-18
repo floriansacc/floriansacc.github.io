@@ -4,7 +4,7 @@ import styles from './styles_css/footerStyle.module.css';
 import { footerInfo } from "./data";
 
 export default function FooterInfo(props) {
-    const { isPhone, isTablet } = useContext(QueryContext);
+    const { isPhone, isTablet, lang } = useContext(QueryContext);
     const [windowSize, setWindowSize] = useState([
         window.innerWidth,
         window.innerHeight,
@@ -90,30 +90,30 @@ export default function FooterInfo(props) {
     return (
         <div className={styles.footerAll}>
             <div style={toStyleFooterGauche} className={styles.footerGauche}>
-                <h2 className={styles.footerH2}>{footerInfo[`${props.lang}footer`][0]}</h2>
+                <h2 className={styles.footerH2}>{footerInfo[`${lang}footer`][0]}</h2>
                 <div className={styles.footerSmallDiv}>
-                    <p style={toStyleSubTitles} className={styles.footerP}>{footerInfo[`${props.lang}footer`][1]}</p>
-                    <span className={styles.footerSpan}>{footerInfo[`${props.lang}footer`][2]}</span>
+                    <p style={toStyleSubTitles} className={styles.footerP}>{footerInfo[`${lang}footer`][1]}</p>
+                    <span className={styles.footerSpan}>{footerInfo[`${lang}footer`][2]}</span>
                 </div>
                 <div className={styles.footerSmallDiv}>
-                    <p style={toStyleSubTitles} className={styles.footerP}>{footerInfo[`${props.lang}footer`][3]}</p>
-                    <span className={styles.footerSpan}>{footerInfo[`${props.lang}footer`][4]}</span>
+                    <p style={toStyleSubTitles} className={styles.footerP}>{footerInfo[`${lang}footer`][3]}</p>
+                    <span className={styles.footerSpan}>{footerInfo[`${lang}footer`][4]}</span>
                 </div>
                 <div style={toStyleDivImg} className={styles.divImgs}>
                     <div className={styles.footerSmallDiv}>
-                        <p style={toStyleSubTitles} className={styles.footerP}>{footerInfo[`${props.lang}footer`][5]}</p>
+                        <p style={toStyleSubTitles} className={styles.footerP}>{footerInfo[`${lang}footer`][5]}</p>
                         <img alt="kakao QR code" onMouseEnter={handleOnME} onClick={handleClick} name='kakao' className={styles.footerImg} src={footerInfo.kakaoImg} />
                     </div>
                     <div className={styles.footerSmallDiv}>
-                        <p id="toAppear" className={styles.toAppear}>{footerInfo[`${props.lang}Appear`]}</p>
-                        <p style={toStyleSubTitles} className={styles.footerP}>{footerInfo[`${props.lang}footer`][6]}</p>
+                        <p id="toAppear" className={styles.toAppear}>{footerInfo[`${lang}Appear`]}</p>
+                        <p style={toStyleSubTitles} className={styles.footerP}>{footerInfo[`${lang}footer`][6]}</p>
                         <a href='https://www.instagram.com/floosaketi/' target='_blank'><img alt="Instagram" className={styles.footerImg} src={footerInfo.instaImg} /></a>
                     </div>
                 </div>
             </div>
             <div className={styles.footerDroite}>
                 <div className={styles.footerSignature}>
-                    <p style={toStyleSignature} className={styles.footerSignatureP}>{footerInfo[`${props.lang}signature`]}</p>
+                    <p style={toStyleSignature} className={styles.footerSignatureP}>{footerInfo[`${lang}signature`]}</p>
                 </div>
             </div>
         </div>

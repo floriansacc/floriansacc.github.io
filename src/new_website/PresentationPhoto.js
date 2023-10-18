@@ -6,7 +6,7 @@ import { QueryContext } from './GlobalBody';
 
 export default function PresentationPhoto(props) {
     const [currentMe, setCurrentMe] = useState(0);
-    const { isBigScreen, isPhone, isTablet } = useContext(QueryContext);
+    const { isBigScreen, isPhone, isTablet, lang } = useContext(QueryContext);
 
     const handleHME = (e) => {
         e.target.style.transform = "";
@@ -20,7 +20,7 @@ export default function PresentationPhoto(props) {
         setCurrentMe(e.target.innerHTML);
     };
 
-    const transitions = useTransition(presentation[props.lang].src[currentMe], {
+    const transitions = useTransition(presentation[lang].src[currentMe], {
         from: { opacity: 0, transform: 'scale(1.2)' },
         enter: { opacity: 1, transform: 'scale(1)' },
         leave: { opacity: 0, transform: 'scale(0.9)' },
@@ -42,7 +42,7 @@ export default function PresentationPhoto(props) {
         const intervalID = setInterval(() => {
             setCurrentMe(prev => {
                 const nextMe = prev + 1
-                return nextMe % presentation[props.lang].src.length
+                return nextMe % presentation[lang].src.length
             });
         }, 5000);
         return () => clearInterval(intervalID);
@@ -50,11 +50,11 @@ export default function PresentationPhoto(props) {
 
     return (
         <div className={styles.content1}>
-            <h1 id={listNavigation[props.lang][0]} className={styles.content1Title}>{listNavigation[props.lang][0]}</h1>
-            <p className={styles.content1Nom}>{presentation[props.lang].name}</p>
+            <h1 id={listNavigation[lang][0]} className={styles.content1Title}>{listNavigation[lang][0]}</h1>
+            <p className={styles.content1Nom}>{presentation[lang].name}</p>
             <ul className={styles.bulletUL}>
-                {presentation[props.lang].src.map((x, i) => (
-                    <li onClick={handleBullet} key={`photo${i}`} className={`${styles.bulletLi} ${currentMe % presentation[props.lang].src.length === i ? styles.bulletLiOn : ''}`}>{i}</li>
+                {presentation[lang].src.map((x, i) => (
+                    <li onClick={handleBullet} key={`photo${i}`} className={`${styles.bulletLi} ${currentMe % presentation[lang].src.length === i ? styles.bulletLiOn : ''}`}>{i}</li>
                 ))}
             </ul>
             <div style={toStyleContent1} id={`img${currentMe}`} className={styles.content1PhotoBox}>
@@ -67,13 +67,13 @@ export default function PresentationPhoto(props) {
                         width: '100%',
                         height: 'auto',
                         willChange: 'opacity',
-                    }} src={item} onMouseEnter={handleHME} onMouseLeave={handleML} key={presentation[props.lang].src[currentMe]} alt="photo de moi" />
+                    }} src={item} onMouseEnter={handleHME} onMouseLeave={handleML} key={presentation[lang].src[currentMe]} alt="photo de moi" />
                 ))}
 
             </div>
             <div>
-                <h2 style={toStyleH2} className={styles.content1H2}>{presentation[props.lang].intro1}</h2>
-                <h2 style={toStyleH2} className={styles.content1H2}>{presentation[props.lang].intro2}</h2></div>
+                <h2 style={toStyleH2} className={styles.content1H2}>{presentation[lang].intro1}</h2>
+                <h2 style={toStyleH2} className={styles.content1H2}>{presentation[lang].intro2}</h2></div>
         </div>
     )
 }

@@ -7,18 +7,16 @@ import { useContext } from "react";
 import { QueryContext } from "./GlobalBody";
 
 export default function PresentationProject(props) {
-  const { isBigScreen, isPhone, isTablet } = useContext(QueryContext);
+  const { isBigScreen, isPhone, isTablet, lang } = useContext(QueryContext);
 
   const handleMouseDown = (e) => {
     e.preventDefault();
-    if (
-      e.target.innerHTML === projectDetails[`fold${props.lang}${props.name}`][0]
-    ) {
+    if (e.target.innerHTML === projectDetails[`fold${lang}${props.name}`][0]) {
       e.target.style.color = "#cacaca";
       e.target.style.display = "none";
       for (
         let i = 2;
-        i < projectDetails[`abstract${props.lang}${props.name}`].length;
+        i < projectDetails[`abstract${lang}${props.name}`].length;
         i++
       ) {
         document.getElementById(`abstractText${i}`).style.display = "block";
@@ -29,7 +27,7 @@ export default function PresentationProject(props) {
       e.target.style.display = "none";
       for (
         let i = 1;
-        i < projectDetails[`abstract${props.lang}${props.name}`].length;
+        i < projectDetails[`abstract${lang}${props.name}`].length;
         i++
       ) {
         document.getElementById(`abstractText${i}`).style.display = "none";
@@ -96,17 +94,17 @@ export default function PresentationProject(props) {
     document.getElementById("aDisButton").style.display = "none";
     for (
       let i = 1;
-      i < projectDetails[`abstract${props.lang}${props.name}`].length;
+      i < projectDetails[`abstract${lang}${props.name}`].length;
       i++
     ) {
       document.getElementById(`abstractText${i}`).style.display = "none";
     }
-  }, [props.lang]);
+  }, [lang]);
 
   return (
     <div style={toStyleProject} className={styles.project}>
       <h3 style={toStyleTitle} className={styles.projectTitle}>
-        {projectDetails[`${props.lang}${props.name}`][0]}
+        {projectDetails[`${lang}${props.name}`][0]}
       </h3>
       <ul style={toStyleProjectBox} className={styles.projectBox}>
         <div style={toStyleAllImgDiv} className={styles.projectAllImgDiv}>
@@ -116,12 +114,12 @@ export default function PresentationProject(props) {
             key="proj1"
           >
             <img
-              alt={projectDetails[`descriptionPhoto`][`${props.lang}`][0]}
+              alt={projectDetails[`descriptionPhoto`][`${lang}`][0]}
               className={styles.projectPhoto}
               src={projectDetails[`photo${props.name}`][0]}
             />
             <p style={toStyleLegend} className={styles.projectPhotoLegend}>
-              {projectDetails[`descriptionPhoto`][`${props.lang}`][0]}
+              {projectDetails[`descriptionPhoto`][`${lang}`][0]}
             </p>
           </li>
           <li
@@ -130,16 +128,16 @@ export default function PresentationProject(props) {
             key="proj2"
           >
             <img
-              alt={projectDetails[`descriptionPhoto`][`${props.lang}`][1]}
+              alt={projectDetails[`descriptionPhoto`][`${lang}`][1]}
               className={styles.projectPhoto}
               src={projectDetails[`photo${props.name}`][1]}
             />
             <p style={toStyleLegend} className={styles.projectPhotoLegend}>
-              {projectDetails[`descriptionPhoto`][`${props.lang}`][1]}
+              {projectDetails[`descriptionPhoto`][`${lang}`][1]}
             </p>
           </li>
         </div>
-        {projectDetails[`${props.lang}${props.name}`].map((x, i) =>
+        {projectDetails[`${lang}${props.name}`].map((x, i) =>
           i === 0 ? (
             ""
           ) : (
@@ -153,14 +151,14 @@ export default function PresentationProject(props) {
           )
         )}
         <li className={styles.projectAbstractTitle} key="proj3">
-          {projectDetails[`abstract${props.lang}${props.name}`][0]}
+          {projectDetails[`abstract${lang}${props.name}`][0]}
         </li>
         <li
           name="abstract-first-sentence"
           style={toStyleExpl}
           className={styles.projectExpl}
         >
-          {projectDetails[`abstract${props.lang}${props.name}`][1]}
+          {projectDetails[`abstract${lang}${props.name}`][1]}
         </li>
         <li
           id="aAppButton"
@@ -172,15 +170,15 @@ export default function PresentationProject(props) {
           onMouseUp={handleMouseUp}
           key="proj4"
         >
-          {projectDetails[`fold${props.lang}${props.name}`][0]}
+          {projectDetails[`fold${lang}${props.name}`][0]}
         </li>
 
-        {projectDetails[`abstract${props.lang}${props.name}`].map((x, i) => (
+        {projectDetails[`abstract${lang}${props.name}`].map((x, i) => (
           <li
             style={toStyleExpl}
             id={`abstractText${i}`}
             className={styles.projectAbstract}
-            key={`abstract${props.lang}${i}`}
+            key={`abstract${lang}${i}`}
           >
             {x}
           </li>
@@ -195,7 +193,7 @@ export default function PresentationProject(props) {
           onMouseUp={handleMouseUp}
           key="proj5"
         >
-          {projectDetails[`fold${props.lang}${props.name}`][1]}
+          {projectDetails[`fold${lang}${props.name}`][1]}
         </li>
         <video
           style={toStyleVideo}
