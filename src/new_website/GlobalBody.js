@@ -33,7 +33,7 @@ export default function GlobalBody() {
 
       <div className={styles.container}>
         <div className={styles.imgBack}></div>
-        <ButtonNavigation />
+
         <MainPresentation />
         <FooterInfo />
       </div>

@@ -8,6 +8,7 @@ const toCheck =
   "https://stackoverflow.com/questions/53158796/get-scroll-position-with-reactjs";
 
 export const ButtonNavigation = (props) => {
+  const { myref } = props;
   const [scrollPosition, setScrollPosition] = useState(0);
   const [ongletActif, setOngletActif] = useState("");
   const { isBigScreen, isPhone, isTablet, lang } = useContext(QueryContext);
@@ -42,69 +43,27 @@ export const ButtonNavigation = (props) => {
     };
   }, []);
 
-  useEffect(() => {
-    if (lang === "fr") {
-      if (scrollPosition > 132 && scrollPosition < 1265) {
-        setOngletActif(listNavigation[lang][0]);
-      } else if (scrollPosition > 1265 && scrollPosition < 2548) {
-        setOngletActif(listNavigation[lang][1]);
-      } else if (scrollPosition > 2548 && scrollPosition < 3390) {
-        setOngletActif(listNavigation[lang][2]);
-      } else if (scrollPosition > 3390) {
-        setOngletActif(listNavigation[lang][3]);
-      } else {
-        setOngletActif("");
-      }
-    } else if (lang === "en") {
-      if (scrollPosition > 132 && scrollPosition < 1265) {
-        setOngletActif(listNavigation[lang][0]);
-      } else if (scrollPosition > 1265 && scrollPosition < 2502) {
-        setOngletActif(listNavigation[lang][1]);
-      } else if (scrollPosition > 2502 && scrollPosition < 3384) {
-        setOngletActif(listNavigation[lang][2]);
-      } else if (scrollPosition > 3384) {
-        setOngletActif(listNavigation[lang][3]);
-      } else {
-        setOngletActif("");
-      }
-    } else {
-      if (scrollPosition > 132 && scrollPosition < 1265) {
-        setOngletActif(listNavigation[lang][0]);
-      } else if (scrollPosition > 1265 && scrollPosition < 2488) {
-        setOngletActif(listNavigation[lang][1]);
-      } else if (scrollPosition > 2488 && scrollPosition < 3307) {
-        setOngletActif(listNavigation[lang][2]);
-      } else if (scrollPosition > 3307) {
-        setOngletActif(listNavigation[lang][3]);
-      } else {
-        setOngletActif("");
-      }
-    }
-
-    return () => {};
-  }, [scrollPosition, lang]);
-
   return (
     <div
       style={{
-        display: isTablet ? "none" : isPhone ? "none" : "flex",
+        display: isTablet ? "flex" : isPhone ? "flex" : "flex",
       }}
       className={styles.navigator}
     >
       <h2 style={{ display: "none" }} className={styles.h2Nav}>
         {scrollPosition}
       </h2>
-      <h2 className={styles.h2Nav}>{titleListNavigation[lang]}</h2>
       <ul className={styles.ulNav}>
         {listNavigation[lang].map((x, i) => (
           <li
             onMouseEnter={handleOnME}
             onMouseLeave={handleOnML}
             onClick={handleClick}
-            className={ongletActif === x ? styles.liNavActif : styles.liNav}
+            className={myref.current === i ? styles.liNavActif : styles.liNav}
             key={`button${lang}${i}`}
+            name={x}
           >
-            {x}
+            {}
           </li>
         ))}
       </ul>

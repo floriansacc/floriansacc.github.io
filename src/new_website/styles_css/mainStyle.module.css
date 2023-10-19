@@ -49,11 +49,34 @@
 
 .titles {
   font-size: 1.8rem;
-  margin: 5rem auto;
-  padding: 1rem 0;
   color: var(--font-color);
-  border-bottom: 1px solid;
+
   border-color: var(--title-border-color);
+}
+
+.titleAndNavigator {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+  height: 55%;
+  border: 1px solid red;
+}
+
+.schoolContentBigBox {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid blue;
+}
+
+.schoolContentSmallBox {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 100%;
+  flex: 2 1 auto;
 }
 
 .content1 {
@@ -159,12 +182,13 @@
 
 .content2,
 .content3 {
-  display: grid;
-  width: 90%;
-  grid-template-columns: min-content auto;
-  grid-auto-rows: max-content;
-  justify-content: stretch;
-  margin-bottom: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: column nowrap;
+  flex: 1 1 200px;
+  max-width: 350px;
+  margin: 1rem;
+  border: 1px solid red;
 }
 
 .ulSchoolWork {
@@ -177,21 +201,25 @@
 }
 
 .pLsy {
-  text-align: end;
-  width: 150px;
+  width: 100%;
   height: auto;
-  margin-top: 1rem;
   white-space: nowrap;
-  padding: 1.5rem 1rem;
   font-size: 1.2rem;
   color: var(--font-color);
 }
 
+.imgContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 100px;
+  border: 1px solid green;
+}
+
 .pLsyImg {
-  position: relative;
-  width: 80%;
+  width: 50%;
+  height: fit-content;
   background-color: var(--logo-background);
-  padding: 0.5rem;
   border-radius: 15px;
 }
 
@@ -207,8 +235,7 @@
   font-size: 1.2rem;
   color: var(--font-color);
   line-height: 1.5rem;
-  border-top: 1px solid var(--info-border-color);
-  border-left: 1px solid var(--info-border-color);
+
   border-top-left-radius: 1.5rem;
   margin: 1rem 0 0 0;
   padding: 1.5rem 0 0.5rem 1rem;
@@ -221,7 +248,7 @@
   line-height: 1.5rem;
   padding: 0 0 0.75rem 1rem;
   margin-bottom: 0.5rem;
-  border-left: 1px solid var(--info-border-color);
+
   font-weight: 600;
   filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.3));
 }
@@ -236,7 +263,7 @@
 }
 
 .liSchool {
-  width: 70%;
+  width: 100%;
   text-align: left;
   color: var(--font-color);
   line-height: 1.5rem;

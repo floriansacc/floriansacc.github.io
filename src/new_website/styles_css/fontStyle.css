@@ -1,7 +1,6 @@
-*{
+* {
   margin: 0;
   padding: 0;
-  
 }
 
 body {
@@ -32,7 +31,6 @@ h1 {
 h2 {
   font-size: 1.2rem;
   color: white;
-  padding: 10px;
 }
 
 h3 {
@@ -63,7 +61,6 @@ ul {
 li {
   font-size: 1.2rem;
   color: white;
-  padding: 10px;
 }
 
 a {
