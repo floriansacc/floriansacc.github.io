@@ -15,6 +15,42 @@ export default function MainPresentation(props) {
   const myRef = useRef(0);
   const [scrollAvailable, setScrollAvailable] = useState(true);
 
+  const toStyleSchoolBigBox = {
+    flexDirection: isTablet ? "column" : "",
+    padding: isTablet ? "0" : "",
+    opacity: myRef.current === 1 ? "1" : "0",
+    transition: myRef.current === 1 ? "all 1s ease-out 1s" : "all 0.5s",
+  };
+
+  const toStyleWorklBigBox = {
+    flexDirection: isTablet ? "column" : "",
+    padding: isTablet ? "0" : "",
+    opacity: myRef.current === 2 ? "1" : "0",
+    transition: myRef.current === 2 ? "all 1s ease-out 1s" : "all 0.5s",
+  };
+
+  const toStyleSchoolSmallBox = {
+    flexWrap: isTablet ? "wrap" : "",
+    paddingRight: isTablet ? "0.2rem" : "",
+  };
+
+  const toStyleDivSchool = {
+    width: isTablet ? "100%" : "",
+    display: "flex",
+    border: "1px solid purple",
+    height: isTablet ? "fit-content" : "90%",
+    margin: "5px 0",
+  };
+
+  const toStyleWorklSmallBox = {
+    flexWrap: isTablet ? "wrap" : "",
+    paddingRight: isTablet ? "0.2rem" : "",
+  };
+
+  const toStyleTitles = {
+    whiteSpace: isTablet ? "nowrap" : "",
+  };
+
   const handleScrollSection = async (e) => {
     if (e.deltaY < 0 && myRef.current !== 0 && scrollAvailable) {
       myRef.current -= 1;
@@ -29,7 +65,7 @@ export default function MainPresentation(props) {
       let elementToGo = document.querySelectorAll("h6")[myRef.current];
       await animateScrollTo(elementToGo, {
         cancelOnUserAction: false,
-        minDuration: 2000,
+        minDuration: 1500,
         verticalOffset: -40,
         easing: (x) =>
           x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
@@ -48,32 +84,47 @@ export default function MainPresentation(props) {
       className={styles.main}
       id="startId"
     >
+      <ButtonNavigation myref={myRef} />
       <ReactLogo />
       <h6></h6>
       <PresentationPhoto lang={lang} />
 
-      <div className={styles.schoolContentBigBox}>
+      <div style={toStyleSchoolBigBox} className={styles.schoolBigBox}>
         <h6></h6>
-        <div className={styles.titleAndNavigator}>
-          <h2 id={listNavigation.entrySchool[lang]} className={styles.titles}>
-            {listNavigation.entrySchool[lang]}
-          </h2>
-          <ButtonNavigation myref={myRef} />
-        </div>
-        <div className={styles.schoolContentSmallBox}>
-          <PresentationSchool name="jbnu" lang={lang} />
-          <PresentationSchool name="jbnuExchange" lang={lang} />
-          <PresentationSchool name="utbm" lang={lang} />
-          <PresentationSchool name="lyon" lang={lang} />
+        <h2
+          style={toStyleTitles}
+          id={listNavigation.entrySchool[lang]}
+          className={styles.titles}
+        >
+          {listNavigation.entrySchool[lang]}
+        </h2>
+        <div style={toStyleSchoolSmallBox} className={styles.schoolSmallBox}>
+          <div style={toStyleDivSchool}>
+            <PresentationSchool name="jbnu" lang={lang} />
+            <PresentationSchool name="jbnuExchange" lang={lang} />
+          </div>
+          <div style={toStyleDivSchool}>
+            <PresentationSchool name="utbm" lang={lang} />
+            <PresentationSchool name="lyon" lang={lang} />
+          </div>
         </div>
       </div>
-      <h6></h6>
-      <h1 id={listNavigation.entryWork[lang]} className={styles.titles}>
-        {listNavigation.entryWork[lang]}
-      </h1>
-      <PresentationWork name="edf" lang={lang} />
-      <PresentationWork name="enedis" lang={lang} />
-      <PresentationWork name="suez" lang={lang} />
+      <div style={toStyleWorklBigBox} className={styles.workBigBox}>
+        <h6></h6>
+        <h2
+          style={toStyleTitles}
+          id={listNavigation.entryWork[lang]}
+          className={styles.titles}
+        >
+          {listNavigation.entryWork[lang]}
+        </h2>
+        <div style={toStyleWorklSmallBox} className={styles.workSmallBox}>
+          <PresentationWork name="edf" lang={lang} />
+          <PresentationWork name="enedis" lang={lang} />
+          <PresentationWork name="suez" lang={lang} />
+        </div>
+      </div>
+
       <h6></h6>
       <h1 id={listNavigation.entryProject[lang]} className={styles.titles}>
         {listNavigation.entryProject[lang]}

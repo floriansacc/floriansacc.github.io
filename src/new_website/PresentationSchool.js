@@ -8,52 +8,37 @@ export default function PresentationSchool(props) {
   const { isPhone, isTablet, lang } = useContext(QueryContext);
 
   const toStyleContent2 = {
-    width: isTablet ? "95%" : isPhone ? "95%" : "",
-    gridTemplateColumns: isPhone ? "100%" : "",
-    justifycontent: isPhone ? "stretch" : "",
-    gridAutoRows: isPhone ? "maxContent" : "",
+    margin: isTablet ? "0.2rem" : "",
+    height: isTablet ? "fit-content" : "",
   };
 
-  const toStyleLsy = {
-    width: isPhone ? "50px" : "",
-    padding: isPhone ? "0.5rem" : "",
+  const toStyleImgContainer = {
+    height: isTablet ? "65px" : "",
   };
 
-  const toStyleDivImg = {
-    flexFlow: isTablet ? "" : isPhone ? "row wrap" : "",
-    justifyContent: isTablet ? "" : isPhone ? "space-between" : "",
-  };
+  const toStyleLsy = {};
 
-  const toStyleImg = {
-    width: isTablet ? "100px" : isPhone ? "100px" : "",
-    left: isTablet ? "" : isPhone ? "1%" : "",
-  };
+  const toStyleDivImg = {};
+
+  const toStyleImg = {};
 
   const toStyleTitle = {
-    margin: isPhone ? "0" : "",
-    padding: isPhone ? "0.75rem 0 0 1rem" : "",
-    borderLeft: isPhone ? "none" : "",
+    height: isTablet ? "fit-content" : "",
   };
 
   const toStyleMajor = {
-    borderLeft: isPhone ? "none" : "",
-    textAlign: isPhone ? "left" : "",
-    position: isPhone ? "relative" : "",
-    left: isPhone ? "1%" : "",
+    height: isTablet ? "fit-content" : "",
   };
 
   const toStyleLi = {
-    width: isTablet ? "100%" : isPhone ? "100%" : "",
+    lineHeight: isTablet ? "1.1rem" : "",
   };
 
-  const toStyleProf = {
-    width: isTablet ? "100%" : isPhone ? "100%" : "",
-    textAlign: isPhone ? "" : "left",
-  };
+  const toStyleProf = {};
 
   return (
-    <div className={styles.content2}>
-      <div className={styles.imgContainer}>
+    <div style={toStyleContent2} className={styles.content2}>
+      <div style={toStyleImgContainer} className={styles.imgContainer}>
         <img
           alt={schoolDetails[`${props.name}img`]}
           src={schoolDetails[`${props.name}img`]}
@@ -69,6 +54,15 @@ export default function PresentationSchool(props) {
           .filter((x) => !x.includes("20"))
           .map((y, i) => (
             <li
+              style={
+                i === 0
+                  ? toStyleTitle
+                  : i === 1
+                  ? toStyleMajor
+                  : i === 6
+                  ? {}
+                  : toStyleLi
+              }
               className={
                 i === 0
                   ? styles.liTitleSchool

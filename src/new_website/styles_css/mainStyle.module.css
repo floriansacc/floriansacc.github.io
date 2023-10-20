@@ -45,38 +45,53 @@
   margin-top: 5rem;
   padding: 1rem;
   min-width: 250px;
+  height: 100%;
 }
 
 .titles {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  padding: 0 5px;
+  width: 150px;
+  max-width: 15%;
+  height: fit-content;
   color: var(--font-color);
-
   border-color: var(--title-border-color);
 }
 
-.titleAndNavigator {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-between;
-  width: 20%;
-  height: 55%;
-  border: 1px solid red;
-}
-
-.schoolContentBigBox {
+.schoolBigBox {
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-start;
   width: 100%;
+  height: 93vh;
+  margin: 5rem 0;
   border: 1px solid blue;
 }
 
-.schoolContentSmallBox {
+.schoolSmallBox {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   max-width: 100%;
-  flex: 2 1 auto;
+  padding-right: 3rem;
+  height: 90%;
+}
+
+.workBigBox {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  width: 100%;
+  height: 93vh;
+  margin: 5rem 0;
+  border: 1px solid blue;
+}
+
+.workSmallBox {
+  display: flex;
+  flex-flow: row nowrap;
+  max-width: 100%;
+  padding-right: 3rem;
+  height: 90%;
 }
 
 .content1 {
@@ -186,8 +201,10 @@
   justify-content: flex-start;
   flex-flow: column nowrap;
   flex: 1 1 200px;
-  max-width: 350px;
+  max-width: 500px;
   margin: 1rem;
+  padding: 0.5rem;
+  height: 90%;
   border: 1px solid red;
 }
 
@@ -201,32 +218,30 @@
 }
 
 .pLsy {
-  width: 100%;
+  width: fit-content;
   height: auto;
   white-space: nowrap;
-  font-size: 1.2rem;
+  align-self: flex-end;
+  font-size: 1rem;
   color: var(--font-color);
 }
 
 .imgContainer {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
   height: 100px;
-  border: 1px solid green;
 }
 
 .pLsyImg {
   width: 50%;
-  height: fit-content;
+  max-width: 120px;
+  height: auto;
+  max-height: 75px;
   background-color: var(--logo-background);
-  border-radius: 15px;
-}
-
-.testDiv {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .liTitleSchool {
@@ -235,40 +250,37 @@
   font-size: 1.2rem;
   color: var(--font-color);
   line-height: 1.5rem;
-
-  border-top-left-radius: 1.5rem;
-  margin: 1rem 0 0 0;
-  padding: 1.5rem 0 0.5rem 1rem;
   font-weight: 600;
   filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.5));
+  margin: 0.8rem 0 0.5rem 0;
+  border-bottom: 1px solid;
+  border-color: var(--title-border-color);
+  height: 70px;
 }
 
 .liMajorSchool {
   color: var(--font-color);
   line-height: 1.5rem;
-  padding: 0 0 0.75rem 1rem;
-  margin-bottom: 0.5rem;
-
   font-weight: 600;
-  filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.3));
+  filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.2));
+  margin-bottom: 1rem;
+  height: 80px;
 }
 
 .liProf {
   color: var(--font-color);
   line-height: 1.5rem;
-  padding: 0 0 0.75rem 1rem;
-  margin: 1rem 0 0.5rem 0;
   font-weight: 600;
   filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.3));
+  padding-top: 1rem;
 }
 
 .liSchool {
   width: 100%;
   text-align: left;
   color: var(--font-color);
-  line-height: 1.5rem;
-  margin: 0;
-  padding: 0.3rem 0 0 1rem;
+  line-height: 1.8rem;
+  padding: 0.5rem 0;
 }
 
 .liTitleWork {
@@ -277,18 +289,19 @@
   font-size: 1.2rem;
   color: var(--font-color);
   line-height: 1.5rem;
-  border-top: 1px solid var(--info-border-color);
-  border-left: 1px solid var(--info-border-color);
-  border-top-left-radius: 1.5rem;
-  margin: 1rem 0 0 0;
-  padding: 1.5rem 0 0 1rem;
   font-weight: 600;
-  filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.3));
+  filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.5));
+  margin: 0.8rem 0 0.5rem 0;
+  padding: 10px 0;
+  border-bottom: 1px solid;
+  border-color: var(--title-border-color);
 }
 
 .liDuree {
-  margin: 0.25rem 0 0 0;
-  padding: 0 0 0.75rem 1.5rem;
   color: var(--font-color);
+  line-height: 1.5rem;
   font-weight: 600;
+  filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.2));
+  margin: 1rem 0;
+  height: 30px;
 }
