@@ -29,6 +29,13 @@ export default function MainPresentation(props) {
     transition: myRef.current === 2 ? "all 1s ease-out 1s" : "all 0.5s",
   };
 
+  const toStyleProjectBigBox = {
+    flexDirection: isTablet ? "column" : "",
+    padding: isTablet ? "0" : "",
+    opacity: myRef.current === 3 ? "1" : "0",
+    transition: myRef.current === 3 ? "all 1s ease-out 1s" : "all 0.5s",
+  };
+
   const toStyleSchoolSmallBox = {
     flexWrap: isTablet ? "wrap" : "",
     paddingRight: isTablet ? "0.2rem" : "",
@@ -38,7 +45,7 @@ export default function MainPresentation(props) {
     width: isTablet ? "100%" : "",
     display: "flex",
     border: "1px solid purple",
-    height: isTablet ? "fit-content" : "90%",
+    height: isTablet ? "50%" : "100%",
     margin: "5px 0",
   };
 
@@ -51,12 +58,31 @@ export default function MainPresentation(props) {
     whiteSpace: isTablet ? "nowrap" : "",
   };
 
+  const toStyleProjectTitle = {
+    width: isTablet ? "120px" : "120px",
+  };
+
+  const toggleScrollAvailable = (x) => {
+    setScrollAvailable(x);
+  };
+
   const handleScrollSection = async (e) => {
     if (e.deltaY < 0 && myRef.current !== 0 && scrollAvailable) {
       myRef.current -= 1;
-    } else if (e.deltaY > 0 && myRef.current < 3 && scrollAvailable) {
+    } else if (e.deltaY > 0 && myRef.current < 4 && scrollAvailable) {
       myRef.current += 1;
-    } else if (myRef.current === 3 || myRef.current === 0) {
+    } else if (
+      (e.deltaY && myRef.current === 4) ||
+      (e.deltaY && myRef.current === 0)
+    ) {
+      return;
+    } else if (
+      parseInt(e.target.innerHTML) >= 0 &&
+      parseInt(e.target.innerHTML) <= 4 &&
+      !e.deltaY
+    ) {
+      myRef.current = parseInt(e.target.innerHTML);
+    } else {
       return;
     }
     window.console.log(myRef.current);
@@ -66,7 +92,7 @@ export default function MainPresentation(props) {
       await animateScrollTo(elementToGo, {
         cancelOnUserAction: false,
         minDuration: 1500,
-        verticalOffset: -40,
+        verticalOffset: -5,
         easing: (x) =>
           x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
       });
@@ -84,20 +110,26 @@ export default function MainPresentation(props) {
       className={styles.main}
       id="startId"
     >
-      <ButtonNavigation myref={myRef} />
+      <ButtonNavigation
+        scrollavailable={scrollAvailable}
+        updateref={handleScrollSection}
+        myref={myRef}
+      />
       <ReactLogo />
       <h6></h6>
       <PresentationPhoto lang={lang} />
 
       <div style={toStyleSchoolBigBox} className={styles.schoolBigBox}>
-        <h6></h6>
-        <h2
-          style={toStyleTitles}
-          id={listNavigation.entrySchool[lang]}
-          className={styles.titles}
-        >
-          {listNavigation.entrySchool[lang]}
-        </h2>
+        <div className={styles.titlesBox}>
+          <h6></h6>
+          <h2
+            style={toStyleTitles}
+            id={listNavigation.entrySchool[lang]}
+            className={styles.titles}
+          >
+            {listNavigation.entrySchool[lang]}
+          </h2>
+        </div>
         <div style={toStyleSchoolSmallBox} className={styles.schoolSmallBox}>
           <div style={toStyleDivSchool}>
             <PresentationSchool name="jbnu" lang={lang} />
@@ -124,12 +156,22 @@ export default function MainPresentation(props) {
           <PresentationWork name="suez" lang={lang} />
         </div>
       </div>
-
-      <h6></h6>
-      <h1 id={listNavigation.entryProject[lang]} className={styles.titles}>
-        {listNavigation.entryProject[lang]}
-      </h1>
-      <PresentationProject name="proj1" lang={lang} />
+      <div style={toStyleProjectBigBox} className={styles.projectBigBox}>
+        <h6></h6>
+        <h2
+          style={toStyleProjectTitle}
+          id={listNavigation.entryProject[lang]}
+          className={styles.titles}
+        >
+          {listNavigation.entryProject[lang]}
+        </h2>
+        <PresentationProject
+          name="proj1"
+          lang={lang}
+          updateref={handleScrollSection}
+          togglescroll={toggleScrollAvailable}
+        />
+      </div>
     </div>
   );
 }

@@ -9,18 +9,18 @@ export default function PresentationSchool(props) {
 
   const toStyleContent2 = {
     margin: isTablet ? "0.2rem" : "",
-    height: isTablet ? "fit-content" : "",
+    padding: isTablet ? "0.2rem 0.5rem" : "",
+    height: isTablet ? "95%" : "",
   };
 
   const toStyleImgContainer = {
-    height: isTablet ? "65px" : "",
+    height: isTablet ? "40px" : "",
   };
 
-  const toStyleLsy = {};
-
-  const toStyleDivImg = {};
-
-  const toStyleImg = {};
+  const toStyleImg = {
+    height: isTablet ? "70%" : "",
+    width: isTablet ? "auto" : "",
+  };
 
   const toStyleTitle = {
     height: isTablet ? "fit-content" : "",
@@ -28,18 +28,23 @@ export default function PresentationSchool(props) {
 
   const toStyleMajor = {
     height: isTablet ? "fit-content" : "",
+    marginBottom: isTablet ? "0.5rem" : "",
   };
 
   const toStyleLi = {
     lineHeight: isTablet ? "1.1rem" : "",
+    padding: isTablet ? "0.4rem 0 " : "",
   };
 
-  const toStyleProf = {};
+  const toStyleProf = {
+    paddingTop: isTablet ? "0.2rem" : "",
+  };
 
   return (
     <div style={toStyleContent2} className={styles.content2}>
       <div style={toStyleImgContainer} className={styles.imgContainer}>
         <img
+          style={toStyleImg}
           alt={schoolDetails[`${props.name}img`]}
           src={schoolDetails[`${props.name}img`]}
           className={styles.pLsyImg}
@@ -60,7 +65,7 @@ export default function PresentationSchool(props) {
                   : i === 1
                   ? toStyleMajor
                   : i === 6
-                  ? {}
+                  ? toStyleProf
                   : toStyleLi
               }
               className={

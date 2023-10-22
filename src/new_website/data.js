@@ -22,9 +22,21 @@ export const titleListNavigation = {
 };
 
 export const listNavigation = {
-  en: ["Presentation", "Academic Background", "Work Experience", "Projects"],
-  fr: ["Présentation", "Education", "Expérience Professionnelle", "Projets"],
-  kr: ["소개", "학력", "경력", "프로젝트"],
+  en: [
+    "Presentation",
+    "Academic Background",
+    "Work Experience",
+    "Projects",
+    "Footer",
+  ],
+  fr: [
+    "Présentation",
+    "Education",
+    "Expérience Professionnelle",
+    "Projets",
+    "Footer",
+  ],
+  kr: ["소개", "학력", "경력", "프로젝트", "Footer"],
   entrySchool: {
     en: "Academic Background",
     fr: "Education",
@@ -94,7 +106,7 @@ export const schoolDetails = {
   enjbnu: [
     "2021-2023",
     "Jeonbuk National University - South Korea",
-    `Environment and Energy Department (Master's Degree)`,
+    `Environment and Energy (Master's Degree)`,
     "Carbon Dioxyde Storage",
     "Reservoir Simulation",
     "Carbon Neutral",
@@ -105,8 +117,8 @@ export const schoolDetails = {
   frjbnu: [
     "2021-2023",
     "Université Nationale Jeonbuk - Corée du Sud",
-    "Département Energie et Environement (Master)",
-    "Stockage de dioxide de carbon",
+    "Energie et Environnement (Master)",
+    "Stockage de dioxyde de carbon",
     "Simulation de reservoir",
     "Neutralité carbone",
     "Base de la programmation (Python, Matlab, HTML/CSS, JavaScript)",
@@ -294,9 +306,9 @@ export const projectDetails = {
     `지상 누출 및 저류층 내의 CO2 확산 분석평가`,
     `CO2 저장에 대한 트랩 메커니즘의 영향`,
   ],
-  foldfrproj1: ["En savoir plus", "En savoir moins"],
-  foldenproj1: [`Learn more`, "Learn less"],
-  foldkrproj1: ["자세히 보기", "접기"],
+  foldfrproj1: ["En savoir plus", "Fermer"],
+  foldenproj1: [`Learn more`, "Close"],
+  foldkrproj1: ["자세히 보기", "닫기"],
   abstractfrproj1: [
     "Extrait (anglais)",
     `The excessive utilization of fossil fuels led to significant emissions of greenhouse gases, increasing the atmospheric carbon dioxide (CO2) concentration to alarming levels and contributing to global warming and climate change.`,

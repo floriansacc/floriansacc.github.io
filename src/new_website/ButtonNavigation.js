@@ -8,7 +8,7 @@ const toCheck =
   "https://stackoverflow.com/questions/53158796/get-scroll-position-with-reactjs";
 
 export const ButtonNavigation = (props) => {
-  const { myref } = props;
+  const { myref, updateref, scrollavailable } = props;
   const [scrollPosition, setScrollPosition] = useState(0);
   const [ongletActif, setOngletActif] = useState("");
   const { isBigScreen, isPhone, isTablet, lang } = useContext(QueryContext);
@@ -16,18 +16,13 @@ export const ButtonNavigation = (props) => {
   const toStyleNavigator = {
     display: isTablet ? "flex" : isPhone ? "flex" : "flex",
     flexDirection: isTablet ? "row" : "",
-    top: isTablet ? "6%" : "",
+    top: isTablet ? "2%" : "",
     left: isTablet ? "60%" : "",
     width: isTablet ? "150px" : "",
   };
 
   const toStyleNavButton = {
     margin: isTablet ? "5px 5px " : "",
-  };
-
-  const handleClick = (e) => {
-    const x = e.target.innerHTML;
-    window.location.href = `#${x}`;
   };
 
   const handleOnME = (e) => {
@@ -65,12 +60,12 @@ export const ButtonNavigation = (props) => {
           style={myref.current === i ? {} : toStyleNavButton}
           onMouseEnter={handleOnME}
           onMouseLeave={handleOnML}
-          onClick={handleClick}
+          onClick={scrollavailable ? updateref : null}
           className={myref.current === i ? styles.liNavActif : styles.liNav}
           key={`button${lang}${i}`}
           name={x}
         >
-          {}
+          {i}
         </p>
       ))}
     </div>

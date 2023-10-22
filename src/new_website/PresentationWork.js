@@ -8,37 +8,54 @@ import { QueryContext } from "./GlobalBody";
 export default function PresentationWork(props) {
   const { isPhone, isTablet, lang } = useContext(QueryContext);
 
-  const toStyleContent3 = {};
+  const toStyleContent3 = {
+    margin: isTablet ? "0.2rem" : "",
+    padding: isTablet ? "0.2rem 0.5rem" : "",
+    height: isTablet ? "50%" : "",
+    maxWidth: isTablet ? "90%" : "",
+    minWidth: isTablet ? "40%" : "",
+  };
 
-  const toStyleLsy = {};
+  const toStyleImgContainer = {
+    height: isTablet ? "55px" : "",
+  };
 
-  const toStyleDivImg = {};
+  const toStyleImg = {
+    height: isTablet ? "70%" : "",
+    width: isTablet ? "auto" : "",
+  };
 
-  const toStyleImg = {};
+  const toStyleTitle = { height: isTablet ? "fit-content" : "" };
 
-  const toStyleTitle = {};
+  const toStyleLiDuree = {
+    height: isTablet ? "fit-content" : "",
+    marginBottom: isTablet ? "0.5rem" : "",
+  };
 
-  const toStyleLi = {};
+  const toStyleLi = {
+    lineHeight: isTablet ? "1.1rem" : "",
+    padding: isTablet ? "0.4rem 0 " : "",
+  };
 
   return (
     <div style={toStyleContent3} className={styles.content3}>
-      <div style={toStyleDivImg} className={styles.imgContainer}>
+      <div style={toStyleImgContainer} className={styles.imgContainer}>
         <img
           alt={workDetails[`${props.name}image`]}
           style={toStyleImg}
           src={workDetails[`${props.name}image`]}
           className={styles.pLsyImg}
         />
-        <p style={toStyleLsy} className={styles.pLsy}>
-          {workDetails[`${lang}${props.name}`][0]}
-        </p>
+        <p className={styles.pLsy}>{workDetails[`${lang}${props.name}`][0]}</p>
       </div>
       <ul className={styles.ulSchoolWork}>
         {workDetails[`${lang}${props.name}`]
           .filter((x) => !x.includes("20"))
           .map((y, i) => (
             <li
-              style={i === 0 ? toStyleTitle : i === 1 ? {} : toStyleLi}
+              style={
+                i === 0 ? toStyleTitle : i === 1 ? toStyleLiDuree : toStyleLi
+              }
               className={
                 i === 0
                   ? styles.liTitleWork

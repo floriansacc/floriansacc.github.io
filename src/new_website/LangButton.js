@@ -13,9 +13,10 @@ export const LangButton = (props) => {
     e.preventDefault();
     if (e.target.innerHTML === "Light" || e.target.innerHTML === "Dark") {
       return;
+    } else if (e.target.className === styles.bLangActive) {
     } else {
       e.target.style.backgroundColor = "#c9c9c9";
-      e.target.style.filter = "brightness(1.3)";
+      e.target.style.filter = "brightness(1.4)";
       e.target.style.transform = "scale(1.1)";
     }
   };
@@ -77,7 +78,7 @@ export const LangButton = (props) => {
           name="fr"
           onClick={props.getChange}
         >
-          Francais
+          Français
         </button>
         <button
           className={lang === "en" ? styles.bLangActive : styles.bLang}
