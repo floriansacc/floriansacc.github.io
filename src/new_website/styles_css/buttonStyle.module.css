@@ -26,7 +26,7 @@
   margin: 10px 0;
   text-indent: -3000px;
   transition: all 400ms ease-out;
-  background-color: #56296ea9;
+  background-color: #bb86fc;
   text-decoration: none;
   border-radius: 15px;
 }
@@ -53,7 +53,7 @@
   margin-left: 2vw;
   white-space: nowrap;
   font-size: clamp(0.8rem, 1.5vw, 1rem);
-  color: var(--lang-color);
+  color: var(--title-color);
   background: var(--lang-background-color);
   filter: opacity(90%);
   border-color: transparent;
@@ -69,7 +69,7 @@
   white-space: nowrap;
   font-size: clamp(0.8rem, 1.5vw, 1rem);
   color: #56296e;
-  filter: brightness(1.3);
+  filter: brightness(1.2);
   border-radius: 15px;
   border-color: transparent;
 }

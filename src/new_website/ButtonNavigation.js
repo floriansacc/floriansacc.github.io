@@ -26,7 +26,7 @@ export const ButtonNavigation = (props) => {
   };
 
   const handleOnME = (e) => {
-    e.target.style.backgroundColor = "#56296e";
+    e.target.style.backgroundColor = "#bb86fc";
     e.target.style.transform = "scale(1.05)";
     e.target.style.cursor = "pointer";
   };

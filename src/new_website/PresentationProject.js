@@ -10,70 +10,74 @@ export default function PresentationProject(props) {
   const { updateref, togglescroll } = props;
   const { isBigScreen, isPhone, isTablet, lang } = useContext(QueryContext);
 
-  const handleMouseDown = (e) => {
+  const handleMouseDownAppear = (e) => {
     let box = document.getElementById("descriptionBox");
     let button = document.getElementById("aDisButton");
     let firstLines = document.querySelectorAll(`.${styles.projectExpl}`);
     e.preventDefault();
-    if (e.target.innerHTML === projectDetails[`fold${lang}${props.name}`][0]) {
-      e.target.style.color = "#cacaca";
-      e.target.style.display = "none";
-      for (
-        let i = 2;
-        i < projectDetails[`abstract${lang}${props.name}`].length;
-        i++
-      ) {
-        document.getElementById(`abstractText${i}`).style.display = "block";
-      }
-      document.getElementById("aDisButton").style.display = "block";
-      box.style.position = "fixed";
-      box.style.width = "60%";
-      box.style.height = "60%";
-      box.style.top = "10%";
-      box.style.left = "15%";
-      box.style.boxShadow = "0px 0px 1px 100vw rgba(0,0,0,0.9)";
-      box.style.background = "inherit";
-      box.style.overflowY = "scroll";
-      box.style.padding = "5rem";
-      togglescroll(false);
-      button.style.position = "fixed";
-      button.style.top = "12%";
-      button.style.left = "5%";
-      firstLines.forEach((x, i) => {
-        if (i < 3) {
-          x.style.display = "none";
-        }
-      });
-    } else {
-      e.target.style.color = "#cacaca";
-      e.target.style.display = "none";
-      for (
-        let i = 1;
-        i < projectDetails[`abstract${lang}${props.name}`].length;
-        i++
-      ) {
-        document.getElementById(`abstractText${i}`).style.display = "none";
-      }
-      document.getElementById("aAppButton").style.display = "block";
-      box.style.position = "";
-      box.style.width = "";
-      box.style.height = "";
-      box.style.top = "";
-      box.style.left = "";
-      box.style.boxShadow = "";
-      box.style.background = "";
-      box.style.overflowY = "";
-      box.style.padding = "";
-      togglescroll(true);
-      button.style.position = "";
-      button.style.top = "";
-      button.style.left = "";
-      firstLines.forEach((x, i) => {
-        if (i < 3) {
-          x.style.display = "";
-        }
-      });
+    e.target.style.color = "#cacaca";
+    e.target.style.display = "none";
+    for (
+      let i = 2;
+      i < projectDetails[`abstract${lang}${props.name}`].length;
+      i++
+    ) {
+      document.getElementById(`abstractText${i}`).style.display = "block";
     }
+    document.getElementById("aDisButton").style.display = "block";
+    box.style.position = "fixed";
+    box.style.width = isTablet ? "75%" : "70%";
+    box.style.height = isTablet ? "70%" : "60%";
+    box.style.top = "10%";
+    box.style.left = "10%";
+    box.style.boxShadow = "0px 0px 1px 100vw rgba(0,0,0,0.9)";
+    box.style.background = "";
+    box.style.overflowY = "scroll";
+    box.style.padding = isTablet ? "2rem" : "5rem";
+    togglescroll(false);
+    button.style.position = "fixed";
+    button.style.top = isTablet ? "2%" : "2%";
+    button.style.left = isTablet ? "-5%" : "0%";
+    firstLines.forEach((x, i) => {
+      if (i < 3) {
+        x.style.display = "none";
+      }
+    });
+  };
+
+  const handleMouseDownDisappear = (e) => {
+    let box = document.getElementById("descriptionBox");
+    let button = document.getElementById("aDisButton");
+    let firstLines = document.querySelectorAll(`.${styles.projectExpl}`);
+    e.preventDefault();
+    e.target.style.color = "#cacaca";
+    e.target.style.display = "none";
+    for (
+      let i = 1;
+      i < projectDetails[`abstract${lang}${props.name}`].length;
+      i++
+    ) {
+      document.getElementById(`abstractText${i}`).style.display = "none";
+    }
+    document.getElementById("aAppButton").style.display = "block";
+    box.style.position = "";
+    box.style.width = "";
+    box.style.height = "";
+    box.style.top = "";
+    box.style.left = "";
+    box.style.boxShadow = "";
+    box.style.background = "";
+    box.style.overflowY = "";
+    box.style.padding = "";
+    togglescroll(true);
+    button.style.position = "";
+    button.style.top = "";
+    button.style.left = "";
+    firstLines.forEach((x, i) => {
+      if (i < 3) {
+        x.style.display = "";
+      }
+    });
   };
 
   const handleMouseUp = (e) => {
@@ -106,17 +110,32 @@ export default function PresentationProject(props) {
 
   useEffect(() => {
     let box = document.getElementById("descriptionBox");
+    if (box.style.position === "fixed") {
+      for (
+        let i = 2;
+        i < projectDetails[`abstract${lang}${props.name}`].length;
+        i++
+      ) {
+        document.getElementById(`abstractText${i}`).style.display = "block";
+      }
+    } else {
+      for (
+        let i = 1;
+        i < projectDetails[`abstract${lang}${props.name}`].length;
+        i++
+      ) {
+        document.getElementById(`abstractText${i}`).style.display = "none";
+      }
+    }
+    return () => {};
+  }, [lang]);
+
+  useEffect(() => {
+    let box = document.getElementById("descriptionBox");
     let button = document.getElementById("aDisButton");
     let firstLines = document.querySelectorAll(`.${styles.projectExpl}`);
     document.getElementById("aAppButton").style.display = "block";
     document.getElementById("aDisButton").style.display = "none";
-    for (
-      let i = 1;
-      i < projectDetails[`abstract${lang}${props.name}`].length;
-      i++
-    ) {
-      document.getElementById(`abstractText${i}`).style.display = "none";
-    }
     box.style.position = "";
     box.style.width = "";
     box.style.height = "";
@@ -135,7 +154,7 @@ export default function PresentationProject(props) {
         x.style.display = "";
       }
     });
-  }, [lang]);
+  }, []);
 
   return (
     <div style={toStyleProject} className={styles.project}>
@@ -181,7 +200,7 @@ export default function PresentationProject(props) {
             className={styles.projectAbstractDisButton}
             onMouseLeave={handleMouseLeave}
             onMouseEnter={handleMouseEnter}
-            onMouseDown={handleMouseDown}
+            onMouseDown={handleMouseDownDisappear}
             onMouseUp={handleMouseUp}
             key="proj5"
           >
@@ -215,7 +234,7 @@ export default function PresentationProject(props) {
             className={styles.projectAbstractAppButton}
             onMouseLeave={handleMouseLeave}
             onMouseEnter={handleMouseEnter}
-            onMouseDown={handleMouseDown}
+            onMouseDown={handleMouseDownAppear}
             onMouseUp={handleMouseUp}
             key="proj4"
           >

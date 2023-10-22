@@ -42,6 +42,8 @@
 .projectPhotoBox {
   width: 50%;
   margin: 1rem auto;
+  padding: 1rem 0;
+  border-radius: 15px;
   background-color: #fafafa;
 }
 
@@ -58,6 +60,7 @@
 .projectVideo {
   width: 80%;
   margin: 0.5rem auto;
+  border-radius: 15px;
 }
 
 .projectTitle {
@@ -66,18 +69,24 @@
   margin-bottom: 0.5rem;
   padding: 0;
   color: var(--font-color);
+  opacity: var(--contrast-color);
   filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.5));
 }
 
 .projectDescriptionBox {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   width: 40%;
   border: 1px solid red;
   height: 95%;
+  background: var(--background-color-project);
 }
 
 .projectExpl {
   width: 90%;
   color: var(--font-color);
+  opacity: var(--contrast-color);
   line-height: 1.2rem;
   padding: 0.6rem 0.5rem;
   text-align: justify;
@@ -86,9 +95,10 @@
 .projectAbstractTitle {
   font-size: 1.2rem;
   font-weight: 600;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   width: fit-content;
   color: var(--font-color);
+  opacity: var(--contrast-color);
   line-height: 1.5rem;
   padding: 0.6rem 0.5rem;
   filter: drop-shadow(10px 5px 0.2rem rgba(69, 69, 69, 0.5));
@@ -99,6 +109,7 @@
   width: 90%;
   text-align: justify;
   color: var(--font-color);
+  opacity: var(--contrast-color);
   line-height: 1.5rem;
   padding: 0.6rem 0.5rem;
   font-size: 1.2rem;
@@ -107,6 +118,7 @@
 .projectAbstractAppButton {
   width: fit-content;
   color: var(--font-color-reverse);
+  opacity: var(--contrast-color);
   line-height: 1.5rem;
   margin-top: 0.5rem;
   margin-left: 4rem;
