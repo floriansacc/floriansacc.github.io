@@ -38,6 +38,7 @@ export default function PresentationProject(props) {
     button.style.position = "fixed";
     button.style.top = isTablet ? "2%" : "2%";
     button.style.left = isTablet ? "-5%" : "0%";
+    box.style.borderWidth = "10px";
     firstLines.forEach((x, i) => {
       if (i < 3) {
         x.style.display = "none";
@@ -73,6 +74,7 @@ export default function PresentationProject(props) {
     button.style.position = "";
     button.style.top = "";
     button.style.left = "";
+    box.style.borderWidth = "";
     firstLines.forEach((x, i) => {
       if (i < 3) {
         x.style.display = "";

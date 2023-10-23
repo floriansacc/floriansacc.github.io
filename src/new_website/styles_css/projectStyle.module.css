@@ -8,7 +8,6 @@
   padding: 0.5rem;
   width: 100%;
   height: 95%;
-  border: 1px solid red;
 }
 
 .projectBox {
@@ -27,7 +26,7 @@
   flex-flow: column nowrap;
   justify-content: space-around;
   align-items: flex-start;
-  border: 1px solid purple;
+  border-right: 2px solid #000;
   width: 60%;
   min-height: 95%;
 }
@@ -78,7 +77,8 @@
   flex-flow: column nowrap;
   align-items: center;
   width: 40%;
-  border: 1px solid red;
+  border: 1px solid;
+  border-color: var(--background-color-project);
   height: 95%;
   background: var(--background-color-project);
 }
