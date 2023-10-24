@@ -1,11 +1,9 @@
-import { ButtonNavigation } from "./ButtonNavigation";
 import React, { useState, useEffect, useContext } from "react";
 import { LangButton } from "./LangButton";
 import styles from "./styles_css/containerStyle.module.css";
 import MainPresentation from "./MainPresentation";
 import MediaQuery, { useMediaQuery } from "react-responsive";
-import FooterInfo from "./FooterInfo";
-import { ReactLogo } from "./ReactLogo";
+
 export const QueryContext = React.createContext();
 
 export default function GlobalBody() {
@@ -30,8 +28,8 @@ export default function GlobalBody() {
   };
 
   const toStyleBackground = {
-    left: mousePos.x + "px",
-    top: mousePos.y + "px",
+    //left: mousePos.x + "px",
+    //top: mousePos.y + "px",
   };
 
   const handleMousePos = (e) => {
@@ -63,8 +61,6 @@ export default function GlobalBody() {
         <div style={toStyleBackground} className={styles.imgBack}></div>
 
         <MainPresentation />
-        <ReactLogo />
-        <FooterInfo />
       </div>
     </QueryContext.Provider>
   );

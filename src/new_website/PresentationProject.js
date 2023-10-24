@@ -13,7 +13,6 @@ export default function PresentationProject(props) {
   const handleMouseDownAppear = (e) => {
     let box = document.getElementById("descriptionBox");
     let button = document.getElementById("aDisButton");
-    let firstLines = document.querySelectorAll(`.${styles.projectExpl}`);
     e.preventDefault();
     e.target.style.color = "#cacaca";
     e.target.style.display = "none";
@@ -39,17 +38,14 @@ export default function PresentationProject(props) {
     button.style.top = isTablet ? "2%" : "2%";
     button.style.left = isTablet ? "-5%" : "0%";
     box.style.borderWidth = "10px";
-    firstLines.forEach((x, i) => {
-      if (i < 3) {
-        x.style.display = "none";
-      }
-    });
+    for (let i = 0; i < 3; i++) {
+      document.getElementById(`summary${i}`).style.display = "none";
+    }
   };
 
   const handleMouseDownDisappear = (e) => {
     let box = document.getElementById("descriptionBox");
     let button = document.getElementById("aDisButton");
-    let firstLines = document.querySelectorAll(`.${styles.projectExpl}`);
     e.preventDefault();
     e.target.style.color = "#cacaca";
     e.target.style.display = "none";
@@ -75,11 +71,9 @@ export default function PresentationProject(props) {
     button.style.top = "";
     button.style.left = "";
     box.style.borderWidth = "";
-    firstLines.forEach((x, i) => {
-      if (i < 3) {
-        x.style.display = "";
-      }
-    });
+    for (let i = 0; i < 3; i++) {
+      document.getElementById(`summary${i}`).style.display = "";
+    }
   };
 
   const handleMouseUp = (e) => {
@@ -103,7 +97,7 @@ export default function PresentationProject(props) {
   };
 
   const toStyleExpl = {
-    fontSize: isTablet ? "1rem" : "",
+    fontSize: isTablet ? "1.1rem" : "",
   };
 
   const toStyleVideo = {
@@ -135,7 +129,6 @@ export default function PresentationProject(props) {
   useEffect(() => {
     let box = document.getElementById("descriptionBox");
     let button = document.getElementById("aDisButton");
-    let firstLines = document.querySelectorAll(`.${styles.projectExpl}`);
     document.getElementById("aAppButton").style.display = "block";
     document.getElementById("aDisButton").style.display = "none";
     box.style.position = "";
@@ -151,11 +144,9 @@ export default function PresentationProject(props) {
     button.style.position = "";
     button.style.top = "";
     button.style.left = "";
-    firstLines.forEach((x, i) => {
-      if (i < 3) {
-        x.style.display = "";
-      }
-    });
+    for (let i = 0; i < 3; i++) {
+      document.getElementById(`summary${i}`).style.display = "";
+    }
   }, []);
 
   return (
@@ -215,6 +206,7 @@ export default function PresentationProject(props) {
               <li
                 style={toStyleExpl}
                 className={styles.projectExpl}
+                id={`summary${i - 1}`}
                 key={`${props.name}${i}`}
               >
                 {x}

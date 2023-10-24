@@ -17,7 +17,6 @@ export default function MainPresentation(props) {
   const [centerPos, setCenterPos] = useState({ x: 0, y: 0 });
 
   const toStylePresentationBigBox = {
-    flexDirection: isTablet ? "column" : "",
     padding: isTablet ? "0" : "",
     opacity: myRef.current === 0 ? "1" : "0",
     position: "relative",
@@ -87,11 +86,12 @@ export default function MainPresentation(props) {
 
   const toStyleTitles = {
     whiteSpace: isTablet ? "nowrap" : "",
-    marginTop: isTablet ? "0" : "",
+    marginTop: isTablet ? "0rem" : "",
   };
 
   const toStyleProjectTitle = {
     width: isTablet ? "120px" : "120px",
+    marginTop: isTablet ? "0rem" : "",
   };
 
   const toggleScrollAvailable = (x) => {
@@ -101,16 +101,16 @@ export default function MainPresentation(props) {
   const handleScrollSection = async (e) => {
     if (e.deltaY < 0 && myRef.current !== 0 && scrollAvailable) {
       myRef.current -= 1;
-    } else if (e.deltaY > 0 && myRef.current < 4 && scrollAvailable) {
+    } else if (e.deltaY > 0 && myRef.current < 3 && scrollAvailable) {
       myRef.current += 1;
     } else if (
-      (e.deltaY && myRef.current === 4) ||
+      (e.deltaY && myRef.current === 3) ||
       (e.deltaY && myRef.current === 0)
     ) {
       return;
     } else if (
       parseInt(e.target.innerHTML) >= 0 &&
-      parseInt(e.target.innerHTML) <= 4 &&
+      parseInt(e.target.innerHTML) <= 3 &&
       !e.deltaY
     ) {
       myRef.current = parseInt(e.target.innerHTML);

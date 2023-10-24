@@ -13,6 +13,7 @@
     "react-responsive": "^9.0.2",
     "react-scripts": "5.0.1",
     "react-spring": "^9.7.2",
+    "react-text-gradients-and-animations": "^1.1.7",
     "react-transition-group": "^4.4.5",
     "web-vitals": "^2.1.4"
   },

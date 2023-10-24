@@ -34,7 +34,7 @@ export const ButtonNavigation = (props) => {
   const handleOnML = (e) => {
     e.target.style.backgroundColor = "";
     e.target.style.color = "";
-    e.target.style.transform = "scale(1)";
+    e.target.style.transform = "";
   };
 
   const handleScroll = () => {

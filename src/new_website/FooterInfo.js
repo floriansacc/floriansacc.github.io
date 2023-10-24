@@ -93,33 +93,25 @@ export default function FooterInfo(props) {
   return (
     <div className={styles.footerAll}>
       <h6></h6>
-      <div style={toStyleFooterGauche} className={styles.footerGauche}>
+      <div className={styles.footerGauche}>
         <h2 className={styles.footerH2}>{footerInfo[`${lang}footer`][0]}</h2>
         <div className={styles.footerSmallDiv}>
-          <p style={toStyleSubTitles} className={styles.footerP}>
-            {footerInfo[`${lang}footer`][1]}
-          </p>
+          <p className={styles.footerP}>{footerInfo[`${lang}footer`][1]}</p>
           <span className={styles.footerSpan}>
             {footerInfo[`${lang}footer`][2]}
           </span>
         </div>
         <div className={styles.footerSmallDiv}>
-          <p style={toStyleSubTitles} className={styles.footerP}>
-            {footerInfo[`${lang}footer`][3]}
-          </p>
+          <p className={styles.footerP}>{footerInfo[`${lang}footer`][3]}</p>
           <span className={styles.footerSpan}>
             {footerInfo[`${lang}footer`][4]}
           </span>
         </div>
-        <div style={toStyleDivImg} className={styles.divImgs}>
+        <div className={styles.divImgs}>
           <div className={styles.footerSmallDiv}>
-            <p style={toStyleSubTitles} className={styles.footerP}>
-              {footerInfo[`${lang}footer`][5]}
-            </p>
+            <p className={styles.footerP}>{footerInfo[`${lang}footer`][5]}</p>
             <img
               alt="kakao QR code"
-              onMouseEnter={handleOnME}
-              onClick={handleClick}
               name="kakao"
               className={styles.footerImg}
               src={footerInfo.kakaoImg}
@@ -129,9 +121,7 @@ export default function FooterInfo(props) {
             <p id="toAppear" className={styles.toAppear}>
               {footerInfo[`${lang}Appear`]}
             </p>
-            <p style={toStyleSubTitles} className={styles.footerP}>
-              {footerInfo[`${lang}footer`][6]}
-            </p>
+            <p className={styles.footerP}>{footerInfo[`${lang}footer`][6]}</p>
             <a href="https://www.instagram.com/floosaketi/" target="_blank">
               <img
                 alt="Instagram"
@@ -140,13 +130,6 @@ export default function FooterInfo(props) {
               />
             </a>
           </div>
-        </div>
-      </div>
-      <div className={styles.footerDroite}>
-        <div className={styles.footerSignature}>
-          <p style={toStyleSignature} className={styles.footerSignatureP}>
-            {footerInfo[`${lang}signature`]}
-          </p>
         </div>
       </div>
     </div>

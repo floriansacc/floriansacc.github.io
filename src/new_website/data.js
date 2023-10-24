@@ -22,21 +22,9 @@ export const titleListNavigation = {
 };
 
 export const listNavigation = {
-  en: [
-    "Presentation",
-    "Academic Background",
-    "Work Experience",
-    "Projects",
-    "Footer",
-  ],
-  fr: [
-    "Présentation",
-    "Education",
-    "Expérience Professionnelle",
-    "Projets",
-    "Footer",
-  ],
-  kr: ["소개", "학력", "경력", "프로젝트", "Footer"],
+  en: ["Presentation", "Academic Background", "Work Experience", "Projects"],
+  fr: ["Présentation", "Education", "Expérience Professionnelle", "Projets"],
+  kr: ["소개", "학력", "경력", "프로젝트"],
   entrySchool: {
     en: "Academic Background",
     fr: "Education",
