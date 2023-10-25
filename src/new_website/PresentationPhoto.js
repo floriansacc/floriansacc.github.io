@@ -8,7 +8,6 @@ import { RadialTextGradient } from "react-text-gradients-and-animations";
 export default function PresentationPhoto(props) {
   const [currentMe, setCurrentMe] = useState(0);
   const { isBigScreen, isPhone, isTablet, lang } = useContext(QueryContext);
-  const initialDelay = useRef(true);
 
   const handleBullet = (e) => {
     setCurrentMe(e.target.innerHTML);

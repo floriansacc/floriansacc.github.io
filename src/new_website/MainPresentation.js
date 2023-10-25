@@ -12,6 +12,9 @@ import { ButtonNavigation } from "./ButtonNavigation";
 export default function MainPresentation(props) {
   const { isPhone, isTablet, lang } = useContext(QueryContext);
   const myRef = useRef(0);
+  const [lastState, SetLastState] = useState(
+    sessionStorage.getItem("lastValue")
+  );
   const [scrollAvailable, setScrollAvailable] = useState(true);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [centerPos, setCenterPos] = useState({ x: 0, y: 0 });
@@ -128,6 +131,7 @@ export default function MainPresentation(props) {
         easing: (x) =>
           x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
       });
+      sessionStorage.setItem("lastValue", myRef.current);
     }
     try {
       setScrollAvailable(true);
@@ -150,6 +154,28 @@ export default function MainPresentation(props) {
         y: 0,
       });
   };
+
+  useEffect(() => {
+    const refreshedPage = async () => {
+      if (scrollAvailable) {
+        myRef.current = !lastState ? 0 : parseInt(lastState);
+        setScrollAvailable(false);
+        await animateScrollTo(document.querySelectorAll("h6")[myRef.current], {
+          cancelOnUserAction: false,
+          minDuration: 1000,
+          verticalOffset: -5,
+          easing: (x) =>
+            x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+        });
+      }
+      try {
+        setScrollAvailable(true);
+      } catch (error) {
+        window.console.log(error);
+      }
+    };
+    refreshedPage();
+  }, []);
 
   useEffect(() => {
     const centerX = document.body.clientWidth / 2;
