@@ -50,9 +50,26 @@ export const ButtonNavigation = (props) => {
     };
   }, []);
 
+  useEffect(() => {
+    if (isTablet) {
+      if (scrollPosition < 1068) {
+        myref.current = 0;
+      } else if (scrollPosition < 2142) {
+        myref.current = 1;
+      } else if (scrollPosition < 3216) {
+        myref.current = 2;
+      } else if (scrollPosition > 3216) {
+        myref.current = 3;
+      }
+    }
+  }, [scrollPosition]);
+
   return (
     <div style={toStyleNavigator} className={styles.navigator}>
-      <h2 style={{ display: "none" }} className={styles.h2Nav}>
+      <h2
+        style={{ display: isTablet ? "block" : "none" }}
+        className={styles.h2Nav}
+      >
         {scrollPosition}
       </h2>
       {listNavigation[lang].map((x, i) => (

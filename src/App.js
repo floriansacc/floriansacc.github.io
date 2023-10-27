@@ -5,10 +5,9 @@ import GlobalBody from "./new_website/GlobalBody";
 function App() {
   return (
     <div>
-
-        <header>
+      <header>
         <GlobalBody />
-        </header>
+      </header>
     </div>
   );
 }

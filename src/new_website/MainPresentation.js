@@ -10,7 +10,7 @@ import { QueryContext } from "./GlobalBody";
 import { ButtonNavigation } from "./ButtonNavigation";
 
 export default function MainPresentation(props) {
-  const { isPhone, isTablet, lang } = useContext(QueryContext);
+  const { isPhone, isTablet, isDesktop, lang } = useContext(QueryContext);
   const myRef = useRef(0);
   const [lastState, SetLastState] = useState(
     sessionStorage.getItem("lastValue")
@@ -19,9 +19,15 @@ export default function MainPresentation(props) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [centerPos, setCenterPos] = useState({ x: 0, y: 0 });
 
+  if (isTablet) {
+    document.body.style.overflowY = "auto";
+  } else {
+    document.body.style.overflowY = "";
+  }
+
   const toStylePresentationBigBox = {
     padding: isTablet ? "0" : "",
-    opacity: myRef.current === 0 ? "1" : "0",
+    opacity: myRef.current === 0 ? "1" : !isDesktop ? "1" : "0",
     position: "relative",
     //left: myRef.current === 1 ? mousePos.x + "px" : "",
     //top: myRef.current === 1 ? mousePos.y + "px" : "",
@@ -34,7 +40,7 @@ export default function MainPresentation(props) {
   const toStyleSchoolBigBox = {
     flexDirection: isTablet ? "column" : "",
     padding: isTablet ? "0" : "",
-    opacity: myRef.current === 1 ? "1" : "0",
+    opacity: myRef.current === 1 ? "1" : !isDesktop ? "1" : "0",
     position: "relative",
     //left: myRef.current === 1 ? mousePos.x + "px" : "",
     //top: myRef.current === 1 ? mousePos.y + "px" : "",
@@ -47,7 +53,7 @@ export default function MainPresentation(props) {
   const toStyleWorklBigBox = {
     flexDirection: isTablet ? "column" : "",
     padding: isTablet ? "0" : "",
-    opacity: myRef.current === 2 ? "1" : "0",
+    opacity: myRef.current === 2 ? "1" : !isDesktop ? "1" : "0",
     position: "relative",
     left: myRef.current === 2 ? mousePos.x + "px" : "",
     top: myRef.current === 2 ? mousePos.y + "px" : "",
@@ -60,7 +66,7 @@ export default function MainPresentation(props) {
   const toStyleProjectBigBox = {
     flexDirection: isTablet ? "column" : "",
     padding: isTablet ? "0" : "",
-    opacity: myRef.current === 3 ? "1" : "0",
+    opacity: myRef.current === 3 ? "1" : !isDesktop ? "1" : "0",
     position: "relative",
     left: myRef.current === 3 ? mousePos.x + "px" : "",
     top: myRef.current === 3 ? mousePos.y + "px" : "",
@@ -123,7 +129,8 @@ export default function MainPresentation(props) {
     window.console.log(myRef.current);
     if (scrollAvailable) {
       setScrollAvailable(false);
-      let elementToGo = document.querySelectorAll("h6")[myRef.current];
+      let elementToGo = document.getElementById(`Section${myRef.current}`);
+      //window.location.hash = `#Section${myRef.current}`;
       await animateScrollTo(elementToGo, {
         cancelOnUserAction: false,
         minDuration: 1000,
@@ -160,13 +167,16 @@ export default function MainPresentation(props) {
       if (scrollAvailable) {
         myRef.current = !lastState ? 0 : parseInt(lastState);
         setScrollAvailable(false);
-        await animateScrollTo(document.querySelectorAll("h6")[myRef.current], {
-          cancelOnUserAction: false,
-          minDuration: 1000,
-          verticalOffset: -5,
-          easing: (x) =>
-            x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
-        });
+        await animateScrollTo(
+          document.getElementById(`Section${myRef.current}`),
+          {
+            cancelOnUserAction: false,
+            minDuration: 1000,
+            verticalOffset: -5,
+            easing: (x) =>
+              x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+          }
+        );
       }
       try {
         setScrollAvailable(true);
@@ -174,8 +184,32 @@ export default function MainPresentation(props) {
         window.console.log(error);
       }
     };
-    refreshedPage();
+    if (isDesktop) {
+      refreshedPage();
+    }
   }, []);
+
+  useEffect(() => {
+    const switchToDesktop = async () => {
+      setScrollAvailable(false);
+      await animateScrollTo(
+        document.getElementById(`Section${myRef.current}`),
+        {
+          cancelOnUserAction: false,
+          minDuration: 1000,
+          verticalOffset: -5,
+          easing: (x) =>
+            x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+        }
+      );
+      try {
+        setScrollAvailable(true);
+      } catch (error) {
+        window.console.log(error);
+      }
+    };
+    switchToDesktop();
+  }, [isDesktop]);
 
   useEffect(() => {
     const centerX = document.body.clientWidth / 2;
@@ -185,7 +219,7 @@ export default function MainPresentation(props) {
 
   return (
     <div
-      onWheel={scrollAvailable ? handleScrollSection : null}
+      onWheel={scrollAvailable && isDesktop ? handleScrollSection : null}
       onMouseMove={handleMousePos}
       className={styles.main}
       id="startId"
@@ -197,20 +231,18 @@ export default function MainPresentation(props) {
       />
 
       <div
-        id="bigBox0"
+        id="Section0"
         style={toStylePresentationBigBox}
         className={styles.presentationBigBox}
       >
-        <h6></h6>
         <PresentationPhoto lang={lang} />
       </div>
       <div
-        id="bigBox1"
+        id="Section1"
         style={toStyleSchoolBigBox}
         className={styles.schoolBigBox}
       >
         <div className={styles.titlesBox}>
-          <h6></h6>
           <h2
             style={toStyleTitles}
             id={listNavigation.entrySchool[lang]}
@@ -231,11 +263,10 @@ export default function MainPresentation(props) {
         </div>
       </div>
       <div
-        id="bigBox2"
+        id="Section2"
         style={toStyleWorklBigBox}
         className={styles.workBigBox}
       >
-        <h6></h6>
         <h2
           style={toStyleTitles}
           id={listNavigation.entryWork[lang]}
@@ -250,11 +281,10 @@ export default function MainPresentation(props) {
         </div>
       </div>
       <div
-        id="bigBox3"
+        id="Section3"
         style={toStyleProjectBigBox}
         className={styles.projectBigBox}
       >
-        <h6></h6>
         <h2
           style={toStyleProjectTitle}
           id={listNavigation.entryProject[lang]}

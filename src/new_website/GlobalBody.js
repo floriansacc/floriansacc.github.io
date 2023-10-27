@@ -15,6 +15,10 @@ export default function GlobalBody() {
     query: "(min-width: 1600px)",
   });
 
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 1300px)",
+  });
+
   const isTablet = useMediaQuery({
     query: "(min-width: 600px) and (max-width: 1300px)",
   });
@@ -54,7 +58,9 @@ export default function GlobalBody() {
   }, [window.innerHeight, window.innerWidth]);
 
   return (
-    <QueryContext.Provider value={{ isBigScreen, isTablet, isPhone, lang }}>
+    <QueryContext.Provider
+      value={{ isBigScreen, isDesktop, isTablet, isPhone, lang }}
+    >
       <LangButton getChange={handleLangChange} />
 
       <div onMouseMove={handleMousePos} className={styles.container}>

@@ -7,10 +7,60 @@ import { RadialTextGradient } from "react-text-gradients-and-animations";
 
 export default function PresentationPhoto(props) {
   const [currentMe, setCurrentMe] = useState(0);
-  const { isBigScreen, isPhone, isTablet, lang } = useContext(QueryContext);
+  const { isBigScreen, isPhone, isTablet, isDesktop, lang } =
+    useContext(QueryContext);
+  const [windowSize, setWindowSize] = useState([
+    document.body.clientWidth,
+    document.body.clientHeight,
+  ]);
 
   const handleBullet = (e) => {
     setCurrentMe(e.target.innerHTML);
+  };
+
+  const handleKakaoClick = (e) => {
+    if (e.target.name === "kakao") {
+      let x = document.getElementById("toAppear");
+      if (e.target.style.height === "250px") {
+        x.style.display = "";
+        x.style.position = "";
+        x.style.top = ``;
+        x.style.right = ``;
+
+        e.target.style.height = "";
+        e.target.style.boxShadow = "";
+        document.body.style.overflow = "";
+        e.target.style.position = "";
+        e.target.style.top = "";
+        e.target.style.left = "";
+        e.target.style.border = "";
+        e.target.style.borderRadius = "";
+        x.style.width = "";
+        x.style.whiteSpace = "";
+      } else {
+        x.style.display = "flex";
+        x.style.position = "fixed";
+        x.style.top = `${windowSize[1] / 2 - 80}px`;
+        x.style.right = `${windowSize[0] / 2 - 100}px`;
+        x.style.width = "500px";
+        x.style.whiteSpace = isTablet ? "wrap" : "";
+
+        e.target.style.height = "250px";
+        e.target.style.boxShadow = "0px 0px 1px 100vw rgba(0,0,0,0.8)";
+        document.body.style.overflow = "hidden";
+        e.target.style.position = "fixed";
+        e.target.style.top = `${windowSize[1] / 2}px`;
+        e.target.style.right = `${windowSize[0] / 2}px`;
+        e.target.style.border = "10px solid red";
+        e.target.style.borderRadius = "25px";
+      }
+    }
+    if (e.target.name === "else") {
+    }
+  };
+
+  const handleOnME = (e) => {
+    e.target.style.cursor = isDesktop ? "pointer" : "";
   };
 
   const bgStyle = useSpring({
@@ -38,7 +88,7 @@ export default function PresentationPhoto(props) {
   };
 
   const toStyleContactBox = {
-    position: isTablet ? "relative" : "",
+    position: isTablet ? "relative" : "relative",
     width: isTablet ? "100%" : "",
     minWidth: isTablet ? "50px" : "",
     margin: isTablet ? "0" : "",
@@ -74,6 +124,10 @@ export default function PresentationPhoto(props) {
     return () => clearInterval(intervalID);
   }, [currentMe]);
 
+  useEffect(() => {
+    setWindowSize([document.body.clientWidth, document.body.clientHeight]);
+  }, [document.body.clientWidth]);
+
   return (
     <div style={toStyleContent1} className={styles.content1}>
       <div className={styles.content1Left}>
@@ -107,29 +161,44 @@ export default function PresentationPhoto(props) {
             <p style={toStyleContactP} className={styles.footerPLeft}>
               {footerInfo[`${lang}footer`][1]}
             </p>
-            <span style={toStyleContactP} className={styles.footerPRight}>
-              {footerInfo[`${lang}footer`][2]}
-            </span>
+            <a href="mailto:florian.sacchetti@gmail.com">
+              <span style={toStyleContactP} className={styles.footerPRight}>
+                {footerInfo[`${lang}footer`][2]}
+              </span>
+            </a>
           </div>
           <div className={styles.footerSmallDiv}>
             <p style={toStyleContactP} className={styles.footerPLeft}>
               {footerInfo[`${lang}footer`][3]}
             </p>
-            <span style={toStyleContactP} className={styles.footerPRight}>
-              {footerInfo[`${lang}footer`][4]}
-            </span>
+            <a href="tel:+821083917997">
+              <span style={toStyleContactP} className={styles.footerPRight}>
+                {footerInfo[`${lang}footer`][4]}
+              </span>
+            </a>
           </div>
           <div className={styles.divImgs}>
             <div className={styles.footerSmallDiv}>
               <p style={toStyleContactP} className={styles.footerPLeft}>
                 {footerInfo[`${lang}footer`][5]}
               </p>
-              <img
-                alt="kakao QR code"
-                name="kakao"
-                className={styles.footerImg}
-                src={footerInfo.kakaoImg}
-              />
+              <a
+                target="_blank"
+                href={
+                  isPhone || isTablet
+                    ? `http://qr.kakao.com/talk/9DzDCSUIxhosfgCLWffciyNPw6k-`
+                    : null
+                }
+              >
+                <img
+                  alt="kakao QR code"
+                  name="kakao"
+                  className={styles.footerImg}
+                  src={footerInfo.kakaoImg}
+                  onClick={isDesktop ? handleKakaoClick : null}
+                  onMouseEnter={handleOnME}
+                />
+              </a>
             </div>
             <div className={styles.footerSmallDiv}>
               <p id="toAppear" className={styles.toAppear}>
