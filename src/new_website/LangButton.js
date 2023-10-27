@@ -33,7 +33,7 @@ export const LangButton = (props) => {
   };
 
   const testSpring = useSpring({
-    backgroundColor: isDarkTheme ? "whitesmoke" : "#282828",
+    backgroundColor: isDarkTheme ? "#d4e6ed" : "#282828",
     width: isDarkTheme ? "0%" : "100%",
     left: isDarkTheme ? "25%" : "0%",
     color: isDarkTheme ? "#282828" : "#2b81ff",
@@ -55,7 +55,7 @@ export const LangButton = (props) => {
       className={styles.bDroite}
     >
       <div className={styles.bSpringTest}>
-        <animated.p
+        <animated.div
           style={{
             color: testSpring.color,
             width: testSpring.width,
@@ -68,7 +68,7 @@ export const LangButton = (props) => {
           className={styles.bTheme}
         >
           {isDarkTheme ? "Light" : "Dark"}
-        </animated.p>
+        </animated.div>
       </div>
       <div className={styles.bLangBox}>
         <button

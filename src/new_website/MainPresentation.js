@@ -19,14 +19,14 @@ export default function MainPresentation(props) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [centerPos, setCenterPos] = useState({ x: 0, y: 0 });
 
-  if (isTablet) {
+  if (isTablet || isPhone) {
     document.body.style.overflowY = "auto";
   } else {
     document.body.style.overflowY = "";
   }
 
   const toStylePresentationBigBox = {
-    padding: isTablet ? "0" : "",
+    padding: isTablet ? "0" : isPhone ? "0" : "",
     opacity: myRef.current === 0 ? "1" : !isDesktop ? "1" : "0",
     position: "relative",
     //left: myRef.current === 1 ? mousePos.x + "px" : "",
@@ -35,6 +35,7 @@ export default function MainPresentation(props) {
       myRef.current === 0
         ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
         : "all 0.5s, left 0.5s",
+    height: isPhone ? "1500px" : "",
   };
 
   const toStyleSchoolBigBox = {

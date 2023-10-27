@@ -14,7 +14,7 @@ export const ButtonNavigation = (props) => {
   const { isBigScreen, isPhone, isTablet, lang } = useContext(QueryContext);
 
   const toStyleNavigator = {
-    display: isTablet ? "flex" : isPhone ? "flex" : "flex",
+    display: isTablet ? "flex" : isPhone ? "none" : "flex",
     flexDirection: isTablet ? "row" : "",
     top: isTablet ? "2%" : "",
     left: isTablet ? "60%" : "",
@@ -67,7 +67,7 @@ export const ButtonNavigation = (props) => {
   return (
     <div style={toStyleNavigator} className={styles.navigator}>
       <h2
-        style={{ display: isTablet ? "block" : "none" }}
+        style={{ display: isTablet ? "flex" : "none" }}
         className={styles.h2Nav}
       >
         {scrollPosition}

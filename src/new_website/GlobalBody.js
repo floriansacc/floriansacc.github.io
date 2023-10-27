@@ -20,7 +20,7 @@ export default function GlobalBody() {
   });
 
   const isTablet = useMediaQuery({
-    query: "(min-width: 600px) and (max-width: 1300px)",
+    query: "(min-width: 600px) and (max-width: 1250px)",
   });
 
   const isPhone = useMediaQuery({

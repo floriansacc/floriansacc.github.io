@@ -72,27 +72,41 @@ export default function PresentationPhoto(props) {
 
   const transitions = useTransition(presentation[lang].src[currentMe], {
     from: { opacity: 0, transform: "scale(1.7)" },
-    enter: { opacity: 0.3, transform: "scale(1.5)" },
+    enter: { opacity: 0.1, transform: "scale(1.5)" },
     leave: { opacity: 0, transform: "scale(1.4)" },
   });
 
   const toStyleContent1 = {
-    flexFlow: isTablet ? "row wrap" : "",
-    margin: isTablet ? "2.5rem 0.2rem 0.2rem 0.2rem" : "",
-    alignItems: isTablet ? "" : "",
+    flexFlow: isTablet ? "row wrap" : isPhone ? "column nowrap" : "",
+    margin: isTablet ? "2.5rem 0.2rem 0.2rem 0.2rem" : isPhone ? "0.2rem" : "",
+  };
+
+  const toStyleContent1Left = {
+    alignItems: isPhone ? "center" : "",
+    height: isPhone ? "fit-content" : "",
   };
 
   const toStyleName = {
+    fontSize: isPhone ? "3rem" : "4.5rem",
     padding: "0.2rem",
-    margin: isTablet ? "0.5rem 0 0 2rem" : "0.5rem 1rem 0 1rem",
+    margin: isTablet
+      ? "0.5rem 0 0 2rem"
+      : isPhone
+      ? "1rem 0"
+      : "0.5rem 1rem 0 1rem",
+  };
+
+  const toStyleContentDescription = {
+    width: isPhone ? "95%" : "",
+    margin: isPhone ? "1rem 0" : "",
   };
 
   const toStyleContactBox = {
     position: isTablet ? "relative" : "relative",
-    width: isTablet ? "100%" : "",
+    width: isTablet ? "100%" : isPhone ? "95%" : "",
     minWidth: isTablet ? "50px" : "",
-    margin: isTablet ? "0" : "",
-    padding: isTablet ? "0" : "",
+    margin: isTablet ? "0" : isPhone ? "" : "",
+    padding: isTablet ? "0" : isPhone ? "" : "",
   };
 
   const toStyleContactP = {
@@ -130,7 +144,7 @@ export default function PresentationPhoto(props) {
 
   return (
     <div style={toStyleContent1} className={styles.content1}>
-      <div className={styles.content1Left}>
+      <div style={toStyleContent1Left} className={styles.content1Left}>
         <div style={toStyleName}>
           <RadialTextGradient
             shape={"circle"}
@@ -145,10 +159,16 @@ export default function PresentationPhoto(props) {
           </RadialTextGradient>
         </div>
         <div className={styles.content1DescriptionBox}>
-          <h2 className={styles.content1Description}>
+          <h2
+            style={toStyleContentDescription}
+            className={styles.content1Description}
+          >
             {presentation[lang].intro1}
           </h2>
-          <h2 className={styles.content1Description}>
+          <h2
+            style={toStyleContentDescription}
+            className={styles.content1Description}
+          >
             {presentation[lang].intro2}
           </h2>
         </div>
