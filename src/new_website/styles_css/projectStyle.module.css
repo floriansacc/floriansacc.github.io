@@ -133,13 +133,13 @@
 .projectAbstractDisButton {
   display: none;
   width: fit-content;
-  color: #282828;
+  color: var(--font-color-reverse);
   line-height: 1.5rem;
   margin-top: 0.5rem;
   margin-left: 4rem;
   padding: 0.6rem;
   align-self: start;
-  background-color: #fff;
+  background-color: var(--info-border-color);
   border-radius: 25px;
   font-size: 1.1rem;
 }

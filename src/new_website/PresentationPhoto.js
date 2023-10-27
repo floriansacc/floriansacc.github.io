@@ -78,7 +78,15 @@ export default function PresentationPhoto(props) {
 
   const toStyleContent1 = {
     flexFlow: isTablet ? "row wrap" : isPhone ? "column nowrap" : "",
-    margin: isTablet ? "2.5rem 0.2rem 0.2rem 0.2rem" : isPhone ? "0.2rem" : "",
+    margin: isTablet ? "0.2rem" : isPhone ? "0.2rem" : "",
+    justifyContent: isPhone ? "center" : "",
+    alignItems: isPhone ? "center" : "",
+  };
+
+  const toStyleContent1SmallBox = {
+    flexFlow: isTablet ? "row wrap" : isPhone ? "column-reverse nowrap" : "",
+    justifyContent: isPhone ? "center" : "",
+    alignItems: isPhone ? "center" : "",
   };
 
   const toStyleContent1Left = {
@@ -114,11 +122,13 @@ export default function PresentationPhoto(props) {
     fontSize: isTablet ? "1rem" : "",
   };
 
-  const toStyleRightPart = {
+  const toStyleContent1Right = {
     marginTop: isTablet ? "3rem" : "",
     marginLeft: isTablet ? "1rem" : "",
     width: isTablet ? "45%" : "",
-    height: isTablet ? document.body.clientWidth / 2 : "",
+    height: isTablet ? document.body.clientWidth / 1.85 : isPhone ? "50%" : "",
+    maxHeight: isTablet ? "85%" : "",
+    alignSelf: isDesktop ? "flex-end" : isPhone ? "" : "flex-start",
   };
 
   const toStylePhotoBox = {
@@ -144,138 +154,140 @@ export default function PresentationPhoto(props) {
 
   return (
     <div style={toStyleContent1} className={styles.content1}>
-      <div style={toStyleContent1Left} className={styles.content1Left}>
-        <div style={toStyleName}>
-          <RadialTextGradient
-            shape={"circle"}
-            position={"center"}
-            colors={["#8b45e0", "#2b81ff"]}
-            animate={true}
-            animateDirection={"diagonal"}
-            animateDuration={6}
-            className={styles.content1Nom}
-          >
-            {presentation[lang].name}
-          </RadialTextGradient>
-        </div>
-        <div className={styles.content1DescriptionBox}>
-          <h2
-            style={toStyleContentDescription}
-            className={styles.content1Description}
-          >
-            {presentation[lang].intro1}
-          </h2>
-          <h2
-            style={toStyleContentDescription}
-            className={styles.content1Description}
-          >
-            {presentation[lang].intro2}
-          </h2>
-        </div>
-
-        <div style={toStyleContactBox} className={styles.footerGauche}>
-          <h2 style={toStyleContactP} className={styles.footerPLeft}>
-            {footerInfo[`${lang}footer`][0]}
-          </h2>
-          <div className={styles.footerSmallDiv}>
-            <p style={toStyleContactP} className={styles.footerPLeft}>
-              {footerInfo[`${lang}footer`][1]}
-            </p>
-            <a href="mailto:florian.sacchetti@gmail.com">
-              <span style={toStyleContactP} className={styles.footerPRight}>
-                {footerInfo[`${lang}footer`][2]}
-              </span>
-            </a>
-          </div>
-          <div className={styles.footerSmallDiv}>
-            <p style={toStyleContactP} className={styles.footerPLeft}>
-              {footerInfo[`${lang}footer`][3]}
-            </p>
-            <a href="tel:+821083917997">
-              <span style={toStyleContactP} className={styles.footerPRight}>
-                {footerInfo[`${lang}footer`][4]}
-              </span>
-            </a>
-          </div>
-          <div className={styles.divImgs}>
-            <div className={styles.footerSmallDiv}>
-              <p style={toStyleContactP} className={styles.footerPLeft}>
-                {footerInfo[`${lang}footer`][5]}
-              </p>
-              <a
-                target="_blank"
-                href={
-                  isPhone || isTablet
-                    ? `http://qr.kakao.com/talk/9DzDCSUIxhosfgCLWffciyNPw6k-`
-                    : null
-                }
-              >
-                <img
-                  alt="kakao QR code"
-                  name="kakao"
-                  className={styles.footerImg}
-                  src={footerInfo.kakaoImg}
-                  onClick={isDesktop ? handleKakaoClick : null}
-                  onMouseEnter={handleOnME}
-                />
-              </a>
-            </div>
-            <div className={styles.footerSmallDiv}>
-              <p id="toAppear" className={styles.toAppear}>
-                {footerInfo[`${lang}Appear`]}
-              </p>
-              <p style={toStyleContactP} className={styles.footerPLeft}>
-                {footerInfo[`${lang}footer`][6]}
-              </p>
-              <a href="https://www.instagram.com/floosaketi/" target="_blank">
-                <img
-                  alt="Instagram"
-                  className={styles.footerImg}
-                  src={footerInfo.instaImg}
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div style={toStyleRightPart} className={styles.content1Right}>
-        <ul className={styles.bulletUL}>
-          {presentation[lang].src.map((x, i) => (
-            <li
-              onClick={handleBullet}
-              key={`photo${i}`}
-              className={`${styles.bulletLi} ${
-                currentMe % presentation[lang].src.length === i
-                  ? styles.bulletLiOn
-                  : ""
-              }`}
-            >
-              {i}
-            </li>
-          ))}
-        </ul>
-        <div
-          style={toStylePhotoBox}
-          id={`img${currentMe}`}
-          className={styles.content1PhotoBox}
+      <div style={toStyleName}>
+        <RadialTextGradient
+          shape={"circle"}
+          position={"center"}
+          colors={["#8b45e0", "#2b81ff"]}
+          animate={true}
+          animateDirection={"diagonal"}
+          animateDuration={6}
+          className={styles.content1Nom}
         >
-          {transitions((styles, item) => (
-            <animated.img
-              style={{
-                ...styles,
-                position: "absolute",
-                top: "0",
-                left: "0",
-                width: "100%",
-                height: "auto",
-                willChange: "opacity",
-              }}
-              src={item}
-              key={presentation[lang].src[currentMe]}
-              alt="photo de moi"
-            />
-          ))}
+          {presentation[lang].name}
+        </RadialTextGradient>
+      </div>
+      <div style={toStyleContent1SmallBox} className={styles.content1SmallBox}>
+        <div style={toStyleContent1Left} className={styles.content1Left}>
+          <div className={styles.content1DescriptionBox}>
+            <h2
+              style={toStyleContentDescription}
+              className={styles.content1Description}
+            >
+              {presentation[lang].intro1}
+            </h2>
+            <h2
+              style={toStyleContentDescription}
+              className={styles.content1Description}
+            >
+              {presentation[lang].intro2}
+            </h2>
+          </div>
+
+          <div style={toStyleContactBox} className={styles.footerGauche}>
+            <h2 style={toStyleContactP} className={styles.footerPLeft}>
+              {footerInfo[`${lang}footer`][0]}
+            </h2>
+            <div className={styles.footerSmallDiv}>
+              <p style={toStyleContactP} className={styles.footerPLeft}>
+                {footerInfo[`${lang}footer`][1]}
+              </p>
+              <a href="mailto:florian.sacchetti@gmail.com">
+                <span style={toStyleContactP} className={styles.footerPRight}>
+                  {footerInfo[`${lang}footer`][2]}
+                </span>
+              </a>
+            </div>
+            <div className={styles.footerSmallDiv}>
+              <p style={toStyleContactP} className={styles.footerPLeft}>
+                {footerInfo[`${lang}footer`][3]}
+              </p>
+              <a href="tel:+821083917997">
+                <span style={toStyleContactP} className={styles.footerPRight}>
+                  {footerInfo[`${lang}footer`][4]}
+                </span>
+              </a>
+            </div>
+            <div className={styles.divImgs}>
+              <div className={styles.footerSmallDiv}>
+                <p style={toStyleContactP} className={styles.footerPLeft}>
+                  {footerInfo[`${lang}footer`][5]}
+                </p>
+                <a
+                  target="_blank"
+                  href={
+                    isPhone || isTablet
+                      ? `http://qr.kakao.com/talk/9DzDCSUIxhosfgCLWffciyNPw6k-`
+                      : null
+                  }
+                >
+                  <img
+                    alt="kakao QR code"
+                    name="kakao"
+                    className={styles.footerImg}
+                    src={footerInfo.kakaoImg}
+                    onClick={isDesktop ? handleKakaoClick : null}
+                    onMouseEnter={handleOnME}
+                  />
+                </a>
+              </div>
+              <div className={styles.footerSmallDiv}>
+                <p id="toAppear" className={styles.toAppear}>
+                  {footerInfo[`${lang}Appear`]}
+                </p>
+                <p style={toStyleContactP} className={styles.footerPLeft}>
+                  {footerInfo[`${lang}footer`][6]}
+                </p>
+                <a href="https://www.instagram.com/floosaketi/" target="_blank">
+                  <img
+                    alt="Instagram"
+                    className={styles.footerImg}
+                    src={footerInfo.instaImg}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style={toStyleContent1Right} className={styles.content1Right}>
+          <ul className={styles.bulletUL}>
+            {presentation[lang].src.map((x, i) => (
+              <li
+                onClick={handleBullet}
+                key={`photo${i}`}
+                className={`${styles.bulletLi} ${
+                  currentMe % presentation[lang].src.length === i
+                    ? styles.bulletLiOn
+                    : ""
+                }`}
+              >
+                {i}
+              </li>
+            ))}
+          </ul>
+          <div
+            style={toStylePhotoBox}
+            id={`img${currentMe}`}
+            className={styles.content1PhotoBox}
+          >
+            {transitions((styles, item) => (
+              <animated.img
+                style={{
+                  ...styles,
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  width: "100%",
+                  height: "auto",
+                  willChange: "opacity",
+                }}
+                src={item}
+                key={presentation[lang].src[currentMe]}
+                alt="photo de moi"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

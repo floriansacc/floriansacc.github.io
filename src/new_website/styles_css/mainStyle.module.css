@@ -4,9 +4,9 @@
   --title-color: rgb(78, 78, 78);
   --font-color-reverse: #fff;
   --background-container: linear-gradient(
-      rgba(255, 255, 255, 0.85),
-      rgba(255, 255, 255, 0.85)
-    )
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.85)
+  );
   --background-color-project: #fff;
   --title-border-color: #d9d9d9;
   --info-border-color: #282828;
@@ -103,6 +103,7 @@
 
 .schoolPack2 {
   display: flex;
+  flex-flow: row nowrap;
   justify-content: center;
   flex: 1;
   margin-bottom: 10px;

@@ -39,8 +39,8 @@ export default function MainPresentation(props) {
   };
 
   const toStyleSchoolBigBox = {
-    flexDirection: isTablet ? "column" : "",
-    padding: isTablet ? "0" : "",
+    flexDirection: isTablet ? "column" : isPhone ? "column" : "",
+    padding: isTablet ? "0" : isPhone ? "0" : "",
     opacity: myRef.current === 1 ? "1" : !isDesktop ? "1" : "0",
     position: "relative",
     //left: myRef.current === 1 ? mousePos.x + "px" : "",
@@ -49,11 +49,13 @@ export default function MainPresentation(props) {
       myRef.current === 1
         ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
         : "all 0.5s, left 0.5s",
+    height: isPhone ? "fit-content" : "",
+    alignItems: isPhone ? "center" : "",
   };
 
   const toStyleWorklBigBox = {
-    flexDirection: isTablet ? "column" : "",
-    padding: isTablet ? "0" : "",
+    flexDirection: isTablet ? "column" : isPhone ? "column" : "",
+    padding: isTablet ? "0" : isPhone ? "0" : "",
     opacity: myRef.current === 2 ? "1" : !isDesktop ? "1" : "0",
     position: "relative",
     left: myRef.current === 2 ? mousePos.x + "px" : "",
@@ -62,11 +64,13 @@ export default function MainPresentation(props) {
       myRef.current === 2
         ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
         : "all 0.5s, left 0.5s",
+    height: isPhone ? "fit-content" : "",
+    alignItems: isPhone ? "center" : "",
   };
 
   const toStyleProjectBigBox = {
-    flexDirection: isTablet ? "column" : "",
-    padding: isTablet ? "0" : "",
+    flexDirection: isTablet ? "column" : isPhone ? "column" : "",
+    padding: isTablet ? "0" : isPhone ? "0" : "",
     opacity: myRef.current === 3 ? "1" : !isDesktop ? "1" : "0",
     position: "relative",
     left: myRef.current === 3 ? mousePos.x + "px" : "",
@@ -75,23 +79,29 @@ export default function MainPresentation(props) {
       myRef.current === 3
         ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
         : "all 0.5s",
+    height: isPhone ? "fit-content" : "",
+    alignItems: isPhone ? "center" : "",
   };
 
   const toStyleSchoolSmallBox = {
-    flexWrap: isTablet ? "wrap" : "",
+    flexFlow: isTablet ? "row wrap" : isPhone ? "column nowrap" : "",
     paddingRight: isTablet ? "0.2rem" : "",
     flex: isTablet ? "none" : "",
   };
 
   const toStyleDivSchool = {
-    width: isTablet ? "100%" : "",
-    height: isTablet ? "50%" : "",
-    flex: isTablet ? "none" : "",
+    flexFlow: isPhone ? "column nowrap" : "",
+    width: isTablet ? "100%" : isPhone ? "100%" : "",
+    height: isTablet ? "50%" : isPhone ? "" : "",
+    flex: isTablet ? "none" : isPhone ? "none" : "",
+    alignItems: isPhone ? "center" : "",
   };
 
-  const toStyleWorklSmallBox = {
-    flexWrap: isTablet ? "wrap" : "",
+  const toStyleWorkSmallBox = {
+    flexFlow: isTablet ? "row wrap" : isPhone ? "column nowrap" : "",
     paddingRight: isTablet ? "0.2rem" : "",
+    flex: isTablet ? "none" : isPhone ? "none" : "",
+    alignItems: isPhone ? "center" : "",
   };
 
   const toStyleTitles = {
@@ -209,7 +219,9 @@ export default function MainPresentation(props) {
         window.console.log(error);
       }
     };
-    switchToDesktop();
+    if (isDesktop) {
+      switchToDesktop();
+    }
   }, [isDesktop]);
 
   useEffect(() => {
@@ -275,7 +287,7 @@ export default function MainPresentation(props) {
         >
           {listNavigation.entryWork[lang]}
         </h2>
-        <div style={toStyleWorklSmallBox} className={styles.workSmallBox}>
+        <div style={toStyleWorkSmallBox} className={styles.workSmallBox}>
           <PresentationWork name="edf" lang={lang} />
           <PresentationWork name="enedis" lang={lang} />
           <PresentationWork name="suez" lang={lang} />

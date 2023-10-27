@@ -24,22 +24,24 @@ export default function PresentationProject(props) {
       document.getElementById(`abstractText${i}`).style.display = "block";
     }
     document.getElementById("aDisButton").style.display = "block";
-    box.style.position = "fixed";
-    box.style.width = isTablet ? "75%" : "70%";
-    box.style.height = isTablet ? "70%" : "60%";
-    box.style.top = "10%";
-    box.style.left = "10%";
-    box.style.boxShadow = "0px 0px 1px 100vw rgba(0,0,0,0.9)";
-    box.style.background = "";
-    box.style.overflowY = "scroll";
-    box.style.padding = isTablet ? "2rem" : "5rem";
-    togglescroll(false);
-    button.style.position = "fixed";
-    button.style.top = isTablet ? "2%" : "2%";
-    button.style.left = isTablet ? "-5%" : "0%";
-    box.style.borderWidth = "10px";
-    for (let i = 0; i < 3; i++) {
-      document.getElementById(`summary${i}`).style.display = "none";
+    if (!isPhone) {
+      box.style.position = "fixed";
+      box.style.width = isTablet ? "75%" : "70%";
+      box.style.height = isTablet ? "70%" : "60%";
+      box.style.top = "10%";
+      box.style.left = "10%";
+      box.style.boxShadow = "0px 0px 1px 100vw rgba(0,0,0,0.9)";
+      box.style.background = "";
+      box.style.overflowY = "scroll";
+      box.style.padding = isTablet ? "2rem" : "5rem";
+      togglescroll(false);
+      button.style.position = "fixed";
+      button.style.top = isTablet ? "2%" : "2%";
+      button.style.left = isTablet ? "-5%" : "0%";
+      box.style.borderWidth = "10px";
+      for (let i = 0; i < 3; i++) {
+        document.getElementById(`summary${i}`).style.display = "none";
+      }
     }
   };
 
@@ -57,22 +59,24 @@ export default function PresentationProject(props) {
       document.getElementById(`abstractText${i}`).style.display = "none";
     }
     document.getElementById("aAppButton").style.display = "block";
-    box.style.position = "";
-    box.style.width = "";
-    box.style.height = "";
-    box.style.top = "";
-    box.style.left = "";
-    box.style.boxShadow = "";
-    box.style.background = "";
-    box.style.overflowY = "";
-    box.style.padding = "";
-    togglescroll(true);
-    button.style.position = "";
-    button.style.top = "";
-    button.style.left = "";
-    box.style.borderWidth = "";
-    for (let i = 0; i < 3; i++) {
-      document.getElementById(`summary${i}`).style.display = "";
+    if (!isPhone) {
+      box.style.position = "";
+      box.style.width = "";
+      box.style.height = "";
+      box.style.top = "";
+      box.style.left = "";
+      box.style.boxShadow = "";
+      box.style.background = "";
+      box.style.overflowY = "";
+      box.style.padding = "";
+      togglescroll(true);
+      button.style.position = "";
+      button.style.top = "";
+      button.style.left = "";
+      box.style.borderWidth = "";
+      for (let i = 0; i < 3; i++) {
+        document.getElementById(`summary${i}`).style.display = "";
+      }
     }
   };
 
@@ -96,17 +100,33 @@ export default function PresentationProject(props) {
     width: isTablet ? "95%" : "",
   };
 
+  const toStyleProjectBox = {
+    flexFlow: isPhone ? "column nowrap" : "",
+  };
+
   const toStyleExpl = {
     fontSize: isTablet ? "1.1rem" : "",
   };
 
+  const toStyleProjectAllImgVidDiv = {
+    width: isPhone ? "100%" : "",
+    minHeight: isPhone ? "fit-content" : "",
+    borderRight: isPhone ? "none" : "",
+  };
+
+  const toStyleDescriptionBox = {
+    width: isPhone ? "100%" : "",
+  };
+
   const toStyleVideo = {
-    width: isTablet ? "95%" : "",
+    width: isTablet || isPhone ? "95%" : "",
   };
 
   useEffect(() => {
     let box = document.getElementById("descriptionBox");
-    if (box.style.position === "fixed") {
+    let buttonApp = document.getElementById("aAppButton");
+    let test = document.getElementById(`abstractText3`);
+    if (buttonApp.style.display === "none") {
       for (
         let i = 2;
         i < projectDetails[`abstract${lang}${props.name}`].length;
@@ -114,6 +134,7 @@ export default function PresentationProject(props) {
       ) {
         document.getElementById(`abstractText${i}`).style.display = "block";
       }
+      document.getElementById("aDisButton").style.display = "block";
     } else {
       for (
         let i = 1;
@@ -131,21 +152,30 @@ export default function PresentationProject(props) {
     let button = document.getElementById("aDisButton");
     document.getElementById("aAppButton").style.display = "block";
     document.getElementById("aDisButton").style.display = "none";
-    box.style.position = "";
-    box.style.width = "";
-    box.style.height = "";
-    box.style.top = "";
-    box.style.left = "";
-    box.style.boxShadow = "";
-    box.style.background = "";
-    box.style.overflowY = "";
-    box.style.padding = "";
-    togglescroll(true);
-    button.style.position = "";
-    button.style.top = "";
-    button.style.left = "";
-    for (let i = 0; i < 3; i++) {
-      document.getElementById(`summary${i}`).style.display = "";
+    for (
+      let i = 1;
+      i < projectDetails[`abstract${lang}${props.name}`].length;
+      i++
+    ) {
+      document.getElementById(`abstractText${i}`).style.display = "none";
+    }
+    if (!isPhone) {
+      box.style.position = "";
+      box.style.width = "";
+      box.style.height = "";
+      box.style.top = "";
+      box.style.left = "";
+      box.style.boxShadow = "";
+      box.style.background = "";
+      box.style.overflowY = "";
+      box.style.padding = "";
+      togglescroll(true);
+      button.style.position = "";
+      button.style.top = "";
+      button.style.left = "";
+      for (let i = 0; i < 3; i++) {
+        document.getElementById(`summary${i}`).style.display = "";
+      }
     }
   }, []);
 
@@ -154,8 +184,11 @@ export default function PresentationProject(props) {
       <h3 className={styles.projectTitle}>
         {projectDetails[`${lang}${props.name}`][0]}
       </h3>
-      <ul className={styles.projectBox}>
-        <div className={styles.projectAllImgVidDiv}>
+      <ul style={toStyleProjectBox} className={styles.projectBox}>
+        <div
+          style={toStyleProjectAllImgVidDiv}
+          className={styles.projectAllImgVidDiv}
+        >
           <div className={styles.projectImgBox}>
             <li className={styles.projectPhotoBox} key="proj1">
               <img
@@ -187,14 +220,21 @@ export default function PresentationProject(props) {
             muted
           />
         </div>
-        <div className={styles.projectDescriptionBox} id="descriptionBox">
+        <div
+          style={toStyleDescriptionBox}
+          className={styles.projectDescriptionBox}
+          id="descriptionBox"
+        >
           <li
             id="aDisButton"
+            style={{
+              backgroundColor: !isPhone ? "#fff" : "",
+              color: !isPhone ? "#282828" : "",
+            }}
             className={styles.projectAbstractDisButton}
             onMouseLeave={handleMouseLeave}
             onMouseEnter={handleMouseEnter}
             onMouseDown={handleMouseDownDisappear}
-            onMouseUp={handleMouseUp}
             key="proj5"
           >
             {projectDetails[`fold${lang}${props.name}`][1]}
@@ -225,11 +265,11 @@ export default function PresentationProject(props) {
           </li>
           <li
             id="aAppButton"
+            style={{ margin: isPhone ? "1rem" : "" }}
             className={styles.projectAbstractAppButton}
             onMouseLeave={handleMouseLeave}
             onMouseEnter={handleMouseEnter}
             onMouseDown={handleMouseDownAppear}
-            onMouseUp={handleMouseUp}
             key="proj4"
           >
             {projectDetails[`fold${lang}${props.name}`][0]}
