@@ -7,7 +7,7 @@ import { RadialTextGradient } from "react-text-gradients-and-animations";
 
 export default function PresentationPhoto(props) {
   const [currentMe, setCurrentMe] = useState(0);
-  const { isBigScreen, isPhone, isTablet, isDesktop, lang } =
+  const { isBigScreen, isSmallPhone, isPhone, isTablet, isDesktop, lang } =
     useContext(QueryContext);
   const [windowSize, setWindowSize] = useState([
     document.body.clientWidth,
@@ -81,21 +81,29 @@ export default function PresentationPhoto(props) {
     margin: isTablet ? "0.2rem" : isPhone ? "0.2rem" : "",
     justifyContent: isPhone ? "center" : "",
     alignItems: isPhone ? "center" : "",
+    width: "200px",
+    maxWidth: "unset",
   };
 
   const toStyleContent1SmallBox = {
     flexFlow: isTablet ? "row wrap" : isPhone ? "column-reverse nowrap" : "",
-    justifyContent: isPhone ? "center" : "",
+    justifyContent: isPhone ? "flex-end" : "",
     alignItems: isPhone ? "center" : "",
   };
 
   const toStyleContent1Left = {
     alignItems: isPhone ? "center" : "",
+    width: isPhone ? "95%" : "",
     height: isPhone ? "fit-content" : "",
   };
 
   const toStyleName = {
-    fontSize: isPhone ? "3rem" : "4.5rem",
+    fontSize:
+      isPhone && !isSmallPhone
+        ? "3rem"
+        : isPhone && isSmallPhone
+        ? "2rem"
+        : "4.5rem",
     padding: "0.2rem",
     margin: isTablet
       ? "0.5rem 0 0 2rem"
@@ -105,36 +113,61 @@ export default function PresentationPhoto(props) {
   };
 
   const toStyleContentDescription = {
-    width: isPhone ? "95%" : "",
     margin: isPhone ? "1rem 0" : "",
+    padding: isPhone ? "0" : "",
+    width: isPhone ? "95%" : "",
   };
 
   const toStyleContactBox = {
     position: isTablet ? "relative" : "relative",
     width: isTablet ? "100%" : isPhone ? "95%" : "",
-    minWidth: isTablet ? "50px" : "",
-    margin: isTablet ? "0" : isPhone ? "" : "",
-    padding: isTablet ? "0" : isPhone ? "" : "",
+    minWidth: isTablet ? "50px" : isPhone ? "unset" : "",
+    margin: isTablet ? "0" : isPhone ? "0" : "",
+    padding: isTablet ? "0" : isPhone ? "0" : "",
+  };
+
+  const toStyleFooterSmallDiv = {
+    flexFlow: isPhone ? "row wrap" : "",
   };
 
   const toStyleContactP = {
     flex: isTablet ? "none" : "",
-    fontSize: isTablet ? "1rem" : "",
+    fontSize: isTablet ? "1rem" : isPhone ? "1rem" : "",
+    padding: isPhone ? "10px 5px" : "",
+  };
+
+  const toStyleContactSpan = {
+    flex: isTablet ? "none" : "",
+    fontSize: isTablet ? "1rem" : isPhone ? "1rem" : "",
+    padding: isPhone ? "10px 10px" : "",
   };
 
   const toStyleContent1Right = {
     marginTop: isTablet ? "3rem" : "",
     marginLeft: isTablet ? "1rem" : "",
-    width: isTablet ? "45%" : "",
-    height: isTablet ? document.body.clientWidth / 1.85 : isPhone ? "50%" : "",
+    width: isTablet
+      ? "45%"
+      : isPhone && isSmallPhone
+      ? "95%"
+      : isPhone && !isSmallPhone
+      ? "75%"
+      : "",
+    height: isTablet
+      ? document.body.clientWidth / 1.85
+      : isPhone && !isSmallPhone
+      ? "45%"
+      : isPhone && isSmallPhone
+      ? `${document.body.clientWidth / 11}%`
+      : "",
     maxHeight: isTablet ? "85%" : "",
     alignSelf: isDesktop ? "flex-end" : isPhone ? "" : "flex-start",
   };
 
   const toStylePhotoBox = {
-    padding: isTablet ? "0.2rem" : "",
-    minWidth: isTablet ? "200px" : "",
-    width: isTablet ? "95%" : "",
+    margin: isPhone ? "0.2rem" : "",
+    padding: isTablet ? "0.2rem" : isPhone ? "0.2rem" : "",
+    minWidth: isTablet ? "200px" : isPhone ? "unset" : "",
+    width: isTablet ? "95%" : isPhone ? "100%" : "",
     height: isTablet ? "80%" : "",
   };
 
@@ -188,12 +221,18 @@ export default function PresentationPhoto(props) {
             <h2 style={toStyleContactP} className={styles.footerPLeft}>
               {footerInfo[`${lang}footer`][0]}
             </h2>
-            <div className={styles.footerSmallDiv}>
+            <div
+              style={toStyleFooterSmallDiv}
+              className={styles.footerSmallDiv}
+            >
               <p style={toStyleContactP} className={styles.footerPLeft}>
                 {footerInfo[`${lang}footer`][1]}
               </p>
               <a href="mailto:florian.sacchetti@gmail.com">
-                <span style={toStyleContactP} className={styles.footerPRight}>
+                <span
+                  style={toStyleContactSpan}
+                  className={styles.footerPRight}
+                >
                   {footerInfo[`${lang}footer`][2]}
                 </span>
               </a>
@@ -203,7 +242,10 @@ export default function PresentationPhoto(props) {
                 {footerInfo[`${lang}footer`][3]}
               </p>
               <a href="tel:+821083917997">
-                <span style={toStyleContactP} className={styles.footerPRight}>
+                <span
+                  style={toStyleContactSpan}
+                  className={styles.footerPRight}
+                >
                   {footerInfo[`${lang}footer`][4]}
                 </span>
               </a>

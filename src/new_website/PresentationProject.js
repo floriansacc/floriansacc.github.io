@@ -95,7 +95,7 @@ export default function PresentationProject(props) {
 
   const toStyleProject = {
     margin: isTablet ? "0.2rem" : "",
-    padding: isTablet ? "0.2rem 0.5rem" : "",
+    padding: isTablet ? "0.2rem 0.5rem" : isPhone ? "0.2rem" : "",
     height: isTablet ? "95%" : "",
     width: isTablet ? "95%" : "",
   };
@@ -105,7 +105,10 @@ export default function PresentationProject(props) {
   };
 
   const toStyleExpl = {
-    fontSize: isTablet ? "1.1rem" : "",
+    fontSize: isTablet ? "1.1rem" : isPhone ? "1rem" : "",
+    width: isPhone ? "96%" : "",
+    margin: isPhone ? " 1rem 0.2rem" : "",
+    padding: isPhone ? "2px" : "",
   };
 
   const toStyleProjectAllImgVidDiv = {
@@ -114,8 +117,17 @@ export default function PresentationProject(props) {
     borderRight: isPhone ? "none" : "",
   };
 
+  const toStyleProjectImgBox = {
+    flexFlow: isPhone ? "column nowrap" : "",
+  };
+
   const toStyleDescriptionBox = {
     width: isPhone ? "100%" : "",
+  };
+
+  const toStylePhotoBox = {
+    width: isPhone ? "98%" : "",
+    padding: isPhone ? "1rem 0.2rem" : "",
   };
 
   const toStyleVideo = {
@@ -189,8 +201,12 @@ export default function PresentationProject(props) {
           style={toStyleProjectAllImgVidDiv}
           className={styles.projectAllImgVidDiv}
         >
-          <div className={styles.projectImgBox}>
-            <li className={styles.projectPhotoBox} key="proj1">
+          <div style={toStyleProjectImgBox} className={styles.projectImgBox}>
+            <li
+              style={toStylePhotoBox}
+              className={styles.projectPhotoBox}
+              key="proj1"
+            >
               <img
                 alt={projectDetails[`descriptionPhoto`][`${lang}`][0]}
                 className={styles.projectPhoto}
@@ -200,7 +216,11 @@ export default function PresentationProject(props) {
                 {projectDetails[`descriptionPhoto`][`${lang}`][0]}
               </p>
             </li>
-            <li className={styles.projectPhotoBox} key="proj2">
+            <li
+              style={toStylePhotoBox}
+              className={styles.projectPhotoBox}
+              key="proj2"
+            >
               <img
                 alt={projectDetails[`descriptionPhoto`][`${lang}`][1]}
                 className={styles.projectPhoto}

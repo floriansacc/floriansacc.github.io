@@ -25,6 +25,10 @@ export default function MainPresentation(props) {
     document.body.style.overflowY = "";
   }
 
+  const toStyleMain = {
+    padding: isPhone ? "0.2rem" : "",
+  };
+
   const toStylePresentationBigBox = {
     padding: isTablet ? "0" : isPhone ? "0" : "",
     opacity: myRef.current === 0 ? "1" : !isDesktop ? "1" : "0",
@@ -85,8 +89,9 @@ export default function MainPresentation(props) {
 
   const toStyleSchoolSmallBox = {
     flexFlow: isTablet ? "row wrap" : isPhone ? "column nowrap" : "",
-    paddingRight: isTablet ? "0.2rem" : "",
+    paddingRight: isTablet ? "0.2rem" : isPhone ? "0" : "",
     flex: isTablet ? "none" : "",
+    width: isPhone ? "100%" : "",
   };
 
   const toStyleDivSchool = {
@@ -234,6 +239,7 @@ export default function MainPresentation(props) {
     <div
       onWheel={scrollAvailable && isDesktop ? handleScrollSection : null}
       onMouseMove={handleMousePos}
+      style={toStyleMain}
       className={styles.main}
       id="startId"
     >

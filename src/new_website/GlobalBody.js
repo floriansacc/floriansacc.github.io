@@ -27,6 +27,14 @@ export default function GlobalBody() {
     query: "(max-width: 600px)",
   });
 
+  const isSmallPhone = useMediaQuery({
+    query: "(max-width: 500px)",
+  });
+
+  const isSmallSmallPhone = useMediaQuery({
+    query: "(max-width: 380px)",
+  });
+
   const handleLangChange = (e) => {
     setLang(e.target.name);
   };
@@ -59,7 +67,7 @@ export default function GlobalBody() {
 
   return (
     <QueryContext.Provider
-      value={{ isBigScreen, isDesktop, isTablet, isPhone, lang }}
+      value={{ isBigScreen, isDesktop, isTablet, isPhone, isSmallPhone, lang }}
     >
       <LangButton getChange={handleLangChange} />
 

@@ -11,6 +11,8 @@ export default function PresentationSchool(props) {
     margin: isTablet ? "0.2rem" : "",
     padding: isTablet ? "0.2rem 0.5rem" : "",
     height: isTablet ? "95%" : "",
+    maxWidth: isPhone ? "unset" : "",
+    width: isPhone ? "100%" : "",
   };
 
   const toStyleImgContainer = {

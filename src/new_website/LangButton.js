@@ -43,23 +43,22 @@ export const LangButton = (props) => {
     },
   });
 
+  const toStyleBandeau = {
+    justifyContent: isTablet ? "space-around" : isPhone ? "space-between" : "",
+    background: isPhone
+      ? "linear-gradient(to right, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0))"
+      : "",
+  };
+
   return (
-    <div
-      style={{
-        justifyContent: isTablet
-          ? "space-around"
-          : isPhone
-          ? "space-between"
-          : "",
-      }}
-      className={styles.bDroite}
-    >
-      <div className={styles.bSpringTest}>
+    <div style={toStyleBandeau} className={styles.bandeau}>
+      <div className={styles.themeButton}>
         <animated.div
           style={{
             color: testSpring.color,
             width: testSpring.width,
             backgroundColor: testSpring.backgroundColor,
+            alignItems: "center",
           }}
           key="themeSwitch"
           onMouseEnter={handleMouseEnter}

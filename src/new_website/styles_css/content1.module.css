@@ -16,7 +16,6 @@
   align-items: center;
   height: 90%;
   width: 100%;
-  border: 1px solid red;
 }
 
 .content1Left {
@@ -74,7 +73,7 @@
   width: 60%;
   max-width: 450px;
   min-width: 350px;
-  border: 1px solid green;
+  border: 1px solid #dadada;
 }
 
 .footerSmallDiv {
@@ -129,8 +128,6 @@
   align-items: center;
   width: 40%;
   height: 110%;
-
-  border: 1px solid red;
 }
 
 .content1PhotoBox {
