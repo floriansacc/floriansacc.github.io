@@ -16,7 +16,7 @@ export default function GlobalBody() {
   });
 
   const isDesktop = useMediaQuery({
-    query: "(min-width: 1300px)",
+    query: "(min-width: 1250px)",
   });
 
   const isTablet = useMediaQuery({

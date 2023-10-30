@@ -31,6 +31,13 @@
   border-radius: 15px;
 }
 
+.h2Nav {
+  color: red;
+  font-size: 1rem;
+  position: absolute;
+  left: -50px;
+}
+
 .bandeau {
   position: fixed;
   right: 5%;

@@ -8,38 +8,45 @@ export default function PresentationSchool(props) {
   const { isPhone, isTablet, lang } = useContext(QueryContext);
 
   const toStyleContent2 = {
-    margin: isTablet ? "0.2rem" : "",
-    padding: isTablet ? "0.2rem 0.5rem" : "",
+    margin: isTablet ? "0.2rem" : isPhone ? "0.5rem 0" : "",
+    padding: isTablet || isPhone ? "0.2rem 0.5rem" : "",
     height: isTablet ? "95%" : "",
     maxWidth: isPhone ? "unset" : "",
     width: isPhone ? "100%" : "",
   };
 
   const toStyleImgContainer = {
-    height: isTablet ? "40px" : "",
+    height: isTablet ? "fit-content" : isPhone ? "fit-content" : "",
   };
 
   const toStyleImg = {
-    height: isTablet ? "70%" : "",
     width: isTablet ? "auto" : "",
   };
 
+  const toStylePLsy = {
+    alignSelf: isPhone ? "unset" : "",
+  };
+
   const toStyleTitle = {
-    height: isTablet ? "fit-content" : "",
+    height: isTablet || isPhone ? "fit-content" : "",
+    padding: isPhone ? "5px 2px" : "",
   };
 
   const toStyleMajor = {
-    height: isTablet ? "fit-content" : "",
+    height: isTablet || isPhone ? "fit-content" : "",
     marginBottom: isTablet ? "0.5rem" : "",
+    fontSize: isPhone ? "1rem" : "",
   };
 
   const toStyleLi = {
-    lineHeight: isTablet ? "1.1rem" : "",
-    padding: isTablet ? "0.4rem 0 " : "",
+    lineHeight: isTablet ? "1.2rem" : isPhone ? "normal" : "",
+    padding: isTablet ? "0.4rem 0 " : isPhone ? "0.2rem 0" : "",
+    fontSize: isPhone ? "1rem" : "",
   };
 
   const toStyleProf = {
     paddingTop: isTablet ? "0.2rem" : "",
+    fontSize: isPhone ? "1rem" : "",
   };
 
   return (
@@ -51,7 +58,7 @@ export default function PresentationSchool(props) {
           src={schoolDetails[`${props.name}img`]}
           className={styles.pLsyImg}
         />
-        <p className={styles.pLsy}>
+        <p style={toStylePLsy} className={styles.pLsy}>
           {schoolDetails[`${lang}${props.name}`][0]}
         </p>
       </div>

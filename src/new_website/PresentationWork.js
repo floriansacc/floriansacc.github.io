@@ -1,44 +1,64 @@
 import styles from "./styles_css/mainStyle.module.css";
 import "./styles_css/fontStyle.css";
-
 import { workDetails } from "./data";
 import { useContext } from "react";
 import { QueryContext } from "./GlobalBody";
+import { useSpring, animated } from "react-spring";
 
 export default function PresentationWork(props) {
-  const { isPhone, isTablet, lang } = useContext(QueryContext);
+  const { isPhone, isTablet, isDesktop, lang } = useContext(QueryContext);
+  const { myref, direction } = props;
+
+  const springUp = useSpring({
+    top: myref.current === 2 ? "0" : "1000px",
+    delay: 800,
+    config: { duration: 800, easing: (x) => 1 - Math.pow(1 - x, 4) },
+  });
+
+  const springDown = useSpring({
+    bottom: myref.current === 2 ? "0" : "1000px",
+    delay: 800,
+    config: { duration: 800, easing: (x) => 1 - Math.pow(1 - x, 4) },
+  });
 
   const toStyleContent3 = {
-    margin: isTablet ? "0.2rem" : "",
-    padding: isTablet ? "0.2rem 0.5rem" : "",
+    bottom: direction === "down" ? springDown.bottom : "unset",
+    top: direction === "up" ? springUp.top : "unset",
+    margin: isTablet ? "0.2rem" : isPhone ? "0.5rem 0" : "",
+    padding: isTablet || isPhone ? "0.2rem 0.5rem" : "",
     height: isTablet ? "50%" : "",
-    maxWidth: isTablet ? "90%" : "",
+    maxWidth: isTablet ? "90%" : isPhone ? "unset" : "",
     minWidth: isTablet ? "40%" : "",
+    width: isPhone ? "100%" : "",
   };
 
   const toStyleImgContainer = {
-    height: isTablet ? "55px" : "",
+    height: isTablet ? "55px" : isPhone ? "fit-content" : "",
   };
 
   const toStyleImg = {
-    height: isTablet ? "70%" : "",
     width: isTablet ? "auto" : "",
   };
 
-  const toStyleTitle = { height: isTablet ? "fit-content" : "" };
+  const toStyleTitle = {
+    height: isTablet || isPhone ? "fit-content" : "",
+    padding: isPhone ? "5px 2px" : "",
+  };
 
   const toStyleLiDuree = {
-    height: isTablet ? "fit-content" : "",
+    height: isTablet || isPhone ? "fit-content" : "",
     marginBottom: isTablet ? "0.5rem" : "",
+    fontSize: isPhone ? "1rem" : "",
   };
 
   const toStyleLi = {
-    lineHeight: isTablet ? "1.1rem" : "",
-    padding: isTablet ? "0.4rem 0 " : "",
+    lineHeight: isTablet ? "normal" : isPhone ? "normal" : "",
+    padding: isTablet ? "0.4rem 0 " : isPhone ? "0.2rem 0" : "",
+    fontSize: isPhone ? "1rem" : "",
   };
 
   return (
-    <div style={toStyleContent3} className={styles.content3}>
+    <animated.div style={toStyleContent3} className={styles.content3}>
       <div style={toStyleImgContainer} className={styles.imgContainer}>
         <img
           alt={workDetails[`${props.name}image`]}
@@ -69,6 +89,6 @@ export default function PresentationWork(props) {
             </li>
           ))}
       </ul>
-    </div>
+    </animated.div>
   );
 }

@@ -100,6 +100,10 @@ export default function PresentationProject(props) {
     width: isTablet ? "95%" : "",
   };
 
+  const toStyleProjectTitle = {
+    fontSize: isPhone ? "1.1rem" : "",
+  };
+
   const toStyleProjectBox = {
     flexFlow: isPhone ? "column nowrap" : "",
   };
@@ -193,7 +197,7 @@ export default function PresentationProject(props) {
 
   return (
     <div style={toStyleProject} className={styles.project}>
-      <h3 className={styles.projectTitle}>
+      <h3 style={toStyleProjectTitle} className={styles.projectTitle}>
         {projectDetails[`${lang}${props.name}`][0]}
       </h3>
       <ul style={toStyleProjectBox} className={styles.projectBox}>

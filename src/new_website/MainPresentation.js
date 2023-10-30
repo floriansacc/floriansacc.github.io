@@ -6,12 +6,17 @@ import PresentationProject from "./PresentationProject";
 import animateScrollTo from "animated-scroll-to";
 import { listNavigation } from "./data";
 import { useEffect, useContext, useRef, useState } from "react";
+import { RadialTextGradient } from "react-text-gradients-and-animations";
 import { QueryContext } from "./GlobalBody";
 import { ButtonNavigation } from "./ButtonNavigation";
+import { useSpring, animated, easings } from "react-spring";
 
 export default function MainPresentation(props) {
-  const { isPhone, isTablet, isDesktop, lang } = useContext(QueryContext);
+  const { isSmallPhone, isPhone, isTablet, isDesktop, lang } =
+    useContext(QueryContext);
   const myRef = useRef(0);
+  const [scrollPosElem, setScrollPosElem] = useState([]);
+  const prevPixelRatio = useRef(null);
   const [lastState, SetLastState] = useState(
     sessionStorage.getItem("lastValue")
   );
@@ -24,6 +29,13 @@ export default function MainPresentation(props) {
   } else {
     document.body.style.overflowY = "";
   }
+
+  const leftSpring = useSpring({
+    position: myRef.current === 2 ? "relative" : "relative",
+    left: myRef.current === 2 ? "0" : "-200px",
+    delay: 800,
+    config: { duration: 800, easing: (x) => 1 - Math.pow(1 - x, 4) },
+  });
 
   const toStyleMain = {
     padding: isPhone ? "0.2rem" : "",
@@ -39,7 +51,12 @@ export default function MainPresentation(props) {
       myRef.current === 0
         ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
         : "all 0.5s, left 0.5s",
-    height: isPhone ? "1500px" : "",
+    height:
+      isPhone && !isSmallPhone
+        ? "1100px"
+        : isPhone && isSmallPhone
+        ? "1200px"
+        : "",
   };
 
   const toStyleSchoolBigBox = {
@@ -62,8 +79,8 @@ export default function MainPresentation(props) {
     padding: isTablet ? "0" : isPhone ? "0" : "",
     opacity: myRef.current === 2 ? "1" : !isDesktop ? "1" : "0",
     position: "relative",
-    left: myRef.current === 2 ? mousePos.x + "px" : "",
-    top: myRef.current === 2 ? mousePos.y + "px" : "",
+    //left: myRef.current === 2 ? mousePos.x + "px" : "",
+    //top: myRef.current === 2 ? mousePos.y + "px" : "",
     transition:
       myRef.current === 2
         ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
@@ -77,8 +94,8 @@ export default function MainPresentation(props) {
     padding: isTablet ? "0" : isPhone ? "0" : "",
     opacity: myRef.current === 3 ? "1" : !isDesktop ? "1" : "0",
     position: "relative",
-    left: myRef.current === 3 ? mousePos.x + "px" : "",
-    top: myRef.current === 3 ? mousePos.y + "px" : "",
+    //left: myRef.current === 3 ? mousePos.x + "px" : "",
+    //top: myRef.current === 3 ? mousePos.y + "px" : "",
     transition:
       myRef.current === 3
         ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
@@ -100,18 +117,26 @@ export default function MainPresentation(props) {
     height: isTablet ? "50%" : isPhone ? "" : "",
     flex: isTablet ? "none" : isPhone ? "none" : "",
     alignItems: isPhone ? "center" : "",
+    margin: isPhone ? "0" : "",
   };
 
   const toStyleWorkSmallBox = {
     flexFlow: isTablet ? "row wrap" : isPhone ? "column nowrap" : "",
-    paddingRight: isTablet ? "0.2rem" : "",
+    paddingRight: isTablet ? "0.2rem" : isPhone ? "0" : "",
     flex: isTablet ? "none" : isPhone ? "none" : "",
     alignItems: isPhone ? "center" : "",
+    width: isPhone ? "100%" : "",
   };
 
   const toStyleTitles = {
-    whiteSpace: isTablet ? "nowrap" : "",
-    marginTop: isTablet ? "0rem" : "",
+    ...leftSpring,
+    whiteSpace: isTablet || isPhone ? "nowrap" : "",
+    marginTop: isTablet || isPhone ? "0rem" : "",
+    width: isPhone ? "fit-content" : "",
+    margin: isPhone ? "5px 0" : "",
+    alignSelf: isTablet || isPhone ? "center" : "",
+    flex: isTablet || isPhone ? "unset" : "",
+    maxWidth: isTablet || isPhone ? "unset" : "",
   };
 
   const toStyleProjectTitle = {
@@ -235,6 +260,31 @@ export default function MainPresentation(props) {
     setCenterPos({ x: centerX, y: centerY });
   }, [window.innerHeight, window.innerWidth]);
 
+  useEffect(() => {
+    if (isTablet) {
+      const handleResize = () => {
+        const currentPixelRatio = window.devicePixelRatio;
+        if (currentPixelRatio !== prevPixelRatio.current) {
+          setScrollPosElem([]);
+          for (let i = 0; i < listNavigation[lang].length; i++) {
+            let y = document.getElementById(`Section${i}`).offsetTop;
+            setScrollPosElem((prev) => [...prev, y]);
+          }
+          prevPixelRatio.current = currentPixelRatio;
+        }
+      };
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+        setScrollPosElem([]);
+        for (let i = 0; i < listNavigation[lang].length; i++) {
+          let y = document.getElementById(`Section${i}`).offsetTop;
+          setScrollPosElem((prev) => [...prev, y]);
+        }
+      };
+    }
+  }, [window.innerHeight, window.innerWidth]);
+
   return (
     <div
       onWheel={scrollAvailable && isDesktop ? handleScrollSection : null}
@@ -247,6 +297,7 @@ export default function MainPresentation(props) {
         scrollavailable={scrollAvailable}
         updateref={handleScrollSection}
         myref={myRef}
+        elempos={scrollPosElem}
       />
 
       <div
@@ -261,23 +312,32 @@ export default function MainPresentation(props) {
         style={toStyleSchoolBigBox}
         className={styles.schoolBigBox}
       >
-        <div className={styles.titlesBox}>
-          <h2
-            style={toStyleTitles}
-            id={listNavigation.entrySchool[lang]}
+        <animated.div
+          style={toStyleTitles}
+          className={styles.titlesBox}
+          id="title1"
+        >
+          <RadialTextGradient
+            shape={"circle"}
+            position={"center"}
+            colors={["#8b45e0", "#2b81ff"]}
+            animate={true}
+            animateDirection={"diagonal"}
+            animateDuration={6}
             className={styles.titles}
+            id={listNavigation.entrySchool[lang]}
           >
             {listNavigation.entrySchool[lang]}
-          </h2>
-        </div>
+          </RadialTextGradient>
+        </animated.div>
         <div style={toStyleSchoolSmallBox} className={styles.schoolSmallBox}>
           <div style={toStyleDivSchool} className={styles.schoolPack2}>
-            <PresentationSchool name="jbnu" lang={lang} />
-            <PresentationSchool name="jbnuExchange" lang={lang} />
+            <PresentationSchool name="jbnu" lang={lang} myref={myRef} />
+            <PresentationSchool name="jbnuExchange" lang={lang} myref={myRef} />
           </div>
           <div style={toStyleDivSchool} className={styles.schoolPack2}>
-            <PresentationSchool name="utbm" lang={lang} />
-            <PresentationSchool name="lyon" lang={lang} />
+            <PresentationSchool name="utbm" lang={lang} myref={myRef} />
+            <PresentationSchool name="lyon" lang={lang} myref={myRef} />
           </div>
         </div>
       </div>
@@ -286,17 +346,44 @@ export default function MainPresentation(props) {
         style={toStyleWorklBigBox}
         className={styles.workBigBox}
       >
-        <h2
+        <animated.div
           style={toStyleTitles}
-          id={listNavigation.entryWork[lang]}
-          className={styles.titles}
+          className={styles.titlesBox}
+          id="title2"
         >
-          {listNavigation.entryWork[lang]}
-        </h2>
+          <RadialTextGradient
+            shape={"circle"}
+            position={"center"}
+            colors={["#8b45e0", "#2b81ff"]}
+            animate={true}
+            animateDirection={"diagonal"}
+            animateDuration={6}
+            className={styles.titles}
+            id={listNavigation.entrySchool[lang]}
+          >
+            {listNavigation.entryWork[lang]}
+          </RadialTextGradient>
+        </animated.div>
+
         <div style={toStyleWorkSmallBox} className={styles.workSmallBox}>
-          <PresentationWork name="edf" lang={lang} />
-          <PresentationWork name="enedis" lang={lang} />
-          <PresentationWork name="suez" lang={lang} />
+          <PresentationWork
+            name="edf"
+            lang={lang}
+            myref={myRef}
+            direction="down"
+          />
+          <PresentationWork
+            name="enedis"
+            lang={lang}
+            myref={myRef}
+            direction="up"
+          />
+          <PresentationWork
+            name="suez"
+            lang={lang}
+            myref={myRef}
+            direction="down"
+          />
         </div>
       </div>
       <div
@@ -304,13 +391,25 @@ export default function MainPresentation(props) {
         style={toStyleProjectBigBox}
         className={styles.projectBigBox}
       >
-        <h2
+        <div
           style={toStyleProjectTitle}
-          id={listNavigation.entryProject[lang]}
-          className={styles.titles}
+          className={styles.titlesBox}
+          id="title3"
         >
-          {listNavigation.entryProject[lang]}
-        </h2>
+          <RadialTextGradient
+            shape={"circle"}
+            position={"center"}
+            colors={["#8b45e0", "#2b81ff"]}
+            animate={true}
+            animateDirection={"diagonal"}
+            animateDuration={6}
+            className={styles.titles}
+            id={listNavigation.entryProject[lang]}
+          >
+            {listNavigation.entryProject[lang]}
+          </RadialTextGradient>
+        </div>
+
         <PresentationProject
           name="proj1"
           lang={lang}

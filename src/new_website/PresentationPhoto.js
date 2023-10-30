@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext, useRef } from "react";
 import styles from "./styles_css/content1.module.css";
 import { listNavigation, presentation, footerInfo } from "./data";
-import { useSpring, useTransition, animated } from "react-spring";
+import { useTransition, animated } from "react-spring";
 import { QueryContext } from "./GlobalBody";
 import { RadialTextGradient } from "react-text-gradients-and-animations";
 
@@ -62,13 +62,6 @@ export default function PresentationPhoto(props) {
   const handleOnME = (e) => {
     e.target.style.cursor = isDesktop ? "pointer" : "";
   };
-
-  const bgStyle = useSpring({
-    loop: { reverse: true },
-    from: { background: "red" },
-    to: { background: "blue" },
-    config: { duration: 1000 },
-  });
 
   const transitions = useTransition(presentation[lang].src[currentMe], {
     from: { opacity: 0, transform: "scale(1.7)" },
@@ -139,6 +132,7 @@ export default function PresentationPhoto(props) {
   const toStyleContactSpan = {
     flex: isTablet ? "none" : "",
     fontSize: isTablet ? "1rem" : isPhone ? "1rem" : "",
+    fontWeight: isPhone ? "500" : "",
     padding: isPhone ? "10px 10px" : "",
   };
 
@@ -155,9 +149,9 @@ export default function PresentationPhoto(props) {
     height: isTablet
       ? document.body.clientWidth / 1.85
       : isPhone && !isSmallPhone
-      ? "45%"
+      ? "65%"
       : isPhone && isSmallPhone
-      ? `${document.body.clientWidth / 11}%`
+      ? "50%"
       : "",
     maxHeight: isTablet ? "85%" : "",
     alignSelf: isDesktop ? "flex-end" : isPhone ? "" : "flex-start",

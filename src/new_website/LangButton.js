@@ -7,7 +7,7 @@ import { QueryContext } from "./GlobalBody";
 export const LangButton = (props) => {
   const { isDarkTheme, onToggleTheme } = useTheme();
 
-  const { isPhone, isTablet, lang } = useContext(QueryContext);
+  const { isPhone, isTablet, isDesktop, lang } = useContext(QueryContext);
 
   const handleMouseEnter = (e) => {
     e.preventDefault();
@@ -32,6 +32,13 @@ export const LangButton = (props) => {
     }
   };
 
+  const bgStyle = useSpring({
+    loop: { reverse: true },
+    from: { background: "red" },
+    to: { background: "blue" },
+    config: { duration: 1000 },
+  });
+
   const testSpring = useSpring({
     backgroundColor: isDarkTheme ? "#d4e6ed" : "#282828",
     width: isDarkTheme ? "0%" : "100%",
@@ -50,9 +57,13 @@ export const LangButton = (props) => {
       : "",
   };
 
+  const toStyleThemeBox = {
+    margin: isPhone ? "0 10px" : "",
+  };
+
   return (
     <div style={toStyleBandeau} className={styles.bandeau}>
-      <div className={styles.themeButton}>
+      <div style={toStyleThemeBox} className={styles.themeButton}>
         <animated.div
           style={{
             color: testSpring.color,
@@ -61,8 +72,8 @@ export const LangButton = (props) => {
             alignItems: "center",
           }}
           key="themeSwitch"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onMouseEnter={isDesktop ? handleMouseEnter : null}
+          onMouseLeave={isDesktop ? handleMouseLeave : null}
           onClick={onToggleTheme}
           className={styles.bTheme}
         >
@@ -72,8 +83,8 @@ export const LangButton = (props) => {
       <div className={styles.bLangBox}>
         <button
           className={lang === "fr" ? styles.bLangActive : styles.bLang}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onMouseEnter={isDesktop ? handleMouseEnter : null}
+          onMouseLeave={isDesktop ? handleMouseLeave : null}
           name="fr"
           onClick={props.getChange}
         >
@@ -81,8 +92,8 @@ export const LangButton = (props) => {
         </button>
         <button
           className={lang === "en" ? styles.bLangActive : styles.bLang}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onMouseEnter={isDesktop ? handleMouseEnter : null}
+          onMouseLeave={isDesktop ? handleMouseLeave : null}
           name="en"
           onClick={props.getChange}
         >
@@ -90,8 +101,8 @@ export const LangButton = (props) => {
         </button>
         <button
           className={lang === "kr" ? styles.bLangActive : styles.bLang}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onMouseEnter={isDesktop ? handleMouseEnter : null}
+          onMouseLeave={isDesktop ? handleMouseLeave : null}
           name="kr"
           onClick={props.getChange}
         >
