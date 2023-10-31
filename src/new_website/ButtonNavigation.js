@@ -41,11 +41,6 @@ export const ButtonNavigation = (props) => {
     setScrollPosition(position);
   };
 
-  //const elemTest = document.getElementById("test");
-  //let calctest = Math.abs(
-  //  elemTest.scrollHeight - elemTest.clientHeight - elemTest.scrollTop
-  //);
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
@@ -56,13 +51,13 @@ export const ButtonNavigation = (props) => {
 
   useEffect(() => {
     if (isTablet) {
-      if (scrollPosition < elempos[1]) {
+      if (scrollPosition < elempos[1] - 25) {
         myref.current = 0;
-      } else if (scrollPosition < elempos[2]) {
+      } else if (scrollPosition < elempos[2] - 25) {
         myref.current = 1;
-      } else if (scrollPosition < elempos[3]) {
+      } else if (scrollPosition < elempos[3] - 25) {
         myref.current = 2;
-      } else if (scrollPosition > elempos[3]) {
+      } else if (scrollPosition > elempos[3] - 25) {
         myref.current = 3;
       }
     }

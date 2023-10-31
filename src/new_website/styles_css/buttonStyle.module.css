@@ -26,7 +26,7 @@
   margin: 10px 0;
   text-indent: -3000px;
   transition: all 400ms ease-out;
-  background-color: #bb86fc;
+  background-color: var(--navigator-background-actif);
   text-decoration: none;
   border-radius: 15px;
 }
@@ -60,7 +60,7 @@
   margin-left: 2vw;
   white-space: nowrap;
   font-size: clamp(0.8rem, 1.5vw, 1rem);
-  color: var(--title-color);
+  color: var(--navigator-background-actif);
   background: var(--lang-background-color);
   filter: opacity(90%);
   border-color: transparent;
@@ -75,7 +75,7 @@
   margin-left: 2vw;
   white-space: nowrap;
   font-size: clamp(0.8rem, 1.5vw, 1rem);
-  color: #56296e;
+  color: var(--navigator-background-actif);
   filter: brightness(1.2);
   border-radius: 15px;
   border-color: transparent;

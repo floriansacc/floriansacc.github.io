@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext, useRef } from "react";
 import styles from "./styles_css/content1.module.css";
 import { listNavigation, presentation, footerInfo } from "./data";
-import { useTransition, animated } from "react-spring";
+import { useSpring, useTransition, animated } from "react-spring";
 import { QueryContext } from "./GlobalBody";
 import { RadialTextGradient } from "react-text-gradients-and-animations";
 
@@ -13,6 +13,27 @@ export default function PresentationPhoto(props) {
     document.body.clientWidth,
     document.body.clientHeight,
   ]);
+  const { myref } = props;
+
+  const springName = useSpring({
+    left: myref.current === 0 ? "0" : "-1000px",
+    delay: 800,
+    config: { duration: 1400, easing: (x) => 1 - Math.pow(1 - x, 4) },
+  });
+
+  const springDescription = useSpring({
+    left: myref.current === 0 ? "0" : "-300px",
+    opacity: myref.current === 0 ? "1" : "0",
+    delay: 950,
+    config: { duration: 1400, easing: (x) => 1 - Math.pow(1 - x, 4) },
+  });
+
+  const springContactBox = useSpring({
+    left: myref.current === 0 ? "0" : "-300px",
+    opacity: myref.current === 0 ? "1" : "0",
+    delay: 1100,
+    config: { duration: 1400, easing: (x) => 1 - Math.pow(1 - x, 4) },
+  });
 
   const handleBullet = (e) => {
     setCurrentMe(e.target.innerHTML);
@@ -65,7 +86,7 @@ export default function PresentationPhoto(props) {
 
   const transitions = useTransition(presentation[lang].src[currentMe], {
     from: { opacity: 0, transform: "scale(1.7)" },
-    enter: { opacity: 0.1, transform: "scale(1.5)" },
+    enter: { opacity: 1, transform: "scale(1.5)" },
     leave: { opacity: 0, transform: "scale(1.4)" },
   });
 
@@ -91,6 +112,8 @@ export default function PresentationPhoto(props) {
   };
 
   const toStyleName = {
+    left: isDesktop ? springName.left : "unset",
+    position: "relative",
     fontSize:
       isPhone && !isSmallPhone
         ? "3rem"
@@ -105,14 +128,20 @@ export default function PresentationPhoto(props) {
       : "0.5rem 1rem 0 1rem",
   };
 
+  const toStyleContent1DescriptionBox = {
+    opacity: isDesktop ? springDescription.opacity : "unset",
+    left: isDesktop ? springDescription.left : "unset",
+  };
+
   const toStyleContentDescription = {
-    margin: isPhone ? "1rem 0" : "",
+    margin: isTablet ? "1rem 0" : isPhone ? "1rem 0" : "",
     padding: isPhone ? "0" : "",
     width: isPhone ? "95%" : "",
+    height: isTablet || isPhone ? "fit-content" : "",
   };
 
   const toStyleContactBox = {
-    position: isTablet ? "relative" : "relative",
+    ...springContactBox,
     width: isTablet ? "100%" : isPhone ? "95%" : "",
     minWidth: isTablet ? "50px" : isPhone ? "unset" : "",
     margin: isTablet ? "0" : isPhone ? "0" : "",
@@ -181,11 +210,11 @@ export default function PresentationPhoto(props) {
 
   return (
     <div style={toStyleContent1} className={styles.content1}>
-      <div style={toStyleName}>
+      <animated.div style={toStyleName}>
         <RadialTextGradient
           shape={"circle"}
           position={"center"}
-          colors={["#8b45e0", "#2b81ff"]}
+          colors={["#8fc7ff", "#994af1"]}
           animate={true}
           animateDirection={"diagonal"}
           animateDuration={6}
@@ -193,10 +222,13 @@ export default function PresentationPhoto(props) {
         >
           {presentation[lang].name}
         </RadialTextGradient>
-      </div>
+      </animated.div>
       <div style={toStyleContent1SmallBox} className={styles.content1SmallBox}>
         <div style={toStyleContent1Left} className={styles.content1Left}>
-          <div className={styles.content1DescriptionBox}>
+          <animated.div
+            style={toStyleContent1DescriptionBox}
+            className={styles.content1DescriptionBox}
+          >
             <h2
               style={toStyleContentDescription}
               className={styles.content1Description}
@@ -209,9 +241,12 @@ export default function PresentationPhoto(props) {
             >
               {presentation[lang].intro2}
             </h2>
-          </div>
+          </animated.div>
 
-          <div style={toStyleContactBox} className={styles.footerGauche}>
+          <animated.div
+            style={toStyleContactBox}
+            className={styles.footerGauche}
+          >
             <h2 style={toStyleContactP} className={styles.footerPLeft}>
               {footerInfo[`${lang}footer`][0]}
             </h2>
@@ -283,7 +318,7 @@ export default function PresentationPhoto(props) {
                 </a>
               </div>
             </div>
-          </div>
+          </animated.div>
         </div>
 
         <div style={toStyleContent1Right} className={styles.content1Right}>

@@ -9,7 +9,7 @@
   );
   --background-color-project: #fff;
   --title-border-color: #d9d9d9;
-  --info-border-color: #282828;
+  --info-border-color: #555555;
   --bandeau-color: whitesmoke;
   --content1-background: linear-gradient(
     rgba(14, 164, 209, 0.7),
@@ -18,8 +18,8 @@
   --logo-background: transparent;
   --project-background-color: #fafafa;
   --footer-background-color: #434343;
-  --navigator-background: #2b81ff;
-  --lang-color: rgb(78, 78, 78);
+  --navigator-background: #218fff;
+  --navigator-background-actif: #974ee7;
   --lang-background-color: linear-gradient(45deg, #d8d2cf, #d4e6ed);
 }
 
@@ -44,8 +44,8 @@
   --logo-background: #ebebeb;
   --project-background-color: transparent;
   --footer-background-color: #343539;
-  --navigator-background: #fafafa;
-  --lang-color: #fff;
+  --navigator-background: #8fc7ff;
+  --navigator-background-actif: #cfabfd;
   --lang-background-color: linear-gradient(45deg, #4c4947, #1a3742);
 }
 
@@ -60,6 +60,7 @@
 }
 
 .titlesBox {
+  position: relative;
   max-width: 180px;
   margin-top: 3rem;
   padding: 0 5px;
@@ -68,7 +69,7 @@
 
 .titles {
   font-size: 1.5rem;
-
+  font-weight: 600;
   color: var(--font-color);
   opacity: var(--contrast-color);
   border-color: var(--title-border-color);
@@ -129,6 +130,7 @@
   max-width: 100%;
   padding-right: 3rem;
   height: 90%;
+  flex: 1;
 }
 
 .projectBigBox {
@@ -138,6 +140,7 @@
   width: 100%;
   height: 99vh;
   margin: 5rem 0;
+  border: 1px solid blue;
 }
 
 .content2,

@@ -3,11 +3,36 @@ import "./styles_css/fontStyle.css";
 import { schoolDetails } from "./data";
 import { useContext } from "react";
 import { QueryContext } from "./GlobalBody";
+import { useSpring, animated } from "react-spring";
 
 export default function PresentationSchool(props) {
-  const { isPhone, isTablet, lang } = useContext(QueryContext);
+  const { isPhone, isTablet, isDesktop, lang } = useContext(QueryContext);
+  const { myref, direction } = props;
+
+  const springUp = useSpring({
+    top: myref.current === 1 ? "0" : "1000px",
+    delay: 800,
+    config: { duration: 800, easing: (x) => 1 - Math.pow(1 - x, 4) },
+  });
+
+  const springDown = useSpring({
+    bottom: myref.current === 1 ? "0" : "1000px",
+    delay: 800,
+    config: { duration: 800, easing: (x) => 1 - Math.pow(1 - x, 4) },
+  });
+
+  const springLeft = useSpring({
+    left: myref.current === 1 ? "0" : "1000px",
+    display: myref.current === 1 ? "" : "none",
+    delay: 800,
+    config: { duration: 800, easing: (x) => 1 - Math.pow(1 - x, 4) },
+  });
 
   const toStyleContent2 = {
+    display: isDesktop ? springLeft.display : "",
+    bottom: direction === "down" && isDesktop ? springDown.bottom : "unset",
+    top: direction === "up" && isDesktop ? springUp.top : "unset",
+    left: direction === "left" && isDesktop ? springLeft.left : "unset",
     margin: isTablet ? "0.2rem" : isPhone ? "0.5rem 0" : "",
     padding: isTablet || isPhone ? "0.2rem 0.5rem" : "",
     height: isTablet ? "95%" : "",
@@ -50,7 +75,7 @@ export default function PresentationSchool(props) {
   };
 
   return (
-    <div style={toStyleContent2} className={styles.content2}>
+    <animated.div style={toStyleContent2} className={styles.content2}>
       <div style={toStyleImgContainer} className={styles.imgContainer}>
         <img
           style={toStyleImg}
@@ -92,6 +117,6 @@ export default function PresentationSchool(props) {
             </li>
           ))}
       </ul>
-    </div>
+    </animated.div>
   );
 }

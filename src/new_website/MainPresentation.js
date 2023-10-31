@@ -9,12 +9,15 @@ import { useEffect, useContext, useRef, useState } from "react";
 import { RadialTextGradient } from "react-text-gradients-and-animations";
 import { QueryContext } from "./GlobalBody";
 import { ButtonNavigation } from "./ButtonNavigation";
-import { useSpring, animated, easings } from "react-spring";
+import { useSpring, useSpringRef, animated, easings } from "react-spring";
 
 export default function MainPresentation(props) {
   const { isSmallPhone, isPhone, isTablet, isDesktop, lang } =
     useContext(QueryContext);
+  const { darktheme } = props;
   const myRef = useRef(0);
+  const [counter, setCounter] = useState(0);
+  const api = useSpringRef();
   const [scrollPosElem, setScrollPosElem] = useState([]);
   const prevPixelRatio = useRef(null);
   const [lastState, SetLastState] = useState(
@@ -30,11 +33,8 @@ export default function MainPresentation(props) {
     document.body.style.overflowY = "";
   }
 
-  const leftSpring = useSpring({
-    position: myRef.current === 2 ? "relative" : "relative",
-    left: myRef.current === 2 ? "0" : "-200px",
-    delay: 800,
-    config: { duration: 800, easing: (x) => 1 - Math.pow(1 - x, 4) },
+  const leftSpringTitles = useSpring({
+    ref: api,
   });
 
   const toStyleMain = {
@@ -51,12 +51,13 @@ export default function MainPresentation(props) {
       myRef.current === 0
         ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
         : "all 0.5s, left 0.5s",
-    height:
-      isPhone && !isSmallPhone
-        ? "1100px"
-        : isPhone && isSmallPhone
-        ? "1200px"
-        : "",
+    height: isTablet
+      ? "800px"
+      : isPhone && !isSmallPhone
+      ? "1100px"
+      : isPhone && isSmallPhone
+      ? "1200px"
+      : "",
   };
 
   const toStyleSchoolBigBox = {
@@ -70,7 +71,7 @@ export default function MainPresentation(props) {
       myRef.current === 1
         ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
         : "all 0.5s, left 0.5s",
-    height: isPhone ? "fit-content" : "",
+    height: isTablet ? "800px" : isPhone ? "fit-content" : "",
     alignItems: isPhone ? "center" : "",
   };
 
@@ -85,7 +86,7 @@ export default function MainPresentation(props) {
       myRef.current === 2
         ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
         : "all 0.5s, left 0.5s",
-    height: isPhone ? "fit-content" : "",
+    height: isTablet ? "800px" : isPhone ? "fit-content" : "",
     alignItems: isPhone ? "center" : "",
   };
 
@@ -100,7 +101,7 @@ export default function MainPresentation(props) {
       myRef.current === 3
         ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
         : "all 0.5s",
-    height: isPhone ? "fit-content" : "",
+    height: isPhone || isTablet ? "fit-content" : "",
     alignItems: isPhone ? "center" : "",
   };
 
@@ -129,19 +130,25 @@ export default function MainPresentation(props) {
   };
 
   const toStyleTitles = {
-    ...leftSpring,
+    ...leftSpringTitles,
     whiteSpace: isTablet || isPhone ? "nowrap" : "",
     marginTop: isTablet || isPhone ? "0rem" : "",
     width: isPhone ? "fit-content" : "",
-    margin: isPhone ? "5px 0" : "",
+    margin: isPhone || isTablet ? "5px 0" : "",
     alignSelf: isTablet || isPhone ? "center" : "",
     flex: isTablet || isPhone ? "unset" : "",
     maxWidth: isTablet || isPhone ? "unset" : "",
   };
 
   const toStyleProjectTitle = {
-    width: isTablet ? "120px" : "120px",
-    marginTop: isTablet ? "0rem" : "",
+    //left: isDesktop ? leftSpringTitles.left : "unset",
+    whiteSpace: isTablet || isPhone ? "nowrap" : "",
+    marginTop: isTablet || isPhone ? "0rem" : "",
+    width: isPhone ? "fit-content" : "",
+    margin: isPhone || isTablet ? "5px 0" : "",
+    alignSelf: isTablet || isPhone ? "center" : "",
+    flex: isTablet || isPhone ? "unset" : "",
+    maxWidth: isTablet || isPhone ? "unset" : "",
   };
 
   const toggleScrollAvailable = (x) => {
@@ -183,6 +190,7 @@ export default function MainPresentation(props) {
     }
     try {
       setScrollAvailable(true);
+      setCounter((prev) => prev + 1);
     } catch (error) {
       window.console.log(error);
     }
@@ -285,6 +293,17 @@ export default function MainPresentation(props) {
     }
   }, [window.innerHeight, window.innerWidth]);
 
+  useEffect(() => {
+    if (isDesktop && myRef.current !== 0) {
+      api.start({
+        from: { left: "-100px" },
+        to: { left: "0" },
+        delay: 500,
+        config: { duration: 1000, easing: (x) => 1 - Math.pow(1 - x, 4) },
+      });
+    }
+  }, [myRef.current]);
+
   return (
     <div
       onWheel={scrollAvailable && isDesktop ? handleScrollSection : null}
@@ -305,7 +324,7 @@ export default function MainPresentation(props) {
         style={toStylePresentationBigBox}
         className={styles.presentationBigBox}
       >
-        <PresentationPhoto lang={lang} />
+        <PresentationPhoto lang={lang} myref={myRef} />
       </div>
       <div
         id="Section1"
@@ -320,7 +339,7 @@ export default function MainPresentation(props) {
           <RadialTextGradient
             shape={"circle"}
             position={"center"}
-            colors={["#8b45e0", "#2b81ff"]}
+            colors={["#bb86fc", "#2b81ff"]}
             animate={true}
             animateDirection={"diagonal"}
             animateDuration={6}
@@ -332,12 +351,32 @@ export default function MainPresentation(props) {
         </animated.div>
         <div style={toStyleSchoolSmallBox} className={styles.schoolSmallBox}>
           <div style={toStyleDivSchool} className={styles.schoolPack2}>
-            <PresentationSchool name="jbnu" lang={lang} myref={myRef} />
-            <PresentationSchool name="jbnuExchange" lang={lang} myref={myRef} />
+            <PresentationSchool
+              name="jbnu"
+              lang={lang}
+              myref={myRef}
+              direction="up"
+            />
+            <PresentationSchool
+              name="jbnuExchange"
+              lang={lang}
+              myref={myRef}
+              direction="down"
+            />
           </div>
           <div style={toStyleDivSchool} className={styles.schoolPack2}>
-            <PresentationSchool name="utbm" lang={lang} myref={myRef} />
-            <PresentationSchool name="lyon" lang={lang} myref={myRef} />
+            <PresentationSchool
+              name="utbm"
+              lang={lang}
+              myref={myRef}
+              direction="up"
+            />
+            <PresentationSchool
+              name="lyon"
+              lang={lang}
+              myref={myRef}
+              direction="down"
+            />
           </div>
         </div>
       </div>
@@ -354,7 +393,7 @@ export default function MainPresentation(props) {
           <RadialTextGradient
             shape={"circle"}
             position={"center"}
-            colors={["#8b45e0", "#2b81ff"]}
+            colors={["#bb86fc", "#2b81ff"]}
             animate={true}
             animateDirection={"diagonal"}
             animateDuration={6}
@@ -399,7 +438,7 @@ export default function MainPresentation(props) {
           <RadialTextGradient
             shape={"circle"}
             position={"center"}
-            colors={["#8b45e0", "#2b81ff"]}
+            colors={["#bb86fc", "#2b81ff"]}
             animate={true}
             animateDirection={"diagonal"}
             animateDuration={6}

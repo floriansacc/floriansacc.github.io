@@ -3,11 +3,13 @@ import { LangButton } from "./LangButton";
 import styles from "./styles_css/containerStyle.module.css";
 import MainPresentation from "./MainPresentation";
 import MediaQuery, { useMediaQuery } from "react-responsive";
+import { useTheme } from "./useTheme";
 
 export const QueryContext = React.createContext();
 
 export default function GlobalBody() {
   const [lang, setLang] = useState("en");
+  const { isDarkTheme, onToggleTheme } = useTheme();
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [centerPos, setCenterPos] = useState({ x: 0, y: 0 });
 
@@ -67,14 +69,25 @@ export default function GlobalBody() {
 
   return (
     <QueryContext.Provider
-      value={{ isBigScreen, isDesktop, isTablet, isPhone, isSmallPhone, lang }}
+      value={{
+        isBigScreen,
+        isDesktop,
+        isTablet,
+        isPhone,
+        isSmallPhone,
+        lang,
+      }}
     >
-      <LangButton getChange={handleLangChange} />
+      <LangButton
+        getChange={handleLangChange}
+        isdarktheme={isDarkTheme}
+        ontoggletheme={onToggleTheme}
+      />
 
       <div onMouseMove={handleMousePos} className={styles.container}>
         <div style={toStyleBackground} className={styles.imgBack}></div>
 
-        <MainPresentation />
+        <MainPresentation darktheme={isDarkTheme} />
       </div>
     </QueryContext.Provider>
   );

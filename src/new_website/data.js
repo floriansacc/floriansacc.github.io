@@ -7,7 +7,7 @@ import suezlogo from "./styles_css/Logo_SUEZ_ENVIRONNEMENT2.png";
 import flophoto1 from "./styles_css/KakaoTalk_20230721_161254019.jpg";
 import flophoto2 from "./styles_css/KakaoTalk_20230906_154056285.jpg";
 import flophoto3 from "./styles_css/KakaoTalk_20230905_001233073.jpg";
-import flophoto4 from "./styles_css/KakaoTalk_20230905_001306860.jpg";
+import flophoto4 from "./styles_css/KakaoTalk_20231031_181135479.jpg";
 
 import projectPhoto1 from "./styles_css/project1photo1.png";
 import projectPhoto2 from "./styles_css/project1photo2.png";
@@ -60,7 +60,7 @@ export const test = [
 export const presentation = {
   en: {
     presTitle: "Presentation",
-    src: [flophoto1, flophoto2, flophoto3],
+    src: [flophoto4, flophoto1, flophoto3],
     name: "Florian Sacchetti",
     intro1:
       "My name is Florian SACCHETTI, I am a 26 years-old French people born in Lyon, France",

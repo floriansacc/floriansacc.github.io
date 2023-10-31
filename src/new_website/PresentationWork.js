@@ -17,13 +17,15 @@ export default function PresentationWork(props) {
 
   const springDown = useSpring({
     bottom: myref.current === 2 ? "0" : "1000px",
+    display: myref.current === 2 ? "" : "none",
     delay: 800,
     config: { duration: 800, easing: (x) => 1 - Math.pow(1 - x, 4) },
   });
 
   const toStyleContent3 = {
-    bottom: direction === "down" ? springDown.bottom : "unset",
-    top: direction === "up" ? springUp.top : "unset",
+    display: isDesktop ? springDown.display : "",
+    bottom: direction === "down" && isDesktop ? springDown.bottom : "unset",
+    top: direction === "up" && isDesktop ? springUp.top : "unset",
     margin: isTablet ? "0.2rem" : isPhone ? "0.5rem 0" : "",
     padding: isTablet || isPhone ? "0.2rem 0.5rem" : "",
     height: isTablet ? "50%" : "",

@@ -14,7 +14,6 @@ export default function PresentationProject(props) {
     let box = document.getElementById("descriptionBox");
     let button = document.getElementById("aDisButton");
     e.preventDefault();
-    e.target.style.color = "#cacaca";
     e.target.style.display = "none";
     for (
       let i = 2;
@@ -26,10 +25,10 @@ export default function PresentationProject(props) {
     document.getElementById("aDisButton").style.display = "block";
     if (!isPhone) {
       box.style.position = "fixed";
-      box.style.width = isTablet ? "75%" : "70%";
-      box.style.height = isTablet ? "70%" : "60%";
+      box.style.width = isTablet ? "75%" : "80%";
+      box.style.height = isTablet ? "75%" : "85%";
       box.style.top = "10%";
-      box.style.left = "10%";
+      box.style.left = "12%";
       box.style.boxShadow = "0px 0px 1px 100vw rgba(0,0,0,0.9)";
       box.style.background = "";
       box.style.overflowY = "scroll";
@@ -49,7 +48,6 @@ export default function PresentationProject(props) {
     let box = document.getElementById("descriptionBox");
     let button = document.getElementById("aDisButton");
     e.preventDefault();
-    e.target.style.color = "#cacaca";
     e.target.style.display = "none";
     for (
       let i = 1;
@@ -78,10 +76,6 @@ export default function PresentationProject(props) {
         document.getElementById(`summary${i}`).style.display = "";
       }
     }
-  };
-
-  const handleMouseUp = (e) => {
-    e.target.style.color = "";
   };
 
   const handleMouseEnter = (e) => {
@@ -125,7 +119,7 @@ export default function PresentationProject(props) {
     flexFlow: isPhone ? "column nowrap" : "",
   };
 
-  const toStyleDescriptionBox = {
+  const toStyleDesBox = {
     width: isPhone ? "100%" : "",
   };
 
@@ -245,16 +239,12 @@ export default function PresentationProject(props) {
           />
         </div>
         <div
-          style={toStyleDescriptionBox}
+          style={toStyleDesBox}
           className={styles.projectDescriptionBox}
           id="descriptionBox"
         >
           <li
             id="aDisButton"
-            style={{
-              backgroundColor: !isPhone ? "#fff" : "",
-              color: !isPhone ? "#282828" : "",
-            }}
             className={styles.projectAbstractDisButton}
             onMouseLeave={handleMouseLeave}
             onMouseEnter={handleMouseEnter}
