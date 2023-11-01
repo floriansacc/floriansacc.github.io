@@ -72,18 +72,15 @@ export default function GlobalBody() {
         isPhone,
         isSmallPhone,
         lang,
+        isDarkTheme,
       }}
     >
-      <LangButton
-        getChange={handleLangChange}
-        isdarktheme={isDarkTheme}
-        ontoggletheme={onToggleTheme}
-      />
+      <LangButton getChange={handleLangChange} ontoggletheme={onToggleTheme} />
 
       <div onMouseMove={handleMousePos} className={styles.container}>
         <div style={toStyleBackground} className={styles.imgBack}></div>
 
-        <MainPresentation darktheme={isDarkTheme} />
+        <MainPresentation />
       </div>
     </QueryContext.Provider>
   );

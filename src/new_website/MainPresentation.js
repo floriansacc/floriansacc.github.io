@@ -14,7 +14,6 @@ import { useSpring, useSpringRef, animated, easings } from "react-spring";
 export default function MainPresentation(props) {
   const { isSmallPhone, isPhone, isTablet, isDesktop, lang } =
     useContext(QueryContext);
-  const { darktheme } = props;
   const myRef = useRef(0);
   const [counter, setCounter] = useState(0);
   const api = useSpringRef();

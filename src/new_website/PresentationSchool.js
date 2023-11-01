@@ -6,7 +6,8 @@ import { QueryContext } from "./GlobalBody";
 import { useSpring, animated } from "react-spring";
 
 export default function PresentationSchool(props) {
-  const { isPhone, isTablet, isDesktop, lang } = useContext(QueryContext);
+  const { isPhone, isTablet, isDesktop, lang, isDarkTheme } =
+    useContext(QueryContext);
   const { myref, direction } = props;
 
   const springUp = useSpring({
@@ -47,6 +48,7 @@ export default function PresentationSchool(props) {
 
   const toStyleImg = {
     width: isTablet ? "auto" : "",
+    filter: isDarkTheme ? "brightness(1.5)" : "",
   };
 
   const toStylePLsy = {

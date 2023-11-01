@@ -5,9 +5,10 @@ import { useSpring, animated, easings } from "react-spring";
 import { QueryContext } from "./GlobalBody";
 
 export const LangButton = (props) => {
-  const { isdarktheme, ontoggletheme } = props;
+  const { ontoggletheme } = props;
 
-  const { isPhone, isTablet, isDesktop, lang } = useContext(QueryContext);
+  const { isPhone, isTablet, isDesktop, lang, isDarkTheme } =
+    useContext(QueryContext);
 
   const handleMouseEnter = (e) => {
     e.preventDefault();
@@ -40,10 +41,10 @@ export const LangButton = (props) => {
   });
 
   const testSpring = useSpring({
-    backgroundColor: isdarktheme ? "#d4e6ed" : "#282828",
-    width: isdarktheme ? "0%" : "100%",
-    left: isdarktheme ? "25%" : "0%",
-    color: isdarktheme ? "#282828" : "#2b81ff",
+    backgroundColor: isDarkTheme ? "#d4e6ed" : "#282828",
+    width: isDarkTheme ? "0%" : "100%",
+    left: isDarkTheme ? "25%" : "0%",
+    color: isDarkTheme ? "#282828" : "#2b81ff",
     config: {
       duration: 400,
       easing: easings.easeInCirc,
@@ -77,7 +78,7 @@ export const LangButton = (props) => {
           onClick={ontoggletheme}
           className={styles.bTheme}
         >
-          {isdarktheme ? "Light" : "Dark"}
+          {isDarkTheme ? "Light" : "Dark"}
         </animated.div>
       </div>
       <div className={styles.bLangBox}>
