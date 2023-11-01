@@ -1,21 +1,26 @@
 :root {
-  --font-color: #1e1e1e;
+  --font-color: #1d1b1e;
+  --font-color-reverse: #f1f1f1;
   --contrast-color: 1;
-  --title-color: rgb(78, 78, 78);
-  --font-color-reverse: #fff;
-  --background-container: linear-gradient(
-    rgba(255, 255, 255, 0.85),
-    rgba(255, 255, 255, 0.85)
+
+  --background-container: #fffbff;
+  --primary-color: #fff7ff;
+  --primary-color-presentation: radial-gradient(
+    circle at 110% -50px,
+    #fff,
+    #fff7ff 40%,
+    #f9ecff 65%,
+    #efdbff 75%,
+    #fff7ff 75%
   );
+  --primary-container-color: linear-gradient(240deg, #fff7ff 65%, #efdbff);
+  --primary-container-color-project: #f9ecff;
+  --primary-container-border-color: #9950e9;
+  --weather-button-color: #f9ecff;
+
   --background-color-project: #fff;
   --title-border-color: #d9d9d9;
   --info-border-color: #555555;
-  --bandeau-color: whitesmoke;
-  --content1-background: linear-gradient(
-    rgba(14, 164, 209, 0.7),
-    rgba(6, 189, 36, 0.7)
-  );
-  --logo-background: transparent;
   --project-background-color: #fafafa;
   --footer-background-color: #434343;
   --navigator-background: #218fff;
@@ -24,24 +29,28 @@
 }
 
 [data-theme="dark"] {
-  --font-color: #f1f1f1;
-  --contrast-color: 0.87;
-  --title-color: #bb86fc;
+  --font-color: #fff7ff;
   --font-color-reverse: #1e1e1e;
-  --background-container: linear-gradient(
-      rgba(19, 19, 19, 0.95),
-      rgba(41, 41, 41, 0.95)
-    ),
-    url("./CBNUphoto_3936x2624_20230712164125.jpg");
+  --contrast-color: 0.95;
+
+  --background-container: #1d1b1e;
+  --primary-color-presentation: radial-gradient(
+    circle at 110% -50px,
+    #0e001b,
+    #0e001b 55%,
+    #2b0052 70%,
+    #dbb8ff 75%,
+    #0e001b 75%
+  );
+  --primary-color: linear-gradient(#0e001b, #0e001b);
+  --primary-container-color: linear-gradient(60deg, #1a0033 80%, #6506b0);
+  --primary-container-color-project: #1a0033;
+  --primary-container-border-color: #c795ff;
+  --weather-button-color: #6506b0;
+
   --background-color-project: #383838;
   --title-border-color: #fff;
   --info-border-color: #fff;
-  --bandeau-color: whitesmoke;
-  --content1-background: linear-gradient(
-    rgba(14, 164, 209, 0.572),
-    rgba(6, 189, 36, 0.459)
-  );
-  --logo-background: #ebebeb;
   --project-background-color: transparent;
   --footer-background-color: #343539;
   --navigator-background: #8fc7ff;
@@ -82,7 +91,9 @@
   width: 100%;
   height: 99vh;
   margin-bottom: 5rem;
-  border: 1px solid blue;
+  border: 1px solid var(--primary-container-border-color);
+  border-radius: 30px;
+  background: var(--primary-color-presentation);
 }
 
 .schoolBigBox {
@@ -92,7 +103,9 @@
   width: 100%;
   height: 99vh;
   margin: 5rem 0;
-  border: 1px solid blue;
+  border: 1px solid var(--primary-container-border-color);
+  border-radius: 30px;
+  background: var(--primary-color);
 }
 
 .schoolSmallBox {
@@ -120,7 +133,9 @@
   width: 100%;
   height: 99vh;
   margin: 5rem 0;
-  border: 1px solid blue;
+  border: 1px solid var(--primary-container-border-color);
+  border-radius: 30px;
+  background: var(--primary-color);
 }
 
 .workSmallBox {
@@ -140,7 +155,9 @@
   width: 100%;
   height: 99vh;
   margin: 5rem 0;
-  border: 1px solid blue;
+  border: 1px solid var(--primary-container-border-color);
+  border-radius: 30px;
+  background: var(--primary-color);
 }
 
 .content2,
@@ -154,8 +171,13 @@
   margin: 1rem 0.5rem;
   padding: 0.5rem;
   height: 95%;
-  border: 1px solid rgb(170, 149, 149);
+  border: 2px solid var(--primary-container-border-color);
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
   overflow: hidden;
+  background: var(--primary-container-color);
 }
 
 .ulSchoolWork {

@@ -26,12 +26,13 @@ export default function PresentationWork(props) {
     display: isDesktop ? springDown.display : "",
     bottom: direction === "down" && isDesktop ? springDown.bottom : "unset",
     top: direction === "up" && isDesktop ? springUp.top : "unset",
-    margin: isTablet ? "0.2rem" : isPhone ? "0.5rem 0" : "",
+    margin: isTablet ? "0.5rem" : isPhone ? "1rem 0" : "",
     padding: isTablet || isPhone ? "0.2rem 0.5rem" : "",
     height: isTablet ? "50%" : "",
     maxWidth: isTablet ? "90%" : isPhone ? "unset" : "",
     minWidth: isTablet ? "40%" : "",
     width: isPhone ? "100%" : "",
+    borderRadius: isPhone ? "25px" : "",
   };
 
   const toStyleImgContainer = {

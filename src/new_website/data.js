@@ -63,26 +63,24 @@ export const presentation = {
     src: [flophoto4, flophoto1, flophoto3],
     name: "Florian Sacchetti",
     intro1:
-      "My name is Florian SACCHETTI, I am a 26 years-old French people born in Lyon, France",
-    intro2:
-      "Currently living in Korea, I am looking for a job in the Energy and Environment field",
+      "My name is Florian SACCHETTI, I am a 26 years-old French people born in Lyon, France.",
+    intro2: "Currently working in Korea in the climate and environment field.",
   },
   fr: {
     presTitle: "Présentation",
     src: [flophoto1, flophoto2, flophoto3],
     name: "Florian Sacchetti",
     intro1:
-      "Je m'appelle Florian SACCHETTI, j'ai 26 ans et je suis né à Lyon en France",
+      "Je m'appelle Florian SACCHETTI, j'ai 26 ans et je suis né à Lyon en France.",
     intro2:
-      "Je vis actuellement en Corée du Sud et je recherche un emploi dans le secteur de l'énergie et/ou l'environement",
+      "Je travaille actuellement en Corée du Sud dans le secteur du climat et de l'environement.",
   },
   kr: {
     presTitle: "자기 소개",
     src: [flophoto1, flophoto2, flophoto3],
     name: "사체티 플로리안",
-    intro1: "저는 리옹, 프랑스에서 태어난 26살 사체티 플로리안입니다",
-    intro2:
-      "현재 한국에서 살고 있으며 환경/에너지 분야에서 취직을 하고자 합니다",
+    intro1: "저는 리옹, 프랑스에서 태어난 26살 사체티 플로리안입니다.",
+    intro2: "현재 한국에서 살고 있으며 기후/환경 분야에 일을 하고 있습니다.",
   },
 };
 
@@ -373,4 +371,7 @@ export const footerInfo = {
   frsignature: [`Cette page a été codé exclusement et intégralement par moi`],
   ensignature: [`This page has been coded exclusively and fully by me`],
   krsignature: [`이 웹사이트 전체로 본인의 작업으로 설계한 것이다.`],
+  frotherproject: ["Mes autres applications"],
+  enotherproject: ["My other apps"],
+  krotherproject: ["제가 만든 다른 앱"],
 };

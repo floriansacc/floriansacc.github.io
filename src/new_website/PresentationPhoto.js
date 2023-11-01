@@ -122,9 +122,9 @@ export default function PresentationPhoto(props) {
         : "4.5rem",
     padding: "0.2rem",
     margin: isTablet
-      ? "0.5rem 0 0 2rem"
+      ? "1rem 0 0 2rem"
       : isPhone
-      ? "1rem 0"
+      ? "1rem 0 0 0"
       : "0.5rem 1rem 0 1rem",
   };
 
@@ -141,7 +141,8 @@ export default function PresentationPhoto(props) {
   };
 
   const toStyleContactBox = {
-    ...springContactBox,
+    left: isDesktop ? springContactBox.left : "unset",
+    opacity: isDesktop ? springContactBox.opacity : "unset",
     width: isTablet ? "100%" : isPhone ? "95%" : "",
     minWidth: isTablet ? "50px" : isPhone ? "unset" : "",
     margin: isTablet ? "0" : isPhone ? "0" : "",
@@ -318,6 +319,37 @@ export default function PresentationPhoto(props) {
                 </a>
               </div>
             </div>
+            <p
+              style={{
+                ...toStyleContactP,
+                transition: "all 0.2s ease-out",
+              }}
+              className={styles.aOtherProject}
+              onMouseEnter={
+                isDesktop
+                  ? (e) => {
+                      e.target.style.filter = "brightness(1.2)";
+                      e.target.style.transform = "scale(1.1)";
+                    }
+                  : null
+              }
+              onMouseLeave={
+                isDesktop
+                  ? (e) => {
+                      e.target.style.filter = "";
+                      e.target.style.transform = "";
+                    }
+                  : null
+              }
+            >
+              <a
+                href="https://floriansacc.github.io/News-weather/"
+                target="_blank"
+                className={styles.aOtherProjectText}
+              >
+                {footerInfo[`${lang}otherproject`]}
+              </a>
+            </p>{" "}
           </animated.div>
         </div>
 

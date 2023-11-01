@@ -37,6 +37,19 @@ export default function MainPresentation(props) {
     ref: api,
   });
 
+  const checkKey = (e) => {
+    if (isDesktop) {
+      window.console.log(e.keyCode);
+      if (e.keyCode == "36") {
+        handleScrollSection(e);
+      } else if (e.keyCode === "35") {
+        handleScrollSection(e);
+      }
+    }
+  };
+
+  document.onkeydown = checkKey;
+
   const toStyleMain = {
     padding: isPhone ? "0.2rem" : "",
   };
@@ -49,8 +62,8 @@ export default function MainPresentation(props) {
     //top: myRef.current === 1 ? mousePos.y + "px" : "",
     transition:
       myRef.current === 0
-        ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
-        : "all 0.5s, left 0.5s",
+        ? "opacity 0.4s ease-out 0.7s, left 0ms, top 0ms, color 0.2s ease-out, background 0.2s ease-out"
+        : "opacity 0.5s",
     height: isTablet
       ? "800px"
       : isPhone && !isSmallPhone
@@ -69,9 +82,9 @@ export default function MainPresentation(props) {
     //top: myRef.current === 1 ? mousePos.y + "px" : "",
     transition:
       myRef.current === 1
-        ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
-        : "all 0.5s, left 0.5s",
-    height: isTablet ? "800px" : isPhone ? "fit-content" : "",
+        ? "opacity 0.4s ease-out 0.7s, left 0ms, top 0ms, color 0.2s ease-out, background 0.2s ease-out"
+        : "opacity 0.5s, color 0.2s ease-out, background 0.2s ease-out",
+    height: isTablet ? "1000px" : isPhone ? "fit-content" : "",
     alignItems: isPhone ? "center" : "",
   };
 
@@ -84,9 +97,9 @@ export default function MainPresentation(props) {
     //top: myRef.current === 2 ? mousePos.y + "px" : "",
     transition:
       myRef.current === 2
-        ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
-        : "all 0.5s, left 0.5s",
-    height: isTablet ? "800px" : isPhone ? "fit-content" : "",
+        ? "opacity 0.4s ease-out 0.7s, left 0ms, top 0ms, color 0.2s ease-out, background 0.2s ease-out"
+        : "opacity 0.5s, color 0.2s ease-out, background 0.2s ease-out",
+    height: isTablet ? "1000px" : isPhone ? "fit-content" : "",
     alignItems: isPhone ? "center" : "",
   };
 
@@ -99,8 +112,8 @@ export default function MainPresentation(props) {
     //top: myRef.current === 3 ? mousePos.y + "px" : "",
     transition:
       myRef.current === 3
-        ? "all 0.4s ease-out 0.7s, left 0ms, top 0ms"
-        : "all 0.5s",
+        ? "opacity 0.4s ease-out 0.7s, left 0ms, top 0ms, color 0.2s ease-out, background 0.2s ease-out"
+        : "opacity 0.5s, color 0.2s ease-out, background 0.2s ease-out",
     height: isPhone || isTablet ? "fit-content" : "",
     alignItems: isPhone ? "center" : "",
   };
@@ -165,6 +178,11 @@ export default function MainPresentation(props) {
       (e.deltaY && myRef.current === 0)
     ) {
       return;
+    } else if (e.keyCode === 36) {
+      myRef.current = 0;
+    } else if (e.keyCode === 35) {
+      window.console.log("le 35");
+      myRef.current = 3;
     } else if (
       parseInt(e.target.innerHTML) >= 0 &&
       parseInt(e.target.innerHTML) <= 3 &&
@@ -375,7 +393,7 @@ export default function MainPresentation(props) {
               name="lyon"
               lang={lang}
               myref={myRef}
-              direction="down"
+              direction="left"
             />
           </div>
         </div>

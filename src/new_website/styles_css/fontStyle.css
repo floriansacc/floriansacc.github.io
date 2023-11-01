@@ -6,11 +6,9 @@
 body {
   display: flex;
   flex-flow: column nowrap;
-  background: var(--background-all);
   height: 100vh;
   background-attachment: fixed;
   background-size: cover;
-
   -moz-osx-font-smoothing: grayscale;
 }
 

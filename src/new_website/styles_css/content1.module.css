@@ -51,7 +51,7 @@
   display: flex;
   position: relative;
   flex-flow: column nowrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 50%;
   width: 100%;
@@ -114,6 +114,21 @@
   width: auto;
   margin: 10px;
   border-radius: 5px;
+}
+
+.aOtherProject {
+  padding: 5px;
+  margin-bottom: 0.5rem;
+  align-self: center;
+  border: 1px solid var(--info-border-color);
+  border-radius: 30px;
+  background: var(--weather-button-color);
+}
+
+.aOtherProjectText {
+  padding: 10px;
+  color: var(--font-color);
+  white-space: nowrap;
 }
 
 .toAppear {

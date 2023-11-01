@@ -33,11 +33,12 @@ export default function PresentationSchool(props) {
     bottom: direction === "down" && isDesktop ? springDown.bottom : "unset",
     top: direction === "up" && isDesktop ? springUp.top : "unset",
     left: direction === "left" && isDesktop ? springLeft.left : "unset",
-    margin: isTablet ? "0.2rem" : isPhone ? "0.5rem 0" : "",
+    margin: isTablet ? "0.5rem" : isPhone ? "1rem 0" : "",
     padding: isTablet || isPhone ? "0.2rem 0.5rem" : "",
     height: isTablet ? "95%" : "",
     maxWidth: isPhone ? "unset" : "",
     width: isPhone ? "100%" : "",
+    borderRadius: isPhone ? "25px" : "",
   };
 
   const toStyleImgContainer = {

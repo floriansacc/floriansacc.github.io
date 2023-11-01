@@ -33,10 +33,6 @@ export default function GlobalBody() {
     query: "(max-width: 500px)",
   });
 
-  const isSmallSmallPhone = useMediaQuery({
-    query: "(max-width: 380px)",
-  });
-
   const handleLangChange = (e) => {
     setLang(e.target.name);
   };
