@@ -4,6 +4,7 @@
   "homepage": "https://floriansacc.github.io",
   "private": true,
   "dependencies": {
+    "@react-three/fiber": "^8.15.9",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -16,6 +17,7 @@
     "react-spring": "^9.7.2",
     "react-text-gradients-and-animations": "^1.1.7",
     "react-transition-group": "^4.4.5",
+    "three": "^0.158.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

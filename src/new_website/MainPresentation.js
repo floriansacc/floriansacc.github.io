@@ -3,6 +3,7 @@ import PresentationPhoto from "./PresentationPhoto";
 import PresentationSchool from "./PresentationSchool";
 import PresentationWork from "./PresentationWork";
 import PresentationProject from "./PresentationProject";
+import MyScene from "./MyScene";
 import animateScrollTo from "animated-scroll-to";
 import { listNavigation } from "./data";
 import { useEffect, useContext, useRef, useState } from "react";
@@ -335,12 +336,12 @@ export default function MainPresentation(props) {
         myref={myRef}
         elempos={scrollPosElem}
       />
-
       <div
         id="Section0"
         style={toStylePresentationBigBox}
         className={styles.presentationBigBox}
       >
+        <MyScene />
         <PresentationPhoto lang={lang} myref={myRef} />
       </div>
       <div
