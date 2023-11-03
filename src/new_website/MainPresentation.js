@@ -336,12 +336,12 @@ export default function MainPresentation(props) {
         myref={myRef}
         elempos={scrollPosElem}
       />
+      <MyScene />
       <div
         id="Section0"
         style={toStylePresentationBigBox}
         className={styles.presentationBigBox}
       >
-        <MyScene />
         <PresentationPhoto lang={lang} myref={myRef} />
       </div>
       <div

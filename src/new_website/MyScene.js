@@ -5,12 +5,13 @@ export default function MyScene(props) {
   const toStyleDiv = {
     position: "fixed",
     zIndex: "5",
+    width: "500px",
+    height: "500px",
   };
 
   return (
     <div style={toStyleDiv}>
       <Canvas>
-        <ambientLight />
         <Box position={[0, 0, 0]} />
       </Canvas>
     </div>
