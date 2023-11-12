@@ -38,17 +38,15 @@ export default function GlobalBody() {
   };
 
   const toStyleBackground = {
-    //left: mousePos.x + "px",
-    //top: mousePos.y + "px",
+    left: mousePos.x + "px",
+    top: mousePos.y + "px",
   };
 
   const handleMousePos = (e) => {
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-    if (!isTablet) {
+    if (isDesktop) {
       setMousePos({
-        x: (-mouseX + centerPos.x) * 0.02,
-        y: (-mouseY + centerPos.y) * 0.02,
+        x: -e.clientX * 0.04,
+        y: -e.clientY * 0.04,
       });
     } else
       setMousePos({
@@ -56,12 +54,6 @@ export default function GlobalBody() {
         y: 0,
       });
   };
-
-  useEffect(() => {
-    const centerX = document.body.clientWidth / 2;
-    const centerY = document.body.clientHeight / 2;
-    setCenterPos({ x: centerX, y: centerY });
-  }, [window.innerHeight, window.innerWidth]);
 
   return (
     <QueryContext.Provider

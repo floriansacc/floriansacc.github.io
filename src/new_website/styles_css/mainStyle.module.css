@@ -3,9 +3,7 @@
   --font-color-reverse: #f1f1f1;
   --contrast-color: 1;
 
-  --background-container: #fffbff;
-  --primary-color: #fff7ff;
-  --primary-color-presentation: radial-gradient(
+  --background-container: radial-gradient(
     circle at 110% -50px,
     #fff,
     #fff7ff 40%,
@@ -13,9 +11,11 @@
     #efdbff 75%,
     #fff7ff 75%
   );
+  --primary-color: transparent;
+  --primary-color-presentation: transparent
   --primary-container-color: linear-gradient(240deg, #fff7ff 65%, #efdbff);
   --primary-container-color-project: #f9ecff;
-  --primary-container-border-color: #9950e9;
+  --primary-container-border-color: #9950e933;
   --weather-button-color: #f9ecff;
 
   --background-color-project: #fff;
@@ -33,8 +33,7 @@
   --font-color-reverse: #1e1e1e;
   --contrast-color: 0.95;
 
-  --background-container: #1d1b1e;
-  --primary-color-presentation: radial-gradient(
+  --background-container: radial-gradient(
     circle at 110% -50px,
     #0e001b,
     #0e001b 55%,
@@ -42,11 +41,12 @@
     #dbb8ff 75%,
     #0e001b 75%
   );
-  --primary-color: linear-gradient(#0e001b, #0e001b);
+  --primary-color-presentation: transparent
+  --primary-color: transparent;
   --primary-container-color: linear-gradient(60deg, #1a0033 80%, #6506b0);
   --primary-container-color-project: #1a0033;
-  --primary-container-border-color: #c795ff;
-  --weather-button-color: #6506b0;
+  --primary-container-border-color: #c795ff33;
+  --weather-button-color: #2b0052;
 
   --background-color-project: #383838;
   --title-border-color: #fff;
@@ -171,7 +171,7 @@
   margin: 1rem 0.5rem;
   padding: 0.5rem;
   height: 95%;
-  border: 2px solid var(--primary-container-border-color);
+  border: 1px solid var(--primary-container-border-color);
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;

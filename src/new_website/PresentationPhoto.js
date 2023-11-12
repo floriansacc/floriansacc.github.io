@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext, useRef } from "react";
 import styles from "./styles_css/content1.module.css";
 import { listNavigation, presentation, footerInfo } from "./data";
-import { useSpring, useTransition, animated } from "react-spring";
+import { useSpring, useSpringRef, useTransition, animated } from "react-spring";
 import { QueryContext } from "./GlobalBody";
 import { RadialTextGradient } from "react-text-gradients-and-animations";
 
@@ -13,26 +13,26 @@ export default function PresentationPhoto(props) {
     document.body.clientWidth,
     document.body.clientHeight,
   ]);
+  const apiName = useSpringRef();
+  const apiH2 = useSpringRef();
+  const apiContact = useSpringRef();
+  const apiPhotoBox = useSpringRef();
   const { myref } = props;
 
   const springName = useSpring({
-    left: myref.current === 0 ? "0" : "-1000px",
-    delay: 800,
-    config: { duration: 1400, easing: (x) => 1 - Math.pow(1 - x, 4) },
+    ref: apiName,
   });
 
   const springDescription = useSpring({
-    left: myref.current === 0 ? "0" : "-300px",
-    opacity: myref.current === 0 ? "1" : "0",
-    delay: 950,
-    config: { duration: 1400, easing: (x) => 1 - Math.pow(1 - x, 4) },
+    ref: apiH2,
   });
 
   const springContactBox = useSpring({
-    left: myref.current === 0 ? "0" : "-300px",
-    opacity: myref.current === 0 ? "1" : "0",
-    delay: 1100,
-    config: { duration: 1400, easing: (x) => 1 - Math.pow(1 - x, 4) },
+    ref: apiContact,
+  });
+
+  const springPhotoBox = useSpring({
+    ref: apiPhotoBox,
   });
 
   const handleBullet = (e) => {
@@ -112,7 +112,7 @@ export default function PresentationPhoto(props) {
   };
 
   const toStyleName = {
-    left: isDesktop ? springName.left : "unset",
+    ...springName,
     position: "relative",
     fontSize:
       isPhone && !isSmallPhone
@@ -129,8 +129,7 @@ export default function PresentationPhoto(props) {
   };
 
   const toStyleContent1DescriptionBox = {
-    opacity: isDesktop ? springDescription.opacity : "unset",
-    left: isDesktop ? springDescription.left : "unset",
+    ...springDescription,
   };
 
   const toStyleContentDescription = {
@@ -141,8 +140,7 @@ export default function PresentationPhoto(props) {
   };
 
   const toStyleContactBox = {
-    left: isDesktop ? springContactBox.left : "unset",
-    opacity: isDesktop ? springContactBox.opacity : "unset",
+    ...springContactBox,
     width: isTablet ? "100%" : isPhone ? "95%" : "",
     minWidth: isTablet ? "50px" : isPhone ? "unset" : "",
     margin: isTablet ? "0" : isPhone ? "0" : "",
@@ -167,6 +165,7 @@ export default function PresentationPhoto(props) {
   };
 
   const toStyleContent1Right = {
+    ...springPhotoBox,
     marginTop: isTablet ? "3rem" : "",
     marginLeft: isTablet ? "1rem" : "",
     width: isTablet
@@ -204,6 +203,43 @@ export default function PresentationPhoto(props) {
     }, 50000);
     return () => clearInterval(intervalID);
   }, [currentMe]);
+
+  useEffect(() => {
+    if (isDesktop && myref.current === 0) {
+      apiName.start({
+        from: { left: "-1000px", opacity: "0" },
+        to: { left: "0", opacity: "1" },
+        //delay: 500,
+        config: { duration: 2400, easing: (x) => 1 - Math.pow(1 - x, 4) },
+      });
+      apiH2.start({
+        from: { left: "-300px", opacity: "0" },
+        to: { left: "0", opacity: "1" },
+        //delay: 650,
+        config: { duration: 2550, easing: (x) => 1 - Math.pow(1 - x, 4) },
+      });
+      apiContact.start({
+        from: { left: "-1000px", opacity: "0" },
+        to: { left: "0", opacity: "1" },
+        //delay: 800,
+        config: { duration: 2700, easing: (x) => 1 - Math.pow(1 - x, 4) },
+      });
+      apiPhotoBox.start({
+        from: { scale: "0", opacity: "0" },
+        to: { scale: "1", opacity: "1" },
+        config: {
+          duration: 1500,
+          easing: (x) =>
+            x < 0.5
+              ? (Math.pow(2 * x, 2) * ((2.5949095 + 1) * 2 * x - 2.5949095)) / 2
+              : (Math.pow(2 * x - 2, 2) *
+                  ((2.5949095 + 1) * (x * 2 - 2) + 2.5949095) +
+                  2) /
+                2,
+        },
+      });
+    }
+  }, [myref.current]);
 
   useEffect(() => {
     setWindowSize([document.body.clientWidth, document.body.clientHeight]);
@@ -353,7 +389,10 @@ export default function PresentationPhoto(props) {
           </animated.div>
         </div>
 
-        <div style={toStyleContent1Right} className={styles.content1Right}>
+        <animated.div
+          style={toStyleContent1Right}
+          className={styles.content1Right}
+        >
           <ul className={styles.bulletUL}>
             {presentation[lang].src.map((x, i) => (
               <li
@@ -391,7 +430,7 @@ export default function PresentationPhoto(props) {
               />
             ))}
           </div>
-        </div>
+        </animated.div>
       </div>
     </div>
   );

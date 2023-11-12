@@ -16,7 +16,8 @@ export default function MainPresentation(props) {
     useContext(QueryContext);
   const myRef = useRef(0);
   const [counter, setCounter] = useState(0);
-  const api = useSpringRef();
+  const apiTitle = useSpringRef();
+  const apiMain = useSpringRef();
   const [scrollPosElem, setScrollPosElem] = useState([]);
   const prevPixelRatio = useRef(null);
   const [lastState, SetLastState] = useState(
@@ -32,8 +33,12 @@ export default function MainPresentation(props) {
     document.body.style.overflowY = "";
   }
 
+  const loadingMain = useSpring({
+    ref: apiMain,
+  });
+
   const leftSpringTitles = useSpring({
-    ref: api,
+    ref: apiTitle,
   });
 
   const checkKey = (e) => {
@@ -50,6 +55,7 @@ export default function MainPresentation(props) {
   document.onkeydown = checkKey;
 
   const toStyleMain = {
+    ...loadingMain,
     padding: isPhone ? "0.2rem" : "",
   };
 
@@ -153,7 +159,6 @@ export default function MainPresentation(props) {
   };
 
   const toStyleProjectTitle = {
-    //left: isDesktop ? leftSpringTitles.left : "unset",
     whiteSpace: isTablet || isPhone ? "nowrap" : "",
     marginTop: isTablet || isPhone ? "0rem" : "",
     width: isPhone ? "fit-content" : "",
@@ -312,17 +317,27 @@ export default function MainPresentation(props) {
 
   useEffect(() => {
     if (isDesktop && myRef.current !== 0) {
-      api.start({
+      apiTitle.start({
         from: { left: "-100px" },
         to: { left: "0" },
         delay: 500,
         config: { duration: 1000, easing: (x) => 1 - Math.pow(1 - x, 4) },
       });
     }
+    if (myRef.current === 0) {
+      apiMain.start({
+        from: { opacity: "0" },
+        to: { opacity: "1" },
+        config: {
+          duration: 1000,
+          easing: (x) => x,
+        },
+      });
+    }
   }, [myRef.current]);
 
   return (
-    <div
+    <animated.div
       onWheel={scrollAvailable && isDesktop ? handleScrollSection : null}
       onMouseMove={handleMousePos}
       style={toStyleMain}
@@ -473,6 +488,6 @@ export default function MainPresentation(props) {
           togglescroll={toggleScrollAvailable}
         />
       </div>
-    </div>
+    </animated.div>
   );
 }
