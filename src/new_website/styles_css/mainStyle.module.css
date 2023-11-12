@@ -12,7 +12,7 @@
     #fff7ff 75%
   );
   --primary-color: transparent;
-  --primary-color-presentation: transparent
+  --primary-color-presentation: transparent;
   --primary-container-color: linear-gradient(240deg, #fff7ff 65%, #efdbff);
   --primary-container-color-project: #f9ecff;
   --primary-container-border-color: #9950e933;
@@ -41,7 +41,7 @@
     #dbb8ff 75%,
     #0e001b 75%
   );
-  --primary-color-presentation: transparent
+  --primary-color-presentation: transparent;
   --primary-color: transparent;
   --primary-container-color: linear-gradient(60deg, #1a0033 80%, #6506b0);
   --primary-container-color-project: #1a0033;
