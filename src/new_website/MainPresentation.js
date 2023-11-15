@@ -324,7 +324,7 @@ export default function MainPresentation(props) {
         config: { duration: 1000, easing: (x) => 1 - Math.pow(1 - x, 4) },
       });
     }
-    if (myRef.current === 0) {
+    if (isDesktop && myRef.current === 0) {
       apiMain.start({
         from: { opacity: "0" },
         to: { opacity: "1" },
