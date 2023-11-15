@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bed890ed.css",
-    "main.js": "/static/js/main.1650df65.js",
+    "main.js": "/static/js/main.8b57ecc3.js",
     "static/js/787.d4aba7ab.chunk.js": "/static/js/787.d4aba7ab.chunk.js",
     "static/media/co2molefraction.mp4": "/static/media/co2molefraction.44e80deef5079815175f.mp4",
     "static/media/KakaoTalk_20230906_154056285.jpg": "/static/media/KakaoTalk_20230906_154056285.e1c13562822876fad981.jpg",
@@ -20,11 +20,11 @@
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
     "main.bed890ed.css.map": "/static/css/main.bed890ed.css.map",
-    "main.1650df65.js.map": "/static/js/main.1650df65.js.map",
+    "main.8b57ecc3.js.map": "/static/js/main.8b57ecc3.js.map",
     "787.d4aba7ab.chunk.js.map": "/static/js/787.d4aba7ab.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bed890ed.css",
-    "static/js/main.1650df65.js"
+    "static/js/main.8b57ecc3.js"
   ]
 }
