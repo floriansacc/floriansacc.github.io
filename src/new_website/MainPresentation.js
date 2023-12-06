@@ -2,14 +2,18 @@ import styles from "./styles_css/mainStyle.module.css";
 import PresentationPhoto from "./PresentationPhoto";
 import PresentationSchool from "./PresentationSchool";
 import PresentationWork from "./PresentationWork";
-import PresentationProject from "./PresentationProject";
+import Skeleton from "react-loading-skeleton";
+
 import animateScrollTo from "animated-scroll-to";
 import { listNavigation } from "./data";
-import { useEffect, useContext, useRef, useState } from "react";
+import { useEffect, useContext, useRef, useState, Suspense } from "react";
+import { lazy } from "react";
 import { RadialTextGradient } from "react-text-gradients-and-animations";
 import { QueryContext } from "./GlobalBody";
 import { ButtonNavigation } from "./ButtonNavigation";
 import { useSpring, useSpringRef, animated, easings } from "react-spring";
+
+const PresentationProject = lazy(() => import("./PresentationProject"));
 
 export default function MainPresentation(props) {
   const { isSmallPhone, isPhone, isTablet, isDesktop, lang } =
@@ -350,14 +354,15 @@ export default function MainPresentation(props) {
         myref={myRef}
         elempos={scrollPosElem}
       />
-
-      <div
-        id="Section0"
-        style={toStylePresentationBigBox}
-        className={styles.presentationBigBox}
-      >
-        <PresentationPhoto lang={lang} myref={myRef} />
-      </div>
+      <Suspense>
+        <div
+          id="Section0"
+          style={toStylePresentationBigBox}
+          className={styles.presentationBigBox}
+        >
+          <PresentationPhoto lang={lang} myref={myRef} />
+        </div>
+      </Suspense>
       <div
         id="Section1"
         style={toStyleSchoolBigBox}
@@ -382,34 +387,44 @@ export default function MainPresentation(props) {
           </RadialTextGradient>
         </animated.div>
         <div style={toStyleSchoolSmallBox} className={styles.schoolSmallBox}>
-          <div style={toStyleDivSchool} className={styles.schoolPack2}>
-            <PresentationSchool
-              name="jbnu"
-              lang={lang}
-              myref={myRef}
-              direction="up"
-            />
-            <PresentationSchool
-              name="jbnuExchange"
-              lang={lang}
-              myref={myRef}
-              direction="down"
-            />
-          </div>
-          <div style={toStyleDivSchool} className={styles.schoolPack2}>
-            <PresentationSchool
-              name="utbm"
-              lang={lang}
-              myref={myRef}
-              direction="up"
-            />
-            <PresentationSchool
-              name="lyon"
-              lang={lang}
-              myref={myRef}
-              direction="left"
-            />
-          </div>
+          <Suspense
+            fallback={
+              <Skeleton
+                borderRadius="16px"
+                count={1}
+                style={{ width: "100vw", height: "100vh" }}
+              />
+            }
+          >
+            <div style={toStyleDivSchool} className={styles.schoolPack2}>
+              <PresentationSchool
+                name="jbnu"
+                lang={lang}
+                myref={myRef}
+                direction="up"
+              />
+              <PresentationSchool
+                name="jbnuExchange"
+                lang={lang}
+                myref={myRef}
+                direction="down"
+              />
+            </div>
+            <div style={toStyleDivSchool} className={styles.schoolPack2}>
+              <PresentationSchool
+                name="utbm"
+                lang={lang}
+                myref={myRef}
+                direction="up"
+              />
+              <PresentationSchool
+                name="lyon"
+                lang={lang}
+                myref={myRef}
+                direction="left"
+              />
+            </div>
+          </Suspense>
         </div>
       </div>
       <div
@@ -435,27 +450,36 @@ export default function MainPresentation(props) {
             {listNavigation.entryWork[lang]}
           </RadialTextGradient>
         </animated.div>
-
-        <div style={toStyleWorkSmallBox} className={styles.workSmallBox}>
-          <PresentationWork
-            name="edf"
-            lang={lang}
-            myref={myRef}
-            direction="down"
-          />
-          <PresentationWork
-            name="enedis"
-            lang={lang}
-            myref={myRef}
-            direction="up"
-          />
-          <PresentationWork
-            name="suez"
-            lang={lang}
-            myref={myRef}
-            direction="down"
-          />
-        </div>
+        <Suspense
+          fallback={
+            <Skeleton
+              borderRadius="16px"
+              count={1}
+              style={{ width: "100vw", height: "100vh" }}
+            />
+          }
+        >
+          <div style={toStyleWorkSmallBox} className={styles.workSmallBox}>
+            <PresentationWork
+              name="edf"
+              lang={lang}
+              myref={myRef}
+              direction="down"
+            />
+            <PresentationWork
+              name="enedis"
+              lang={lang}
+              myref={myRef}
+              direction="up"
+            />
+            <PresentationWork
+              name="suez"
+              lang={lang}
+              myref={myRef}
+              direction="down"
+            />
+          </div>
+        </Suspense>
       </div>
       <div
         id="Section3"
@@ -480,13 +504,22 @@ export default function MainPresentation(props) {
             {listNavigation.entryProject[lang]}
           </RadialTextGradient>
         </div>
-
-        <PresentationProject
-          name="proj1"
-          lang={lang}
-          updateref={handleScrollSection}
-          togglescroll={toggleScrollAvailable}
-        />
+        <Suspense
+          fallback={
+            <Skeleton
+              borderRadius="16px"
+              count={1}
+              style={{ width: "100vw", height: "100vh" }}
+            />
+          }
+        >
+          <PresentationProject
+            name="proj1"
+            lang={lang}
+            updateref={handleScrollSection}
+            togglescroll={toggleScrollAvailable}
+          />
+        </Suspense>
       </div>
     </animated.div>
   );
