@@ -16,7 +16,7 @@ import { useSpring, useSpringRef, animated, easings } from "react-spring";
 const PresentationProject = lazy(() => import("./PresentationProject"));
 
 export default function MainPresentation(props) {
-  const { isSmallPhone, isPhone, isTablet, isDesktop, lang } =
+  const { isSmallPhone, isPhone, isTablet, isDesktop, isDarkTheme, lang } =
     useContext(QueryContext);
   const myRef = useRef(0);
   const [counter, setCounter] = useState(0);

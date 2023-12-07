@@ -4,9 +4,7 @@ import styles from "./styles_css/containerStyle.module.css";
 import MainPresentation from "./MainPresentation";
 import MediaQuery, { useMediaQuery } from "react-responsive";
 import { useTheme } from "./useTheme";
-import { Helmet } from "react-helmet";
 import { useSpring, useSpringRef, animated } from "react-spring";
-import ogPhoto from "./styles_css/KakaoTalk_20231206_214115178.jpg";
 import Lottie from "react-lottie";
 
 import * as screenAnimation from "./styles_css/lottieAnimation.json";
@@ -18,9 +16,12 @@ export default function GlobalBody() {
   const { isDarkTheme, onToggleTheme } = useTheme();
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [centerPos, setCenterPos] = useState({ x: 0, y: 0 });
-  const apiLoading = useSpringRef();
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(undefined);
+  const [lastTheme, setLastTheme] = useState(
+    sessionStorage.getItem("lastTheme")
+  );
+  const apiLoading = useSpringRef();
 
   const isBigScreen = useMediaQuery({
     query: "(min-width: 1600px)",
@@ -45,6 +46,27 @@ export default function GlobalBody() {
   const springLoading = useSpring({
     ref: apiLoading,
   });
+
+  const [props, api] = useSpring(
+    () => ({
+      from: {
+        scale: 1,
+        opacity: 1,
+        filter: "brightness(1)",
+      },
+      to: {
+        scale: 15,
+        opacity: lastTheme === "1" ? 0.5 : 0,
+        filter: lastTheme === "1" ? "brightness(0)" : "brightness(1)",
+      },
+      delay: 1500,
+      config: {
+        duration: 2000,
+        easing: (x) => (x === 0 ? 0 : Math.pow(2, 10 * x - 10)),
+      },
+    }),
+    []
+  );
 
   const handleLangChange = (e) => {
     setLang(e.target.name);
@@ -89,17 +111,29 @@ export default function GlobalBody() {
       } catch (e) {
         window.console.log(e);
       }
-    }, 2000);
+    }, 3500);
   }, []);
 
   useEffect(() => {
     apiLoading.start({
       from: { opacity: "0" },
       to: { opacity: "1" },
-      delay: 2200,
-      config: { duration: 200, easing: (x) => x * x * x * x * x },
+      delay: 3500,
+      config: { duration: 400, easing: (x) => x * x * x * x * x },
     });
   }, []);
+
+  useEffect(() => {
+    window.console.log(lastTheme);
+    if (lastTheme === "1") {
+      onToggleTheme();
+      window.console.log("switch to dark mode");
+    }
+  }, []);
+
+  useEffect(() => {
+    sessionStorage.setItem("lastTheme", isDarkTheme ? 1 : 0);
+  }, [isDarkTheme]);
 
   return (
     <QueryContext.Provider
@@ -113,37 +147,13 @@ export default function GlobalBody() {
         isDarkTheme,
       }}
     >
-      <Helmet>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="description"
-          content="My name is Florian SACCHETTI, I am a 26 years-old French people born in Lyon, France
-Currently working in Korea in the climate and environment field"
-          data-react-helmet="true"
-        />
-        <meta
-          name="keywords"
-          content="JavaScript, React, Florian Sacchetti, Florian, Sacchetti"
-          data-react-helmet="true"
-        />
-        <meta property="og:title" content="Florian Sacchetti - Portfolio" />
-        <meta
-          property="og:description"
-          content="My name is Florian SACCHETTI, I am a 26 years-old French people born in Lyon, France
-Currently working in Korea in the climate and environment field"
-          data-react-helmet="true"
-        />
-        <meta property="og:type" content="website" data-react-helmet="true" />
-        <meta property="og:image" content={ogPhoto} data-react-helmet="true" />
-        <title>Florian Sacchetti - Portfolio</title>
-      </Helmet>
       <>
         {!loading ? (
-          <Lottie
-            options={defaultOption}
-            style={{ background: "transparent" }}
-          />
+          <>
+            <animated.div className={styles.divLottie} style={props}>
+              <Lottie options={defaultOption} isClickToPauseDisabled={true} i />
+            </animated.div>
+          </>
         ) : (
           <animated.div style={{ ...springLoading }}>
             <LangButton
@@ -154,7 +164,7 @@ Currently working in Korea in the climate and environment field"
             <div onMouseMove={handleMousePos} className={styles.container}>
               <div style={toStyleBackground} className={styles.imgBack}></div>
 
-              <MainPresentation />
+              <MainPresentation ontoggletheme={onToggleTheme} />
             </div>
           </animated.div>
         )}
