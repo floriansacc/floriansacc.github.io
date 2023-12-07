@@ -120,19 +120,22 @@ export default function GlobalBody() {
           name="description"
           content="My name is Florian SACCHETTI, I am a 26 years-old French people born in Lyon, France
 Currently working in Korea in the climate and environment field"
+          data-react-helmet="true"
         />
         <meta
           name="keywords"
           content="JavaScript, React, Florian Sacchetti, Florian, Sacchetti"
+          data-react-helmet="true"
         />
         <meta property="og:title" content="Florian Sacchetti - Portfolio" />
         <meta
           property="og:description"
           content="My name is Florian SACCHETTI, I am a 26 years-old French people born in Lyon, France
 Currently working in Korea in the climate and environment field"
+          data-react-helmet="true"
         />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={ogPhoto} />
+        <meta property="og:type" content="website" data-react-helmet="true" />
+        <meta property="og:image" content={ogPhoto} data-react-helmet="true" />
         <title>Florian Sacchetti - Portfolio</title>
       </Helmet>
       <>
