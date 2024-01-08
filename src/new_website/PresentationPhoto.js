@@ -7,7 +7,7 @@ import { RadialTextGradient } from "react-text-gradients-and-animations";
 
 export default function PresentationPhoto(props) {
   const [currentMe, setCurrentMe] = useState(0);
-  const { isBigScreen, isSmallPhone, isPhone, isTablet, isDesktop, lang } =
+  const { isSmallPhone, isPhone, isTablet, isDesktop, lang } =
     useContext(QueryContext);
   const [windowSize, setWindowSize] = useState([
     document.body.clientWidth,
