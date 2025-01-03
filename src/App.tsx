@@ -1,11 +1,7 @@
 export default function App() {
   return (
     <div>
-      <div className="text-red-500">aaaaa</div>
-      <div className="p-10 text-red-500">aaaaa</div>
-      <div>aaaaa</div>
-      <div>aaaaa</div>
-      <div>aaaaa</div>
+      <div className="bg-red-500 p-10 text-blue-500">Test</div>
     </div>
   );
 }
