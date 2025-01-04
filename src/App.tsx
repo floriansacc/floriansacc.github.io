@@ -48,7 +48,7 @@ export default function App() {
     screenRefs.forEach((ref, index) => {
       if (ref.current) {
         const rect = ref.current.getBoundingClientRect();
-        if (rect.bottom <= window.innerHeight + 100) {
+        if (rect.bottom <= window.innerHeight + 200) {
           setScrollPos({ scrollPosY: window.scrollY, activeSection: index });
         }
       }

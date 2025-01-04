@@ -38,3 +38,47 @@ body {
   background-color: #7d828abe;
   padding: 0.5px 2px;
 }
+
+.gradient-border {
+  background: linear-gradient(
+    to left,
+    transparent 0%,
+    white 40%,
+    white 60%,
+    transparent
+  );
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px; /* Border thickness */
+  background: linear-gradient(
+    to left,
+    transparent 0%,
+    white 40%,
+    white 60%,
+    transparent
+  );
+  z-index: -1;
+}
+
+.test {
+  border: 2px solid transparent;
+  background-image: linear-gradient(#242424, #242424),
+    linear-gradient(
+      to top right,
+      white 0%,
+      transparent 20%,
+      transparent 30%,
+      white 50%,
+      transparent 70%,
+      transparent 80%,
+      white 100%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}

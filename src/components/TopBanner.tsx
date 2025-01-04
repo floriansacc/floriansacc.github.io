@@ -9,12 +9,23 @@ export default function TopBanner({
 }: TopBannerProps) {
   const [isOpen, setIsOpen] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
+  const [thresholdY, setThresholdY] = useState<number>(0);
 
   const controlNavbar = (): void => {
-    if (window.scrollY > lastScrollY && window.scrollY > 50) {
-      setIsOpen(false);
+    if (window.scrollY > lastScrollY) {
+      if (window.scrollY > thresholdY) {
+        if (isOpen) {
+          setIsOpen(false);
+        }
+        // Set new threshold to current scrollY + 100
+        setThresholdY(window.scrollY + 100);
+      }
     } else {
-      setIsOpen(true);
+      if (!isOpen) {
+        setIsOpen(true);
+      }
+      // Reset threshold to current scrollY + 100
+      setThresholdY(window.scrollY + 100);
     }
 
     setLastScrollY(window.scrollY);
