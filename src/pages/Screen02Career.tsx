@@ -1,7 +1,13 @@
-export default function Screen02Career() {
+import { MutableRefObject } from "react";
+
+export default function Screen02Career({ screenRef, ...props }: Screen02Props) {
   return (
-    <div className="flex h-screen w-full bg-bgcolor">
-      <div></div>
+    <div ref={screenRef} className="flex h-screen w-full bg-bgcolor" {...props}>
+      <div>Career</div>
     </div>
   );
+}
+
+interface Screen02Props extends React.HTMLAttributes<HTMLDivElement> {
+  screenRef: MutableRefObject<HTMLDivElement | null>;
 }

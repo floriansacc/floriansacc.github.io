@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, MutableRefObject, useRef, useState } from "react";
 import Screen01AboutMe from "./pages/Screen01AboutMe";
 import ContactIcons from "./components/ContactIcons";
 import TopBanner from "./components/TopBanner";
@@ -10,6 +10,12 @@ export default function App() {
   const [showContact, setShowContact] = useState<boolean>(false);
   const [showKakao, setShowKakao] = useState<boolean>(false);
 
+  const screenRefs: MutableRefObject<HTMLDivElement | null>[] = [
+    useRef<HTMLDivElement | null>(null),
+    useRef<HTMLDivElement | null>(null),
+    useRef<HTMLDivElement | null>(null),
+  ];
+
   const closeTooltips = (): void => {
     if (showContact) {
       setShowContact(false);
@@ -19,15 +25,21 @@ export default function App() {
     }
   };
 
+  const goToSection = (index: number): void => {
+    if (screenRefs?.[index] == null || screenRefs?.[index].current == null)
+      return;
+    screenRefs[index].current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <QueryContext.Provider value={{}}>
       <div
-        className="relative flex min-h-screen w-screen flex-col"
+        className="relative flex min-h-screen w-full flex-col"
         onClick={() => closeTooltips()}
       >
-        <TopBanner />
-        <Screen01AboutMe />
-        <Screen02Career />
+        <TopBanner goToSection={goToSection} />
+        <Screen01AboutMe screenRef={screenRefs[0]} />
+        <Screen02Career screenRef={screenRefs[1]} />
       </div>
       <ContactIcons
         showContact={showContact}

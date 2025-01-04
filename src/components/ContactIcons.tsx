@@ -71,7 +71,7 @@ export default function ContactIcons({
             </div>
           </div>
           <div className="inline-flex h-fit items-center gap-2 sm:flex-col md:break-keep lg:break-keep">
-            <span className="font-bold sm:whitespace-nowrap">휴대폰</span>
+            <span className="font-bold sm:whitespace-nowrap">휴대폰:</span>
             <div className="flex items-center gap-2 sm:flex-wrap sm:justify-end sm:gap-0 sm:break-all">
               <span id="phone-flo">010-8391-7997</span>
               <FaRegCopy
@@ -138,13 +138,12 @@ export default function ContactIcons({
           />
         </a>
         <div className="mt-2 h-28 w-[2px] bg-gradient-to-b from-white from-40% sm:hidden"></div>
-
-        <Tooltip
-          id="icons-tooltip"
-          openOnClick={true}
-          closeEvents={{ mouseleave: true }}
-        />
       </div>
+      <Tooltip
+        id="icons-tooltip"
+        openOnClick={true}
+        closeEvents={{ mouseleave: true }}
+      />
       <FaChevronUp
         className={`${hideIcon ? "rotate-180" : ""} h-9 w-9 p-2 transition-transform md:hidden lg:hidden`}
         onClick={() => {

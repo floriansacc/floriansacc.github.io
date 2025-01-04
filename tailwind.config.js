@@ -24,6 +24,7 @@ export default {
         },
         line: "#e6e7e8",
         disabled: "#9e9e9E",
+        gitbgvar: "#2d333b",
         bgmain: "#fafafb",
         bgcolor: "#242424",
         menuactive: "#f1f1fa",

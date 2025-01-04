@@ -32,3 +32,9 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.git-bg-variable {
+  border-radius: 0.375rem;
+  background-color: #7d828abe;
+  padding: 0.5px 2px;
+}
