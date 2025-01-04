@@ -12,7 +12,7 @@ export default {
         line: "#e6e7e8",
         disabled: "#9e9e9E",
         bgmain: "#fafafb",
-        bgcolor: "#fafafa",
+        bgcolor: "#242424",
         menuactive: "#f1f1fa",
         menuhover: "#f1f1fa",
         inputfocus: "#5e5ec6",

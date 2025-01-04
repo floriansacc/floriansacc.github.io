@@ -14,9 +14,9 @@ export default function ContactIcons({
   };
 
   return (
-    <div className="no-scrollbar absolute bottom-5 right-10 flex flex-col gap-4 sm:right-3 sm:gap-6">
+    <div className="no-scrollbar fixed bottom-5 right-10 flex flex-col gap-4 sm:right-3 sm:gap-6">
       <div
-        className={`${hideIcon ? "invisible opacity-0 sm:h-0" : ""} relative transition-all`}
+        className={`${hideIcon ? "sm:invisible sm:h-0 sm:opacity-0" : ""} relative transition-all`}
       >
         <button
           className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500 font-bold transition-all duration-200 sm:h-9 sm:w-9 sm:text-sm md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)]"
@@ -86,7 +86,7 @@ export default function ContactIcons({
             className="aspect-auto rounded-full transition-all duration-200 md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)]"
           />
         </a>
-        <div className="mt-2 h-40 w-[2px] bg-gradient-to-b from-white from-40% sm:hidden"></div>
+        <div className="mt-2 h-28 w-[2px] bg-gradient-to-b from-white from-40% sm:hidden"></div>
 
         <Tooltip
           id="icons-tooltip"
