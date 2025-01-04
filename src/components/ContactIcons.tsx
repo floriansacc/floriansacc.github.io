@@ -5,6 +5,8 @@ import { FaRegCopy, FaChevronUp } from "react-icons/fa";
 export default function ContactIcons({
   showContact,
   setShowContact,
+  showKakao,
+  setShowKakao,
 }: ContactIconsProps) {
   const [hideIcon, setHideIcon] = useState<boolean>(false);
 
@@ -13,14 +15,36 @@ export default function ContactIcons({
     navigator.clipboard.writeText(content);
   };
 
+  const openKakaoTooltip = (): void => {
+    if (showKakao) {
+      setShowKakao(false);
+    } else {
+      if (showContact) {
+        setShowContact(false);
+      }
+      setShowKakao(true);
+    }
+  };
+
+  const openShowContact = (): void => {
+    if (showContact) {
+      setShowContact(false);
+    } else {
+      if (showKakao) {
+        setShowKakao(false);
+      }
+      setShowContact(true);
+    }
+  };
+
   return (
     <div className="no-scrollbar fixed bottom-5 right-10 flex flex-col gap-4 sm:right-3 sm:gap-6">
       <div
-        className={`${hideIcon ? "sm:invisible sm:h-0 sm:opacity-0" : ""} relative transition-all`}
+        className={`${hideIcon ? "sm:invisible sm:h-0 sm:opacity-0" : ""} relative transition-all sm:duration-300`}
       >
         <button
           className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500 font-bold transition-all duration-200 sm:h-9 sm:w-9 sm:text-sm md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)]"
-          onClick={() => setShowContact(!showContact)}
+          onClick={() => openShowContact()}
         >
           <span>연락</span>
         </button>
@@ -47,9 +71,9 @@ export default function ContactIcons({
             </div>
           </div>
           <div className="inline-flex h-fit items-center gap-2 sm:flex-col md:break-keep lg:break-keep">
-            <span className="font-bold sm:whitespace-nowrap">kakao id:</span>
+            <span className="font-bold sm:whitespace-nowrap">휴대폰</span>
             <div className="flex items-center gap-2 sm:flex-wrap sm:justify-end sm:gap-0 sm:break-all">
-              <span id="kakao-flo">floriansacchetti</span>
+              <span id="phone-flo">010-8391-7997</span>
               <FaRegCopy
                 className="h-8 w-8 rounded-xl p-1.5 transition-all hover:scale-105 hover:bg-white/25"
                 data-tooltip-id="icons-tooltip"
@@ -62,12 +86,12 @@ export default function ContactIcons({
         </div>
       </div>
       <div
-        className={`${hideIcon ? "sm:h-0" : ""} relative flex flex-col items-center gap-4 transition-[height] sm:gap-6 sm:overflow-y-hidden sm:overflow-x-visible sm:rounded-b-2xl`}
+        className={`${hideIcon ? "sm:h-0" : ""} relative flex flex-col items-center gap-4 transition-[height] sm:gap-6 sm:overflow-y-hidden sm:overflow-x-visible sm:rounded-b-2xl sm:duration-300`}
       >
         <a
           href="http://qr.kakao.com/talk/9DzDCSUIxhosfgCLWffciyNPw6k-"
           target="_blank"
-          className="h-12 w-12 sm:h-9 sm:w-9"
+          className="h-12 w-12 sm:h-9 sm:w-9 lg:hidden"
         >
           <img
             alt="Kakao Florian Sacchetti"
@@ -75,6 +99,33 @@ export default function ContactIcons({
             className="aspect-auto rounded-xl transition-all duration-200 md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_#FEE50080] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_#FEE50080]"
           />
         </a>
+        <div className="relative h-12 w-12 sm:hidden sm:h-9 sm:w-9 md:hidden">
+          <img
+            alt="Kakao Florian Sacchetti"
+            src="/assets/images/kakao_logo.png"
+            onClick={() => openKakaoTooltip()}
+            className="aspect-auto rounded-xl transition-all duration-200 md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_#FEE50080] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_#FEE50080]"
+          />
+          <div
+            className={`${
+              showKakao
+                ? "visible opacity-100"
+                : "invisible translate-x-60 scale-0 opacity-0"
+            } absolute right-24 top-1/2 flex h-fit min-h-fit w-fit -translate-y-1/2 flex-col gap-2 rounded-xl bg-gray-500 p-4 font-semibold text-white transition-all duration-300 sm:right-12 sm:w-[75vw] sm:gap-6`}
+          >
+            <span className="font-bold sm:whitespace-nowrap">카카오ID:</span>
+            <div className="flex items-center gap-2 sm:flex-wrap sm:justify-end sm:gap-0 sm:break-all">
+              <span id="kakao-flo">floriansacchetti</span>
+              <FaRegCopy
+                className="h-8 w-8 rounded-xl p-1.5 transition-all hover:scale-105 hover:bg-white/25"
+                data-tooltip-id="icons-tooltip"
+                data-tooltip-content={"Copied to clipboard"}
+                data-tooltip-delay-hide={500}
+                onClick={() => copyToClipBoard("kakao-flo")}
+              />
+            </div>
+          </div>
+        </div>
         <a
           href="https://github.com/floriansacc"
           target="_blank"
@@ -108,4 +159,6 @@ export default function ContactIcons({
 interface ContactIconsProps {
   showContact: boolean;
   setShowContact: React.Dispatch<React.SetStateAction<boolean>>; //  (showContact: boolean) => void;
+  showKakao: boolean;
+  setShowKakao: React.Dispatch<React.SetStateAction<boolean>>; //  (showContact: boolean) => void;
 }

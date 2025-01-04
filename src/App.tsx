@@ -8,18 +8,33 @@ export const QueryContext = createContext<ContextEntry | null>(null);
 
 export default function App() {
   const [showContact, setShowContact] = useState<boolean>(false);
+  const [showKakao, setShowKakao] = useState<boolean>(false);
+
+  const closeTooltips = (): void => {
+    if (showContact) {
+      setShowContact(false);
+    }
+    if (showKakao) {
+      setShowKakao(false);
+    }
+  };
 
   return (
     <QueryContext.Provider value={{}}>
       <div
         className="relative flex min-h-screen w-screen flex-col"
-        onClick={showContact ? () => setShowContact(false) : () => {}}
+        onClick={() => closeTooltips()}
       >
         <TopBanner />
         <Screen01AboutMe />
         <Screen02Career />
       </div>
-      <ContactIcons showContact={showContact} setShowContact={setShowContact} />
+      <ContactIcons
+        showContact={showContact}
+        setShowContact={setShowContact}
+        showKakao={showKakao}
+        setShowKakao={setShowKakao}
+      />
     </QueryContext.Provider>
   );
 }
