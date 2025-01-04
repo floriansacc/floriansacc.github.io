@@ -2,7 +2,11 @@ import { useState, useEffect, Fragment } from "react";
 
 const menuItems: string[] = ["About me", "Career", "Project", "Education"];
 
-export default function TopBanner({ goToSection }: TopBannerProps) {
+export default function TopBanner({
+  activeSection,
+  scrollPos,
+  goToSection,
+}: TopBannerProps) {
   const [isOpen, setIsOpen] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
 
@@ -17,9 +21,8 @@ export default function TopBanner({ goToSection }: TopBannerProps) {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", controlNavbar);
-    return () => window.removeEventListener("scroll", controlNavbar);
-  }, [lastScrollY]);
+    controlNavbar();
+  }, [scrollPos]);
 
   return (
     <div
@@ -32,7 +35,7 @@ export default function TopBanner({ goToSection }: TopBannerProps) {
               <div className="h-6 w-[0.5px] bg-line/50 sm:hidden"></div>
             )}
             <p
-              className="cursor-pointer rounded-full px-4 py-4 transition-all sm:px-2 md:px-2 md:hover:scale-110 md:hover:text-white/90 lg:hover:scale-110 lg:hover:text-white/90"
+              className={`${activeSection === i ? "text-blue-200" : ""} cursor-pointer rounded-full px-4 py-4 transition-all sm:px-2 md:px-2 md:hover:scale-110 md:hover:text-white/90 lg:hover:scale-110 lg:hover:text-white/90`}
               onClick={() => goToSection(i)}
             >
               {e}
@@ -45,5 +48,7 @@ export default function TopBanner({ goToSection }: TopBannerProps) {
 }
 
 interface TopBannerProps {
+  activeSection: number;
+  scrollPos: number;
   goToSection: (index: number) => void;
 }

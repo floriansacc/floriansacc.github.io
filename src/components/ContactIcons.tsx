@@ -5,8 +5,6 @@ import { FaRegCopy, FaChevronUp } from "react-icons/fa";
 export default function ContactIcons({
   showContact,
   setShowContact,
-  showKakao,
-  setShowKakao,
 }: ContactIconsProps) {
   const [hideIcon, setHideIcon] = useState<boolean>(false);
 
@@ -16,24 +14,24 @@ export default function ContactIcons({
   };
 
   const openKakaoTooltip = (): void => {
-    if (showKakao) {
-      setShowKakao(false);
+    if (showContact.kakao) {
+      setShowContact((prev) => ({ ...prev, kakao: false }));
     } else {
-      if (showContact) {
-        setShowContact(false);
+      if (showContact.other) {
+        setShowContact((prev) => ({ ...prev, other: false }));
       }
-      setShowKakao(true);
+      setShowContact((prev) => ({ ...prev, kakao: true }));
     }
   };
 
   const openShowContact = (): void => {
-    if (showContact) {
-      setShowContact(false);
+    if (showContact.other) {
+      setShowContact((prev) => ({ ...prev, other: false }));
     } else {
-      if (showKakao) {
-        setShowKakao(false);
+      if (showContact.kakao) {
+        setShowContact((prev) => ({ ...prev, kakao: false }));
       }
-      setShowContact(true);
+      setShowContact((prev) => ({ ...prev, other: true }));
     }
   };
 
@@ -50,7 +48,7 @@ export default function ContactIcons({
         </button>
         <div
           className={`${
-            showContact
+            showContact.other
               ? "visible opacity-100"
               : "invisible translate-x-60 scale-0 opacity-0"
           } absolute right-24 top-1/2 flex h-40 min-h-fit w-fit -translate-y-1/2 flex-col gap-2 rounded-xl bg-gray-500 p-4 font-semibold text-white transition-all duration-300 sm:right-12 sm:w-[75vw] sm:gap-6`}
@@ -108,9 +106,9 @@ export default function ContactIcons({
           />
           <div
             className={`${
-              showKakao
+              showContact.kakao
                 ? "visible opacity-100"
-                : "invisible translate-x-60 scale-0 opacity-0"
+                : "invisible translate-x-40 scale-0 opacity-0"
             } absolute right-24 top-1/2 flex h-fit min-h-fit w-fit -translate-y-1/2 flex-col gap-2 rounded-xl bg-gray-500 p-4 font-semibold text-white transition-all duration-300 sm:right-12 sm:w-[75vw] sm:gap-6`}
           >
             <span className="font-bold sm:whitespace-nowrap">카카오ID:</span>
@@ -148,7 +146,7 @@ export default function ContactIcons({
         className={`${hideIcon ? "rotate-180" : ""} h-9 w-9 p-2 transition-transform md:hidden lg:hidden`}
         onClick={() => {
           setHideIcon(!hideIcon);
-          setShowContact(false);
+          setShowContact((prev) => ({ ...prev, other: false }));
         }}
       />
     </div>
@@ -156,8 +154,14 @@ export default function ContactIcons({
 }
 
 interface ContactIconsProps {
-  showContact: boolean;
-  setShowContact: React.Dispatch<React.SetStateAction<boolean>>; //  (showContact: boolean) => void;
-  showKakao: boolean;
-  setShowKakao: React.Dispatch<React.SetStateAction<boolean>>; //  (showContact: boolean) => void;
+  showContact: {
+    kakao: boolean;
+    other: boolean;
+  };
+  setShowContact: React.Dispatch<
+    React.SetStateAction<{
+      kakao: boolean;
+      other: boolean;
+    }>
+  >;
 }

@@ -1,4 +1,10 @@
-import { createContext, MutableRefObject, useRef, useState } from "react";
+import {
+  createContext,
+  MutableRefObject,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import Screen01AboutMe from "./pages/Screen01AboutMe";
 import ContactIcons from "./components/ContactIcons";
 import TopBanner from "./components/TopBanner";
@@ -7,8 +13,15 @@ import Screen02Career from "./pages/Screen02Career";
 export const QueryContext = createContext<ContextEntry | null>(null);
 
 export default function App() {
-  const [showContact, setShowContact] = useState<boolean>(false);
-  const [showKakao, setShowKakao] = useState<boolean>(false);
+  const [showContact, setShowContact] = useState<{
+    kakao: boolean;
+    other: boolean;
+  }>({ kakao: false, other: false });
+
+  const [scrollPos, setScrollPos] = useState<{
+    scrollPosY: number;
+    activeSection: number;
+  }>({ scrollPosY: 0, activeSection: 0 });
 
   const screenRefs: MutableRefObject<HTMLDivElement | null>[] = [
     useRef<HTMLDivElement | null>(null),
@@ -18,10 +31,10 @@ export default function App() {
 
   const closeTooltips = (): void => {
     if (showContact) {
-      setShowContact(false);
+      setShowContact((prev) => ({ ...prev, other: false }));
     }
-    if (showKakao) {
-      setShowKakao(false);
+    if (showContact.kakao) {
+      setShowContact((prev) => ({ ...prev, kakao: false }));
     }
   };
 
@@ -31,22 +44,38 @@ export default function App() {
     screenRefs[index].current.scrollIntoView({ behavior: "smooth" });
   };
 
+  const getScrollPos = (): void => {
+    screenRefs.forEach((ref, index) => {
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        if (rect.bottom <= window.innerHeight + 100) {
+          setScrollPos({ scrollPosY: window.scrollY, activeSection: index });
+        }
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", getScrollPos);
+
+    return () => window.removeEventListener("scroll", getScrollPos);
+  }, []);
+
   return (
     <QueryContext.Provider value={{}}>
       <div
         className="relative flex min-h-screen w-full flex-col"
         onClick={() => closeTooltips()}
       >
-        <TopBanner goToSection={goToSection} />
+        <TopBanner
+          activeSection={scrollPos.activeSection}
+          goToSection={goToSection}
+          scrollPos={scrollPos.scrollPosY}
+        />
         <Screen01AboutMe screenRef={screenRefs[0]} />
         <Screen02Career screenRef={screenRefs[1]} />
       </div>
-      <ContactIcons
-        showContact={showContact}
-        setShowContact={setShowContact}
-        showKakao={showKakao}
-        setShowKakao={setShowKakao}
-      />
+      <ContactIcons showContact={showContact} setShowContact={setShowContact} />
     </QueryContext.Provider>
   );
 }
