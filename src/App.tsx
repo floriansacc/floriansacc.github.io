@@ -1,15 +1,16 @@
 import {
-  createContext,
-  MutableRefObject,
+  useState,
   useEffect,
   useRef,
-  useState,
+  createContext,
+  MutableRefObject,
 } from "react";
 import Screen01AboutMe from "./pages/Screen01AboutMe";
 import ContactIcons from "./components/ContactIcons";
 import TopBanner from "./components/TopBanner";
 import Screen02Career from "./pages/Screen02Career";
 import Screen03Project from "./pages/Screen03Project";
+import { Outlet } from "react-router";
 
 export const QueryContext = createContext<ContextEntry | null>(null);
 
@@ -23,6 +24,7 @@ export default function App() {
     scrollPosY: number;
     activeSection: number;
   }>({ scrollPosY: 0, activeSection: 0 });
+  const [isDetails, setIsDetails] = useState<boolean>(false);
 
   const screenRefs: MutableRefObject<HTMLDivElement | null>[] = [
     useRef<HTMLDivElement | null>(null),
@@ -63,9 +65,9 @@ export default function App() {
   }, []);
 
   return (
-    <QueryContext.Provider value={{}}>
+    <QueryContext.Provider value={{ isDetails, setIsDetails }}>
       <div
-        className="relative flex min-h-screen w-full flex-col"
+        className="crelative flex min-h-screen w-full flex-col"
         onClick={() => closeTooltips()}
       >
         <TopBanner
@@ -78,10 +80,12 @@ export default function App() {
         <Screen03Project screenRef={screenRefs[2]} />
       </div>
       <ContactIcons showContact={showContact} setShowContact={setShowContact} />
+      <Outlet />
     </QueryContext.Provider>
   );
 }
 
-interface ContextEntry {
-  // test: string;
+export interface ContextEntry {
+  isDetails: boolean;
+  setIsDetails: React.Dispatch<React.SetStateAction<boolean>>;
 }

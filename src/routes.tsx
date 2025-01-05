@@ -1,9 +1,13 @@
-import { createHashRouter } from "react-router";
+import { createHashRouter, RouteObject } from "react-router";
 import App from "./App";
+import HanaroDetails from "./pages/details/HanaroDetails";
 
-const appRoutes: AppRoute[] = [
-  { path: "/", element: <App /> },
-  // { path: "/thehanaro", element: <App /> },
+const appRoutes: RouteObject[] = [
+  {
+    path: "/",
+    element: <App />,
+    children: [{ path: "/thenanaro", element: <HanaroDetails /> }],
+  },
 ];
 
 export const router = createHashRouter(appRoutes, {
@@ -15,8 +19,3 @@ export const router = createHashRouter(appRoutes, {
     v7_skipActionErrorRevalidation: true,
   },
 });
-
-interface AppRoute {
-  path: string;
-  element: JSX.Element;
-}

@@ -34,7 +34,7 @@ export default {
         buttonclick: "#4341bb",
       },
       boxShadow: {
-        dim: " 0 0 0 200vmax rgba(0, 0, 0, .3)",
+        dim: " 0 0 0 200vmax rgba(0, 0, 0, .7)",
       },
       fontFamily: {
         // sans: ["Pretendard", "sans-serif"],

@@ -2,6 +2,7 @@ import { MutableRefObject } from "react";
 import CardComponent from "../components/CardComponent";
 import FloatingComponent from "../components/FloatingComponent";
 import TechnoIcon from "../components/TechnoIcon";
+import { Link } from "react-router";
 
 export default function Screen03Project({
   screenRef,
@@ -46,13 +47,13 @@ export default function Screen03Project({
                   건강체크를 언제 어디서나 쉽고 편리하게 이용할 수 있는
                   서비스입니다.
                 </span>
-                <button
+                <Link
                   className="bg-hanarogreen/75 box-border rounded-md border-2 border-solid border-maincolor-200 p-4 text-xl text-white transition-all sm:p-2 sm:py-2 sm:text-base md:p-2 md:py-1 md:text-base md:hover:bg-maincolor-200 md:hover:text-black lg:mt-4 lg:hover:bg-maincolor-200 lg:hover:text-black"
                   //TODO add link
-                  onClick={() => {}}
+                  to={"/thenanaro"}
                 >
                   담당한 업무 확인하기
-                </button>
+                </Link>
                 <span className="w-[70%] text-sm text-maincolor-200 sm:w-full sm:text-xs md:text-xs">
                   *앱은 Google Play Store 심사중이오니 앱 이미지 활용하지 못하는
                   점을 양해 부탁드립니다
@@ -111,7 +112,7 @@ export default function Screen03Project({
 
       <div className="flex h-fit flex-col items-start justify-start gap-8 bg-bgcolor p-4 sm:flex-col sm:justify-start sm:gap-2 sm:px-2 sm:py-4 sm:pt-10 md:flex-wrap md:items-center md:justify-center md:gap-2 lg:ml-[5vw]">
         <div className="flex flex-wrap gap-8 sm:w-full sm:flex-col sm:gap-2 md:gap-2">
-          <div className="flex flex-col sm:w-full">
+          <div className="flex flex-col sm:w-full md:items-center">
             <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">
               <div className="ml-4 flex flex-col gap-8 sm:gap-2 md:gap-2">
                 <span className="text-[18px] sm:ml-0 sm:self-center">
