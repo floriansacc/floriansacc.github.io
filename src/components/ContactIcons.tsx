@@ -51,7 +51,7 @@ export default function ContactIcons({
             showContact.other
               ? "visible opacity-100"
               : "invisible translate-x-60 scale-0 opacity-0"
-          } absolute right-24 top-1/2 flex h-40 min-h-fit w-fit -translate-y-1/2 flex-col gap-2 rounded-xl bg-gray-500 p-4 font-semibold text-white transition-all duration-300 sm:right-12 sm:w-[75vw] sm:gap-6`}
+          } absolute right-24 top-1/2 flex h-fit min-h-fit w-fit -translate-y-1/2 flex-col gap-2 rounded-xl bg-gray-500 p-4 font-semibold text-white transition-all duration-300 sm:right-12 sm:w-[75vw] sm:gap-6`}
         >
           <div className="inline-flex h-fit items-center gap-2 sm:flex-col md:break-keep lg:break-keep">
             <span className="font-bold sm:whitespace-nowrap">이메일:</span>
@@ -97,11 +97,13 @@ export default function ContactIcons({
             className="aspect-auto rounded-xl transition-all duration-200 md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_#FEE50080] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_#FEE50080]"
           />
         </a>
-        <div className="relative h-12 w-12 sm:hidden sm:h-9 sm:w-9 md:hidden">
+        <div
+          className="relative h-12 w-12 cursor-pointer sm:hidden sm:h-9 sm:w-9 md:hidden"
+          onClick={() => openKakaoTooltip()}
+        >
           <img
             alt="Kakao Florian Sacchetti"
             src="/assets/images/kakao_logo.png"
-            onClick={() => openKakaoTooltip()}
             className="aspect-auto rounded-xl transition-all duration-200 md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_#FEE50080] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_#FEE50080]"
           />
           <div

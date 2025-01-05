@@ -28,15 +28,15 @@ export default function Screen01AboutMe({
     >
       <div className="mb-10 flex w-full items-center justify-around sm:flex-col md:items-start">
         <div className="mb-10 flex flex-col items-start justify-center gap-4 sm:items-center sm:gap-0 md:flex-wrap">
-          <span className="text-2xl font-normal sm:text-xl">
+          <span className="text-2xl font-normal sm:text-xl md:px-6 md:text-xl">
             저는 5년 전부터 한국에서 거주하고 있는 프랑스에서 온{" "}
           </span>
-          <p className="text-center text-[70px] font-bold sm:text-[32px]">
+          <p className="text-center text-[70px] font-bold sm:text-[32px] md:px-6 md:text-[44px]">
             <span>SACCHETTI Florian</span>
             <br className="md:hidden lg:hidden" />
             입니다
           </p>
-          <span className="self-center text-[50px] font-semibold italic sm:text-[28px]">
+          <span className="self-center text-[50px] font-semibold italic sm:text-[28px] md:text-[36px]">
             Front-end Developer
           </span>
         </div>
@@ -52,7 +52,7 @@ export default function Screen01AboutMe({
         </div>
       </div>
       <div className="flex flex-col items-start justify-start gap-4 p-2 sm:w-full sm:flex-col sm:items-center sm:px-1 md:mt-5 md:w-[80%] lg:w-[80%]">
-        <div className="relative mb-10 flex flex-col items-start justify-center gap-4 py-4 pl-2 pr-8 text-2xl font-normal sm:w-full sm:px-0 sm:text-xl lg:w-8/12">
+        <div className="relative mb-10 flex flex-col items-start justify-center gap-4 py-4 pl-2 pr-8 text-2xl font-normal sm:w-full sm:px-0 sm:text-xl md:text-xl lg:w-8/12">
           <div className="gradient-border-center absolute inset-0 -top-1 h-[1px]"></div>
           {/* <p>
             저는 5년 전부터 한국에서 거주하고 있는 프랑스에서 온{" "}
@@ -71,7 +71,7 @@ export default function Screen01AboutMe({
         {/* <CardComponent className="flex flex-col items-start justify-center text-2xl font-normal sm:w-full lg:w-1/2">
             
           </CardComponent> */}
-        <div className="relative flex flex-col items-start justify-center gap-4 py-4 pl-2 pr-8 text-2xl font-normal sm:w-full sm:px-0 sm:text-xl lg:w-8/12">
+        <div className="relative flex flex-col items-start justify-center gap-4 py-4 pl-2 pr-8 text-2xl font-normal sm:w-full sm:px-0 sm:text-xl md:text-xl lg:w-8/12">
           <div className="gradient-border-center absolute inset-0 -top-1 h-[1px]"></div>
           <p>
             앱 개발 분야에서 다양한 프로젝트를 경험하고 능숙하게 진행할 수 있는

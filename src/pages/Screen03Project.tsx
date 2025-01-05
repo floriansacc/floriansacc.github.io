@@ -57,7 +57,7 @@ export default function Screen03Project({
                 </span>
               </CardComponent>
             </div>
-            <div className="relative m-2 flex min-h-[400px] min-w-[300px] max-w-[400px] flex-[1_2_0%] items-center self-start overflow-hidden rounded-md bg-maincolor-700 sm:m-0 sm:min-h-[300px] sm:w-full sm:max-w-full sm:items-end md:min-h-[300px] md:items-end">
+            <div className="relative m-2 flex min-h-[400px] min-w-[300px] max-w-[400px] flex-[1_2_0%] items-center self-start overflow-hidden rounded-md bg-maincolor-700 sm:m-0 sm:min-h-[300px] sm:w-full sm:min-w-0 sm:max-w-full sm:items-end md:min-h-[300px] md:items-end">
               <FloatingComponent
                 imageBox1={[
                   "/assets/images/card_chartjs.png",
@@ -71,7 +71,7 @@ export default function Screen03Project({
             </div>
           </div>
 
-          <div className="flex min-w-[250px] max-w-[350px] flex-[1_1_0%] flex-col sm:mt-2 sm:self-center">
+          <div className="flex min-w-[250px] max-w-[350px] flex-[1_1_0%] flex-col sm:mt-2 sm:min-w-0 sm:self-center">
             <img
               className="mb-1 aspect-auto w-full rounded-xl"
               src="/assets/images/project_1_image.png"
@@ -101,7 +101,7 @@ export default function Screen03Project({
 
       {/* Project 2 */}
 
-      <div className="flex h-fit min-h-screen w-full flex-col items-start justify-start gap-8 bg-bgcolor p-4 sm:flex-col sm:justify-start sm:gap-2 sm:px-2 sm:py-4 sm:pt-10 md:flex-wrap md:items-center md:justify-center md:gap-2 lg:ml-[5vw]">
+      <div className="flex h-fit flex-col items-start justify-start gap-8 bg-bgcolor p-4 sm:flex-col sm:justify-start sm:gap-2 sm:px-2 sm:py-4 sm:pt-10 md:flex-wrap md:items-center md:justify-center md:gap-2 lg:ml-[5vw]">
         <div className="flex flex-wrap gap-8 sm:w-full sm:flex-col sm:gap-2 md:gap-2">
           <div className="flex flex-col sm:w-full">
             <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">
