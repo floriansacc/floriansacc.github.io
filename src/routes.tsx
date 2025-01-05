@@ -3,7 +3,7 @@ import App from "./App";
 
 const appRoutes: AppRoute[] = [
   { path: "/", element: <App /> },
-  // { path: "/", element: <App /> },
+  // { path: "/thehanaro", element: <App /> },
 ];
 
 export const router = createHashRouter(appRoutes, {

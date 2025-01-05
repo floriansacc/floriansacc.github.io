@@ -23,6 +23,7 @@ export default {
           950: "#242424",
         },
         line: "#e6e7e8",
+        hanarogreen: "#5ec65e",
         disabled: "#9e9e9E",
         gitbgvar: "#2d333b",
         bgmain: "#fafafb",
