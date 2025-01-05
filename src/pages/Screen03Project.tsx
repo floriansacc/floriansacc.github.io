@@ -1,6 +1,7 @@
 import { MutableRefObject } from "react";
 import CardComponent from "../components/CardComponent";
 import FloatingComponent from "../components/FloatingComponent";
+import TechnoIcon from "../components/TechnoIcon";
 
 export default function Screen03Project({
   screenRef,
@@ -23,13 +24,20 @@ export default function Screen03Project({
                 <span className="text-[18px] sm:ml-0 sm:self-center">
                   개발 기간: 2024-03 ~ 2024.01
                 </span>
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-6 sm:flex-wrap sm:gap-4">
                   <span className="text-5xl font-bold sm:text-2xl md:text-3xl">
                     더하나로
                   </span>
                   <span className="rounded-md bg-maincolor-200 p-1.5 text-sm text-black md:text-xs">
                     모바일 앱
                   </span>
+                  <div className="flex items-center justify-self-end">
+                    <TechnoIcon
+                      src="/assets/images/flutter_icon.png"
+                      alt="Flutter"
+                    />
+                    <TechnoIcon src="/assets/svg/figma_icon.svg" alt="Figma" />
+                  </div>
                 </div>
               </div>
               <CardComponent className="flex flex-col items-start md:max-w-[400px] lg:max-w-[600px]">
@@ -109,13 +117,18 @@ export default function Screen03Project({
                 <span className="text-[18px] sm:ml-0 sm:self-center">
                   개발 기간: 2023-09 ~ 2024-04
                 </span>
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-6 sm:flex-wrap sm:gap-4">
                   <span className="text-5xl font-bold sm:text-2xl md:text-3xl">
                     날씨 앱
                   </span>
                   <span className="rounded-md bg-maincolor-200 p-1.5 text-sm text-black md:text-xs">
                     웹
                   </span>
+                  <div className="flex items-center justify-self-end">
+                    <TechnoIcon src="/assets/svg/react.svg" alt="React" />
+                    <TechnoIcon src="/assets/images/html_logo.png" alt="HTML" />
+                    <TechnoIcon src="/assets/svg/css_logo.svg" alt="CSS" />
+                  </div>
                 </div>
               </div>
               <CardComponent className="flex flex-col items-start md:max-w-[400px] lg:max-w-[600px]">

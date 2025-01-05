@@ -1,5 +1,6 @@
 import { MutableRefObject } from "react";
 import CardComponent from "../components/CardComponent";
+import TechnoIcon from "../components/TechnoIcon";
 
 const logoList: { src: string; alt: string }[] = [
   { src: "/assets/images/flutter_icon.png", alt: "Flutter" },
@@ -30,12 +31,7 @@ export default function Screen02Career({ screenRef, ...props }: Screen02Props) {
           </span>
           <div className="flex items-center gap-5 sm:flex-wrap">
             {logoList.map((logo, index) => (
-              <img
-                key={`logo-${index}`}
-                className="h-14 w-14 rounded-md bg-maincolor-950 p-2 sm:h-11 sm:w-11"
-                src={logo.src}
-                alt={logo.alt}
-              />
+              <TechnoIcon key={`logo-${index}`} src={logo.src} alt={logo.alt} />
             ))}
           </div>
         </div>
