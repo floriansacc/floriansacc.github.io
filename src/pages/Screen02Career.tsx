@@ -13,34 +13,36 @@ export default function Screen02Career({ screenRef, ...props }: Screen02Props) {
   return (
     <div
       ref={screenRef}
-      className="flex h-fit min-h-screen w-full flex-col items-center justify-start bg-bgcolor p-4 sm:justify-start sm:pt-10"
+      className="flex h-fit min-h-screen w-full flex-col items-center justify-start bg-bgcolor p-4 sm:justify-start sm:px-2 sm:py-4 sm:pt-10"
       {...props}
     >
-      <div className="gradient-border h-[2px] w-[98%] bg-line"></div>
-      <div className="self-start pl-10 text-[70px] font-bold sm:text-[40px]">
+      <div className="gradient-border-to-right h-[2px] w-[98%] bg-line"></div>
+      <div className="self-start pl-10 text-[70px] font-bold sm:mb-8 sm:text-[40px]">
         Career
       </div>
       <CardComponent className="flex flex-col items-start">
-        <span className="ml-4 text-[18px] sm:ml-0 sm:self-center">
+        <span className="ml-4 text-[18px] sm:ml-0 sm:self-center sm:text-base">
           2024-03 ~ 현재
         </span>
         <div className="flex w-full items-center justify-between gap-4 sm:flex-col sm:items-start md:flex-wrap">
-          <span className="text-3xl font-bold">(주)위릿 (Wiilit)</span>
+          <span className="text-3xl font-bold sm:text-2xl">
+            (주)위릿 (Wiilit)
+          </span>
           <div className="flex items-center gap-5 sm:flex-wrap">
             {logoList.map((logo, index) => (
               <img
                 key={`logo-${index}`}
-                className="bg-maincolor-950 h-14 w-14 rounded-md p-2"
+                className="h-14 w-14 rounded-md bg-maincolor-950 p-2 sm:h-11 sm:w-11"
                 src={logo.src}
                 alt={logo.alt}
               />
             ))}
           </div>
         </div>
-        <span className="mb-4 text-2xl font-bold">
+        <span className="mb-4 text-2xl font-bold sm:text-xl">
           모바일/웹 프론트엔드 개발
         </span>
-        <ul className="list-inside list-disc text-xl font-medium">
+        <ul className="list-inside list-disc text-xl font-medium sm:text-base">
           <p className="font-bold">모바일 개발</p>
           <li>
             의료 분야 모바일 앱을{" "}
@@ -58,7 +60,7 @@ export default function Screen02Career({ screenRef, ...props }: Screen02Props) {
           </li>
           <li>기술: Flutter, Figma</li>
         </ul>
-        <ul className="list-inside list-disc text-xl font-medium">
+        <ul className="list-inside list-disc text-xl font-medium sm:text-base">
           <p className="font-bold">웹 개발</p>
           <li>
             <span className="git-bg-variable">관리자 페이지</span>를 제작해

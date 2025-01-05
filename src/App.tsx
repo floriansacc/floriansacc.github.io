@@ -9,6 +9,7 @@ import Screen01AboutMe from "./pages/Screen01AboutMe";
 import ContactIcons from "./components/ContactIcons";
 import TopBanner from "./components/TopBanner";
 import Screen02Career from "./pages/Screen02Career";
+import Screen03Project from "./pages/Screen03Project";
 
 export const QueryContext = createContext<ContextEntry | null>(null);
 
@@ -74,6 +75,7 @@ export default function App() {
         />
         <Screen01AboutMe screenRef={screenRefs[0]} />
         <Screen02Career screenRef={screenRefs[1]} />
+        <Screen03Project screenRef={screenRefs[2]} />
       </div>
       <ContactIcons showContact={showContact} setShowContact={setShowContact} />
     </QueryContext.Provider>

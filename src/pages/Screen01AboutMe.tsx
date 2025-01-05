@@ -27,16 +27,21 @@ export default function Screen01AboutMe({
       {...props}
     >
       <div className="mb-10 flex w-full items-center justify-around sm:flex-col md:items-start">
-        <div className="mb-10 flex flex-col items-center justify-center gap-4 sm:gap-0 md:flex-wrap">
-          <span className="text-center text-[70px] font-bold sm:text-[40px]">
-            Florian SACCHETTI
+        <div className="mb-10 flex flex-col items-start justify-center gap-4 sm:items-center sm:gap-0 md:flex-wrap">
+          <span className="text-2xl font-normal sm:text-xl">
+            저는 5년 전부터 한국에서 거주하고 있는 프랑스에서 온{" "}
           </span>
-          <span className="text-center text-[50px] font-semibold italic sm:text-[32px]">
+          <p className="text-center text-[70px] font-bold sm:text-[32px]">
+            <span>SACCHETTI Florian</span>
+            <br className="md:hidden lg:hidden" />
+            입니다
+          </p>
+          <span className="self-center text-[50px] font-semibold italic sm:text-[28px]">
             Front-end Developer
           </span>
         </div>
-        <div className="test relative min-w-[200px] rounded-xl bg-cover sm:w-[60%] md:w-80 lg:m-2 lg:w-80">
-          <div className="gradient-border bottom absolute inset-0 h-[1px]"></div>
+        <div className="gradient-border-pp relative min-w-[200px] rounded-xl bg-cover sm:w-[60%] md:w-80 lg:m-2 lg:w-80">
+          <div className="gradient-border-center bottom absolute inset-0 h-[1px]"></div>
           <img
             src="/assets/images/profile_picture.jpeg"
             className={`sticky left-0 top-0 rounded-xl border-2 border-solid border-line/50 sm:translate-x-0 sm:translate-y-0 sm:border-0`}
@@ -46,14 +51,14 @@ export default function Screen01AboutMe({
           />
         </div>
       </div>
-      <div className="flex flex-col items-start justify-start gap-4 p-2 sm:w-full sm:flex-col sm:items-center md:mt-5 md:w-[80%] lg:w-[80%]">
-        <div className="relative mb-10 flex flex-col items-start justify-center gap-4 py-4 pl-2 pr-8 text-2xl font-normal sm:w-full sm:px-2 lg:w-8/12">
-          <div className="gradient-border absolute inset-0 -top-1 h-[1px]"></div>
-          <p>
+      <div className="flex flex-col items-start justify-start gap-4 p-2 sm:w-full sm:flex-col sm:items-center sm:px-1 md:mt-5 md:w-[80%] lg:w-[80%]">
+        <div className="relative mb-10 flex flex-col items-start justify-center gap-4 py-4 pl-2 pr-8 text-2xl font-normal sm:w-full sm:px-0 sm:text-xl lg:w-8/12">
+          <div className="gradient-border-center absolute inset-0 -top-1 h-[1px]"></div>
+          {/* <p>
             저는 5년 전부터 한국에서 거주하고 있는 프랑스에서 온{" "}
             <span className="font-bold">사체티 플로리안</span>입니다.
           </p>
-          <br />
+          <br /> */}
           <p>
             현재 한국에서 프론트엔드 개발자로 활동하고 있으며{" "}
             <span className="git-bg-variable">React</span>,{" "}
@@ -66,8 +71,8 @@ export default function Screen01AboutMe({
         {/* <CardComponent className="flex flex-col items-start justify-center text-2xl font-normal sm:w-full lg:w-1/2">
             
           </CardComponent> */}
-        <div className="relative flex flex-col items-start justify-center gap-4 py-4 pl-2 pr-8 text-2xl font-normal sm:w-full sm:px-2 lg:w-8/12">
-          <div className="gradient-border absolute inset-0 -top-1 h-[1px]"></div>
+        <div className="relative flex flex-col items-start justify-center gap-4 py-4 pl-2 pr-8 text-2xl font-normal sm:w-full sm:px-0 sm:text-xl lg:w-8/12">
+          <div className="gradient-border-center absolute inset-0 -top-1 h-[1px]"></div>
           <p>
             앱 개발 분야에서 다양한 프로젝트를 경험하고 능숙하게 진행할 수 있는
             역량을 보유하고 있습니다.
