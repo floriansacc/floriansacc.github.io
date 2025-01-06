@@ -1,7 +1,7 @@
-import { MutableRefObject, useContext } from "react";
+import { useContext, MutableRefObject } from "react";
+import { QueryContext } from "../App";
 import CardComponent from "../components/CardComponent";
 import TechnoIcon from "../components/TechnoIcon";
-import { QueryContext } from "../App";
 
 const logoList: LogoModel[] = [
   { src: "/assets/disallowed/images/flutter_icon.png", alt: "Flutter" },

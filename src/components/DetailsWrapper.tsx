@@ -16,9 +16,7 @@ export default function DetailsWrapper({ children }: DetailsWrapperProps) {
   const closePage = (): void => {
     context?.setIsDetails(false);
     document.body.classList.remove("no-scroll");
-    // setTimeout(() => {
     navigate("/");
-    // }, 500);
   };
 
   const handleClickOutside = (e: React.MouseEvent<HTMLDivElement>) => {

@@ -1,9 +1,9 @@
-import { MutableRefObject, useContext } from "react";
+import { useContext, MutableRefObject } from "react";
+import { QueryContext } from "../App";
+import { Link } from "react-router";
 import CardComponent from "../components/CardComponent";
 import FloatingComponent from "../components/FloatingComponent";
 import TechnoIcon from "../components/TechnoIcon";
-import { Link } from "react-router";
-import { QueryContext } from "../App";
 
 export default function Screen03Project({
   screenRef,
@@ -69,7 +69,6 @@ export default function Screen03Project({
               </span>
               <Link
                 className="box-border rounded-md border-2 border-solid border-maincolor-200 bg-hanarogreen/75 p-4 text-xl text-white transition-all sm:p-2 sm:py-2 sm:text-base md:p-2 md:py-1 md:text-base md:hover:bg-maincolor-200 md:hover:text-black lg:mt-4 lg:hover:bg-maincolor-200 lg:hover:text-black"
-                //TODO add link
                 to={"/thenanaro"}
               >
                 담당한 업무 확인하기
@@ -113,18 +112,6 @@ export default function Screen03Project({
             출처: https://thehanaro.co.kr
           </span>
         </div>
-        {/* <div className="relative flex min-h-[400px] min-w-[300px] max-w-[400px] flex-[1_2_0%] items-center self-start overflow-hidden rounded-xl bg-maincolor-700">
-            <FloatingComponent
-              imageBox1={[
-                "/assets/disallowed/images/card_chartjs.png",
-                "/assets/disallowed/images/card_react.png",
-              ]}
-              imageBox2={[
-                "/assets/disallowed/images/card_flutter.png",
-                "/assets/disallowed/images/card_github.png",
-              ]}
-            />
-          </div> */}
       </div>
 
       {/* Project 2 */}

@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useState } from "react";
+import { useState, useEffect, MutableRefObject } from "react";
 import useScreenSize from "../hooks/useScreenSize";
 
 export default function Screen01AboutMe({
@@ -54,11 +54,6 @@ export default function Screen01AboutMe({
       <div className="flex flex-col items-start justify-start gap-4 p-2 sm:w-full sm:flex-col sm:items-center sm:px-1 md:mt-5 md:w-[80%] lg:w-[80%]">
         <div className="relative mb-10 flex flex-col items-start justify-center gap-4 py-4 pl-2 pr-8 text-2xl font-normal sm:w-full sm:px-0 sm:text-xl md:text-xl lg:w-8/12">
           <div className="gradient-border-center absolute inset-0 -top-1 h-[1px]"></div>
-          {/* <p>
-            저는 5년 전부터 한국에서 거주하고 있는 프랑스에서 온{" "}
-            <span className="font-bold">사체티 플로리안</span>입니다.
-          </p>
-          <br /> */}
           <p>
             현재 한국에서 프론트엔드 개발자로 활동하고 있으며{" "}
             <span className="font-bold underline underline-offset-[3px]">
@@ -75,9 +70,6 @@ export default function Screen01AboutMe({
             스텍으로 활용하여 여러 프로젝트를 진행해왔습니다.
           </p>
         </div>
-        {/* <CardComponent className="flex flex-col items-start justify-center text-2xl font-normal sm:w-full lg:w-1/2">
-            
-          </CardComponent> */}
         <div className="relative flex flex-col items-start justify-center gap-4 py-4 pl-2 pr-8 text-2xl font-normal sm:w-full sm:px-0 sm:text-xl md:text-xl lg:w-8/12">
           <div className="gradient-border-center absolute inset-0 -top-1 h-[1px]"></div>
           <p>

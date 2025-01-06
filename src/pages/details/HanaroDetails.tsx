@@ -1,12 +1,13 @@
 import { useState } from "react";
-import DetailsWrapper from "../../components/DetailsWrapper";
 import { FaChevronUp } from "react-icons/fa";
+import DetailsWrapper from "../../components/DetailsWrapper";
 
 export default function HanaroDetails() {
   const [openFolder, setOpenFolder] = useState<{
     mobile: boolean;
     web: boolean;
   }>({ mobile: true, web: true });
+
   return (
     <DetailsWrapper>
       <div className="flex flex-col gap-4 break-keep text-justify sm:mb-24 md:mb-10">
@@ -254,7 +255,3 @@ export default function HanaroDetails() {
     </DetailsWrapper>
   );
 }
-
-/** WEB PART
-   
- */

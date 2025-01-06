@@ -1,6 +1,6 @@
-import { MutableRefObject, useContext } from "react";
-import CardComponent from "../components/CardComponent";
+import { useContext, MutableRefObject } from "react";
 import { QueryContext } from "../App";
+import CardComponent from "../components/CardComponent";
 
 const educationInfo: EducationModel[] = [
   {

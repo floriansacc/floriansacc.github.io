@@ -14,7 +14,6 @@ export default function TopBanner({
 
   const controlNavbar = (): void => {
     scrollPos.isNavigating;
-    //TODO if click to go to section, top banner should not disappear
     if (window.scrollY > lastScrollY) {
       if (window.scrollY > thresholdY) {
         if (isOpen) {
