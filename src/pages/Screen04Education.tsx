@@ -78,7 +78,7 @@ export default function Screen04Education({
             >
               <img
                 src={e.image}
-                className={`${e.isDarkIcon ? "rounded-md bg-white p-2" : ""} absolute right-2 top-2 aspect-auto h-14 rounded-md sm:h-11 sm:w-11`}
+                className={`${e.isDarkIcon ? "rounded-md bg-white p-2" : ""} absolute right-2 top-2 aspect-auto h-14 rounded-md sm:h-11`}
               />
               <span className="ml-4 text-[18px] sm:ml-0 sm:self-center sm:text-base">
                 {e.date}
