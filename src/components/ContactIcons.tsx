@@ -1,17 +1,13 @@
-import { useState } from "react";
-import { Tooltip } from "react-tooltip";
+import { useState, useContext } from "react";
+import { QueryContext } from "../App";
 import { FaRegCopy, FaChevronUp } from "react-icons/fa";
 
 export default function ContactIcons({
   showContact,
   setShowContact,
 }: ContactIconsProps) {
+  const context = useContext(QueryContext);
   const [hideIcon, setHideIcon] = useState<boolean>(false);
-
-  const copyToClipBoard = (id: string): void => {
-    const content: string = document.getElementById(id)?.textContent ?? "";
-    navigator.clipboard.writeText(content);
-  };
 
   const openKakaoTooltip = (): void => {
     if (showContact.kakao) {
@@ -63,7 +59,7 @@ export default function ContactIcons({
                 data-tooltip-content={"Copied to clipboard"}
                 data-tooltip-delay-hide={500}
                 onClick={() => {
-                  copyToClipBoard("email-flo");
+                  context?.copyToClipBoard("email-flo");
                 }}
               />
             </div>
@@ -77,7 +73,7 @@ export default function ContactIcons({
                 data-tooltip-id="icons-tooltip"
                 data-tooltip-content={"Copied to clipboard"}
                 data-tooltip-delay-hide={500}
-                onClick={() => copyToClipBoard("kakao-flo")}
+                onClick={() => context?.copyToClipBoard("kakao-flo")}
               />
             </div>
           </div>
@@ -97,14 +93,12 @@ export default function ContactIcons({
             className="aspect-auto rounded-xl transition-all duration-200 md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_#FEE50080] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_#FEE50080]"
           />
         </a>
-        <div
-          className="relative h-12 w-12 cursor-pointer sm:hidden sm:h-9 sm:w-9 md:hidden"
-          onClick={() => openKakaoTooltip()}
-        >
+        <div className="relative h-12 w-12 sm:hidden sm:h-9 sm:w-9 md:hidden">
           <img
             alt="Kakao Florian Sacchetti"
             src="/assets/images/kakao_logo.png"
-            className="aspect-auto rounded-xl transition-all duration-200 md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_#FEE50080] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_#FEE50080]"
+            className="aspect-auto cursor-pointer rounded-xl transition-all duration-200 md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_#FEE50080] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_#FEE50080]"
+            onClick={() => openKakaoTooltip()}
           />
           <div
             className={`${
@@ -121,7 +115,7 @@ export default function ContactIcons({
                 data-tooltip-id="icons-tooltip"
                 data-tooltip-content={"Copied to clipboard"}
                 data-tooltip-delay-hide={500}
-                onClick={() => copyToClipBoard("kakao-flo")}
+                onClick={() => context?.copyToClipBoard("kakao-flo")}
               />
             </div>
           </div>
@@ -139,11 +133,7 @@ export default function ContactIcons({
         </a>
         <div className="mt-2 h-28 w-[2px] bg-gradient-to-b from-white from-40% sm:hidden"></div>
       </div>
-      <Tooltip
-        id="icons-tooltip"
-        openOnClick={true}
-        closeEvents={{ mouseleave: true }}
-      />
+
       <FaChevronUp
         className={`${hideIcon ? "rotate-180" : ""} h-9 w-9 p-2 transition-transform md:hidden lg:hidden`}
         onClick={() => {

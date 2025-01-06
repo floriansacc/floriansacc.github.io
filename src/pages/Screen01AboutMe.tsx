@@ -26,7 +26,7 @@ export default function Screen01AboutMe({
       className="flex h-fit min-h-screen w-full flex-col items-center justify-center bg-bgcolor p-4 sm:justify-start sm:pt-10"
       {...props}
     >
-      <div className="mb-10 flex w-full items-center justify-around sm:flex-col md:mt-4 md:items-center">
+      <div className="flex w-full items-center justify-around sm:flex-col md:mt-4 md:items-center">
         <div className="mb-10 flex flex-col items-start justify-center gap-4 sm:items-center sm:gap-0 md:flex-wrap">
           <span className="text-2xl font-normal sm:text-xl md:px-6 md:text-xl">
             저는 5년 전부터 한국에서 거주하고 있는 프랑스에서 온{" "}

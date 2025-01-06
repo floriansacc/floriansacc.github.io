@@ -1,5 +1,10 @@
+import { useContext } from "react";
+import { QueryContext } from "../App";
 import { FaRegCopy, FaPhoneSquare } from "react-icons/fa";
+
 export default function Footer() {
+  const context = useContext(QueryContext);
+
   return (
     <div className="flex h-fit min-h-[50vh] w-full flex-col items-start justify-start bg-bgcolor p-4 pb-32 pt-20 sm:items-center sm:justify-start sm:px-2 sm:py-4 sm:pt-10 md:items-center">
       <div
@@ -31,7 +36,7 @@ export default function Footer() {
               data-tooltip-content={"Copied to clipboard"}
               data-tooltip-delay-hide={500}
               onClick={() => {
-                //   copyToClipBoard("email-flo");
+                context?.copyToClipBoard("email-flo");
               }}
             />
           </div>
@@ -45,7 +50,7 @@ export default function Footer() {
               data-tooltip-id="icons-tooltip"
               data-tooltip-content={"Copied to clipboard"}
               data-tooltip-delay-hide={500}
-              // onClick={() => copyToClipBoard("kakao-flo")}
+              onClick={() => context?.copyToClipBoard("kakao-flo")}
             />
           </div>
           <div className="w-12 justify-items-center">
@@ -59,7 +64,7 @@ export default function Footer() {
               data-tooltip-id="icons-tooltip"
               data-tooltip-content={"Copied to clipboard"}
               data-tooltip-delay-hide={500}
-              // onClick={() => copyToClipBoard("kakao-flo")}
+              onClick={() => context?.copyToClipBoard("phone-flo")}
             />
           </div>
         </div>
