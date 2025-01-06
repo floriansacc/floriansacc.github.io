@@ -1,17 +1,15 @@
 import { useState, useEffect, Fragment } from "react";
+import { ScrollModel } from "../App";
 
 const menuItems: string[] = ["About me", "Career", "Project", "Education"];
 
-export default function TopBanner({
-  activeSection,
-  scrollPos,
-  goToSection,
-}: TopBannerProps) {
+export default function TopBanner({ scrollPos, goToSection }: TopBannerProps) {
   const [isOpen, setIsOpen] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
   const [thresholdY, setThresholdY] = useState<number>(0);
 
   const controlNavbar = (): void => {
+    scrollPos.isNavigating;
     //TODO if click to go to section, top banner should not disappear
     if (window.scrollY > lastScrollY) {
       if (window.scrollY > thresholdY) {
@@ -33,8 +31,9 @@ export default function TopBanner({
   };
 
   useEffect(() => {
+    if (scrollPos.isNavigating) return;
     controlNavbar();
-  }, [scrollPos]);
+  }, [scrollPos.scrollPosY]);
 
   return (
     <div
@@ -47,7 +46,7 @@ export default function TopBanner({
               <div className="h-6 w-[0.5px] bg-line/50 sm:hidden"></div>
             )}
             <p
-              className={`${activeSection === i ? "text-blue-200" : ""} cursor-pointer rounded-full px-4 py-4 transition-all sm:px-2 md:px-2 md:hover:scale-110 md:hover:text-white/90 lg:hover:scale-110 lg:hover:text-white/90`}
+              className={`${scrollPos.activeSection === i ? "text-blue-200" : ""} cursor-pointer rounded-full px-4 py-4 transition-all sm:px-2 md:px-2 md:hover:scale-110 md:hover:text-white/90 lg:hover:scale-110 lg:hover:text-white/90`}
               onClick={() => goToSection(i)}
             >
               {e}
@@ -60,7 +59,6 @@ export default function TopBanner({
 }
 
 interface TopBannerProps {
-  activeSection: number;
-  scrollPos: number;
+  scrollPos: ScrollModel;
   goToSection: (index: number) => void;
 }

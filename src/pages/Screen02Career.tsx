@@ -58,7 +58,7 @@ const carrierInfo: CarrierInfo[] = [
   },
   {
     date: "2023.11 ~ 2024.03",
-    name: "웨더피아 (Weatherpedia)",
+    name: "(주)웨더피아 (Weatherpedia)",
     role: "연구원 · 기후변화연구소",
     skillsImage: [],
     details: [

@@ -23,10 +23,11 @@ export default function App() {
     other: boolean;
   }>({ kakao: false, other: false });
 
-  const [scrollPos, setScrollPos] = useState<{
-    scrollPosY: number;
-    activeSection: number;
-  }>({ scrollPosY: 0, activeSection: 0 });
+  const [scrollPos, setScrollPos] = useState<ScrollModel>({
+    scrollPosY: 0,
+    activeSection: 0,
+    isNavigating: false,
+  });
   const [isDetails, setIsDetails] = useState<boolean>(false);
 
   const screenRefs: MutableRefObject<HTMLDivElement | null>[] = [
@@ -48,6 +49,18 @@ export default function App() {
   const goToSection = (index: number): void => {
     if (screenRefs?.[index] == null || screenRefs?.[index].current == null)
       return;
+    setScrollPos((prev) => ({
+      ...prev,
+      isNavigating: true,
+    })),
+      setTimeout(
+        () =>
+          setScrollPos((prev) => ({
+            ...prev,
+            isNavigating: false,
+          })),
+        900,
+      );
     screenRefs[index].current.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -56,7 +69,11 @@ export default function App() {
       if (ref.current) {
         const rect = ref.current.getBoundingClientRect();
         if (rect.top <= 200 && rect.top > -rect.height + 200) {
-          setScrollPos({ scrollPosY: window.scrollY, activeSection: index });
+          setScrollPos((prev) => ({
+            ...prev,
+            scrollPosY: window.scrollY,
+            activeSection: index,
+          }));
         }
       }
     });
@@ -79,11 +96,7 @@ export default function App() {
         className="crelative flex min-h-screen w-full flex-col"
         onClick={() => closeTooltips()}
       >
-        <TopBanner
-          activeSection={scrollPos.activeSection}
-          goToSection={goToSection}
-          scrollPos={scrollPos.scrollPosY}
-        />
+        <TopBanner goToSection={goToSection} scrollPos={scrollPos} />
         <Screen01AboutMe screenRef={screenRefs[0]} />
         <Screen02Career screenRef={screenRefs[1]} />
         <Screen03Project screenRef={screenRefs[2]} />
@@ -105,4 +118,10 @@ export interface ContextEntry {
   isDetails: boolean;
   copyToClipBoard: (id: string) => void;
   setIsDetails: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface ScrollModel {
+  scrollPosY: number;
+  activeSection: number;
+  isNavigating: boolean;
 }
