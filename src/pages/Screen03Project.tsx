@@ -186,8 +186,7 @@ export default function Screen03Project({
             />
           </video>
         </div>
-
-        <div className="flex min-w-[250px] max-w-[350px] flex-[1_1_0%] flex-col sm:mt-2 sm:w-full sm:min-w-0 sm:max-w-full sm:self-center lg:mt-16">
+        <div className="flex min-w-[250px] max-w-[350px] flex-[1_1_0%] flex-col sm:mt-2 sm:w-full sm:min-w-0 sm:max-w-full sm:self-center sm:px-4 lg:mt-16">
           <img
             className="mb-1 aspect-auto w-full rounded-xl"
             src="/assets/allowed/images/project_2_image.jpeg"

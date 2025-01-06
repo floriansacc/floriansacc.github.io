@@ -63,7 +63,6 @@ const carrierInfo: CarrierInfo[] = [
     skillsImage: [],
     details: [
       <ul className="list-inside list-disc text-xl font-medium sm:text-base">
-        <p className="font-bold">모바일 개발</p>
         <li>국내 및 국제 기후변화 사업 구축/관리 (GCF, CTCN, 기상청 등)</li>
       </ul>,
     ],

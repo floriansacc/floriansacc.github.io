@@ -6,7 +6,7 @@ export default function Footer() {
   const context = useContext(QueryContext);
 
   return (
-    <div className="flex h-fit min-h-[50vh] w-full flex-col items-start justify-start bg-bgcolor p-4 pb-32 pt-20 sm:items-center sm:justify-start sm:px-2 sm:py-4 sm:pt-10 md:items-center">
+    <div className="mb-32 flex h-fit min-h-[50vh] w-full flex-col items-start justify-start bg-bgcolor p-4 pt-20 sm:items-center sm:justify-start sm:px-2 sm:py-4 sm:pt-10 md:items-center">
       <div
         style={{ "--color": "white" } as React.CSSProperties}
         className="gradient-border-to-right h-[2px] w-[98%] bg-line"
@@ -15,10 +15,10 @@ export default function Footer() {
         <div className="mb-32 mt-10 self-start pl-10 text-[70px] font-bold text-white sm:mb-10 sm:text-[40px] md:mb-16">
           Contacts
         </div>
-        <div className="text-4xl font-semibold italic sm:text-2xl md:text-3xl">
+        <div className="text-4xl font-semibold italic sm:text-xl md:text-3xl">
           구직 활동을 적극적으로 하고 있으니
         </div>
-        <div className="mb-10 text-4xl font-semibold italic sm:text-2xl md:text-3xl">
+        <div className="mb-10 text-4xl font-semibold italic sm:text-xl md:text-3xl">
           언제든 편하게 연락주시면 감사하겠습니다.
         </div>
         <div className="grid w-fit grid-flow-row grid-cols-[min-content_1fr] content-start items-center gap-4 rounded-md bg-maincolor-900 p-10 sm:w-full sm:p-4 md:text-xl lg:text-xl">
