@@ -6,7 +6,7 @@ const appRoutes: RouteObject[] = [
   {
     path: "/",
     element: <App />,
-    children: [{ path: "/thenanaro", element: <HanaroDetails /> }],
+    children: [{ path: "/thehanaro", element: <HanaroDetails /> }],
   },
 ];
 

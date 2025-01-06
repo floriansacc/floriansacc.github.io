@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400..800&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400..800&display=swap"); */
 
 @tailwind base;
 @tailwind components;
@@ -24,21 +24,6 @@ body {
   color: #f1f1f1;
 }
 
-.no-scroll {
-  overflow: hidden;
-  height: 100%;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
 ul > li {
   margin-bottom: 4px;
 }
@@ -52,6 +37,21 @@ div > h3 {
   font-size: 1.25rem /* 20px */;
   line-height: 1.75rem /* 28px */;
   font-weight: 700;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .git-bg-variable {
@@ -99,23 +99,6 @@ div > h3 {
   height: 2px; /* Border thickness */
   background: linear-gradient(to right, var(--color) 10%, transparent);
   z-index: -1;
-}
-
-.gradient-border-pp {
-  border: 2px solid transparent;
-  background-image: linear-gradient(#242424, #242424),
-    linear-gradient(
-      to top right,
-      white 0%,
-      transparent 20%,
-      transparent 30%,
-      white 50%,
-      transparent 70%,
-      transparent 80%,
-      white 100%
-    );
-  background-origin: border-box;
-  background-clip: content-box, border-box;
 }
 
 .academic-box {

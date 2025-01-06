@@ -40,7 +40,7 @@ export default function Screen01AboutMe({
             Front-end Developer
           </span>
         </div>
-        <div className="gradient-border-pp relative min-w-[200px] rounded-xl bg-cover sm:mb-10 sm:w-[60%] md:w-80 lg:m-2 lg:w-80">
+        <div className="relative min-w-[200px] rounded-xl border-2 border-solid border-white bg-cover sm:mb-10 sm:w-[60%] md:w-80 lg:m-2 lg:w-80">
           <div className="gradient-border-center bottom absolute inset-0 h-[1px]"></div>
           <img
             src="/assets/allowed/images/profile_picture.jpeg"

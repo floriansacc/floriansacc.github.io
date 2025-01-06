@@ -17,7 +17,7 @@ export default function DetailsWrapper({ children }: DetailsWrapperProps) {
     context?.setIsDetails(false);
     document.body.classList.remove("no-scroll");
     // setTimeout(() => {
-    navigate(-1);
+    navigate("/");
     // }, 500);
   };
 
