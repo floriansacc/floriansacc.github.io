@@ -89,14 +89,14 @@ export default function ContactIcons({
         >
           <img
             alt="Kakao Florian Sacchetti"
-            src="/assets/images/kakao_logo.png"
+            src="/assets/disallowed/images/kakao_logo.png"
             className="aspect-auto rounded-xl transition-all duration-200 md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_#FEE50080] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_#FEE50080]"
           />
         </a>
         <div className="relative h-12 w-12 sm:hidden sm:h-9 sm:w-9 md:hidden">
           <img
             alt="Kakao Florian Sacchetti"
-            src="/assets/images/kakao_logo.png"
+            src="/assets/disallowed/images/kakao_logo.png"
             className="aspect-auto cursor-pointer rounded-xl transition-all duration-200 md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_#FEE50080] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_#FEE50080]"
             onClick={() => openKakaoTooltip()}
           />
@@ -127,7 +127,7 @@ export default function ContactIcons({
         >
           <img
             alt="GitHub Florian Sacchetti"
-            src="/assets/svg/github-mark-white.svg"
+            src="/assets/disallowed/svg/github-mark-white.svg"
             className="aspect-auto rounded-full transition-all duration-200 md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)]"
           />
         </a>

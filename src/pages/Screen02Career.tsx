@@ -3,12 +3,12 @@ import CardComponent from "../components/CardComponent";
 import TechnoIcon from "../components/TechnoIcon";
 
 const logoList: LogoInfo[] = [
-  { src: "/assets/images/flutter_icon.png", alt: "Flutter" },
-  { src: "/assets/svg/react.svg", alt: "React" },
-  { src: "/assets/images/html_logo.png", alt: "HTML" },
-  { src: "/assets/svg/css_logo.svg", alt: "CSS" },
-  { src: "/assets/svg/chartjs_logo.svg", alt: "Chart.js" },
-  { src: "/assets/svg/figma_icon.svg", alt: "Figma" },
+  { src: "/assets/disallowed/images/flutter_icon.png", alt: "Flutter" },
+  { src: "/assets/disallowed/svg/react.svg", alt: "React" },
+  { src: "/assets/disallowed/images/html_logo.png", alt: "HTML" },
+  { src: "/assets/disallowed/svg/css_logo.svg", alt: "CSS" },
+  { src: "/assets/disallowed/svg/chartjs_logo.svg", alt: "Chart.js" },
+  { src: "/assets/disallowed/svg/figma_icon.svg", alt: "Figma" },
 ];
 
 const carrierInfo: CarrierInfo[] = [

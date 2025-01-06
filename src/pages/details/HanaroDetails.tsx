@@ -12,7 +12,7 @@ export default function HanaroDetails() {
       <div className="flex flex-col gap-4 break-keep text-justify sm:mb-24 md:mb-10">
         <img
           className="my-10 max-w-[500px] self-center px-20"
-          src="/assets/images/hanaro_logo.svg"
+          src="/assets/disallowed/svg/hanaro_logo.svg"
         />
         <span className="text-xl font-semibold">
           개발은 '더하나로' (2차)라는 앱을 만드는 작업이었으며 이 개발은
@@ -196,7 +196,7 @@ export default function HanaroDetails() {
                 >
                   <source
                     type="video/mp4"
-                    src="/assets/videos/project_1_video_1.mp4"
+                    src="/assets/disallowed/videos/project_1_video_1.mp4"
                   />
                 </video>
                 <video
@@ -208,7 +208,7 @@ export default function HanaroDetails() {
                 >
                   <source
                     type="video/mp4"
-                    src="/assets/videos/project_1_video_2.mp4"
+                    src="/assets/disallowed/videos/project_1_video_2.mp4"
                   />
                 </video>
               </div>

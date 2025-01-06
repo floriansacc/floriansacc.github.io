@@ -16,7 +16,7 @@ const educationInfo: EducationInf[] = [
       "공대 프로그래밍 기초 (Python, Matlab)",
       "웹 기초 (HTML/CSS, JavaScript)",
     ],
-    image: "/assets/images/jbnu_logo.png",
+    image: "/assets/disallowed/images/jbnu_logo.png",
   },
   {
     date: "2017 ~ 2021",
@@ -31,7 +31,7 @@ const educationInfo: EducationInf[] = [
       "Matlab, Simulink 프로그래밍",
       "재생 에너지",
     ],
-    image: "/assets/images/utbm_logo.png",
+    image: "/assets/disallowed/images/utbm_logo.png",
     isDarkIcon: true,
   },
   {
@@ -42,7 +42,7 @@ const educationInfo: EducationInf[] = [
     univName: "University Claude Bernard Lyon 1",
     country: "리옹 (프랑스)",
     details: ["전기, 전자, 열역학, 기계공학 기초 교육"],
-    image: "/assets/images/lyon_logo.png",
+    image: "/assets/disallowed/images/lyon_logo.png",
     isDarkIcon: true,
   },
 ];

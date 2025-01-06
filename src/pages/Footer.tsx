@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="w-12 justify-items-center">
             <img
               className="h-8 w-8 rounded-md bg-maincolor-100 p-1"
-              src="/assets/svg/gmail_icon.svg"
+              src="/assets/disallowed/svg/gmail_icon.svg"
             />
           </div>
           <div className="flex items-center gap-2 sm:flex-wrap sm:justify-start sm:gap-0 sm:break-all">
@@ -41,7 +41,10 @@ export default function Footer() {
             />
           </div>
           <div className="w-12 justify-items-center">
-            <img className="h-8 w-8" src="/assets/images/kakao_logo.png" />
+            <img
+              className="h-8 w-8"
+              src="/assets/disallowed/images/kakao_logo.png"
+            />
           </div>
           <div className="flex items-center gap-2 sm:flex-wrap sm:justify-start sm:gap-0 sm:break-all">
             <span id="kakao-flo">floriansacchetti</span>

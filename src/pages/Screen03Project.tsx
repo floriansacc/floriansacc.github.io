@@ -40,10 +40,13 @@ export default function Screen03Project({
                 </span>
                 <div className="flex items-center justify-self-end">
                   <TechnoIcon
-                    src="/assets/images/flutter_icon.png"
+                    src="/assets/disallowed/images/flutter_icon.png"
                     alt="Flutter"
                   />
-                  <TechnoIcon src="/assets/svg/figma_icon.svg" alt="Figma" />
+                  <TechnoIcon
+                    src="/assets/disallowed/svg/figma_icon.svg"
+                    alt="Figma"
+                  />
                 </div>
               </div>
             </div>
@@ -75,12 +78,12 @@ export default function Screen03Project({
           <div className="relative m-2 flex min-h-[400px] min-w-[300px] max-w-[400px] flex-[1_2_0%] items-center self-start overflow-hidden rounded-md bg-maincolor-700 sm:m-0 sm:min-h-[300px] sm:w-full sm:min-w-0 sm:max-w-full sm:items-end md:min-h-[300px] md:items-end">
             <FloatingComponent
               imageBox1={[
-                "/assets/images/card_chartjs.png",
-                "/assets/images/card_react.png",
+                "/assets/disallowed/images/card_chartjs.png",
+                "/assets/disallowed/images/card_react.png",
               ]}
               imageBox2={[
-                "/assets/images/card_flutter.png",
-                "/assets/images/card_github.png",
+                "/assets/disallowed/images/card_flutter.png",
+                "/assets/disallowed/images/card_github.png",
               ]}
             />
           </div>
@@ -89,7 +92,7 @@ export default function Screen03Project({
         <div className="flex min-w-[250px] max-w-[350px] flex-[1_1_0%] flex-col sm:mt-2 sm:min-w-0 sm:self-center lg:mt-16">
           <img
             className="mb-1 aspect-auto w-full rounded-xl"
-            src="/assets/images/project_1_image.png"
+            src="/assets/disallowed/images/project_1_image.png"
           />
           <span className="mr-1 w-full text-sm text-maincolor-400 sm:text-sm">
             *이 이미지는 하나로의료재단의 소유이며, 상업적 목적으로 사용하지
@@ -102,12 +105,12 @@ export default function Screen03Project({
         {/* <div className="relative flex min-h-[400px] min-w-[300px] max-w-[400px] flex-[1_2_0%] items-center self-start overflow-hidden rounded-xl bg-maincolor-700">
             <FloatingComponent
               imageBox1={[
-                "/assets/images/card_chartjs.png",
-                "/assets/images/card_react.png",
+                "/assets/disallowed/images/card_chartjs.png",
+                "/assets/disallowed/images/card_react.png",
               ]}
               imageBox2={[
-                "/assets/images/card_flutter.png",
-                "/assets/images/card_github.png",
+                "/assets/disallowed/images/card_flutter.png",
+                "/assets/disallowed/images/card_github.png",
               ]}
             />
           </div> */}
@@ -130,9 +133,18 @@ export default function Screen03Project({
                   웹
                 </span>
                 <div className="flex items-center justify-self-end">
-                  <TechnoIcon src="/assets/svg/react.svg" alt="React" />
-                  <TechnoIcon src="/assets/images/html_logo.png" alt="HTML" />
-                  <TechnoIcon src="/assets/svg/css_logo.svg" alt="CSS" />
+                  <TechnoIcon
+                    src="/assets/disallowed/svg/react.svg"
+                    alt="React"
+                  />
+                  <TechnoIcon
+                    src="/assets/disallowed/images/html_logo.png"
+                    alt="HTML"
+                  />
+                  <TechnoIcon
+                    src="/assets/disallowed/svg/css_logo.svg"
+                    alt="CSS"
+                  />
                 </div>
               </div>
             </div>
@@ -155,7 +167,7 @@ export default function Screen03Project({
                 >
                   <img
                     className="h-10 w-10 rounded-full transition-all duration-200 md:hover:scale-125 lg:hover:scale-125"
-                    src="/assets/svg/github-mark-white.svg"
+                    src="/assets/disallowed/svg/github-mark-white.svg"
                   />
                 </a>
               </div>
@@ -168,14 +180,17 @@ export default function Screen03Project({
             playsInline
             className="relative m-2 flex min-h-[400px] min-w-[300px] max-w-[400px] flex-[1_2_0%] flex-col items-center self-start overflow-hidden rounded-md bg-maincolor-700 sm:m-0 sm:mt-2 sm:min-h-[300px] sm:w-full sm:min-w-0 sm:max-w-full sm:items-end md:mt-10 md:min-h-[300px] md:items-end"
           >
-            <source type="video/mp4" src="/assets/videos/project_2_video.mp4" />
+            <source
+              type="video/mp4"
+              src="/assets/allowed/videos/project_2_video.mp4"
+            />
           </video>
         </div>
 
         <div className="flex min-w-[250px] max-w-[350px] flex-[1_1_0%] flex-col sm:mt-2 sm:w-full sm:min-w-0 sm:max-w-full sm:self-center lg:mt-16">
           <img
             className="mb-1 aspect-auto w-full rounded-xl"
-            src="/assets/images/project_2_image.jpeg"
+            src="/assets/allowed/images/project_2_image.jpeg"
           />
         </div>
       </div>
@@ -186,7 +201,7 @@ export default function Screen03Project({
 /**
  <div className="min-w[300px] mt-16 max-w-[700px] flex-1 sm:hidden md:hidden md:max-w-[300px]">
           <img
-            src="/assets/images/project_2_image_desktop.png"
+            src="/assets/allowed/images/project_2_image_desktop.png"
             className="aspect-auto rounded-xl"
           />
         </div>

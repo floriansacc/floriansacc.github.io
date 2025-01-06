@@ -43,7 +43,7 @@ export default function Screen01AboutMe({
         <div className="gradient-border-pp relative min-w-[200px] rounded-xl bg-cover sm:w-[60%] md:w-80 lg:m-2 lg:w-80">
           <div className="gradient-border-center bottom absolute inset-0 h-[1px]"></div>
           <img
-            src="/assets/images/profile_picture.jpeg"
+            src="/assets/allowed/images/profile_picture.jpeg"
             className={`sticky left-0 top-0 rounded-xl border-2 border-solid border-line/50 sm:translate-x-0 sm:translate-y-0 sm:border-0`}
             style={{
               transform: `translate(-${randomTranslation[0]}px, -${randomTranslation[1]}px)`,
