@@ -1,8 +1,9 @@
-import { MutableRefObject } from "react";
+import { MutableRefObject, useContext } from "react";
 import CardComponent from "../components/CardComponent";
 import TechnoIcon from "../components/TechnoIcon";
+import { QueryContext } from "../App";
 
-const logoList: LogoInfo[] = [
+const logoList: LogoModel[] = [
   { src: "/assets/disallowed/images/flutter_icon.png", alt: "Flutter" },
   { src: "/assets/disallowed/svg/react.svg", alt: "React" },
   { src: "/assets/disallowed/images/html_logo.png", alt: "HTML" },
@@ -11,14 +12,17 @@ const logoList: LogoInfo[] = [
   { src: "/assets/disallowed/svg/figma_icon.svg", alt: "Figma" },
 ];
 
-const carrierInfo: CarrierInfo[] = [
+const careerInfo: CareerModel[] = [
   {
     date: "2024-03 ~ 2025.02",
     name: "(주)위릿 (Wiilit)",
     role: "모바일/웹 프론트엔드 개발",
     skillsImage: logoList,
     details: [
-      <ul className="list-inside list-disc text-xl font-medium sm:text-base">
+      <ul
+        key="career-1-details-1"
+        className="list-inside list-disc text-xl font-medium sm:text-base"
+      >
         <p className="font-bold">모바일 개발</p>
         <li>
           의료 분야 모바일 앱을{" "}
@@ -36,7 +40,10 @@ const carrierInfo: CarrierInfo[] = [
         </li>
         <li>기술: Flutter, Figma</li>
       </ul>,
-      <ul className="list-inside list-disc text-xl font-medium sm:text-base">
+      <ul
+        key="career-1-details-2"
+        className="list-inside list-disc text-xl font-medium sm:text-base"
+      >
         <p className="font-bold">웹 개발</p>
         <li>
           <span className="git-bg-variable">관리자 페이지</span>를 제작해
@@ -62,7 +69,10 @@ const carrierInfo: CarrierInfo[] = [
     role: "연구원 · 기후변화연구소",
     skillsImage: [],
     details: [
-      <ul className="list-inside list-disc text-xl font-medium sm:text-base">
+      <ul
+        key="career-2-details-1"
+        className="list-inside list-disc text-xl font-medium sm:text-base"
+      >
         <li>국내 및 국제 기후변화 사업 구축/관리 (GCF, CTCN, 기상청 등)</li>
       </ul>,
     ],
@@ -70,6 +80,8 @@ const carrierInfo: CarrierInfo[] = [
 ];
 
 export default function Screen02Career({ screenRef, ...props }: Screen02Props) {
+  const context = useContext(QueryContext);
+
   return (
     <div
       ref={screenRef}
@@ -83,9 +95,20 @@ export default function Screen02Career({ screenRef, ...props }: Screen02Props) {
       <div className="mt-10 self-start pl-10 text-[70px] font-bold sm:mb-8 sm:text-[40px]">
         Career
       </div>
-      <div className="flex h-fit w-full flex-wrap justify-start justify-items-start sm:flex-col">
-        {carrierInfo.map((e) => (
-          <CardComponent className="flex flex-col items-start sm:w-full md:w-[45%] md:min-w-[500px] md:flex-1 lg:min-h-[430px] lg:w-[45%]">
+      <div
+        className={`${
+          context?.activeSection === 1
+            ? "md:translate-y-0 md:opacity-100 lg:translate-y-0 lg:opacity-100"
+            : (context?.activeSection ?? 0) > 1
+              ? "md:-translate-y-24 md:opacity-0 lg:-translate-y-24 lg:opacity-0"
+              : "md:translate-y-24 md:opacity-0 lg:translate-y-24 lg:opacity-0"
+        } transition-[transform, opacity] relative flex h-fit w-full flex-wrap justify-start justify-items-start duration-[750ms] sm:flex-col`}
+      >
+        {careerInfo.map((e, i) => (
+          <CardComponent
+            key={`career-${i}`}
+            className="flex flex-col items-start sm:w-full md:w-[45%] md:min-w-[500px] md:flex-1 lg:min-h-[430px] lg:w-[45%]"
+          >
             <span className="ml-4 text-[18px] sm:ml-0 sm:self-center sm:text-base">
               {e.date}
             </span>
@@ -114,15 +137,15 @@ interface Screen02Props extends React.HTMLAttributes<HTMLDivElement> {
   screenRef: MutableRefObject<HTMLDivElement | null>;
 }
 
-interface CarrierInfo {
+interface CareerModel {
   date: string;
   name: string;
   role: string;
-  skillsImage: LogoInfo[];
+  skillsImage: LogoModel[];
   details: JSX.Element[];
 }
 
-interface LogoInfo {
+interface LogoModel {
   src: string;
   alt: string;
 }

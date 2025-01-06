@@ -1,7 +1,8 @@
-import { MutableRefObject } from "react";
+import { MutableRefObject, useContext } from "react";
 import CardComponent from "../components/CardComponent";
+import { QueryContext } from "../App";
 
-const educationInfo: EducationInf[] = [
+const educationInfo: EducationModel[] = [
   {
     date: "2021 ~ 2023",
     department: "환경에너지융합학과",
@@ -51,11 +52,13 @@ export default function Screen04Education({
   screenRef,
   ...props
 }: Screen04Props) {
+  const context = useContext(QueryContext);
+
   return (
     <div
       ref={screenRef}
       {...props}
-      className="flex h-fit min-h-screen w-full flex-col items-start justify-start bg-bgcolor p-4 sm:justify-start sm:px-2 sm:py-4 sm:pt-10 md:items-center"
+      className="relative flex h-fit min-h-screen w-full flex-col items-start justify-start bg-bgcolor p-4 sm:justify-start sm:px-2 sm:py-4 sm:pt-10 md:items-center"
     >
       <div
         style={{ "--color": "white" } as React.CSSProperties}
@@ -64,10 +67,19 @@ export default function Screen04Education({
       <div className="mb-20 mt-10 self-start pl-10 text-[70px] font-bold sm:text-[40px]">
         Education
       </div>
-      <div className="flex w-full justify-end">
+      <div
+        className={`${
+          context?.activeSection === 3
+            ? "md:translate-y-0 md:opacity-100 lg:translate-y-0 lg:opacity-100"
+            : (context?.activeSection ?? 0) > 3
+              ? "md:-translate-y-24 md:opacity-0 lg:-translate-y-24 lg:opacity-0"
+              : "md:translate-y-24 md:opacity-0 lg:translate-y-24 lg:opacity-0"
+        } transition-[transform, opacity] relative flex w-full justify-end duration-[750ms]`}
+      >
         <div className="flex w-fit flex-wrap justify-start justify-items-start sm:flex-col">
-          {educationInfo.map((e) => (
+          {educationInfo.map((e, i) => (
             <CardComponent
+              key={`${e.univName}-${i}`}
               style={
                 {
                   "--imagebg": `url(${e.image})`,
@@ -98,8 +110,8 @@ export default function Screen04Education({
               </div>
 
               <ul className="list-inside list-disc text-xl font-medium sm:text-base">
-                {e.details.map((detail) => (
-                  <li>{detail}</li>
+                {e.details.map((detail, i) => (
+                  <li key={`detail-${detail}-${i}`}>{detail}</li>
                 ))}
               </ul>
             </CardComponent>
@@ -114,7 +126,7 @@ interface Screen04Props extends React.HTMLAttributes<HTMLDivElement> {
   screenRef: MutableRefObject<HTMLDivElement | null>;
 }
 
-interface EducationInf {
+interface EducationModel {
   details: string[];
   univName: string;
   department: string;

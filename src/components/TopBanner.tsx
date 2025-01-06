@@ -3,7 +3,11 @@ import { ScrollModel } from "../App";
 
 const menuItems: string[] = ["About me", "Career", "Project", "Education"];
 
-export default function TopBanner({ scrollPos, goToSection }: TopBannerProps) {
+export default function TopBanner({
+  activeSection,
+  scrollPos,
+  goToSection,
+}: TopBannerProps) {
   const [isOpen, setIsOpen] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
   const [thresholdY, setThresholdY] = useState<number>(0);
@@ -46,7 +50,7 @@ export default function TopBanner({ scrollPos, goToSection }: TopBannerProps) {
               <div className="h-6 w-[0.5px] bg-line/50 sm:hidden"></div>
             )}
             <p
-              className={`${scrollPos.activeSection === i ? "text-blue-200" : ""} cursor-pointer rounded-full px-4 py-4 transition-all sm:px-2 md:px-2 md:hover:scale-110 md:hover:text-white/90 lg:hover:scale-110 lg:hover:text-white/90`}
+              className={`${activeSection === i ? "text-blue-200" : ""} cursor-pointer rounded-full px-4 py-4 transition-all sm:px-2 md:px-2 md:hover:scale-110 md:hover:text-white/90 lg:hover:scale-110 lg:hover:text-white/90`}
               onClick={() => goToSection(i)}
             >
               {e}
@@ -60,5 +64,6 @@ export default function TopBanner({ scrollPos, goToSection }: TopBannerProps) {
 
 interface TopBannerProps {
   scrollPos: ScrollModel;
+  activeSection: number;
   goToSection: (index: number) => void;
 }

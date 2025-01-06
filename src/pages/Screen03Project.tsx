@@ -1,13 +1,16 @@
-import { MutableRefObject } from "react";
+import { MutableRefObject, useContext } from "react";
 import CardComponent from "../components/CardComponent";
 import FloatingComponent from "../components/FloatingComponent";
 import TechnoIcon from "../components/TechnoIcon";
 import { Link } from "react-router";
+import { QueryContext } from "../App";
 
 export default function Screen03Project({
   screenRef,
   ...props
 }: Screen03Props) {
+  const context = useContext(QueryContext);
+
   return (
     <div
       ref={screenRef}
@@ -24,7 +27,15 @@ export default function Screen03Project({
 
       {/* Project 1 */}
 
-      <div className="mb-32 flex items-start gap-8 sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[5vw]">
+      <div
+        className={`${
+          context?.activeSection === 2
+            ? "md:translate-y-0 md:opacity-100 lg:translate-y-0 lg:opacity-100"
+            : (context?.activeSection ?? 0) > 2
+              ? "md:-translate-y-24 md:opacity-0 lg:-translate-y-24 lg:opacity-0"
+              : "md:translate-y-24 md:opacity-0 lg:translate-y-24 lg:opacity-0"
+        } transition-[transform, opacity] relativeitems-start mb-32 flex gap-8 duration-[750ms] sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[5vw]`}
+      >
         <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2">
           <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">
             <div className="ml-4 flex flex-col gap-8 sm:gap-2 md:gap-2">
@@ -118,7 +129,15 @@ export default function Screen03Project({
 
       {/* Project 2 */}
 
-      <div className="mb-32 flex items-start gap-8 sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[5vw]">
+      <div
+        className={`${
+          context?.activeSection === 2
+            ? "md:translate-y-0 md:opacity-100 lg:translate-y-0 lg:opacity-100"
+            : (context?.activeSection ?? 0) > 2
+              ? "md:-translate-y-24 md:opacity-0 lg:-translate-y-24 lg:opacity-0"
+              : "md:translate-y-24 md:opacity-0 lg:translate-y-24 lg:opacity-0"
+        } transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-[750ms] sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[5vw]`}
+      >
         <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2">
           <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">
             <div className="ml-4 flex flex-col gap-8 sm:gap-2 md:gap-2">

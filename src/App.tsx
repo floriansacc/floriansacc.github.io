@@ -5,15 +5,15 @@ import {
   createContext,
   MutableRefObject,
 } from "react";
-import Screen01AboutMe from "./pages/Screen01AboutMe";
-import ContactIcons from "./components/ContactIcons";
+import { Outlet } from "react-router";
+import { Tooltip } from "react-tooltip";
 import TopBanner from "./components/TopBanner";
+import Screen01AboutMe from "./pages/Screen01AboutMe";
 import Screen02Career from "./pages/Screen02Career";
 import Screen03Project from "./pages/Screen03Project";
-import { Outlet } from "react-router";
 import Screen04Education from "./pages/Screen04Education";
+import ContactIcons from "./components/ContactIcons";
 import Footer from "./pages/Footer";
-import { Tooltip } from "react-tooltip";
 
 export const QueryContext = createContext<ContextEntry | null>(null);
 
@@ -23,9 +23,10 @@ export default function App() {
     other: boolean;
   }>({ kakao: false, other: false });
 
+  const [activeSection, setActiveSection] = useState<number>(0);
+
   const [scrollPos, setScrollPos] = useState<ScrollModel>({
     scrollPosY: 0,
-    activeSection: 0,
     isNavigating: false,
   });
   const [isDetails, setIsDetails] = useState<boolean>(false);
@@ -68,12 +69,12 @@ export default function App() {
     screenRefs.forEach((ref, index) => {
       if (ref.current) {
         const rect = ref.current.getBoundingClientRect();
-        if (rect.top <= 200 && rect.top > -rect.height + 200) {
+        if (rect.top <= 250 && rect.top > -rect.height + 250) {
           setScrollPos((prev) => ({
             ...prev,
             scrollPosY: window.scrollY,
-            activeSection: index,
           }));
+          setActiveSection(index);
         }
       }
     });
@@ -91,12 +92,23 @@ export default function App() {
   }, []);
 
   return (
-    <QueryContext.Provider value={{ isDetails, setIsDetails, copyToClipBoard }}>
+    <QueryContext.Provider
+      value={{
+        isDetails,
+        activeSection,
+        setIsDetails,
+        copyToClipBoard,
+      }}
+    >
       <div
         className="crelative flex min-h-screen w-full flex-col"
         onClick={() => closeTooltips()}
       >
-        <TopBanner goToSection={goToSection} scrollPos={scrollPos} />
+        <TopBanner
+          activeSection={activeSection}
+          goToSection={goToSection}
+          scrollPos={scrollPos}
+        />
         <Screen01AboutMe screenRef={screenRefs[0]} />
         <Screen02Career screenRef={screenRefs[1]} />
         <Screen03Project screenRef={screenRefs[2]} />
@@ -116,12 +128,12 @@ export default function App() {
 
 export interface ContextEntry {
   isDetails: boolean;
+  activeSection: number;
   copyToClipBoard: (id: string) => void;
   setIsDetails: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface ScrollModel {
   scrollPosY: number;
-  activeSection: number;
   isNavigating: boolean;
 }
