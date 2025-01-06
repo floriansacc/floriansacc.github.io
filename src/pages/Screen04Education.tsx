@@ -64,45 +64,47 @@ export default function Screen04Education({
       <div className="mb-20 mt-10 self-start pl-10 text-[70px] font-bold sm:text-[40px]">
         Education
       </div>
-      <div className="flex w-full flex-wrap justify-start justify-items-start sm:flex-col">
-        {educationInfo.map((e) => (
-          <CardComponent
-            style={
-              {
-                "--imagebg": `url(${e.image})`,
-                "--opacitybg": e.isDarkIcon ? "0.15" : "0.07",
-              } as React.CSSProperties
-            }
-            className="academic-box h-fit sm:w-full md:w-[45%] lg:min-h-[430px] lg:w-[45%]"
-          >
-            <img
-              src={e.image}
-              className={`${e.isDarkIcon ? "rounded-md bg-white p-2" : ""} absolute right-2 top-2 aspect-auto h-14 rounded-md sm:h-11 sm:w-11`}
-            />
-            <span className="ml-4 text-[18px] sm:ml-0 sm:self-center sm:text-base">
-              {e.date}
-            </span>
-            <div className="mb-4 mt-8 flex w-full items-center justify-between gap-4 sm:flex-col sm:items-start md:flex-wrap">
-              <span className="sm:text-1xl text-3xl font-bold md:text-xl">
-                {e.univName} - {e.country}
+      <div className="flex w-full justify-end">
+        <div className="flex w-fit flex-wrap justify-start justify-items-start sm:flex-col">
+          {educationInfo.map((e) => (
+            <CardComponent
+              style={
+                {
+                  "--imagebg": `url(${e.image})`,
+                  "--opacitybg": e.isDarkIcon ? "0.15" : "0.07",
+                } as React.CSSProperties
+              }
+              className="academic-box h-fit sm:w-full md:w-[45%] md:min-w-[500px] md:flex-1 lg:min-h-[430px] lg:w-[45%]"
+            >
+              <img
+                src={e.image}
+                className={`${e.isDarkIcon ? "rounded-md bg-white p-2" : ""} absolute right-2 top-2 aspect-auto h-14 rounded-md sm:h-11 sm:w-11`}
+              />
+              <span className="ml-4 text-[18px] sm:ml-0 sm:self-center sm:text-base">
+                {e.date}
               </span>
-            </div>
+              <div className="mb-4 mt-8 flex w-full items-center justify-between gap-4 sm:flex-col sm:items-start md:flex-wrap">
+                <span className="sm:text-1xl text-3xl font-bold md:text-xl">
+                  {e.univName} - {e.country}
+                </span>
+              </div>
 
-            <span className="mb-4 text-2xl font-bold sm:text-xl md:text-xl">
-              {e.department}
-            </span>
-            <div className="sm:text-md mb-4 flex gap-4 text-xl font-normal text-maincolor-100">
-              <span>학위: {e.degree}</span>
-              <span>학점: {e.score}</span>
-            </div>
+              <span className="mb-4 text-2xl font-bold sm:text-xl md:text-xl">
+                {e.department}
+              </span>
+              <div className="sm:text-md mb-4 flex gap-4 text-xl font-normal text-maincolor-100">
+                <span>학위: {e.degree}</span>
+                <span>학점: {e.score}</span>
+              </div>
 
-            <ul className="list-inside list-disc text-xl font-medium sm:text-base">
-              {e.details.map((detail) => (
-                <li>{detail}</li>
-              ))}
-            </ul>
-          </CardComponent>
-        ))}
+              <ul className="list-inside list-disc text-xl font-medium sm:text-base">
+                {e.details.map((detail) => (
+                  <li>{detail}</li>
+                ))}
+              </ul>
+            </CardComponent>
+          ))}
+        </div>
       </div>
     </div>
   );
