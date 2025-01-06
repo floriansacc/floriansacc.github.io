@@ -118,6 +118,26 @@ div > h3 {
   background-clip: content-box, border-box;
 }
 
+.academic-box {
+  position: relative;
+}
+
+.academic-box:before {
+  content: "";
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: center center;
+  z-index: 1;
+  background-image: var(--imagebg);
+  opacity: var(--opacitybg);
+  pointer-events: none;
+}
+
 @keyframes wave-1 {
   0% {
     transform: translateX(20%);
