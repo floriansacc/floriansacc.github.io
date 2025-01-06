@@ -11,6 +11,8 @@ import TopBanner from "./components/TopBanner";
 import Screen02Career from "./pages/Screen02Career";
 import Screen03Project from "./pages/Screen03Project";
 import { Outlet } from "react-router";
+import Screen04Education from "./pages/Screen04Education";
+import Footer from "./pages/Footer";
 
 export const QueryContext = createContext<ContextEntry | null>(null);
 
@@ -27,6 +29,7 @@ export default function App() {
   const [isDetails, setIsDetails] = useState<boolean>(false);
 
   const screenRefs: MutableRefObject<HTMLDivElement | null>[] = [
+    useRef<HTMLDivElement | null>(null),
     useRef<HTMLDivElement | null>(null),
     useRef<HTMLDivElement | null>(null),
     useRef<HTMLDivElement | null>(null),
@@ -78,6 +81,8 @@ export default function App() {
         <Screen01AboutMe screenRef={screenRefs[0]} />
         <Screen02Career screenRef={screenRefs[1]} />
         <Screen03Project screenRef={screenRefs[2]} />
+        {/* <Screen04Education screenRef={screenRefs[3]} /> */}
+        <Footer />
       </div>
       <ContactIcons showContact={showContact} setShowContact={setShowContact} />
       <Outlet />

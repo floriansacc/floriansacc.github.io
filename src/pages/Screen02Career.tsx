@@ -17,13 +17,16 @@ export default function Screen02Career({ screenRef, ...props }: Screen02Props) {
       className="flex h-fit min-h-screen w-full flex-col items-center justify-start bg-bgcolor p-4 sm:justify-start sm:px-2 sm:py-4 sm:pt-10"
       {...props}
     >
-      <div className="gradient-border-to-right h-[2px] w-[98%] bg-line"></div>
-      <div className="self-start pl-10 text-[70px] font-bold sm:mb-8 sm:text-[40px]">
+      <div
+        style={{ "--color": "white" } as React.CSSProperties}
+        className="gradient-border-to-right h-[2px] w-[98%] bg-line"
+      ></div>
+      <div className="mt-10 self-start pl-10 text-[70px] font-bold sm:mb-8 sm:text-[40px]">
         Career
       </div>
       <CardComponent className="flex flex-col items-start">
         <span className="ml-4 text-[18px] sm:ml-0 sm:self-center sm:text-base">
-          2024-03 ~ 현재
+          2024-03 ~ 2025.02
         </span>
         <div className="flex w-full items-center justify-between gap-4 sm:flex-col sm:items-start md:flex-wrap">
           <span className="text-3xl font-bold sm:text-2xl">

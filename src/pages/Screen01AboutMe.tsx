@@ -61,7 +61,14 @@ export default function Screen01AboutMe({
           <br /> */}
           <p>
             현재 한국에서 프론트엔드 개발자로 활동하고 있으며{" "}
-            <span className="git-bg-variable">React</span>,{" "}
+            <span className="font-bold underline underline-offset-[3px]">
+              적극적인 구직 활동에 있어
+            </span>{" "}
+            새로운 팀과 함께 성장하며 제 역량을 강화할 수 있는 기회를 찾고
+            있습니다.
+          </p>
+          <p>
+            기술 스텍은 <span className="git-bg-variable">React</span>,{" "}
             <span className="git-bg-variable">Javascript</span>로 개발을
             시작하여 <span className="git-bg-variable">Flutter</span>,{" "}
             <span className="git-bg-variable">TypeScript</span> 등 다양한 기술

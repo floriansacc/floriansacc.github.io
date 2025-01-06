@@ -12,16 +12,19 @@ export default function Screen03Project({
     <div
       ref={screenRef}
       {...props}
-      className="flex h-fit min-h-screen w-full flex-col items-start justify-start gap-20 bg-bgcolor p-4 sm:justify-start sm:px-2 sm:py-4 sm:pt-10 md:items-center"
+      className="flex h-fit min-h-screen w-full flex-col items-start justify-start bg-bgcolor p-4 sm:justify-start sm:px-2 sm:py-4 sm:pt-10 md:items-center"
     >
-      <div className="gradient-border-to-right h-[2px] w-[98%] bg-line"></div>
-      <div className="self-start pl-10 text-[70px] font-bold sm:text-[40px]">
+      <div
+        style={{ "--color": "white" } as React.CSSProperties}
+        className="gradient-border-to-right h-[2px] w-[98%] bg-line"
+      ></div>
+      <div className="mb-20 mt-10 self-start pl-10 text-[70px] font-bold sm:text-[40px]">
         Projects
       </div>
 
       {/* Project 1 */}
 
-      <div className="flex items-start gap-8 sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[5vw]">
+      <div className="mb-32 flex items-start gap-8 sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[5vw]">
         <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2">
           <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">
             <div className="ml-4 flex flex-col gap-8 sm:gap-2 md:gap-2">
@@ -112,7 +115,7 @@ export default function Screen03Project({
 
       {/* Project 2 */}
 
-      <div className="flex items-start gap-8 sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[5vw]">
+      <div className="mb-32 flex items-start gap-8 sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[5vw]">
         <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2">
           <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">
             <div className="ml-4 flex flex-col gap-8 sm:gap-2 md:gap-2">

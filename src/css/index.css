@@ -86,7 +86,7 @@ div > h3 {
   z-index: -1;
 }
 .gradient-border-to-right {
-  background: linear-gradient(to right, white 10%, transparent);
+  background: linear-gradient(to right, var(--color) 10%, transparent);
 }
 
 .gradient-border-to-right::before {
@@ -96,7 +96,7 @@ div > h3 {
   left: 0;
   right: 0;
   height: 2px; /* Border thickness */
-  background: linear-gradient(to right, white 10%, transparent);
+  background: linear-gradient(to right, var(--color) 10%, transparent);
   z-index: -1;
 }
 
