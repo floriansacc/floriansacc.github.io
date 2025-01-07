@@ -5,11 +5,40 @@ import CardComponent from "../components/CardComponent";
 import FloatingComponent from "../components/FloatingComponent";
 import TechnoIcon from "../components/TechnoIcon";
 
+/**
+  <CardComponent className="relative text-2xl font-normal sm:w-full sm:text-xl md:w-full md:text-xl lg:w-8/12">
+          <span> 기술 스텍</span>
+          <div className="relative h-20 w-full">
+            <div className="absolute flex h-full w-full items-center gap-5">
+              {logoList.map((e, i) => (
+                <div
+                  style={isMobile ? {} : getItemStyle(i)}
+                  className="relative"
+                  key={`logo-my-stack-${i}`}
+                  id={`logo-my-stack-${i}`}
+                >
+                  <TechnoIcon className="" src={e.src} alt={e.alt} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </CardComponent>
+ * @returns 
+ */
+
 export default function Screen03Project({
   screenRef,
   ...props
 }: Screen03Props) {
   const context = useContext(QueryContext);
+
+  // const { getItemStyle } = useWave({
+  //   isInList: true,
+  //   minDistance: 95,
+  //   repulseReducer: 7,
+  //   condition: context?.activeSection === 0 || context?.activeSection === 1,
+  //   entryId: logoList.map((e) => e.key!),
+  // });
 
   return (
     <div

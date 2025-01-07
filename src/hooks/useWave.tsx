@@ -97,16 +97,15 @@ export default function useWave(props: UseWaveProps) {
       };
     });
 
-    setRelativePos(() =>
-      listItem.map((e) => {
-        const item: RelativePosModel = {
+    setRelativePos(() => {
+      return listItem.map((e) => {
+        return {
           center: { x: e.x ?? 0, y: e.y ?? 0 },
           distance: parseFloat(e.distance ?? "0"),
           angle: e.angle ?? 0,
         };
-        return item;
-      }),
-    );
+      });
+    });
   }, [JSON.stringify(props.entryId), props.condition, mousePos]);
 
   // ------------------------------------------------------

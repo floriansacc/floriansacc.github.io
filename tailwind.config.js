@@ -3,8 +3,8 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      sm: { max: "600px" },
-      md: { min: "600px", max: "1250px" },
+      sm: { max: "649px" },
+      md: { min: "650px", max: "1249px" },
       lg: { min: "1250px" },
     },
     extend: {
