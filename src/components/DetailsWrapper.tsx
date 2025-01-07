@@ -36,11 +36,7 @@ export default function DetailsWrapper({ children }: DetailsWrapperProps) {
         className="absolute left-0 top-0 z-40 h-screen w-screen backdrop-blur-sm"
       ></div> */}
         <div
-          className={`${
-            context?.isDetails
-              ? "md:scale-100 lg:scale-100"
-              : "md:scale-50 lg:scale-50"
-          } relative z-[49] h-fit min-h-96 w-full rounded-md bg-maincolor-950 px-20 py-8 shadow-dim transition-all duration-300 sm:px-4 md:px-6`}
+          className={`relative z-[49] h-fit min-h-96 w-full rounded-md bg-maincolor-950 px-20 py-8 shadow-dim transition-all duration-300 sm:px-4 md:px-6`}
         >
           {children}
         </div>

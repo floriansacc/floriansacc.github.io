@@ -69,7 +69,7 @@ export default function Screen03Project({
               </span>
               <Link
                 className="box-border rounded-md border-2 border-solid border-maincolor-200 bg-hanarogreen/75 p-4 text-xl text-white transition-all sm:p-2 sm:py-2 sm:text-base md:p-2 md:py-1 md:text-base md:hover:bg-maincolor-200 md:hover:text-black lg:mt-4 lg:hover:bg-maincolor-200 lg:hover:text-black"
-                to={"/thenanaro"}
+                to={"/thehanaro"}
               >
                 담당한 업무 확인하기
               </Link>
