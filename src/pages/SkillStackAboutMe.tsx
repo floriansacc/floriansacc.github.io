@@ -67,12 +67,12 @@ export default function SkillStackAboutMe() {
   const [activeIcon, setActiveIcon] = useState<string>("Flutter");
 
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center break-keep text-2xl font-normal sm:m-0 sm:my-2 sm:w-full sm:px-0 sm:py-4 sm:text-xl md:max-h-[500px] md:text-xl lg:w-[35%]">
+    <div className="relative flex w-full flex-col items-center justify-center break-keep text-2xl font-normal sm:m-0 sm:my-2 sm:w-full sm:px-0 sm:py-4 sm:text-xl md:max-h-[500px] md:text-xl lg:w-[35%]">
       <p className="mb-2 h-fit w-fit rounded-xl bg-maincolor-900 p-2 font-bold">
         {" "}
         기술 스텍
       </p>
-      <div className="flex w-full items-center justify-center gap-8 sm:justify-center">
+      <div className="flex w-full items-center justify-center gap-8">
         <div className="relative flex h-full w-fit flex-col items-center justify-between pl-4 sm:pl-2">
           {logoList.map((e, i) => (
             <div
@@ -95,7 +95,7 @@ export default function SkillStackAboutMe() {
             </div>
           ))}
         </div>
-        <div className="flex sm:h-full sm:w-full md:h-full lg:h-full">
+        <div className="flex h-full sm:w-full">
           <CardComponent
             noMargin={true}
             className="m-0 h-full sm:w-full sm:max-w-none md:min-w-[250px] lg:w-[300px] lg:max-w-[300px]"
