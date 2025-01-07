@@ -2,6 +2,7 @@ import { useContext, MutableRefObject } from "react";
 import { QueryContext } from "../App";
 import CardComponent from "../components/CardComponent";
 import TechnoIcon from "../components/TechnoIcon";
+import { LogoModel } from "../models/global-models";
 
 const logoList: LogoModel[] = [
   { src: "/assets/disallowed/images/flutter_icon.png", alt: "Flutter" },
@@ -143,9 +144,4 @@ interface CareerModel {
   role: string;
   skillsImage: LogoModel[];
   details: JSX.Element[];
-}
-
-interface LogoModel {
-  src: string;
-  alt: string;
 }

@@ -1,9 +1,10 @@
 import { useRef, useState, useEffect } from "react";
+import { CoordModel } from "../models/global-models";
 
 export default function useWave(props: UseWaveProps) {
   const requestRef = useRef<number | null>(null);
 
-  const [mousePos, setMousePos] = useState<CoordsInterface>({
+  const [mousePos, setMousePos] = useState<CoordModel>({
     x: null,
     y: null,
   });
@@ -26,7 +27,7 @@ export default function useWave(props: UseWaveProps) {
     },
   ]);
 
-  const getItemStyle = (i?: number) => {
+  const getItemStyle = (i?: number): { transform: string } => {
     const item = affectedItem[i ?? 0];
     if (props.isInList) {
       return {
@@ -174,7 +175,7 @@ export default function useWave(props: UseWaveProps) {
  * @return {number} - angle
  */
 // ------------------------------------------------------
-function getAngle(center: CoordsInterface, mousePos: CoordsInterface): number {
+function getAngle(center: CoordModel, mousePos: CoordModel): number {
   const dx = (mousePos.x ?? 0) - (center.x ?? 0);
   const dy = (center.y ?? 0) - (mousePos.y ?? 0);
 
@@ -198,8 +199,8 @@ function getAngle(center: CoordsInterface, mousePos: CoordsInterface): number {
  */
 // ------------------------------------------------------
 function calculatePosition(
-  mousePos: CoordsInterface,
-  center: CoordsInterface,
+  mousePos: CoordModel,
+  center: CoordModel,
   distance: number | null,
   minDistance: number,
   repulseReducer: number,
@@ -216,6 +217,8 @@ function calculatePosition(
   return { left, top };
 }
 
+// Models
+
 interface UseWaveProps {
   isInList: boolean;
   minDistance: number;
@@ -224,20 +227,15 @@ interface UseWaveProps {
   entryId: string[];
 }
 
-interface CoordsInterface {
-  x: number | null;
-  y: number | null;
-}
-
 interface RelativePosModel {
-  center: CoordsInterface;
+  center: CoordModel;
   distance: number | null;
   angle: number | null;
 }
 
-interface AffectedItemModel {
+export interface AffectedItemModel {
   index: number | null;
-  center: CoordsInterface;
+  center: CoordModel;
   distance: number | null;
   angle: number | null;
   top: number | null;

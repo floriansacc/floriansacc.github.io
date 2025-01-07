@@ -1,13 +1,24 @@
 import { useState, useEffect, MutableRefObject } from "react";
 import useScreenSize from "../hooks/useScreenSize";
+// import { QueryContext } from "../App";
+// import useWave from "../hooks/useWave";
 
 export default function Screen01AboutMe({
   screenRef,
   ...props
 }: Screen01Props) {
+  // const context = useContext(QueryContext);
   const [randomTranslation, setRandomTranslation] = useState<number[]>([0, 0]);
 
   const { isMobile } = useScreenSize();
+
+  // const { getItemStyle } = useWave({
+  //   isInList: true,
+  //   minDistance: 95,
+  //   repulseReducer: 2,
+  //   condition: context?.activeSection === 0,
+  //   entryId: [],
+  // });
 
   useEffect(() => {
     if (isMobile) {
