@@ -86,10 +86,19 @@ export default function App() {
   };
 
   useEffect(() => {
-    if (!isDetails && document.body.classList.contains("no-scroll")) {
-      document.body.classList.remove("no-scroll");
-    }
-  }, [isDetails]);
+    const handlePopState = (): void => {
+      if (!document.body.classList.contains("no-scroll")) return;
+      if (!isDetails) {
+        document.body.classList.remove("no-scroll");
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", getScrollPos);

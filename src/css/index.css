@@ -39,11 +39,10 @@ div > h3 {
   font-weight: 700;
 }
 
-@media (min-width: 649px) {
-  .no-scroll {
-    overflow: hidden;
-    height: 100%;
-  }
+.no-scroll {
+  color: red;
+  overflow: hidden;
+  height: 100%;
 }
 
 .no-scrollbar::-webkit-scrollbar {
