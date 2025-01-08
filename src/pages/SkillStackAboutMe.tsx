@@ -72,7 +72,7 @@ export default function SkillStackAboutMe() {
         {" "}
         기술 스텍
       </p>
-      <div className="flex w-full items-center justify-center gap-8">
+      <div className="flex w-full items-center justify-center gap-8 sm:items-start">
         <div className="relative flex h-full w-fit flex-col items-center justify-between pl-4 sm:pl-2">
           {logoList.map((e, i) => (
             <div
@@ -95,10 +95,10 @@ export default function SkillStackAboutMe() {
             </div>
           ))}
         </div>
-        <div className="flex h-full sm:w-full">
+        <div className="flex h-full flex-1 sm:w-full md:max-w-[50%]">
           <CardComponent
             noMargin={true}
-            className="m-0 h-full sm:w-full sm:max-w-none md:min-w-[250px] lg:w-[300px] lg:max-w-[300px]"
+            className="m-0 h-full sm:w-full sm:max-w-none md:min-w-[250px] md:flex-1 lg:w-[300px] lg:max-w-[300px]"
           >
             <ul
               key={`card-skills-${activeIcon}`}
