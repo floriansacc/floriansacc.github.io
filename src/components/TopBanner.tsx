@@ -1,7 +1,7 @@
 import { useState, useEffect, Fragment } from "react";
 import { ScrollModel } from "../App";
 
-const menuItems: string[] = ["About me", "Career", "Project", "Education"];
+const menuItems: string[] = ["About me", "Career", "Projects", "Education"];
 
 export default function TopBanner({
   activeSection,

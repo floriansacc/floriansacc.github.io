@@ -13,6 +13,10 @@ const logoList: LogoModel[] = [
     alt: "React",
   },
   {
+    src: "/assets/disallowed/svg/vue_logo.svg",
+    alt: "Vue",
+  },
+  {
     src: "/assets/disallowed/images/javascript_logo.png",
     alt: "Javascript",
   },
@@ -48,6 +52,7 @@ const infoCard: {
     "React Router를 사용한 라우팅",
     "Rest API, 서버 연동 경험",
   ],
+  Vue: ["React로 만들었던 프로젝트를 Vue로 다시 만들어보기", "문법에 익히기"],
   Javascript: ["ES6 문법에 익숙", "함수형 프로그래밍 경험", "비동기 처리 활용"],
   Typescript: [
     "엄중한 타입 검사를 통한 안정적인 개발",
@@ -69,7 +74,6 @@ export default function SkillStackAboutMe() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center break-keep text-2xl font-normal sm:m-0 sm:my-2 sm:w-full sm:px-0 sm:py-4 sm:text-xl md:max-h-[500px] md:text-xl lg:w-[35%]">
       <p className="mb-2 h-fit w-fit rounded-xl bg-maincolor-900 p-2 font-bold">
-        {" "}
         기술 스텍
       </p>
       <div className="flex w-full items-center justify-center gap-8 sm:items-start">
