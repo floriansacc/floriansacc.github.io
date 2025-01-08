@@ -28,8 +28,8 @@ export default function Screen01AboutMe({
       {...props}
     >
       <div className="flex w-full items-center justify-around sm:flex-col sm:px-2 md:mt-4 md:items-center">
-        <div className="mb-10 flex flex-col items-start justify-center gap-4 px-10 sm:items-center sm:gap-0 md:flex-wrap lg:w-[65%]">
-          <span className="text-2xl font-normal sm:text-xl md:px-6 md:text-xl">
+        <div className="mb-10 flex flex-col items-start justify-center gap-4 break-keep px-10 sm:items-center sm:gap-0 sm:px-2 md:flex-wrap lg:w-[65%]">
+          <span className="text-2xl font-normal sm:text-center sm:text-xl md:px-6 md:text-xl">
             저는 5년 전부터 한국에서 거주하고 있는 프랑스에서 온{" "}
           </span>
           <p className="text-center text-[70px] font-bold sm:text-[32px] md:px-6 md:text-[44px]">

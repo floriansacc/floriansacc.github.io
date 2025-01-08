@@ -106,10 +106,10 @@ export default function Screen03Project({
                 *앱은 Google Play Store 심사중이오니 앱 이미지 활용하지 못하는
                 점을 양해 부탁드립니다
               </span>
-              <span className="self-end text-base italic sm:text-sm">
+              <span className="self-end text-sm italic sm:text-sm">
                 출처:{" "}
-                <a href="https://thehanaro.co.kr" target="_blank">
-                  https://thehanaro.co.kr
+                <a href="https://thehanaro.com" target="_blank">
+                  https://thehanaro.com
                 </a>
               </span>
             </CardComponent>
@@ -138,7 +138,10 @@ export default function Screen03Project({
             않을 것이며, 오직 참고 및 개인적인 용도로만 활용할 것입니다
           </span>
           <span className="mr-1 self-end text-sm italic text-maincolor-400 sm:text-sm">
-            출처: https://thehanaro.co.kr
+            출처:{" "}
+            <a href="https://thehanaro.com" target="_blank">
+              https://thehanaro.com
+            </a>
           </span>
         </div>
       </div>

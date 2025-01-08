@@ -220,7 +220,10 @@ export default function HanaroDetails() {
                   것입니다
                 </span>
                 <span className="mr-1 self-end text-sm italic text-maincolor-200 sm:text-sm">
-                  출처: https://thehanaro.co.kr
+                  출처:{" "}
+                  <a href="https://thehanaro.com" target="_blank">
+                    https://thehanaro.com
+                  </a>
                 </span>
               </div>
             </div>

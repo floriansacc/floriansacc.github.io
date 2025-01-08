@@ -101,6 +101,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    getScrollPos();
     window.addEventListener("scroll", getScrollPos);
 
     return () => window.removeEventListener("scroll", getScrollPos);
