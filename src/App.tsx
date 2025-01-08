@@ -86,6 +86,12 @@ export default function App() {
   };
 
   useEffect(() => {
+    if (!isDetails && document.body.classList.contains("no-scroll")) {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [isDetails]);
+
+  useEffect(() => {
     window.addEventListener("scroll", getScrollPos);
 
     return () => window.removeEventListener("scroll", getScrollPos);

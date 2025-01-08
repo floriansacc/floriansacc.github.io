@@ -9,8 +9,10 @@ export default function DetailsWrapper({ children }: DetailsWrapperProps) {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (context?.isDetails === true) {
+      document.body.classList.add("no-scroll");
+    }
     context?.setIsDetails(true);
-    document.body.classList.add("no-scroll");
   }, []);
 
   const closePage = (): void => {
