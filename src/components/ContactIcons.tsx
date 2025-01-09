@@ -40,7 +40,9 @@ export default function ContactIcons({
           className="flex h-12 w-12 items-center justify-center rounded-xl bg-maincolor-500 font-bold transition-all duration-200 hover:animate-none sm:h-9 sm:w-9 sm:text-sm md:animate-[scaleUpDown_5s_infinite] md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)] lg:animate-[scaleUpDown_5s_infinite] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)]"
           onClick={() => openShowContact()}
         >
-          <span className="rounded-full bg-maincolor-900 p-1.5">연락</span>
+          <span className="rounded-full bg-maincolor-900 p-1.5 sm:bg-transparent sm:p-0">
+            연락
+          </span>
         </button>
         <div
           className={`${
