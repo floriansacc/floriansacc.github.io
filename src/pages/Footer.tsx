@@ -29,7 +29,9 @@ export default function Footer() {
             />
           </div>
           <div className="flex items-center gap-2 sm:flex-wrap sm:justify-start sm:gap-0 sm:break-all">
-            <span id="email-flo">florian.sacchetti@gmail.com</span>
+            <a href="mailto:floriansacchetti" target="_blank">
+              <span id="email-flo">florian.sacchetti@gmail.com</span>
+            </a>
             <FaRegCopy
               className="h-8 w-8 rounded-xl p-1.5 transition-all hover:scale-105 hover:bg-white/25"
               data-tooltip-id="icons-tooltip"
@@ -61,7 +63,9 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-2 sm:flex-wrap sm:justify-start sm:gap-0 sm:break-all">
-            <span id="phone-flo">010-8391-7997</span>
+            <a href="tel:010-8391-7997">
+              <span id="phone-flo">010-8391-7997</span>
+            </a>
             <FaRegCopy
               className="h-8 w-8 rounded-xl p-1.5 transition-all hover:scale-105 hover:bg-white/25"
               data-tooltip-id="icons-tooltip"

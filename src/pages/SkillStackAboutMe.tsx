@@ -65,7 +65,11 @@ const infoCard: {
     "차트 컴포넌트 재사옹 및 커스터마이징",
     "원하는 사이즈로 차트 다운로드 및 CSV Export 기능 구현",
   ],
-  Tailwind: ["CSS 프레임워크 활용 경험", "반응형 웹 디자인 구축"],
+  Tailwind: [
+    "CSS 프레임워크 활용 경험",
+    "반응형 웹 디자인 구축",
+    "Class의 확정을 통한",
+  ],
 };
 
 export default function SkillStackAboutMe() {

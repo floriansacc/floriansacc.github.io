@@ -218,3 +218,15 @@ div > h3 {
   animation-duration: calc(var(--duration) * 1ms);
   animation-delay: var(--delay);
 }
+
+@keyframes scaleUpDown {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.1);
+  }
+  30% {
+    transform: scale(1);
+  }
+}

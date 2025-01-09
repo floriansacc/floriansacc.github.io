@@ -37,10 +37,10 @@ export default function ContactIcons({
         className={`${hideIcon ? "sm:invisible sm:h-0 sm:opacity-0" : ""} relative transition-all sm:duration-300`}
       >
         <button
-          className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500 font-bold transition-all duration-200 sm:h-9 sm:w-9 sm:text-sm md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)]"
+          className="flex h-12 w-12 items-center justify-center rounded-xl bg-maincolor-500 font-bold transition-all duration-200 hover:animate-none sm:h-9 sm:w-9 sm:text-sm md:animate-[scaleUpDown_5s_infinite] md:hover:scale-125 md:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)] lg:animate-[scaleUpDown_5s_infinite] lg:hover:scale-125 lg:hover:drop-shadow-[0_0_0.5em_rgb(255,255,255,0.5)]"
           onClick={() => openShowContact()}
         >
-          <span>연락</span>
+          <span className="rounded-full bg-maincolor-900 p-1.5">연락</span>
         </button>
         <div
           className={`${
@@ -52,7 +52,9 @@ export default function ContactIcons({
           <div className="inline-flex h-fit items-center gap-2 sm:flex-col md:break-keep lg:break-keep">
             <span className="font-bold sm:whitespace-nowrap">이메일:</span>
             <div className="flex items-center gap-2 sm:flex-wrap sm:justify-end sm:gap-0 sm:break-all">
-              <span id="email-flo">florian.sacchetti@gmail.com</span>
+              <a href="mailto:floriansacchetti" target="_blank">
+                <span id="email-flo">florian.sacchetti@gmail.com</span>
+              </a>
               <FaRegCopy
                 className="h-8 w-8 rounded-xl p-1.5 transition-all hover:scale-105 hover:bg-white/25"
                 data-tooltip-id="icons-tooltip"
@@ -67,7 +69,9 @@ export default function ContactIcons({
           <div className="inline-flex h-fit items-center gap-2 sm:flex-col md:break-keep lg:break-keep">
             <span className="font-bold sm:whitespace-nowrap">휴대폰:</span>
             <div className="flex items-center gap-2 sm:flex-wrap sm:justify-end sm:gap-0 sm:break-all">
-              <span id="phone-flo">010-8391-7997</span>
+              <a href="tel:010-8391-7997">
+                <span id="phone-flo">010-8391-7997</span>
+              </a>
               <FaRegCopy
                 className="h-8 w-8 rounded-xl p-1.5 transition-all hover:scale-105 hover:bg-white/25"
                 data-tooltip-id="icons-tooltip"
@@ -118,6 +122,10 @@ export default function ContactIcons({
                 onClick={() => context?.copyToClipBoard("kakao-flo")}
               />
             </div>
+            <img
+              src="/assets/allowed/images/kakao_qr_code.jpg"
+              className="h-32 w-32 self-center rounded-md"
+            />
           </div>
         </div>
         <a
