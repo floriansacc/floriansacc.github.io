@@ -14,6 +14,11 @@ import Screen03Project from "./pages/Screen03Project";
 import Screen04Education from "./pages/Screen04Education";
 import ContactIcons from "./components/ContactIcons";
 import Footer from "./pages/Footer";
+import useScrollTracking from "./hooks/useScrollTracking";
+import { Chart } from "chart.js/auto";
+import ChartDataLabels from "chartjs-plugin-datalabels";
+
+Chart.register(ChartDataLabels);
 
 export const QueryContext = createContext<ContextEntry | null>(null);
 
@@ -23,12 +28,8 @@ export default function App() {
     other: boolean;
   }>({ kakao: false, other: false });
 
-  const [activeSection, setActiveSection] = useState<number>(0);
+  const [isNavigating, setIsNavigating] = useState<boolean>(false);
 
-  const [scrollPos, setScrollPos] = useState<ScrollModel>({
-    scrollPosY: 0,
-    isNavigating: false,
-  });
   const [isDetails, setIsDetails] = useState<boolean>(false);
 
   const screenRefs: MutableRefObject<HTMLDivElement | null>[] = [
@@ -37,6 +38,8 @@ export default function App() {
     useRef<HTMLDivElement | null>(null),
     useRef<HTMLDivElement | null>(null),
   ];
+
+  const { scrollPos, activeSection } = useScrollTracking({ screenRefs });
 
   const closeTooltips = (): void => {
     if (showContact) {
@@ -50,34 +53,9 @@ export default function App() {
   const goToSection = (index: number): void => {
     if (screenRefs?.[index] == null || screenRefs?.[index].current == null)
       return;
-    setScrollPos((prev) => ({
-      ...prev,
-      isNavigating: true,
-    })),
-      setTimeout(
-        () =>
-          setScrollPos((prev) => ({
-            ...prev,
-            isNavigating: false,
-          })),
-        900,
-      );
+    setIsNavigating(true);
+    setTimeout(() => setIsNavigating(false), 900);
     screenRefs[index].current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const getScrollPos = (): void => {
-    screenRefs.forEach((ref, index) => {
-      if (ref.current) {
-        const rect = ref.current.getBoundingClientRect();
-        if (rect.top <= 250 && rect.top > -rect.height + 250) {
-          setScrollPos((prev) => ({
-            ...prev,
-            scrollPosY: window.scrollY,
-          }));
-          setActiveSection(index);
-        }
-      }
-    });
   };
 
   const copyToClipBoard = (id: string): void => {
@@ -95,16 +73,7 @@ export default function App() {
 
     window.addEventListener("popstate", handlePopState);
 
-    return () => {
-      window.removeEventListener("popstate", handlePopState);
-    };
-  }, []);
-
-  useEffect(() => {
-    getScrollPos();
-    window.addEventListener("scroll", getScrollPos);
-
-    return () => window.removeEventListener("scroll", getScrollPos);
+    return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
   return (
@@ -122,12 +91,13 @@ export default function App() {
       >
         <TopBanner
           activeSection={activeSection}
-          goToSection={goToSection}
           scrollPos={scrollPos}
+          isNavigating={isNavigating}
+          goToSection={goToSection}
         />
         <Screen01AboutMe screenRef={screenRefs[0]} />
         <Screen02Career screenRef={screenRefs[1]} />
-        <Screen03Project screenRef={screenRefs[2]} />
+        <Screen03Project screenRef={screenRefs[2]} scrollPos={scrollPos} />
         <Screen04Education screenRef={screenRefs[3]} />
         <Footer />
       </div>
@@ -147,9 +117,4 @@ export interface ContextEntry {
   activeSection: number;
   copyToClipBoard: (id: string) => void;
   setIsDetails: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export interface ScrollModel {
-  scrollPosY: number;
-  isNavigating: boolean;
 }

@@ -111,7 +111,7 @@ export default function SkillStackAboutMe() {
           >
             <ul
               key={`card-skills-${activeIcon}`}
-              className="animate-[fadeIn_150ms_forwards] list-inside list-disc"
+              className="animate-[fadeIn_150ms_forwards] list-disc sm:pl-3 sm:pr-1 md:pl-3 md:pr-1"
             >
               {infoCard?.[activeIcon] &&
                 infoCard?.[activeIcon].map((e, i) => (

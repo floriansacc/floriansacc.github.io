@@ -17,7 +17,7 @@ const careerInfo: CareerModel[] = [
   {
     date: "2024-03 ~ 2025.02",
     name: "(주)위릿 (Wiilit)",
-    role: "모바일/웹 프론트엔드 개발",
+    role: "프론트엔드 개발 (모바일 및 웹)",
     skillsImage: logoList,
     details: [
       <ul

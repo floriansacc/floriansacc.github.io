@@ -1,9 +1,9 @@
 import { useState, useEffect, Fragment } from "react";
-import { ScrollModel } from "../App";
 
 const menuItems: string[] = ["About me", "Career", "Projects", "Education"];
 
 export default function TopBanner({
+  isNavigating,
   activeSection,
   scrollPos,
   goToSection,
@@ -13,7 +13,7 @@ export default function TopBanner({
   const [thresholdY, setThresholdY] = useState<number>(0);
 
   const controlNavbar = (): void => {
-    scrollPos.isNavigating;
+    isNavigating;
     if (window.scrollY > lastScrollY) {
       if (window.scrollY > thresholdY) {
         if (isOpen) {
@@ -34,9 +34,9 @@ export default function TopBanner({
   };
 
   useEffect(() => {
-    if (scrollPos.isNavigating) return;
+    if (isNavigating) return;
     controlNavbar();
-  }, [scrollPos.scrollPosY]);
+  }, [scrollPos]);
 
   return (
     <div
@@ -62,7 +62,8 @@ export default function TopBanner({
 }
 
 interface TopBannerProps {
-  scrollPos: ScrollModel;
+  isNavigating: boolean;
   activeSection: number;
+  scrollPos: number;
   goToSection: (index: number) => void;
 }

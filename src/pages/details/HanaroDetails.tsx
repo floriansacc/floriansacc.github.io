@@ -242,14 +242,22 @@ export default function HanaroDetails() {
         <p>
           웹 소개 페이지 주소:
           <br />
-          <a className="underline" href="https://thehanaro.co.kr">
+          <a
+            className="underline"
+            href="https://thehanaro.co.kr"
+            target="_blank"
+          >
             https://thehanaro.co.kr
           </a>
         </p>
 
         <p className="text-start">
           (임시 주소이며 서버 이전 시 <br />
-          <a className="underline" href="https://thehanaro.com/">
+          <a
+            className="underline"
+            href="https://thehanaro.com/"
+            target="_blank"
+          >
             https://thehanaro.com/
           </a>
           로 확인 바랍니다)
