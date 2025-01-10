@@ -170,16 +170,16 @@ export default function Screen03Project({
 
       {/* Hanaro Web */}
       <div
-        className={`${isOnView ? "" : "translate-x-96 opacity-0"} ${context?.activeSection === 2 ? "" : "opacity-0"} transition-[transform, opacity] relative mb-32 hidden items-start gap-8 duration-[750ms] sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[5vw]`}
+        className={`${isOnView ? "" : "translate-x-96 opacity-0"} ${context?.activeSection === 2 ? "" : "opacity-0"} transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-[750ms] sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:ml-[5vw]`}
         id="project-web-hanaro"
       >
-        <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2">
+        <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2 lg:w-fit">
           <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">
             <div className="ml-4 flex flex-col gap-8 sm:gap-2 md:gap-2">
               <span className="text-[18px] sm:ml-0 sm:self-center">
                 개발 기간: 2024-06 ~ 2024.12
               </span>
-              <div className="flex items-center gap-6 sm:flex-wrap sm:gap-4">
+              <div className="flex flex-wrap items-center gap-6 sm:flex-wrap sm:gap-4">
                 <span className="text-5xl font-bold sm:text-2xl md:text-3xl">
                   더하나로 웹 페이지
                 </span>
@@ -237,18 +237,23 @@ export default function Screen03Project({
               </Link>
             </CardComponent>
           </div>
-          <div className="shadow-table relative flex h-96 w-96 min-w-fit flex-1 select-none flex-col items-center justify-start overflow-hidden rounded-md bg-maincolor-700 py-4 pb-1 pl-4 pr-2 transition-[background-image] duration-1000 sm:p-1 md:max-w-full lg:max-w-full">
+        </div>
+        <div className="flex w-full justify-center gap-4 rounded-md sm:flex-col md:h-[500px] md:w-[80%] md:snap-y md:flex-col md:justify-start md:overflow-y-scroll lg:w-[80%] lg:flex-wrap">
+          <div className="relative flex select-none flex-col items-start justify-start rounded-md bg-maincolor-700 duration-1000 sm:h-fit sm:min-w-fit sm:items-start sm:overflow-hidden sm:p-1 md:h-fit md:max-w-full md:snap-start md:p-2 lg:h-fit lg:w-[400px] lg:max-w-full lg:p-2">
             <ChartPie
               divId="pie-1"
               entryData={dataPie}
               graphTitle="Pie Example"
             />
+          </div>
+          <div className="relative flex select-none flex-col items-start justify-start rounded-md bg-maincolor-700 duration-1000 sm:h-fit sm:min-w-fit sm:items-start sm:overflow-hidden sm:p-1 md:h-fit md:max-w-full md:snap-start md:p-2 lg:h-fit lg:w-[500px] lg:max-w-full lg:p-2">
             <ChartBar
               divId="bar-1"
               entryData={dataBar}
               graphTitle="Bar Example"
             />
-
+          </div>
+          <div className="relative flex select-none flex-col items-start justify-start rounded-md bg-maincolor-700 duration-1000 sm:h-fit sm:min-w-fit sm:items-start sm:overflow-hidden sm:p-1 md:h-fit md:max-w-full md:snap-start md:p-2 lg:h-fit lg:w-[500px] lg:max-w-full lg:p-2">
             <ChartLine
               divId="line-1"
               entryData={dataLine}

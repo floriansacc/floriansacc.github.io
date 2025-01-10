@@ -7,8 +7,8 @@ export default function ChartPie({
   isDoughnut = false,
   graphTitle,
   entryData = [],
-  unit,
   divId,
+  ...props
 }: ChartPieEntry) {
   const chartRef = useRef(null);
 
@@ -254,7 +254,7 @@ export default function ChartPie({
       tooltip: {
         callbacks: {
           label: (context: any) =>
-            `${context.dataset.label}: ${context.formattedValue}${unit}`,
+            `${context.dataset.label}: ${context.formattedValue}`,
         },
       },
     },
@@ -403,10 +403,14 @@ export default function ChartPie({
   const plugins: Plugin[] = [htmlLegendPlugin, legendOutside];
 
   return (
-    <div className="flex h-fit w-fit items-center">
+    <div
+      className="flex h-[70%] w-[70%] items-center justify-start md:h-fit md:w-fit"
+      {...props}
+    >
       {isDoughnut ? (
         <Doughnut
           id={divId}
+          style={{ width: "99%", height: "99%" }}
           data={data}
           options={options}
           ref={chartRef}
@@ -415,6 +419,7 @@ export default function ChartPie({
       ) : (
         <Pie
           id={divId}
+          style={{ width: "99%", height: "99%" }}
           data={data}
           options={options}
           ref={chartRef}
@@ -426,10 +431,9 @@ export default function ChartPie({
   );
 }
 
-interface ChartPieEntry {
+interface ChartPieEntry extends React.ImgHTMLAttributes<HTMLImageElement> {
   isDoughnut?: boolean;
   graphTitle: string;
   entryData: any[];
-  unit?: string;
   divId: string;
 }

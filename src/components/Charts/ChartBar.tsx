@@ -6,6 +6,7 @@ export default function ChartBar({
   graphTitle,
   entryData = [],
   divId,
+  ...props
 }: ChartBarEntry) {
   const chartRef = useRef(null);
 
@@ -13,7 +14,7 @@ export default function ChartBar({
     return {
       datasets: entryData.map((item) => {
         return {
-          label: item.data[0].x,
+          label: item.label,
           data: item.data,
           backgroundColor: item.bgColor,
           barThickness: "flex",
@@ -88,9 +89,13 @@ export default function ChartBar({
   };
 
   return (
-    <div id={divId} className={`items-center justify-center sm:w-full`}>
+    <div
+      id={divId}
+      className={`w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
+      {...props}
+    >
       <Bar
-        className="h-full w-full sm:h-fit"
+        className="h-full w-full"
         data={data}
         options={options}
         ref={chartRef}
@@ -99,13 +104,14 @@ export default function ChartBar({
   );
 }
 
-interface ChartBarEntry {
+interface ChartBarEntry extends React.ImgHTMLAttributes<HTMLImageElement> {
   graphTitle: string;
   entryData: DataBarModel[];
   divId: string;
 }
 
 export interface DataBarModel {
+  label: string;
   data: {
     x: string;
     y: number;

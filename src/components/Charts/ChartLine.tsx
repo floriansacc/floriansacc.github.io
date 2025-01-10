@@ -6,6 +6,7 @@ export default function ChartLine({
   graphTitle,
   entryData = [],
   divId,
+  ...props
 }: ChartLineEntry) {
   const lineRef = useRef(null);
 
@@ -89,9 +90,13 @@ export default function ChartLine({
   };
 
   return (
-    <div id={divId} className={`w-full items-center justify-center sm:w-full`}>
+    <div
+      id={divId}
+      className={`w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
+      {...props}
+    >
       <Line
-        className="h-full w-full sm:h-fit"
+        className="h-full w-full"
         data={data}
         options={options}
         ref={lineRef}
@@ -100,7 +105,7 @@ export default function ChartLine({
   );
 }
 
-interface ChartLineEntry {
+interface ChartLineEntry extends React.ImgHTMLAttributes<HTMLImageElement> {
   graphTitle: string;
   entryData: DataLineModel[];
   divId: string;
