@@ -84,6 +84,7 @@ export default function SkillStackAboutMe() {
         <div className="relative flex h-full w-fit flex-col items-center justify-between pl-4 sm:pl-2">
           {logoList.map((e, i) => (
             <div
+              key={`logo-my-stack-${i}`}
               className="group flex h-14 w-14 items-center sm:h-11 sm:w-11"
               onClick={() => setActiveIcon(e.alt)}
             >
@@ -113,8 +114,13 @@ export default function SkillStackAboutMe() {
               className="animate-[fadeIn_150ms_forwards] list-inside list-disc"
             >
               {infoCard?.[activeIcon] &&
-                infoCard?.[activeIcon].map((e) => (
-                  <li className="py-1 text-base">{e}</li>
+                infoCard?.[activeIcon].map((e, i) => (
+                  <li
+                    key={`description-icon-${e}-${i}`}
+                    className="py-1 text-base"
+                  >
+                    {e}
+                  </li>
                 ))}
             </ul>
           </CardComponent>
