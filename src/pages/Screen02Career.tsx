@@ -97,18 +97,23 @@ export default function Screen02Career({ screenRef, ...props }: Screen02Props) {
         Career
       </div>
       <div
-        className={`${
-          context?.activeSection === 1
-            ? "md:translate-y-0 md:opacity-100 lg:translate-y-0 lg:opacity-100"
-            : (context?.activeSection ?? 0) > 1
-              ? "md:-translate-y-24 md:opacity-0 lg:-translate-y-24 lg:opacity-0"
-              : "md:translate-y-24 md:opacity-0 lg:translate-y-24 lg:opacity-0"
-        } transition-[transform, opacity] relative flex h-fit w-full flex-wrap justify-start justify-items-start duration-[750ms] sm:flex-col`}
+        className={`relative flex h-fit w-full flex-wrap justify-start justify-items-start sm:flex-col`}
       >
         {careerInfo.map((e, i) => (
           <CardComponent
             key={`career-${i}`}
-            className="flex flex-col items-start sm:w-full md:w-[45%] md:min-w-[500px] md:flex-1 lg:min-h-[430px] lg:w-[45%]"
+            style={
+              {
+                "--anim-index": `${i * 50 + 50}px`,
+              } as React.CSSProperties
+            }
+            className={`flex ${
+              context?.activeSection === 1
+                ? "md:translate-y-0 md:opacity-100 lg:translate-y-0 lg:opacity-100"
+                : (context?.activeSection ?? 0) > 1
+                  ? "md:-translate-y-[var(--anim-index)] md:opacity-0 lg:-translate-y-[var(--anim-index)] lg:opacity-0"
+                  : `md:translate-y-[var(--anim-index)] md:opacity-0 lg:translate-y-[var(--anim-index)] lg:opacity-0`
+            } transition-[transform, opacity] flex-col items-start duration-1000 ease-in-out sm:w-full md:w-[45%] md:min-w-[500px] md:flex-1 lg:min-h-[430px] lg:w-[45%]`}
           >
             <span className="ml-4 text-[18px] sm:ml-0 sm:self-center sm:text-base">
               {e.date}

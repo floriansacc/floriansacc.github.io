@@ -67,15 +67,7 @@ export default function Screen04Education({
       <div className="mb-20 mt-10 self-start pl-10 text-[70px] font-bold sm:text-[40px]">
         Education
       </div>
-      <div
-        className={`${
-          context?.activeSection === 3
-            ? "md:translate-y-0 md:opacity-100 lg:translate-y-0 lg:opacity-100"
-            : (context?.activeSection ?? 0) > 3
-              ? "md:-translate-y-24 md:opacity-0 lg:-translate-y-24 lg:opacity-0"
-              : "md:translate-y-24 md:opacity-0 lg:translate-y-24 lg:opacity-0"
-        } transition-[transform, opacity] relative flex w-full justify-end duration-[750ms]`}
-      >
+      <div className={`relative flex w-full justify-end`}>
         <div className="flex w-fit flex-wrap justify-start justify-items-start sm:flex-col">
           {educationInfo.map((e, i) => (
             <CardComponent
@@ -84,9 +76,16 @@ export default function Screen04Education({
                 {
                   "--imagebg": `url(${e.image})`,
                   "--opacitybg": e.isDarkIcon ? "0.15" : "0.07",
+                  "--anim-index": `${i * 50 + 50}px`,
                 } as React.CSSProperties
               }
-              className="academic-box h-fit sm:w-full md:w-[45%] md:min-w-[500px] md:flex-1 lg:min-h-[430px] lg:w-[45%]"
+              className={`${
+                context?.activeSection === 3
+                  ? "md:translate-y-0 md:opacity-100 lg:translate-y-0 lg:opacity-100"
+                  : (context?.activeSection ?? 0) > 3
+                    ? "md:-translate-y-[var(--anim-index)] md:opacity-0 lg:-translate-y-[var(--anim-index)] lg:opacity-0"
+                    : "md:translate-y-[var(--anim-index)] md:opacity-0 lg:translate-y-[var(--anim-index)] lg:opacity-0"
+              } academic-box transition-[transform, opacity] h-fit duration-1000 ease-in-out sm:w-full md:w-[45%] md:min-w-[500px] md:flex-1 lg:min-h-[430px] lg:w-[45%]`}
             >
               <img
                 src={e.image}
