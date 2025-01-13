@@ -1,6 +1,6 @@
 import { useState, MutableRefObject, useEffect } from "react";
 
-export default function useScrollTracking({ screenRefs }: ScrollTrackingEntry) {
+export default function useScrollTracking({ screenRefs }: ScrollTrackingProps) {
   const [activeSection, setActiveSection] = useState<number>(0);
   const [scrollPos, setScrollPos] = useState<number>(0);
 
@@ -26,7 +26,7 @@ export default function useScrollTracking({ screenRefs }: ScrollTrackingEntry) {
   return { activeSection, scrollPos };
 }
 
-interface ScrollTrackingEntry {
+interface ScrollTrackingProps {
   screenRefs: MutableRefObject<HTMLDivElement | null>[];
 }
 

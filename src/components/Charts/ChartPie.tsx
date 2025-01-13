@@ -8,7 +8,7 @@ export default function ChartPie({
   entryData = [],
   divId,
   ...props
-}: ChartPieEntry) {
+}: ChartPieProps) {
   const chartRef = useRef(null);
 
   const data = useMemo(() => {
@@ -430,7 +430,7 @@ export default function ChartPie({
   );
 }
 
-interface ChartPieEntry extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface ChartPieProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   isDoughnut?: boolean;
   graphTitle: string;
   entryData: any[];

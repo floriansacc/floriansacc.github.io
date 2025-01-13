@@ -8,7 +8,7 @@ export default function ChartBarStack({
   entryData = [],
   divId,
   ...props
-}: ChartBarEntry) {
+}: ChartBarProps) {
   const barStackRef = useRef(null);
 
   const { isMobile } = useScreenSize();
@@ -282,7 +282,7 @@ export default function ChartBarStack({
   );
 }
 
-interface ChartBarEntry extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface ChartBarProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   graphTitle: string;
   entryData: DataBarModel[];
   divId: string;

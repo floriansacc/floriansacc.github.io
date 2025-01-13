@@ -7,7 +7,7 @@ export default function ChartBar({
   entryData = [],
   divId,
   ...props
-}: ChartBarEntry) {
+}: ChartBarProps) {
   const chartRef = useRef(null);
 
   const data: ChartData<"bar", any[], string> = useMemo(() => {
@@ -104,7 +104,7 @@ export default function ChartBar({
   );
 }
 
-interface ChartBarEntry extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface ChartBarProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   graphTitle: string;
   entryData: DataBarModel[];
   divId: string;

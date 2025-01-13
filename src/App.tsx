@@ -20,7 +20,7 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 
 Chart.register(ChartDataLabels);
 
-export const QueryContext = createContext<ContextEntry | null>(null);
+export const QueryContext = createContext<ContextProps | null>(null);
 
 export default function App() {
   const [showContact, setShowContact] = useState<{
@@ -112,7 +112,7 @@ export default function App() {
   );
 }
 
-export interface ContextEntry {
+export interface ContextProps {
   isDetails: boolean;
   activeSection: number;
   copyToClipBoard: (id: string) => void;

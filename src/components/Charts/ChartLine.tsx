@@ -7,7 +7,7 @@ export default function ChartLine({
   entryData = [],
   divId,
   ...props
-}: ChartLineEntry) {
+}: ChartLineProps) {
   const lineRef = useRef(null);
 
   const data: ChartData<"line", any[], string> = useMemo(() => {
@@ -105,7 +105,7 @@ export default function ChartLine({
   );
 }
 
-interface ChartLineEntry extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface ChartLineProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   graphTitle: string;
   entryData: DataLineModel[];
   divId: string;
