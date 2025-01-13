@@ -1,13 +1,15 @@
 import { useContext, MutableRefObject, useEffect, useState } from "react";
-import { QueryContext } from "../App";
 import { Link } from "react-router";
+import { QueryContext } from "../App";
 import CardComponent from "../components/CardComponent";
 import FloatingComponent from "../components/FloatingComponent";
 import TechnoIcon from "../components/TechnoIcon";
 import ChartPie from "../components/Charts/ChartPie";
 import ChartBar from "../components/Charts/ChartBar";
+import ChartBarStack from "../components/Charts/ChartBarStack";
 import ChartLine from "../components/Charts/ChartLine";
-import { dataBar, dataLine, dataPie } from "../data/fakeData";
+import { dataBar, dataBarStack, dataLine, dataPie } from "../data/fakeData";
+import ChartWrapper from "../components/ChartWrapper";
 
 const imagesUrl: string[] = [
   "/assets/disallowed/images/thehanaro_app_image_1.png",
@@ -38,6 +40,7 @@ export default function Screen03Project({
     const interval = setInterval(() => {
       setCarouselIndex((prev) => (prev + 1) % imagesUrl.length);
     }, 3000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -75,7 +78,7 @@ export default function Screen03Project({
             : (context?.activeSection ?? 0) > 2
               ? "md:-translate-y-24 md:opacity-0 lg:-translate-y-24 lg:opacity-0"
               : "md:translate-y-24 md:opacity-0 lg:translate-y-24 lg:opacity-0"
-        } transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-[750ms] sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[5vw]`}
+        } transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-[750ms] sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[1vw]`}
       >
         <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2">
           <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">
@@ -148,9 +151,11 @@ export default function Screen03Project({
             className="flex aspect-auto h-full w-full items-center rounded-xl transition-transform duration-[800ms] ease-in-out"
           >
             {imagesUrl.map((url, i) => (
-              <div className="flex w-full flex-shrink-0 items-center justify-center p-2">
+              <div
+                key={url}
+                className="flex w-full flex-shrink-0 items-center justify-center p-2"
+              >
                 <img
-                  key={url}
                   src={url}
                   className={`${carouselIndex === i ? "" : "opacity-0"} aspect-auto h-full rounded-md transition-opacity duration-[1200ms]`}
                   alt="The Hanaro App"
@@ -170,12 +175,12 @@ export default function Screen03Project({
 
       {/* Hanaro Web */}
       <div
-        className={`${isOnView ? "" : "translate-x-96 opacity-0"} ${context?.activeSection === 2 ? "" : "opacity-0"} transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-[750ms] sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:ml-[5vw]`}
+        className={`${isOnView ? "" : "translate-x-96 opacity-0"} ${context?.activeSection === 2 ? "" : "opacity-0"} transition-[transform, opacity] relative mb-32 flex items-start gap-0 duration-[750ms] sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:ml-[1vw]`}
         id="project-web-hanaro"
       >
         <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2 lg:w-fit">
           <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">
-            <div className="ml-4 flex flex-col gap-8 sm:gap-2 md:gap-2">
+            <div className="flex flex-col gap-8 pl-4 sm:gap-2 md:gap-2">
               <span className="text-[18px] sm:ml-0 sm:self-center">
                 개발 기간: 2024-06 ~ 2024.12
               </span>
@@ -239,27 +244,38 @@ export default function Screen03Project({
           </div>
         </div>
         <div className="flex w-full justify-center gap-4 rounded-md sm:flex-col md:h-[500px] md:w-[80%] md:snap-y md:flex-col md:justify-start md:overflow-y-scroll lg:w-[80%] lg:flex-wrap">
-          <div className="relative flex select-none flex-col items-start justify-start rounded-md bg-maincolor-700 duration-1000 sm:h-fit sm:min-w-fit sm:items-start sm:overflow-hidden sm:p-1 md:h-fit md:max-w-full md:snap-start md:p-2 lg:h-fit lg:w-[400px] lg:max-w-full lg:p-2">
+          <ChartWrapper>
             <ChartPie
               divId="pie-1"
               entryData={dataPie}
               graphTitle="Pie Example"
             />
-          </div>
-          <div className="relative flex select-none flex-col items-start justify-start rounded-md bg-maincolor-700 duration-1000 sm:h-fit sm:min-w-fit sm:items-start sm:overflow-hidden sm:p-1 md:h-fit md:max-w-full md:snap-start md:p-2 lg:h-fit lg:w-[500px] lg:max-w-full lg:p-2">
+          </ChartWrapper>
+          <ChartWrapper>
+            <ChartBarStack
+              divId="bar-1"
+              entryData={dataBarStack}
+              graphTitle="Bar Example"
+            />
+            <div className="flex w-full justify-center" id="Bar Example">
+              <ul className={`max-h-fit sm:max-h-fit`}></ul>
+            </div>
+          </ChartWrapper>
+          <ChartWrapper>
             <ChartBar
               divId="bar-1"
               entryData={dataBar}
               graphTitle="Bar Example"
             />
-          </div>
-          <div className="relative flex select-none flex-col items-start justify-start rounded-md bg-maincolor-700 duration-1000 sm:h-fit sm:min-w-fit sm:items-start sm:overflow-hidden sm:p-1 md:h-fit md:max-w-full md:snap-start md:p-2 lg:h-fit lg:w-[500px] lg:max-w-full lg:p-2">
+          </ChartWrapper>
+
+          <ChartWrapper>
             <ChartLine
               divId="line-1"
               entryData={dataLine}
               graphTitle="Line Example"
             />
-          </div>
+          </ChartWrapper>
         </div>
       </div>
 
@@ -272,7 +288,7 @@ export default function Screen03Project({
             : (context?.activeSection ?? 0) > 2
               ? "md:-translate-y-24 md:opacity-0 lg:-translate-y-24 lg:opacity-0"
               : "md:translate-y-24 md:opacity-0 lg:translate-y-24 lg:opacity-0"
-        } transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-[750ms] sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[5vw]`}
+        } transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-[750ms] sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[1vw]`}
       >
         <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2">
           <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">

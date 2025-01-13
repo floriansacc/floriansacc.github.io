@@ -1,5 +1,5 @@
-import { ChartData } from "chart.js";
 import { useMemo, useRef } from "react";
+import { ChartData } from "chart.js";
 import { Line } from "react-chartjs-2";
 
 export default function ChartLine({

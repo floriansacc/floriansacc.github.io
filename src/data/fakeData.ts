@@ -39,6 +39,59 @@ export const dataBar: DataBarModel[] = [
     ],
   },
 ];
+export const dataBarStack: DataBarModel[] = [
+  {
+    label: "BarStack 1",
+    bgColor: "#4A90E2",
+    data: [
+      { x: "0", y: 92 },
+      { x: "5", y: 35 },
+      { x: "10", y: 36 },
+      { x: "15", y: 16 },
+      { x: "20", y: 99 },
+      { x: "25", y: 92 },
+      { x: "30", y: 75 },
+      { x: "35", y: 93 },
+      { x: "40", y: 52 },
+      { x: "45", y: 73 },
+      { x: "50", y: 59 },
+    ],
+  },
+  {
+    label: "BarStack 2",
+    bgColor: "#F5A623",
+    data: [
+      { x: "0", y: 15 },
+      { x: "5", y: 80 },
+      { x: "10", y: 31 },
+      { x: "15", y: 10 },
+      { x: "20", y: 24 },
+      { x: "25", y: 69 },
+      { x: "30", y: 16 },
+      { x: "35", y: 73 },
+      { x: "40", y: 28 },
+      { x: "45", y: 64 },
+      { x: "50", y: 83 },
+    ],
+  },
+  {
+    label: "BarStack 3",
+    bgColor: "#50E3C2",
+    data: [
+      { x: "0", y: 92 },
+      { x: "5", y: 35 },
+      { x: "10", y: 36 },
+      { x: "15", y: 16 },
+      { x: "20", y: 29 },
+      { x: "25", y: 50 },
+      { x: "30", y: 75 },
+      { x: "35", y: 93 },
+      { x: "40", y: 52 },
+      { x: "45", y: 73 },
+      { x: "50", y: 59 },
+    ],
+  },
+];
 
 export const dataLine: DataLineModel[] = [
   {

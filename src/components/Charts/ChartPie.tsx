@@ -1,6 +1,5 @@
-import { Plugin } from "chart.js";
-
 import { useMemo, useRef } from "react";
+import { Plugin } from "chart.js";
 import { Doughnut, Pie } from "react-chartjs-2";
 
 export default function ChartPie({
