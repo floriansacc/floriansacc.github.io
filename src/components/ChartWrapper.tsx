@@ -4,11 +4,20 @@ import ChartPie from "./Charts/ChartPie";
 import ChartBar from "./Charts/ChartBar";
 import ChartBarStack from "./Charts/ChartBarStack";
 import ChartLine from "./Charts/ChartLine";
+import {
+  ChartType,
+  DataBarModel,
+  DataBarStackModel,
+  DataLineModel,
+} from "../models/global-models";
 
 export default function ChartWrapper<T extends ChartType>({
   divId,
   chartType,
   entryData,
+  hasFullscreen = true,
+  hasCsv = true,
+  hasImageDl = true,
 }: ChartWrapperProps<T>) {
   const [isFullScreen, setIsFullScreen] = useState<boolean>(false);
 
@@ -99,14 +108,18 @@ export default function ChartWrapper<T extends ChartType>({
       <div
         className={`${isFullScreen ? "hidden" : ""} relative mb-2 flex h-10 w-full justify-end gap-2`}
       >
-        <button className="border-graphorange text-graphorange hover:bg-graphorange box-border rounded-md border border-solid bg-maincolor-800/75 px-2 transition-colors hover:border-maincolor-900 hover:text-maincolor-900">
+        <button
+          className={`${hasCsv ? "" : "pointer-events-none opacity-25"} border-graphorange text-graphorange hover:bg-graphorange box-border rounded-md border border-solid bg-maincolor-800/75 px-2 transition-colors hover:border-maincolor-900 hover:text-maincolor-900`}
+        >
           <BsFiletypeCsv className="m-0 p-0 text-xl" />
         </button>
-        <button className="border-graphorange text-graphorange hover:bg-graphorange box-border rounded-md border border-solid bg-maincolor-800/75 px-2 transition-colors hover:border-maincolor-900 hover:text-maincolor-900">
+        <button
+          className={`${hasImageDl ? "" : "pointer-events-none opacity-25"} border-graphorange text-graphorange hover:bg-graphorange box-border rounded-md border border-solid bg-maincolor-800/75 px-2 transition-colors hover:border-maincolor-900 hover:text-maincolor-900`}
+        >
           <BsImage className="m-0 p-0 text-xl" />
         </button>
         <button
-          className="border-graphorange text-graphorange hover:bg-graphorange box-border rounded-md border border-solid bg-maincolor-800/75 px-2 transition-colors hover:border-maincolor-900 hover:text-maincolor-900"
+          className={`${hasFullscreen ? "" : "pointer-events-none opacity-25"} border-graphorange text-graphorange hover:bg-graphorange box-border rounded-md border border-solid bg-maincolor-800/75 px-2 transition-colors hover:border-maincolor-900 hover:text-maincolor-900 sm:hidden`}
           onClick={() => getFullscreen(divId)}
         >
           <BsArrowsFullscreen className="m-0 p-0 text-xl" />
@@ -117,7 +130,7 @@ export default function ChartWrapper<T extends ChartType>({
       >
         {chart()}
         {chartType === ChartType.barStack && (
-          <div className="flex w-full justify-center" id="Bar Example">
+          <div className="flex w-full justify-center" id="BarStack Example">
             <ul className={`max-h-fit sm:max-h-fit`}></ul>
           </div>
         )}
@@ -129,6 +142,9 @@ export default function ChartWrapper<T extends ChartType>({
 interface ChartWrapperProps<T extends ChartType>
   extends React.HTMLAttributes<HTMLDivElement> {
   divId: string;
+  hasFullscreen?: boolean;
+  hasCsv?: boolean;
+  hasImageDl?: boolean;
   chartType: T;
   entryData: EntryDataMap[T];
 }
@@ -139,37 +155,3 @@ type EntryDataMap = {
   [ChartType.barStack]: DataBarStackModel[];
   [ChartType.line]: DataLineModel[];
 };
-
-export interface DataLineModel {
-  label: string;
-  bgColor: string;
-  data: {
-    x: string;
-    y: number;
-  }[];
-}
-
-export interface DataBarModel {
-  label: string;
-  data: {
-    x: string;
-    y: number;
-  }[];
-  bgColor: string;
-}
-
-export interface DataBarStackModel {
-  label: string;
-  data: {
-    x: string;
-    y: number;
-  }[];
-  bgColor: string;
-}
-
-export enum ChartType {
-  pie,
-  bar,
-  barStack,
-  line,
-}

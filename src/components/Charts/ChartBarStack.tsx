@@ -2,7 +2,7 @@ import { useMemo, useRef } from "react";
 import { ChartData, Plugin } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import useScreenSize from "../../hooks/useScreenSize";
-import { DataBarStackModel } from "../ChartWrapper";
+import { DataBarStackModel } from "../../models/global-models";
 
 export default function ChartBarStack({
   graphTitle,
@@ -270,7 +270,7 @@ export default function ChartBarStack({
   return (
     <div
       id={divId}
-      className={`${isFullScreen ? "h-[99%]" : "lg:max-h-[16vw]"} w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
+      className={`${isFullScreen ? "lg:h-[99%]" : "lg:max-h-[16vw]"} w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
       {...props}
     >
       <Bar

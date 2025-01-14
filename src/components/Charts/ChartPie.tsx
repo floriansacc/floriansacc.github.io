@@ -407,11 +407,7 @@ export default function ChartPie({
 
   return (
     <div
-      style={{
-        height: isFullScreen ? "85%" : "70%",
-        width: isFullScreen ? "85%" : "70%",
-      }}
-      className={`flex items-center justify-start md:h-fit md:w-fit`}
+      className={`${isFullScreen ? "h-[85%] w-[85%]" : "h-[70%] w-[70%]"} flex items-center justify-start md:h-fit md:w-fit`}
       {...props}
     >
       {isDoughnut ? (

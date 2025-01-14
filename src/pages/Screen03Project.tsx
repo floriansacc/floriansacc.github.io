@@ -4,8 +4,9 @@ import { QueryContext } from "../App";
 import CardComponent from "../components/CardComponent";
 import FloatingComponent from "../components/FloatingComponent";
 import TechnoIcon from "../components/TechnoIcon";
+import ChartWrapper from "../components/ChartWrapper";
 import { dataBar, dataBarStack, dataLine, dataPie } from "../data/fakeData";
-import ChartWrapper, { ChartType } from "../components/ChartWrapper";
+import { ChartType } from "../models/global-models";
 
 const imagesUrl: string[] = [
   "/assets/disallowed/images/thehanaro_app_image_1.png",
@@ -241,6 +242,8 @@ export default function Screen03Project({
         </div>
         <div className="flex w-full justify-center gap-4 rounded-md sm:flex-col md:h-[500px] md:w-[80%] md:snap-y md:flex-col md:justify-start md:overflow-y-scroll lg:w-[80%] lg:flex-wrap">
           <ChartWrapper
+            hasCsv={false}
+            hasImageDl={false}
             chartType={ChartType.pie}
             entryData={dataPie}
             divId="pie-1"
@@ -251,11 +254,15 @@ export default function Screen03Project({
             divId="barStack-1"
           />
           <ChartWrapper
+            hasImageDl={false}
+            hasFullscreen={false}
             chartType={ChartType.bar}
             entryData={dataBar}
             divId="bar-1"
           />
           <ChartWrapper
+            hasCsv={false}
+            hasFullscreen={false}
             chartType={ChartType.line}
             entryData={dataLine}
             divId="line-1"

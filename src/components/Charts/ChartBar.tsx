@@ -1,7 +1,7 @@
 import { useMemo, useRef } from "react";
 import { ChartData } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { DataBarModel } from "../ChartWrapper";
+import { DataBarModel } from "../../models/global-models";
 
 export default function ChartBar({
   graphTitle,
@@ -93,7 +93,7 @@ export default function ChartBar({
   return (
     <div
       id={divId}
-      className={`${isFullScreen ? "h-[99%]" : "lg:max-h-[16vw]"} w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
+      className={`${isFullScreen ? "lg:h-[99%]" : "lg:max-h-[16vw]"} w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
       {...props}
     >
       <Bar

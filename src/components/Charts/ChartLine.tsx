@@ -1,7 +1,7 @@
 import { useMemo, useRef } from "react";
 import { ChartData } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { DataLineModel } from "../ChartWrapper";
+import { DataLineModel } from "../../models/global-models";
 
 export default function ChartLine({
   graphTitle,
@@ -94,7 +94,7 @@ export default function ChartLine({
   return (
     <div
       id={divId}
-      className={`${isFullScreen ? "h-[99%]" : "lg:max-h-[16vw]"} w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
+      className={`${isFullScreen ? "lg:h-[99%]" : "lg:max-h-[16vw]"} w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
       {...props}
     >
       <Line
