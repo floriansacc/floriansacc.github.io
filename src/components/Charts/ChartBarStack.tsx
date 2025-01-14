@@ -2,11 +2,13 @@ import { useMemo, useRef } from "react";
 import { ChartData, Plugin } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import useScreenSize from "../../hooks/useScreenSize";
+import { DataBarStackModel } from "../ChartWrapper";
 
 export default function ChartBarStack({
   graphTitle,
   entryData = [],
   divId,
+  isFullScreen,
   ...props
 }: ChartBarProps) {
   const barStackRef = useRef(null);
@@ -268,11 +270,11 @@ export default function ChartBarStack({
   return (
     <div
       id={divId}
-      className={`w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
+      className={`${isFullScreen ? "h-[99%]" : "lg:max-h-[16vw]"} w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
       {...props}
     >
       <Bar
-        className="h-full w-full"
+        style={{ width: "99%", height: "99%" }}
         data={data}
         options={options}
         ref={barStackRef}
@@ -284,15 +286,7 @@ export default function ChartBarStack({
 
 interface ChartBarProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   graphTitle: string;
-  entryData: DataBarModel[];
   divId: string;
-}
-
-export interface DataBarModel {
-  label: string;
-  data: {
-    x: string;
-    y: number;
-  }[];
-  bgColor: string;
+  isFullScreen: boolean;
+  entryData: DataBarStackModel[];
 }

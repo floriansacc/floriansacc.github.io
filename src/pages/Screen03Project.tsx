@@ -4,12 +4,8 @@ import { QueryContext } from "../App";
 import CardComponent from "../components/CardComponent";
 import FloatingComponent from "../components/FloatingComponent";
 import TechnoIcon from "../components/TechnoIcon";
-import ChartPie from "../components/Charts/ChartPie";
-import ChartBar from "../components/Charts/ChartBar";
-import ChartBarStack from "../components/Charts/ChartBarStack";
-import ChartLine from "../components/Charts/ChartLine";
 import { dataBar, dataBarStack, dataLine, dataPie } from "../data/fakeData";
-import ChartWrapper from "../components/ChartWrapper";
+import ChartWrapper, { ChartType } from "../components/ChartWrapper";
 
 const imagesUrl: string[] = [
   "/assets/disallowed/images/thehanaro_app_image_1.png",
@@ -244,38 +240,26 @@ export default function Screen03Project({
           </div>
         </div>
         <div className="flex w-full justify-center gap-4 rounded-md sm:flex-col md:h-[500px] md:w-[80%] md:snap-y md:flex-col md:justify-start md:overflow-y-scroll lg:w-[80%] lg:flex-wrap">
-          <ChartWrapper>
-            <ChartPie
-              divId="pie-1"
-              entryData={dataPie}
-              graphTitle="Pie Example"
-            />
-          </ChartWrapper>
-          <ChartWrapper>
-            <ChartBarStack
-              divId="bar-1"
-              entryData={dataBarStack}
-              graphTitle="Bar Example"
-            />
-            <div className="flex w-full justify-center" id="Bar Example">
-              <ul className={`max-h-fit sm:max-h-fit`}></ul>
-            </div>
-          </ChartWrapper>
-          <ChartWrapper>
-            <ChartBar
-              divId="bar-1"
-              entryData={dataBar}
-              graphTitle="Bar Example"
-            />
-          </ChartWrapper>
-
-          <ChartWrapper>
-            <ChartLine
-              divId="line-1"
-              entryData={dataLine}
-              graphTitle="Line Example"
-            />
-          </ChartWrapper>
+          <ChartWrapper
+            chartType={ChartType.pie}
+            entryData={dataPie}
+            divId="pie-1"
+          />
+          <ChartWrapper
+            chartType={ChartType.barStack}
+            entryData={dataBarStack}
+            divId="barStack-1"
+          />
+          <ChartWrapper
+            chartType={ChartType.bar}
+            entryData={dataBar}
+            divId="bar-1"
+          />
+          <ChartWrapper
+            chartType={ChartType.line}
+            entryData={dataLine}
+            divId="line-1"
+          />
         </div>
       </div>
 

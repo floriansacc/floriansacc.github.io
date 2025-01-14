@@ -24,6 +24,8 @@ export default {
         },
         line: "#e6e7e8",
         hanarogreen: "#5ec65e",
+        graphcyan: "#50e3c2",
+        graphorange: "#f5a623",
         disabled: "#9e9e9E",
         gitbgvar: "#2d333b",
         bgmain: "#fafafb",

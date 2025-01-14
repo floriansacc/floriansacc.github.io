@@ -7,6 +7,7 @@ export default function ChartPie({
   graphTitle,
   entryData = [],
   divId,
+  isFullScreen,
   ...props
 }: ChartPieProps) {
   const chartRef = useRef(null);
@@ -154,6 +155,9 @@ export default function ChartPie({
   }
 
   const options: any = {
+    style: {
+      backgroundColor: "#000",
+    },
     responsive: true,
     hoverBorderWidth: 1,
     hoverBorderColor: "#1f2329",
@@ -403,7 +407,11 @@ export default function ChartPie({
 
   return (
     <div
-      className="flex h-[70%] w-[70%] items-center justify-start md:h-fit md:w-fit"
+      style={{
+        height: isFullScreen ? "85%" : "70%",
+        width: isFullScreen ? "85%" : "70%",
+      }}
+      className={`flex items-center justify-start md:h-fit md:w-fit`}
       {...props}
     >
       {isDoughnut ? (
@@ -433,6 +441,7 @@ export default function ChartPie({
 interface ChartPieProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   isDoughnut?: boolean;
   graphTitle: string;
-  entryData: any[];
   divId: string;
+  isFullScreen: boolean;
+  entryData: any[];
 }

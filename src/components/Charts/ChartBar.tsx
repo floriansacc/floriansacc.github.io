@@ -1,11 +1,13 @@
 import { useMemo, useRef } from "react";
 import { ChartData } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import { DataBarModel } from "../ChartWrapper";
 
 export default function ChartBar({
   graphTitle,
   entryData = [],
   divId,
+  isFullScreen,
   ...props
 }: ChartBarProps) {
   const chartRef = useRef(null);
@@ -91,11 +93,11 @@ export default function ChartBar({
   return (
     <div
       id={divId}
-      className={`w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
+      className={`${isFullScreen ? "h-[99%]" : "lg:max-h-[16vw]"} w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
       {...props}
     >
       <Bar
-        className="h-full w-full"
+        style={{ width: "99%", height: "99%" }}
         data={data}
         options={options}
         ref={chartRef}
@@ -106,15 +108,7 @@ export default function ChartBar({
 
 interface ChartBarProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   graphTitle: string;
-  entryData: DataBarModel[];
   divId: string;
-}
-
-export interface DataBarModel {
-  label: string;
-  data: {
-    x: string;
-    y: number;
-  }[];
-  bgColor: string;
+  isFullScreen: boolean;
+  entryData: DataBarModel[];
 }

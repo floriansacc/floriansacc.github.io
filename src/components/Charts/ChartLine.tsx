@@ -1,11 +1,13 @@
 import { useMemo, useRef } from "react";
 import { ChartData } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { DataLineModel } from "../ChartWrapper";
 
 export default function ChartLine({
   graphTitle,
   entryData = [],
   divId,
+  isFullScreen,
   ...props
 }: ChartLineProps) {
   const lineRef = useRef(null);
@@ -92,11 +94,11 @@ export default function ChartLine({
   return (
     <div
       id={divId}
-      className={`w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
+      className={`${isFullScreen ? "h-[99%]" : "lg:max-h-[16vw]"} w-[99%] items-center justify-center sm:h-[70vw] sm:w-[99%] md:w-full`}
       {...props}
     >
       <Line
-        className="h-full w-full"
+        style={{ width: "99%", height: "99%" }}
         data={data}
         options={options}
         ref={lineRef}
@@ -107,14 +109,7 @@ export default function ChartLine({
 
 interface ChartLineProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   graphTitle: string;
-  entryData: DataLineModel[];
   divId: string;
-}
-export interface DataLineModel {
-  label: string;
-  bgColor: string;
-  data: {
-    x: string;
-    y: number;
-  }[];
+  isFullScreen: boolean;
+  entryData: DataLineModel[];
 }
