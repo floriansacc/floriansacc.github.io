@@ -32,7 +32,7 @@ export default function ContactIcons({
   };
 
   return (
-    <div className="no-scrollbar fixed bottom-5 right-10 flex flex-col gap-4 sm:right-3 sm:gap-6">
+    <div className="no-scrollbar fixed bottom-5 right-10 z-50 flex flex-col gap-4 sm:right-3 sm:gap-6">
       <div
         className={`${hideIcon ? "sm:invisible sm:h-0 sm:opacity-0" : ""} relative transition-all sm:duration-300`}
       >
