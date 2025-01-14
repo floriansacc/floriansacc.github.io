@@ -189,13 +189,13 @@ export default function ChartWrapper<T extends ChartType>({
               i === 0 ? (
                 <div className="mb-4 flex w-full items-center justify-center gap-4 text-xl font-semibold">
                   {!isTutorialClosed.csv && hasCsv && (
-                    <BsFiletypeCsv className="border-graphorange text-graphorange box-border" />
+                    <BsFiletypeCsv className="box-border border-graphorange text-graphorange" />
                   )}
                   {!isTutorialClosed.image && hasImageDl && (
-                    <BsImage className="border-graphorange text-graphorange box-border" />
+                    <BsImage className="box-border border-graphorange text-graphorange" />
                   )}
                   {!isTutorialClosed.fullscreen && hasFullscreen && (
-                    <BsArrowsFullscreen className="border-graphorange text-graphorange box-border" />
+                    <BsArrowsFullscreen className="box-border border-graphorange text-graphorange" />
                   )}
                   <p>{e}</p>
                 </div>
@@ -207,40 +207,40 @@ export default function ChartWrapper<T extends ChartType>({
         </div>
         <div className="relative">
           <button
-            className={`${hasCsv ? "" : "pointer-events-none opacity-25"} border-graphorange text-graphorange hover:bg-graphorange box-border h-full rounded-md border border-solid bg-maincolor-800/75 px-2 transition-colors hover:border-maincolor-900 hover:text-maincolor-900`}
+            className={`${hasCsv ? "" : "pointer-events-none opacity-25"} box-border h-full rounded-md border border-solid border-graphorange bg-maincolor-800/75 px-2 text-graphorange transition-colors hover:border-maincolor-900 hover:bg-graphorange hover:text-maincolor-900`}
           >
             <BsFiletypeCsv className="m-0 p-0 text-xl" />
           </button>
           {hasCsv && !hasImageDl && !hasFullscreen && (
             <BsInfoCircle
-              className="hover:bg-graphorange absolute -bottom-6 right-1 cursor-pointer rounded-full transition-colors hover:border-maincolor-900 hover:text-maincolor-900"
+              className="absolute -bottom-6 right-1 cursor-pointer rounded-full transition-colors hover:border-maincolor-900 hover:bg-graphorange hover:text-maincolor-900"
               onClick={() => openTutorial("csv")}
             />
           )}
         </div>
         <div className="relative">
           <button
-            className={`${hasImageDl ? "" : "pointer-events-none opacity-25"} border-graphorange text-graphorange hover:bg-graphorange box-border h-full rounded-md border border-solid bg-maincolor-800/75 px-2 transition-colors hover:border-maincolor-900 hover:text-maincolor-900`}
+            className={`${hasImageDl ? "" : "pointer-events-none opacity-25"} box-border h-full rounded-md border border-solid border-graphorange bg-maincolor-800/75 px-2 text-graphorange transition-colors hover:border-maincolor-900 hover:bg-graphorange hover:text-maincolor-900`}
           >
             <BsImage className="m-0 p-0 text-xl" />
           </button>
           {hasImageDl && !hasCsv && !hasFullscreen && (
             <BsInfoCircle
-              className="hover:bg-graphorange absolute -bottom-6 right-1 cursor-pointer rounded-full transition-colors hover:border-maincolor-900 hover:text-maincolor-900"
+              className="absolute -bottom-6 right-1 cursor-pointer rounded-full transition-colors hover:border-maincolor-900 hover:bg-graphorange hover:text-maincolor-900"
               onClick={() => openTutorial("image")}
             />
           )}
         </div>
         <div className="relative">
           <button
-            className={`${hasFullscreen ? "" : "pointer-events-none opacity-25"} border-graphorange text-graphorange hover:bg-graphorange box-border h-full rounded-md border border-solid bg-maincolor-800/75 px-2 transition-colors hover:border-maincolor-900 hover:text-maincolor-900 sm:hidden`}
+            className={`${hasFullscreen ? "" : "pointer-events-none opacity-25"} box-border h-full rounded-md border border-solid border-graphorange bg-maincolor-800/75 px-2 text-graphorange transition-colors hover:border-maincolor-900 hover:bg-graphorange hover:text-maincolor-900 sm:hidden`}
             onClick={() => getFullscreen(divId)}
           >
             <BsArrowsFullscreen className="m-0 p-0 text-xl" />
           </button>
           {hasFullscreen && !hasImageDl && !hasCsv && (
             <BsInfoCircle
-              className="hover:bg-graphorange absolute -bottom-6 right-1 cursor-pointer rounded-full transition-colors hover:border-maincolor-900 hover:text-maincolor-900"
+              className="absolute -bottom-6 right-1 cursor-pointer rounded-full transition-colors hover:border-maincolor-900 hover:bg-graphorange hover:text-maincolor-900"
               onClick={() => openTutorial("fullscreen")}
             />
           )}

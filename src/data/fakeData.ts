@@ -1,5 +1,4 @@
-import { DataBarModel } from "../components/Charts/ChartBar";
-import { DataLineModel } from "../components/Charts/ChartLine";
+import { DataBarModel, DataLineModel } from "../models/global-models";
 
 export const dataPie: number[] = [25, 40, 15];
 
