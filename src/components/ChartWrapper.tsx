@@ -38,7 +38,7 @@ export default function ChartWrapper<T extends ChartType>({
 
   const tutorialText = (): string[] => {
     if (!isTutorialClosed.csv && hasCsv) {
-      return ["CSV 다운로드", "그래프 데이터가 CSV로 출려할 수 있는 기능"];
+      return ["CSV 다운로드", "그래프 데이터가 CSV로 출력할 수 있는 기능"];
     } else if (!isTutorialClosed.image && hasImageDl) {
       return [
         "이미지 다운로드",
