@@ -5,8 +5,9 @@ import CardComponent from "../components/CardComponent";
 import FloatingComponent from "../components/FloatingComponent";
 import TechnoIcon from "../components/TechnoIcon";
 import ChartWrapper from "../components/ChartWrapper";
-import { dataBar, dataBarStack, dataLine, dataPie } from "../data/fakeData";
-import { ChartType } from "../models/global-models";
+import { dataBar, dataBarStack, dataLine } from "../data/fakeData";
+import { ChartType, DataPieModel } from "../models/global-models";
+import useGithubFetch from "../services/useGithubFetch";
 
 const imagesUrl: string[] = [
   "/assets/disallowed/images/thehanaro_app_image_1.png",
@@ -24,14 +25,40 @@ export default function Screen03Project({
   const context = useContext(QueryContext);
   const [isOnView, setIsOnView] = useState<boolean>(false);
   const [carouselIndex, setCarouselIndex] = useState<number>(0);
+  const [languageUsed, setLanguageUsed] = useState<DataPieModel[]>([]);
 
-  // const { getItemStyle } = useWave({
-  //   isInList: true,
-  //   minDistance: 95,
-  //   repulseReducer: 7,
-  //   condition: context?.activeSection === 0 || context?.activeSection === 1,
-  //   entryId: logoList.map((e) => e.key!),
-  // });
+  const { githubInfo } = useGithubFetch();
+
+  useEffect(() => {
+    const newMap: { [key: string]: number } = {};
+    githubInfo?.repos.map((e) => {
+      if (e.language) {
+        return (newMap[e.language] = (newMap[e.language] || 0) + 1);
+      }
+    });
+
+    setLanguageUsed(() => {
+      return Object.entries(newMap).map(([key, value]) => {
+        let color = "";
+        switch (key) {
+          case "TypeScript":
+            color = "#3178c6";
+            break;
+          case "JavaScript":
+            color = "#F0DB4F";
+            break;
+          case "Dart":
+            color = "#00B4AB";
+            break;
+
+          default:
+            color = "#4A90E2";
+            break;
+        }
+        return { label: key, value: value, color: color };
+      });
+    });
+  }, [githubInfo]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -242,18 +269,21 @@ export default function Screen03Project({
         </div>
         <div className="flex w-full justify-center gap-4 rounded-md sm:flex-col md:h-[500px] md:w-[80%] md:snap-y md:flex-col md:justify-start md:overflow-y-scroll lg:w-[80%] lg:flex-wrap">
           <ChartWrapper
+            graphTitle="Main language by repo"
             hasCsv={false}
             hasImageDl={false}
             chartType={ChartType.pie}
-            entryData={dataPie}
+            entryData={languageUsed}
             divId="pie-1"
           />
           <ChartWrapper
+            graphTitle="BarStack Example"
             chartType={ChartType.barStack}
             entryData={dataBarStack}
             divId="barStack-1"
           />
           <ChartWrapper
+            graphTitle="Bar Example"
             hasImageDl={false}
             hasFullscreen={false}
             chartType={ChartType.bar}
@@ -261,6 +291,7 @@ export default function Screen03Project({
             divId="bar-1"
           />
           <ChartWrapper
+            graphTitle="Line Example"
             hasCsv={false}
             hasFullscreen={false}
             chartType={ChartType.line}

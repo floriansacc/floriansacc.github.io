@@ -1,6 +1,7 @@
 import { useMemo, useRef } from "react";
 import { Plugin } from "chart.js";
 import { Doughnut, Pie } from "react-chartjs-2";
+import { DataPieModel } from "../../models/global-models";
 
 export default function ChartPie({
   isDoughnut = false,
@@ -14,12 +15,11 @@ export default function ChartPie({
 
   const data = useMemo(() => {
     return {
-      labels: ["Data 1", "Data 2", "Data 3"],
+      labels: entryData.map((e) => e.label),
       datasets: [
         {
-          label: graphTitle || "그래프",
-          data: entryData,
-          backgroundColor: ["#4A90E2", "#50E3C2", "#F5A623"],
+          data: entryData.map((e) => e.value),
+          backgroundColor: entryData.map((e) => e.color),
           hoverOffset: 1,
           offset: 2,
         },
@@ -439,5 +439,5 @@ interface ChartPieProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   graphTitle: string;
   divId: string;
   isFullScreen: boolean;
-  entryData: any[];
+  entryData: DataPieModel[];
 }

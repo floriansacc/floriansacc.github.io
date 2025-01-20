@@ -15,10 +15,12 @@ import {
   DataBarModel,
   DataBarStackModel,
   DataLineModel,
+  DataPieModel,
 } from "../models/global-models";
 
 export default function ChartWrapper<T extends ChartType>({
   divId,
+  graphTitle,
   chartType,
   entryData,
   hasFullscreen = true,
@@ -58,8 +60,8 @@ export default function ChartWrapper<T extends ChartType>({
           <ChartPie
             isFullScreen={isFullScreen}
             divId={divId}
-            entryData={entryData}
-            graphTitle="Pie Example"
+            entryData={entryData as DataPieModel[]}
+            graphTitle={graphTitle}
           />
         );
 
@@ -68,8 +70,8 @@ export default function ChartWrapper<T extends ChartType>({
           <ChartBar
             isFullScreen={isFullScreen}
             divId={divId}
-            entryData={entryData}
-            graphTitle="Bar Example"
+            entryData={entryData as DataBarModel[]}
+            graphTitle={graphTitle}
           />
         );
 
@@ -78,8 +80,8 @@ export default function ChartWrapper<T extends ChartType>({
           <ChartBarStack
             isFullScreen={isFullScreen}
             divId={divId}
-            entryData={entryData}
-            graphTitle="BarStack Example"
+            entryData={entryData as DataBarStackModel[]}
+            graphTitle={graphTitle}
           />
         );
 
@@ -88,8 +90,8 @@ export default function ChartWrapper<T extends ChartType>({
           <ChartLine
             isFullScreen={isFullScreen}
             divId={divId}
-            entryData={entryData}
-            graphTitle="Line Example"
+            entryData={entryData as DataLineModel[]}
+            graphTitle={graphTitle}
           />
         );
     }
@@ -205,6 +207,9 @@ export default function ChartWrapper<T extends ChartType>({
             )}
           </div>
         </div>
+        <div className="flex w-full items-center justify-center">
+          <span>{graphTitle}</span>
+        </div>
         <div className="relative">
           <button
             className={`${hasCsv ? "" : "pointer-events-none opacity-25"} box-border h-full rounded-md border border-solid border-graphorange bg-maincolor-800/75 px-2 text-graphorange transition-colors hover:border-maincolor-900 hover:bg-graphorange hover:text-maincolor-900`}
@@ -263,15 +268,16 @@ export default function ChartWrapper<T extends ChartType>({
 interface ChartWrapperProps<T extends ChartType>
   extends React.HTMLAttributes<HTMLDivElement> {
   divId: string;
+  graphTitle: string;
   hasFullscreen?: boolean;
   hasCsv?: boolean;
   hasImageDl?: boolean;
-  chartType: T;
-  entryData: EntryDataMap[T];
+  chartType: T; // T is constrained to ChartType
+  entryData: EntryDataMap[T]; // Entry data type depends on the chart type
 }
 
 type EntryDataMap = {
-  [ChartType.pie]: any[];
+  [ChartType.pie]: DataPieModel[];
   [ChartType.bar]: DataBarModel[];
   [ChartType.barStack]: DataBarStackModel[];
   [ChartType.line]: DataLineModel[];

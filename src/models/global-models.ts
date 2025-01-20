@@ -9,6 +9,11 @@ export interface CoordModel {
   y: number | null;
 }
 
+export interface DataPieModel {
+  label: string;
+  value: number;
+  color: string;
+}
 export interface DataLineModel {
   label: string;
   bgColor: string;
@@ -37,8 +42,8 @@ export interface DataBarStackModel {
 }
 
 export enum ChartType {
-  pie,
-  bar,
-  barStack,
-  line,
+  pie = "pie",
+  bar = "bar",
+  barStack = "barStack",
+  line = "line",
 }

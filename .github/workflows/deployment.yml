@@ -20,6 +20,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+env:
+  VITE_GITHUB_FINE_GRAINED_TOKEN: ${{ secrets.VITE_GITHUB_FINE_GRAINED_TOKEN }}
+
 jobs:
   # 단순히 배포만 수행하기에 하나의 잡으로만 구성
   deploy:

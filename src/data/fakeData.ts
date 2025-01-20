@@ -1,6 +1,8 @@
-import { DataBarModel, DataLineModel } from "../models/global-models";
-
-export const dataPie: number[] = [25, 40, 15];
+import {
+  DataBarModel,
+  DataBarStackModel,
+  DataLineModel,
+} from "../models/global-models";
 
 export const dataBar: DataBarModel[] = [
   {
@@ -38,7 +40,7 @@ export const dataBar: DataBarModel[] = [
     ],
   },
 ];
-export const dataBarStack: DataBarModel[] = [
+export const dataBarStack: DataBarStackModel[] = [
   {
     label: "BarStack 1",
     bgColor: "#4A90E2",
