@@ -256,7 +256,7 @@ export default function ChartWrapper<T extends ChartType>({
       >
         {chart()}
         {chartType === ChartType.barStack && (
-          <div className="flex w-full justify-center" id="BarStack Example">
+          <div className="flex w-full justify-center" id={graphTitle}>
             <ul className={`max-h-fit sm:max-h-fit`}></ul>
           </div>
         )}

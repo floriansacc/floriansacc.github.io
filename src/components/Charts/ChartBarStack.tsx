@@ -17,16 +17,17 @@ export default function ChartBarStack({
 
   const data: ChartData<"bar", any[], string> = useMemo(() => {
     return {
-      datasets: entryData.map((item) => {
-        return {
-          label: item.label,
-          data: item.data,
-          backgroundColor: item.bgColor,
-          barThickness: "flex",
-          barPercentage: 1,
-          categoryPercentage: 0.7,
-        };
-      }),
+      datasets: entryData.map((item) => ({
+        label: item.label,
+        data: item.data,
+        backgroundColor: item.bgColor,
+        borderColor: item.bgColor + "4D",
+        borderWidth: 2,
+        borderRadius: 12,
+        barThickness: "flex",
+        barPercentage: 0.2,
+        categoryPercentage: 0.7,
+      })),
     };
   }, [entryData]);
 
@@ -138,6 +139,10 @@ export default function ChartBarStack({
   };
 
   const options: any = {
+    parsing: {
+      xAxisKey: "x",
+      yAxisKey: "y",
+    },
     responsive: true,
     maintainAspectRatio: false,
     onHover(_: any, elements: any, chart: any) {
@@ -187,6 +192,7 @@ export default function ChartBarStack({
 
         ticks: {
           color: "#fff",
+          callback: (val: number) => (Number.isInteger(val) ? val : null),
         },
         grid: {
           color: ({ tick }: any) =>

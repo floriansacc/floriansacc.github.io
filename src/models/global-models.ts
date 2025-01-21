@@ -47,3 +47,8 @@ export enum ChartType {
   barStack = "barStack",
   line = "line",
 }
+
+export interface DateGraph {
+  date: Date;
+  name: string;
+}

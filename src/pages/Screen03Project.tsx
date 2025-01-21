@@ -5,8 +5,12 @@ import CardComponent from "../components/CardComponent";
 import FloatingComponent from "../components/FloatingComponent";
 import TechnoIcon from "../components/TechnoIcon";
 import ChartWrapper from "../components/ChartWrapper";
-import { dataBar, dataBarStack, dataLine } from "../data/fakeData";
-import { ChartType, DataPieModel } from "../models/global-models";
+import { dataBar, dataLine } from "../data/fakeData";
+import {
+  ChartType,
+  DataBarStackModel,
+  DataPieModel,
+} from "../models/global-models";
 import useGithubFetch from "../services/useGithubFetch";
 
 const imagesUrl: string[] = [
@@ -26,12 +30,52 @@ export default function Screen03Project({
   const [isOnView, setIsOnView] = useState<boolean>(false);
   const [carouselIndex, setCarouselIndex] = useState<number>(0);
   const [languageUsed, setLanguageUsed] = useState<DataPieModel[]>([]);
+  const [dateStart, setDateStart] = useState<DataBarStackModel[]>([]);
 
   const { githubInfo } = useGithubFetch();
 
   useEffect(() => {
+    if (!githubInfo) return;
+
+    const map: DataBarStackModel[] = [];
+
+    const sortedRepos = githubInfo?.repos.toSorted(
+      (a, b) => a.createdDate.getFullYear() - b.createdDate.getFullYear(),
+    );
+
+    sortedRepos.map((e) => {
+      let color = "";
+      switch (e.language) {
+        case "TypeScript":
+          color = "#3178c6";
+          break;
+        case "JavaScript":
+          color = "#F0DB4F";
+          break;
+        case "Dart":
+          color = "#00B4AB";
+          break;
+
+        default:
+          color = "";
+          break;
+      }
+      if (color != "") {
+        return map.push({
+          data: [{ x: e.createdDate.getFullYear().toString(), y: 1 }],
+          label: e.repoName,
+          bgColor: color,
+        });
+      }
+    });
+
+    setDateStart(map);
+  }, [githubInfo]);
+
+  useEffect(() => {
+    if (!githubInfo) return;
     const newMap: { [key: string]: number } = {};
-    githubInfo?.repos.map((e) => {
+    githubInfo.repos.map((e) => {
       if (e.language) {
         return (newMap[e.language] = (newMap[e.language] || 0) + 1);
       }
@@ -268,21 +312,21 @@ export default function Screen03Project({
           </div>
         </div>
         <div className="flex w-full justify-center gap-4 rounded-md sm:flex-col md:h-[500px] md:w-[80%] md:snap-y md:flex-col md:justify-start md:overflow-y-scroll lg:w-[80%] lg:flex-wrap">
-          <ChartWrapper
-            graphTitle="Main language by repo"
+          <ChartWrapper<ChartType.pie>
+            graphTitle="Main language by personnal repos"
             hasCsv={false}
             hasImageDl={false}
             chartType={ChartType.pie}
             entryData={languageUsed}
             divId="pie-1"
           />
-          <ChartWrapper
-            graphTitle="BarStack Example"
+          <ChartWrapper<ChartType.barStack>
+            graphTitle="Repos start year"
             chartType={ChartType.barStack}
-            entryData={dataBarStack}
+            entryData={dateStart}
             divId="barStack-1"
           />
-          <ChartWrapper
+          <ChartWrapper<ChartType.bar>
             graphTitle="Bar Example"
             hasImageDl={false}
             hasFullscreen={false}
@@ -290,12 +334,12 @@ export default function Screen03Project({
             entryData={dataBar}
             divId="bar-1"
           />
-          <ChartWrapper
+          <ChartWrapper<ChartType.line>
             graphTitle="Line Example"
             hasCsv={false}
             hasFullscreen={false}
-            chartType={ChartType.line}
             entryData={dataLine}
+            chartType={ChartType.line}
             divId="line-1"
           />
         </div>
