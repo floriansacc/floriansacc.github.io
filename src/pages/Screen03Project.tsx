@@ -11,7 +11,8 @@ import {
   DataBarStackModel,
   DataPieModel,
 } from "../models/global-models";
-import useGithubFetch from "../services/useGithubFetch";
+import useGithubFetchRepos from "../services/useGithubFetchRepos";
+// import useGitLanguageByRepo from "../services/useGitLanguageByRepo";
 
 const imagesUrl: string[] = [
   "/assets/disallowed/images/thehanaro_app_image_1.png",
@@ -29,10 +30,17 @@ export default function Screen03Project({
   const context = useContext(QueryContext);
   const [isOnView, setIsOnView] = useState<boolean>(false);
   const [carouselIndex, setCarouselIndex] = useState<number>(0);
-  const [languageUsed, setLanguageUsed] = useState<DataPieModel[]>([]);
-  const [dateStart, setDateStart] = useState<DataBarStackModel[]>([]);
 
-  const { githubInfo } = useGithubFetch();
+  const [mainLanguageRepo, setMainLanguageRepo] = useState<DataPieModel[]>([]);
+  const [repoDateStart, setRepoDateStart] = useState<DataBarStackModel[]>([]);
+
+  const { githubInfo } = useGithubFetchRepos();
+
+  // const { language } = useGitLanguageByRepo({ githubInfo: githubInfo });
+
+  // useEffect(() => {
+  //   console.log(language);
+  // }, [language]);
 
   useEffect(() => {
     if (!githubInfo) return;
@@ -69,7 +77,7 @@ export default function Screen03Project({
       }
     });
 
-    setDateStart(map);
+    setRepoDateStart(map);
   }, [githubInfo]);
 
   useEffect(() => {
@@ -81,7 +89,7 @@ export default function Screen03Project({
       }
     });
 
-    setLanguageUsed(() => {
+    setMainLanguageRepo(() => {
       return Object.entries(newMap).map(([key, value]) => {
         let color = "";
         switch (key) {
@@ -317,13 +325,13 @@ export default function Screen03Project({
             hasCsv={false}
             hasImageDl={false}
             chartType={ChartType.pie}
-            entryData={languageUsed}
+            entryData={mainLanguageRepo}
             divId="pie-1"
           />
           <ChartWrapper<ChartType.barStack>
             graphTitle="Repos start year"
             chartType={ChartType.barStack}
-            entryData={dateStart}
+            entryData={repoDateStart}
             divId="barStack-1"
           />
           <ChartWrapper<ChartType.bar>

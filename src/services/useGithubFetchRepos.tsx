@@ -3,12 +3,12 @@ import { GithubModel, githubModelFromJson } from "../models/GithubModel";
 
 const baseUrl: string = "https://api.github.com";
 
-export default function useGithubFetch() {
+export default function useGithubFetchRepos() {
   const [githubInfo, setGithubInfo] = useState<GithubModel | null>(null);
 
   useEffect(() => {
     const getGithubInfos = async (): Promise<void> => {
-      const fetchUrl = `${baseUrl}/users/floriansacc/repos`;
+      const fetchUrl: string = `${baseUrl}/users/floriansacc/repos`;
       try {
         const response: Response = await fetch(fetchUrl, {
           headers: {
@@ -23,6 +23,7 @@ export default function useGithubFetch() {
         }
 
         const jsonResponse = await response.json();
+        console.log(jsonResponse);
         setGithubInfo(githubModelFromJson(jsonResponse));
       } catch (error) {
         console.log(error);
