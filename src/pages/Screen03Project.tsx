@@ -12,7 +12,8 @@ import {
   DataPieModel,
 } from "../models/global-models";
 import useGithubFetchRepos from "../services/useGithubFetchRepos";
-// import useGitLanguageByRepo from "../services/useGitLanguageByRepo";
+import useGitLanguageByRepo from "../services/useGitLanguageByRepo";
+import { getColorByLanguage } from "../functions/public_method";
 
 const imagesUrl: string[] = [
   "/assets/disallowed/images/thehanaro_app_image_1.png",
@@ -52,22 +53,7 @@ export default function Screen03Project({
     );
 
     sortedRepos.map((e) => {
-      let color = "";
-      switch (e.language) {
-        case "TypeScript":
-          color = "#3178c6";
-          break;
-        case "JavaScript":
-          color = "#F0DB4F";
-          break;
-        case "Dart":
-          color = "#00B4AB";
-          break;
-
-        default:
-          color = "";
-          break;
-      }
+      const color: string = getColorByLanguage({ entry: e.language });
       if (color != "") {
         return map.push({
           data: [{ x: e.createdDate.getFullYear().toString(), y: 1 }],
@@ -91,23 +77,11 @@ export default function Screen03Project({
 
     setMainLanguageRepo(() => {
       return Object.entries(newMap).map(([key, value]) => {
-        let color = "";
-        switch (key) {
-          case "TypeScript":
-            color = "#3178c6";
-            break;
-          case "JavaScript":
-            color = "#F0DB4F";
-            break;
-          case "Dart":
-            color = "#00B4AB";
-            break;
-
-          default:
-            color = "#4A90E2";
-            break;
-        }
-        return { label: key, value: value, color: color };
+        return {
+          label: key,
+          value: value,
+          color: getColorByLanguage({ entry: key, hasDefaultColor: true }),
+        };
       });
     });
   }, [githubInfo]);
