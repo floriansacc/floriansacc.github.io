@@ -23,7 +23,6 @@ export default function useGithubFetchRepos() {
         }
 
         const jsonResponse = await response.json();
-        console.log(jsonResponse);
         setGithubInfo(githubModelFromJson(jsonResponse));
       } catch (error) {
         console.log(error);

@@ -6,7 +6,7 @@ import {
 } from "../models/GitLanguageRepo";
 
 export default function useGitLanguageByRepo({ githubInfo }: Props) {
-  const [language, setLanguage] = useState<{
+  const [languagesInRepo, setLanguagesInRepo] = useState<{
     [key: string]: GitLanguageRepo | null;
   }>();
 
@@ -30,7 +30,7 @@ export default function useGitLanguageByRepo({ githubInfo }: Props) {
 
         const jsonResponse = await response.json();
 
-        setLanguage((prev) => {
+        setLanguagesInRepo((prev) => {
           let newMap = { ...prev };
           newMap[repoName] = gitLanguageRepoFromJson(jsonResponse);
           return newMap;
@@ -40,12 +40,14 @@ export default function useGitLanguageByRepo({ githubInfo }: Props) {
       }
     };
 
-    githubInfo?.repos.forEach((e) =>
-      getLanguageByRepo(e.repoName, e.languagesUrl),
-    );
+    githubInfo?.repos.forEach((e) => {
+      if (e.repoName !== "floriansacc") {
+        getLanguageByRepo(e.repoName, e.languagesUrl);
+      }
+    });
   }, [githubInfo]);
 
-  return { language };
+  return { languagesInRepo };
 }
 
 interface Props {

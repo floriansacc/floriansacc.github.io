@@ -70,7 +70,7 @@ export default function ChartWrapper<T extends ChartType>({
           <ChartBar
             isFullScreen={isFullScreen}
             divId={divId}
-            entryData={entryData as DataBarModel[]}
+            entryData={entryData as DataBarModel}
             graphTitle={graphTitle}
           />
         );
@@ -278,7 +278,7 @@ interface ChartWrapperProps<T extends ChartType>
 
 type EntryDataMap = {
   [ChartType.pie]: DataPieModel[];
-  [ChartType.bar]: DataBarModel[];
+  [ChartType.bar]: DataBarModel;
   [ChartType.barStack]: DataBarStackModel[];
   [ChartType.line]: DataLineModel[];
 };

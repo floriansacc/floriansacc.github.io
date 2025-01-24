@@ -13,9 +13,15 @@ export const getColorByLanguage = ({
     case "Dart":
       color = "#00B4AB";
       break;
+    case "HTML":
+      color = "#E34F26";
+      break;
+    case "CSS":
+      color = "#1572B6";
+      break;
 
     default:
-      color = defaultColor ? "#4A90E2" : "";
+      color = defaultColor ? "#fff" : "";
       break;
   }
   return color;

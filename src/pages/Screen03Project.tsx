@@ -5,9 +5,10 @@ import CardComponent from "../components/CardComponent";
 import FloatingComponent from "../components/FloatingComponent";
 import TechnoIcon from "../components/TechnoIcon";
 import ChartWrapper from "../components/ChartWrapper";
-import { dataBar, dataLine } from "../data/fakeData";
+import { dataLine } from "../data/fakeData";
 import {
   ChartType,
+  DataBarModel,
   DataBarStackModel,
   DataPieModel,
 } from "../models/global-models";
@@ -34,14 +35,16 @@ export default function Screen03Project({
 
   const [mainLanguageRepo, setMainLanguageRepo] = useState<DataPieModel[]>([]);
   const [repoDateStart, setRepoDateStart] = useState<DataBarStackModel[]>([]);
+  const [languageByRepo, setLanguageByRepo] = useState<DataBarModel>({
+    mainLabels: [],
+    datasets: [],
+  });
 
   const { githubInfo } = useGithubFetchRepos();
 
-  // const { language } = useGitLanguageByRepo({ githubInfo: githubInfo });
-
-  // useEffect(() => {
-  //   console.log(language);
-  // }, [language]);
+  const { languagesInRepo } = useGitLanguageByRepo({
+    githubInfo: githubInfo,
+  });
 
   useEffect(() => {
     if (!githubInfo) return;
@@ -85,6 +88,39 @@ export default function Screen03Project({
       });
     });
   }, [githubInfo]);
+
+  useEffect(() => {
+    if (!languagesInRepo) return;
+
+    languagesInRepo;
+
+    const languageToRemove: string[] = [
+      "Objective-C",
+      "Ruby",
+      "Kotlin",
+      "Swift",
+    ];
+
+    const allLanguages = new Set<string>();
+    Object.values(languagesInRepo).forEach((repo) => {
+      Object.keys(repo?.languages ?? {}).forEach((language) => {
+        if (!languageToRemove.includes(language)) {
+          allLanguages.add(language);
+        }
+      });
+    });
+
+    setLanguageByRepo({
+      mainLabels: Object.keys(languagesInRepo),
+      datasets: Array.from(allLanguages).map((e) => ({
+        label: e,
+        data: Object.keys(languagesInRepo).map(
+          (label) => languagesInRepo[label]?.languages[e] || 0,
+        ),
+        bgColor: getColorByLanguage({ entry: e, hasDefaultColor: true }),
+      })),
+    });
+  }, [languagesInRepo]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -309,11 +345,11 @@ export default function Screen03Project({
             divId="barStack-1"
           />
           <ChartWrapper<ChartType.bar>
-            graphTitle="Bar Example"
+            graphTitle="Languages by personnal repos"
             hasImageDl={false}
             hasFullscreen={false}
             chartType={ChartType.bar}
-            entryData={dataBar}
+            entryData={languageByRepo}
             divId="bar-1"
           />
           <ChartWrapper<ChartType.line>

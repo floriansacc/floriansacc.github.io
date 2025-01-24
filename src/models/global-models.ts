@@ -24,12 +24,8 @@ export interface DataLineModel {
 }
 
 export interface DataBarModel {
-  label: string;
-  data: {
-    x: string;
-    y: number;
-  }[];
-  bgColor: string;
+  mainLabels: string[];
+  datasets: { label: string; data: number[]; bgColor: string }[];
 }
 
 export interface DataBarStackModel {

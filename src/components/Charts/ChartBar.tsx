@@ -5,7 +5,7 @@ import { DataBarModel } from "../../models/global-models";
 
 export default function ChartBar({
   graphTitle,
-  entryData = [],
+  entryData,
   divId,
   isFullScreen,
   ...props
@@ -14,13 +14,15 @@ export default function ChartBar({
 
   const data: ChartData<"bar", any[], string> = useMemo(() => {
     return {
-      datasets: entryData.map((item) => {
+      labels: entryData.mainLabels, // X-axis groups
+      datasets: entryData.datasets.map((item) => {
+        // console.log(item.data.map((e) => e));
         return {
           label: item.label,
-          data: item.data,
+          data: item.data.map((e) => Math.log(e)),
           backgroundColor: item.bgColor,
           barThickness: "flex",
-          barPercentage: 1,
+          barPercentage: 0.5,
           categoryPercentage: 0.7,
         };
       }),
@@ -110,5 +112,5 @@ interface ChartBarProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   graphTitle: string;
   divId: string;
   isFullScreen: boolean;
-  entryData: DataBarModel[];
+  entryData: DataBarModel;
 }
