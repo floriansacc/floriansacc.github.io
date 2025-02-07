@@ -15,12 +15,12 @@ export default function Footer() {
         <div className="mb-32 mt-10 self-start pl-10 text-[70px] font-bold text-white sm:mb-10 sm:text-[40px] md:mb-16">
           Contacts
         </div>
-        <div className="text-4xl font-semibold italic sm:text-xl md:text-3xl">
+        {/* <div className="text-4xl font-semibold italic sm:text-xl md:text-3xl">
           구직 활동을 적극적으로 하고 있으니
         </div>
         <div className="mb-10 text-4xl font-semibold italic sm:text-xl md:text-3xl">
           언제든 편하게 연락주시면 감사하겠습니다.
-        </div>
+        </div> */}
         <div className="grid w-fit grid-flow-row grid-cols-[min-content_1fr] content-start items-center gap-4 rounded-md bg-maincolor-900 p-10 sm:w-full sm:p-4 md:text-xl lg:text-xl">
           <div className="w-12 justify-items-center">
             <img
