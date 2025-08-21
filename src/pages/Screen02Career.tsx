@@ -49,6 +49,7 @@ const careerInfo: CareerModel[] = [
         <li>
           Firebase 메시징을 통한 푸시 알림 및 이에 대한 라우팅, UI 업데이트
         </li>
+        <li>App Store / Google Play Store 관리, 배포 및 업데이트</li>
         <li>기술: Flutter, Figma</li>
       </ul>,
       <ul
