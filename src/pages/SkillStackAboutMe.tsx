@@ -8,6 +8,7 @@ const logoList: LogoModel[] = [
     src: "/assets/disallowed/images/flutter_icon.png",
     alt: "Flutter",
   },
+  { src: "/assets/disallowed/svg/next_js_logo.svg", alt: "Next.js" },
   {
     src: "/assets/disallowed/svg/react.svg",
     alt: "React",
@@ -39,10 +40,18 @@ const infoCard: {
 } = {
   Flutter: [
     "Flutter로 크로스 플랫폼 모바일 구축",
+    "다양한 기능 구현 (지도, 결제, 인증)",
+    "Rest API, 서버 연동 경험",
     "위젯 기반 프레임워크를 사용하여 반응형 UI 제작",
     "첫 단계부터 앱 출시까지 경험",
     "Provider 패턴을 사용한 상태 관리",
     "Dart 언어로 개발",
+  ],
+  "Next.js": [
+    "서버 사이드 렌더링(SSR) 경험",
+    "API 라우트 및 데이터 조회",
+    "Next.js의 파일 기반 라우팅 시스템 활용",
+    "쿠키 기반 인증 및 세션 관리",
   ],
   React: [
     "웹 애플리케이션 개발 경험",
@@ -77,7 +86,7 @@ export default function SkillStackAboutMe() {
 
   return (
     <div className="relative flex w-full flex-col items-center justify-center break-keep text-2xl font-normal sm:m-0 sm:my-2 sm:w-full sm:px-0 sm:py-4 sm:text-xl md:max-h-[500px] md:text-xl lg:w-[35%]">
-      <p className="mb-2 h-fit w-fit rounded-xl bg-maincolor-900 p-2 font-bold">
+      <p className="bg-maincolor-900 mb-2 h-fit w-fit rounded-xl p-2 font-bold">
         기술 스텍
       </p>
       <div className="flex w-full items-center justify-center gap-8 sm:items-start">
@@ -89,10 +98,10 @@ export default function SkillStackAboutMe() {
               onClick={() => setActiveIcon(e.alt)}
             >
               <div
-                className={`${activeIcon === e.alt ? "bg-maincolor-200" : "bg-maincolor-500"} absolute h-10 w-[2px] transition-all md:group-hover:bg-maincolor-100 lg:group-hover:bg-maincolor-100`}
+                className={`${activeIcon === e.alt ? "bg-maincolor-200" : "bg-maincolor-500"} md:group-hover:bg-maincolor-100 lg:group-hover:bg-maincolor-100 absolute h-10 w-[2px] transition-all`}
               ></div>
               <div
-                className={`${activeIcon === e.alt ? "animate-[fadeIn_150ms_forwards]" : "hidden"} absolute -right-8 h-0 w-0 border-b-8 border-r-8 border-t-8 border-solid border-b-transparent border-r-maincolor-700 border-t-transparent transition-opacity sm:hidden`}
+                className={`${activeIcon === e.alt ? "animate-[fadeIn_150ms_forwards]" : "hidden"} border-r-maincolor-700 absolute -right-8 h-0 w-0 border-b-8 border-r-8 border-t-8 border-solid border-b-transparent border-t-transparent transition-opacity sm:hidden`}
               ></div>
 
               <TechnoIcon

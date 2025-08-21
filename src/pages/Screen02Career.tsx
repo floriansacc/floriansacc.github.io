@@ -4,27 +4,88 @@ import CardComponent from "../components/CardComponent";
 import TechnoIcon from "../components/TechnoIcon";
 import { LogoModel } from "../models/global-models";
 
-const logoList: LogoModel[] = [
-  { src: "/assets/disallowed/images/flutter_icon.png", alt: "Flutter" },
-  { src: "/assets/disallowed/svg/react.svg", alt: "React" },
-  { src: "/assets/disallowed/images/html_logo.png", alt: "HTML" },
-  { src: "/assets/disallowed/svg/css_logo.svg", alt: "CSS" },
-  { src: "/assets/disallowed/svg/chartjs_logo.svg", alt: "Chart.js" },
-  { src: "/assets/disallowed/svg/figma_icon.svg", alt: "Figma" },
-];
+const logoList: { [key: string]: LogoModel } = {
+  flutter: {
+    src: "/assets/disallowed/images/flutter_icon.png",
+    alt: "Flutter",
+  },
+  nextJs: { src: "/assets/disallowed/svg/next_js_logo.svg", alt: "Next.js" },
+  react: { src: "/assets/disallowed/svg/react.svg", alt: "React" },
+  html: { src: "/assets/disallowed/images/html_logo.png", alt: "HTML" },
+  css: { src: "/assets/disallowed/svg/css_logo.svg", alt: "CSS" },
+  chartjs: { src: "/assets/disallowed/svg/chartjs_logo.svg", alt: "Chart.js" },
+  figma: { src: "/assets/disallowed/svg/figma_icon.svg", alt: "Figma" },
+};
 
 const careerInfo: CareerModel[] = [
+  {
+    date: "2025.02 ~ 현재",
+    name: "(주)플래어",
+    role: "프론트엔드 개발 (모바일 및 웹)",
+    skillsImage: [logoList.flutter, logoList.nextJs],
+    details: [
+      <ul
+        key="career-2-details-1"
+        className="list-inside list-disc text-xl font-medium sm:text-base"
+      >
+        <p className="mb-2 font-bold">모바일 개발</p>
+        <li>
+          <span className="git-bg-variable">카카오맵 API</span>를 활용한 지도
+          기반 공간 탐색
+        </li>
+        <li>
+          다국어 지원: <span className="git-bg-variable">한/영 앱 구성</span> 및{" "}
+          <span className="git-bg-variable">자동 번역</span>
+        </li>
+        <li>
+          <span className="git-bg-variable">결제 시스템 구현/연동</span> (웹뷰
+          기반, iOS/Android 각각 대응)
+        </li>
+        <li>
+          Firebase Firestore 기반{" "}
+          <span className="git-bg-variable">실시간 채팅 기능</span> 구현
+        </li>
+        <li>본인 인증(NICE) 및 계좌 인증 기능 개발</li>
+        <li>
+          Firebase 메시징을 통한 푸시 알림 및 이에 대한 라우팅, UI 업데이트
+        </li>
+        <li>기술: Flutter, Figma</li>
+      </ul>,
+      <ul
+        key="career-2-details-2"
+        className="list-inside list-disc text-xl font-medium sm:text-base"
+      >
+        <p className="mb-2 font-bold">웹 개발</p>
+        <li>
+          <span className="git-bg-variable">Next.js 기반 SSR</span> 관리자
+          웹페이지 설계 및 개발
+        </li>
+        <li>
+          <span className="git-bg-variable">랜딩 페이지 개발</span> (앱 다운로드
+          유도 및 기능 소개 포함)
+        </li>
+        <li>기술: Next.js</li>
+      </ul>,
+    ],
+  },
   {
     date: "2024-03 ~ 2025.02",
     name: "(주)위릿 (Wiilit)",
     role: "프론트엔드 개발 (모바일 및 웹)",
-    skillsImage: logoList,
+    skillsImage: [
+      logoList.flutter,
+      logoList.react,
+      logoList.html,
+      logoList.css,
+      logoList.chartjs,
+      logoList.figma,
+    ],
     details: [
       <ul
         key="career-1-details-1"
         className="list-inside list-disc text-xl font-medium sm:text-base"
       >
-        <p className="font-bold">모바일 개발</p>
+        <p className="mb-2 font-bold">모바일 개발</p>
         <li>
           의료 분야 모바일 앱을{" "}
           <span className="git-bg-variable">첫 단계부터 출시까지</span> 개발
@@ -45,7 +106,7 @@ const careerInfo: CareerModel[] = [
         key="career-1-details-2"
         className="list-inside list-disc text-xl font-medium sm:text-base"
       >
-        <p className="font-bold">웹 개발</p>
+        <p className="mb-2 font-bold">웹 개발</p>
         <li>
           <span className="git-bg-variable">관리자 페이지</span>를 제작해
           관리자가 사용자 데이터를 손쉽게 조회, 수정, 삭제할 수 있게 설계

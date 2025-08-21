@@ -24,7 +24,7 @@ export default function Screen01AboutMe({
   return (
     <div
       ref={screenRef}
-      className="flex h-fit min-h-screen w-full flex-col items-center justify-center bg-bgcolor p-4 sm:justify-start sm:px-2 sm:pt-10"
+      className="bg-bgcolor flex h-fit min-h-screen w-full flex-col items-center justify-center p-4 sm:justify-start sm:px-2 sm:pt-10"
       {...props}
     >
       <div className="flex w-full items-center justify-around sm:flex-col sm:px-2 md:mt-4 md:items-center">
@@ -54,7 +54,7 @@ export default function Screen01AboutMe({
             <div className="gradient-border-center bottom absolute inset-0 h-[1px]"></div>
             <img
               src="/assets/allowed/images/profile_picture.jpeg"
-              className={`sticky left-0 top-0 rounded-xl border-2 border-solid border-line/50 sm:translate-x-0 sm:translate-y-0 sm:border-0`}
+              className={`border-line/50 sticky left-0 top-0 rounded-xl border-2 border-solid sm:translate-x-0 sm:translate-y-0 sm:border-0`}
               style={{
                 transform: `translate(-${randomTranslation[0]}px, -${randomTranslation[1]}px)`,
               }}
@@ -78,6 +78,7 @@ export default function Screen01AboutMe({
               주로 <span className="git-bg-variable">React</span>,{" "}
               <span className="git-bg-variable">Javascript</span> 기술로 개발을
               시작하여 <span className="git-bg-variable">Flutter</span>,{" "}
+              <span className="git-bg-variable">Next.js</span>,{" "}
               <span className="git-bg-variable">TypeScript</span> 등 다양한 기술
               스텍으로 활용하여 여러 프로젝트를 진행해왔습니다.
             </p>
