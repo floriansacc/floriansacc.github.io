@@ -15,13 +15,19 @@ import {
 import useGithubFetchRepos from "../services/useGithubFetchRepos";
 import useGitLanguageByRepo from "../services/useGitLanguageByRepo";
 import { getColorByLanguage } from "../functions/public_method";
+import PhoneWrapper from "../components/PhoneWrapper";
 
-const imagesUrl: string[] = [
+const hanaroImagesUrl: string[] = [
   "/assets/disallowed/images/thehanaro_app_image_1.png",
   "/assets/disallowed/images/thehanaro_app_image_2.png",
   "/assets/disallowed/images/thehanaro_app_image_3.png",
   "/assets/disallowed/images/thehanaro_app_image_4.png",
   "/assets/disallowed/images/thehanaro_app_image_5.png",
+];
+
+const locaImagesUrl: string[] = [
+  "/assets/disallowed/images/locaplace_gallery.jpg",
+  "/assets/disallowed/images/locaplace_search.png",
 ];
 
 export default function Screen03Project({
@@ -31,7 +37,8 @@ export default function Screen03Project({
 }: Screen03Props) {
   const context = useContext(QueryContext);
   const [isOnView, setIsOnView] = useState<boolean>(false);
-  const [carouselIndex, setCarouselIndex] = useState<number>(0);
+  const [carouselIndexLo, setCarouselIndexLo] = useState<number>(0);
+  const [carouselIndexHa, setCarouselIndexHa] = useState<number>(0);
 
   const [mainLanguageRepo, setMainLanguageRepo] = useState<DataPieModel[]>([]);
   const [repoDateStart, setRepoDateStart] = useState<DataBarStackModel[]>([]);
@@ -123,11 +130,18 @@ export default function Screen03Project({
   }, [languagesInRepo]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCarouselIndex((prev) => (prev + 1) % imagesUrl.length);
+    const locaInterval = setInterval(() => {
+      setCarouselIndexLo((prev) => (prev + 1) % locaImagesUrl.length);
     }, 3000);
 
-    return () => clearInterval(interval);
+    const hanaroInterval = setInterval(() => {
+      setCarouselIndexHa((prev) => (prev + 1) % hanaroImagesUrl.length);
+    }, 3000);
+
+    return () => {
+      clearInterval(locaInterval);
+      clearInterval(hanaroInterval);
+    };
   }, []);
 
   useEffect(() => {
@@ -155,7 +169,107 @@ export default function Screen03Project({
         Projects
       </div>
 
-      {/* Project 1 */}
+      {/* Locaplace Project */}
+
+      <div
+        className={`${
+          context?.activeSection === 2
+            ? "md:translate-y-0 md:opacity-100 lg:translate-y-0 lg:opacity-100"
+            : (context?.activeSection ?? 0) > 2
+              ? "md:-translate-y-24 md:opacity-0 lg:-translate-y-24 lg:opacity-0"
+              : "md:translate-y-24 md:opacity-0 lg:translate-y-24 lg:opacity-0"
+        } transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-[750ms] sm:w-full sm:flex-col sm:items-center sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[1vw]`}
+      >
+        <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2">
+          <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">
+            <div className="ml-4 flex flex-col gap-8 sm:gap-2 md:gap-2">
+              <span className="text-[18px] sm:ml-0 sm:self-center">
+                개발 기간: 2025.02 ~ 현재
+              </span>
+              <div className="flex items-start gap-6 sm:flex-wrap sm:gap-4">
+                <span className="bg-gradient-2 bg-clip-text text-5xl font-bold text-transparent sm:text-2xl md:text-3xl">
+                  로카플레이스
+                  <br />
+                  LOCAPLACE
+                </span>
+                <span className="mt-3 rounded-md bg-maincolor-200 p-1.5 text-sm text-black md:text-xs">
+                  모바일 앱
+                </span>
+                <div className="flex items-center justify-self-end">
+                  <TechnoIcon
+                    src="/assets/disallowed/images/flutter_icon.png"
+                    alt="Flutter"
+                  />
+                </div>
+              </div>
+            </div>
+            <CardComponent className="flex flex-col items-start md:max-w-[400px] lg:max-w-[500px]">
+              <span className="text-2xl font-medium sm:text-xl md:text-xl">
+                검색부터 예약, 결제까지 한 번에. 누구나 쉽고 빠르게 공간을
+                이용할 수 있도록, 로카플레이스는 간편한 계약 서비스를 제공합니다
+              </span>
+              {/* <Link
+                className="box-border rounded-md border-2 border-solid border-maincolor-200 bg-locamint/75 p-4 text-xl text-white transition-all sm:p-2 sm:py-2 sm:text-base md:p-2 md:py-1 md:text-base md:hover:bg-maincolor-200 md:hover:text-black lg:mt-4 lg:hover:bg-maincolor-200 lg:hover:text-black"
+                to={"/locaplace"}
+              >
+                담당한 업무 확인하기
+              </Link> */}
+              <span className="self-end text-sm italic sm:text-sm">
+                출처:{" "}
+                <a
+                  className="text-blue-400 underline"
+                  href="https://locaplace.net"
+                  target="_blank"
+                >
+                  locaplace.net
+                </a>
+              </span>
+            </CardComponent>
+          </div>
+          <div className="m-0 flex min-w-[250px] max-w-[300px] flex-[1_1_0%] flex-col items-center justify-center overflow-hidden p-0 sm:mt-2 sm:w-full sm:min-w-0 sm:self-center lg:mt-16">
+            <div
+              style={{
+                transformStyle: "preserve-3d",
+                transform: `rotateY(${180 * carouselIndexLo}deg)`,
+              }}
+              className="flex aspect-auto h-full w-full items-center rounded-xl transition-transform duration-[800ms] ease-in-out"
+            >
+              {/* Front Image */}
+              <img
+                src={locaImagesUrl?.[0]}
+                style={{
+                  backfaceVisibility: "hidden",
+                  transform: "rotateY(0deg)",
+                }}
+                className={`relative aspect-auto h-full rounded-md`}
+                alt="App Gallery"
+              />
+
+              {/* Back Image */}
+              <img
+                src={locaImagesUrl?.[1]}
+                style={{
+                  backfaceVisibility: "hidden",
+                  transform: "rotateY(180deg)",
+                }}
+                className={`absolute aspect-auto h-full rounded-md`}
+                alt="App Search"
+              />
+            </div>
+            <span className="mr-1 w-full text-sm text-maincolor-400 sm:text-sm">
+              *이 이미지는 플래어의 소유이며, 상업적 목적으로 사용하지 않을
+              것이며, 오직 참고 및 개인적인 용도로만 활용할 것입니다
+            </span>
+            <span className="mr-1 self-end text-sm italic text-maincolor-400 sm:text-sm">
+              출처: 로카플레이스 애플리케이션
+            </span>
+          </div>
+        </div>
+
+        <PhoneWrapper className="lg:mt-16" />
+      </div>
+
+      {/* The Hanaro Project */}
 
       <div
         className={`${
@@ -172,11 +286,11 @@ export default function Screen03Project({
               <span className="text-[18px] sm:ml-0 sm:self-center">
                 개발 기간: 2024-03 ~ 2025.01
               </span>
-              <div className="flex items-center gap-6 sm:flex-wrap sm:gap-4">
+              <div className="items-startç flex gap-6 sm:flex-wrap sm:gap-4">
                 <span className="text-5xl font-bold sm:text-2xl md:text-3xl">
                   더하나로
                 </span>
-                <span className="rounded-md bg-maincolor-200 p-1.5 text-sm text-black md:text-xs">
+                <span className="mt-3 rounded-md bg-maincolor-200 p-1.5 text-sm text-black md:text-xs">
                   모바일 앱
                 </span>
                 <div className="flex items-center justify-self-end">
@@ -203,14 +317,15 @@ export default function Screen03Project({
               >
                 담당한 업무 확인하기
               </Link>
-              <span className="w-[70%] text-sm text-maincolor-200 sm:w-full sm:text-xs md:text-xs">
-                *앱은 Google Play Store 심사중이오니 앱 이미지 활용하지 못하는
-                점을 양해 부탁드립니다
-              </span>
+
               <span className="self-end text-sm italic sm:text-sm">
                 출처:{" "}
-                <a href="https://thehanaro.com" target="_blank">
-                  https://thehanaro.com
+                <a
+                  className="text-blue-400 underline"
+                  href="https://thehanaro.com"
+                  target="_blank"
+                >
+                  thehanaro.com
                 </a>
               </span>
             </CardComponent>
@@ -232,18 +347,18 @@ export default function Screen03Project({
         <div className="m-0 flex min-w-[250px] max-w-[350px] flex-[1_1_0%] flex-col items-center justify-center overflow-hidden p-0 sm:mt-2 sm:w-full sm:min-w-0 sm:self-center lg:mt-16">
           <div
             style={{
-              transform: `translate(-${carouselIndex * 100}%, 0px`,
+              transform: `translate(-${carouselIndexHa * 100}%, 0px`,
             }}
             className="flex aspect-auto h-full w-full items-center rounded-xl transition-transform duration-[800ms] ease-in-out"
           >
-            {imagesUrl.map((url, i) => (
+            {hanaroImagesUrl.map((url, i) => (
               <div
                 key={url}
                 className="flex w-full flex-shrink-0 items-center justify-center p-2"
               >
                 <img
                   src={url}
-                  className={`${carouselIndex === i ? "" : "opacity-0"} aspect-auto h-full rounded-md transition-opacity duration-[1200ms]`}
+                  className={`${carouselIndexHa === i ? "" : "opacity-0"} aspect-auto h-full rounded-md transition-opacity duration-[1200ms]`}
                   alt="The Hanaro App"
                 />
               </div>

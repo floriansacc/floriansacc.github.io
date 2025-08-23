@@ -23,6 +23,7 @@ export default {
           950: "#242424",
         },
         line: "#e6e7e8",
+        locamint: "#18ccb6",
         hanarogreen: "#5ec65e",
         graphcyan: "#50e3c2",
         graphorange: "#f5a623",
@@ -34,6 +35,9 @@ export default {
         menuhover: "#f1f1fa",
         inputfocus: "#5e5ec6",
         buttonclick: "#4341bb",
+      },
+      backgroundImage: {
+        "gradient-2": "linear-gradient(-120deg, #ff6861 0%, #c1e81a 100%);",
       },
       boxShadow: {
         dim: " 0 0 0 200vmax rgba(0, 0, 0, .7)",
