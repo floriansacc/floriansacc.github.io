@@ -73,7 +73,7 @@ export default function PhoneWrapper({ className }: PhoneWrapperProps) {
   return (
     <div className={`${className} no-scrollbar relative w-[300px]`}>
       <img
-        className="pointer-events-none sticky top-0 z-[21] w-full select-none"
+        className="pointer-events-none sticky top-0 z-21 w-full select-none"
         src="/assets/disallowed/images/iphone_16_pro_frame.png"
       />
 

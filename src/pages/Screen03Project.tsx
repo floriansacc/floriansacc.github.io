@@ -159,13 +159,13 @@ export default function Screen03Project({
     <div
       ref={screenRef}
       {...props}
-      className="flex h-fit min-h-screen w-full flex-col items-start justify-start overflow-x-hidden bg-bgcolor p-4 sm:justify-start sm:px-2 sm:py-4 sm:pt-10 md:items-center"
+      className="bg-bgcolor flex h-fit min-h-screen w-full flex-col items-start justify-start overflow-x-hidden p-4 sm:justify-start sm:px-2 sm:py-4 sm:pt-10 md:items-center"
     >
       <div
         style={{ "--color": "white" } as React.CSSProperties}
-        className="gradient-border-to-right h-[2px] w-[98%] bg-line"
+        className="gradient-border-to-right bg-line h-[2px] w-[98%]"
       ></div>
-      <div className="mb-20 mt-10 self-start pl-10 text-[70px] font-bold sm:text-[40px]">
+      <div className="mt-10 mb-20 self-start pl-10 text-[70px] font-bold sm:text-[40px]">
         Projects
       </div>
 
@@ -178,7 +178,7 @@ export default function Screen03Project({
             : (context?.activeSection ?? 0) > 2
               ? "md:-translate-y-24 md:opacity-0 lg:-translate-y-24 lg:opacity-0"
               : "md:translate-y-24 md:opacity-0 lg:translate-y-24 lg:opacity-0"
-        } transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-[750ms] sm:w-full sm:flex-col sm:items-center sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[1vw]`}
+        } transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-750 sm:w-full sm:flex-col sm:items-center sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[1vw]`}
       >
         <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2">
           <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">
@@ -192,7 +192,7 @@ export default function Screen03Project({
                   <br />
                   LOCAPLACE
                 </span>
-                <span className="mt-3 rounded-md bg-maincolor-200 p-1.5 text-sm text-black md:text-xs">
+                <span className="bg-maincolor-200 mt-3 rounded-md p-1.5 text-sm text-black md:text-xs">
                   모바일 앱
                 </span>
                 <div className="flex items-center justify-self-end">
@@ -226,13 +226,13 @@ export default function Screen03Project({
               </span>
             </CardComponent>
           </div>
-          <div className="m-0 flex min-w-[250px] max-w-[300px] flex-[1_1_0%] flex-col items-center justify-center overflow-hidden p-0 sm:mt-2 sm:w-full sm:min-w-0 sm:self-center lg:mt-16">
+          <div className="m-0 flex max-w-[300px] min-w-[250px] flex-[1_1_0%] flex-col items-center justify-center overflow-hidden p-0 sm:mt-2 sm:w-full sm:min-w-0 sm:self-center lg:mt-16">
             <div
               style={{
                 transformStyle: "preserve-3d",
                 transform: `rotateY(${180 * carouselIndexLo}deg)`,
               }}
-              className="flex aspect-auto h-full w-full items-center rounded-xl transition-transform duration-[800ms] ease-in-out"
+              className="flex aspect-auto h-full w-full items-center rounded-xl transition-transform duration-800 ease-in-out"
             >
               {/* Front Image */}
               <img
@@ -256,11 +256,11 @@ export default function Screen03Project({
                 alt="App Search"
               />
             </div>
-            <span className="mr-1 w-full text-sm text-maincolor-400 sm:text-sm">
+            <span className="text-maincolor-400 mr-1 w-full text-sm sm:text-sm">
               *이 이미지는 플래어의 소유이며, 상업적 목적으로 사용하지 않을
               것이며, 오직 참고 및 개인적인 용도로만 활용할 것입니다
             </span>
-            <span className="mr-1 self-end text-sm italic text-maincolor-400 sm:text-sm">
+            <span className="text-maincolor-400 mr-1 self-end text-sm italic sm:text-sm">
               출처: 로카플레이스 애플리케이션
             </span>
           </div>
@@ -278,7 +278,7 @@ export default function Screen03Project({
             : (context?.activeSection ?? 0) > 2
               ? "md:-translate-y-24 md:opacity-0 lg:-translate-y-24 lg:opacity-0"
               : "md:translate-y-24 md:opacity-0 lg:translate-y-24 lg:opacity-0"
-        } transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-[750ms] sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[1vw]`}
+        } transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-750 sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[1vw]`}
       >
         <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2">
           <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">
@@ -290,7 +290,7 @@ export default function Screen03Project({
                 <span className="text-5xl font-bold sm:text-2xl md:text-3xl">
                   더하나로
                 </span>
-                <span className="mt-3 rounded-md bg-maincolor-200 p-1.5 text-sm text-black md:text-xs">
+                <span className="bg-maincolor-200 mt-3 rounded-md p-1.5 text-sm text-black md:text-xs">
                   모바일 앱
                 </span>
                 <div className="flex items-center justify-self-end">
@@ -312,7 +312,7 @@ export default function Screen03Project({
                 서비스입니다.
               </span>
               <Link
-                className="box-border rounded-md border-2 border-solid border-maincolor-200 bg-hanarogreen/75 p-4 text-xl text-white transition-all sm:p-2 sm:py-2 sm:text-base md:p-2 md:py-1 md:text-base md:hover:bg-maincolor-200 md:hover:text-black lg:mt-4 lg:hover:bg-maincolor-200 lg:hover:text-black"
+                className="border-maincolor-200 bg-hanarogreen/75 md:hover:bg-maincolor-200 lg:hover:bg-maincolor-200 box-border rounded-md border-2 border-solid p-4 text-xl text-white transition-all sm:p-2 sm:py-2 sm:text-base md:p-2 md:py-1 md:text-base md:hover:text-black lg:mt-4 lg:hover:text-black"
                 to={"/thehanaro"}
               >
                 담당한 업무 확인하기
@@ -330,7 +330,7 @@ export default function Screen03Project({
               </span>
             </CardComponent>
           </div>
-          <div className="relative m-2 flex min-h-[400px] min-w-[300px] max-w-[400px] flex-[1_2_0%] items-center self-start overflow-hidden rounded-md bg-maincolor-700 sm:m-0 sm:min-h-[300px] sm:w-full sm:min-w-0 sm:max-w-full sm:items-end md:min-h-[300px] md:items-end">
+          <div className="bg-maincolor-700 relative m-2 flex min-h-[400px] max-w-[400px] min-w-[300px] flex-[1_2_0%] items-center self-start overflow-hidden rounded-md sm:m-0 sm:min-h-[300px] sm:w-full sm:max-w-full sm:min-w-0 sm:items-end md:min-h-[300px] md:items-end">
             <FloatingComponent
               imageBox1={[
                 "/assets/disallowed/images/card_chartjs.png",
@@ -344,31 +344,31 @@ export default function Screen03Project({
           </div>
         </div>
 
-        <div className="m-0 flex min-w-[250px] max-w-[350px] flex-[1_1_0%] flex-col items-center justify-center overflow-hidden p-0 sm:mt-2 sm:w-full sm:min-w-0 sm:self-center lg:mt-16">
+        <div className="m-0 flex max-w-[350px] min-w-[250px] flex-[1_1_0%] flex-col items-center justify-center overflow-hidden p-0 sm:mt-2 sm:w-full sm:min-w-0 sm:self-center lg:mt-16">
           <div
             style={{
               transform: `translate(-${carouselIndexHa * 100}%, 0px`,
             }}
-            className="flex aspect-auto h-full w-full items-center rounded-xl transition-transform duration-[800ms] ease-in-out"
+            className="flex aspect-auto h-full w-full items-center rounded-xl transition-transform duration-800 ease-in-out"
           >
             {hanaroImagesUrl.map((url, i) => (
               <div
                 key={url}
-                className="flex w-full flex-shrink-0 items-center justify-center p-2"
+                className="flex w-full shrink-0 items-center justify-center p-2"
               >
                 <img
                   src={url}
-                  className={`${carouselIndexHa === i ? "" : "opacity-0"} aspect-auto h-full rounded-md transition-opacity duration-[1200ms]`}
+                  className={`${carouselIndexHa === i ? "" : "opacity-0"} aspect-auto h-full rounded-md transition-opacity duration-1200`}
                   alt="The Hanaro App"
                 />
               </div>
             ))}
           </div>
-          <span className="mr-1 w-full text-sm text-maincolor-400 sm:text-sm">
+          <span className="text-maincolor-400 mr-1 w-full text-sm sm:text-sm">
             *이 이미지는 하나로의료재단의 소유이며, 상업적 목적으로 사용하지
             않을 것이며, 오직 참고 및 개인적인 용도로만 활용할 것입니다
           </span>
-          <span className="mr-1 self-end text-sm italic text-maincolor-400 sm:text-sm">
+          <span className="text-maincolor-400 mr-1 self-end text-sm italic sm:text-sm">
             출처: 더하나로 애플리케이션
           </span>
         </div>
@@ -376,7 +376,7 @@ export default function Screen03Project({
 
       {/* Hanaro Web */}
       <div
-        className={`${isOnView ? "" : "translate-x-96 opacity-0"} ${context?.activeSection === 2 ? "" : "opacity-0"} transition-[transform, opacity] relative mb-32 flex items-start gap-0 duration-[750ms] sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:ml-[1vw]`}
+        className={`${isOnView ? "" : "translate-x-96 opacity-0"} ${context?.activeSection === 2 ? "" : "opacity-0"} transition-[transform, opacity] relative mb-32 flex items-start gap-0 duration-750 sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:ml-[1vw]`}
         id="project-web-hanaro"
       >
         <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2 lg:w-fit">
@@ -389,7 +389,7 @@ export default function Screen03Project({
                 <span className="text-5xl font-bold sm:text-2xl md:text-3xl">
                   더하나로 웹 페이지
                 </span>
-                <span className="rounded-md bg-maincolor-200 p-1.5 text-sm text-black md:text-xs">
+                <span className="bg-maincolor-200 rounded-md p-1.5 text-sm text-black md:text-xs">
                   웹
                 </span>
                 <div className="flex items-center justify-self-end">
@@ -436,7 +436,7 @@ export default function Screen03Project({
                 개발 및 디자인 작업 동시에 진행하였습니다.
               </span>
               <Link
-                className="box-border rounded-md border-2 border-solid border-maincolor-200 bg-hanarogreen/75 p-4 text-xl text-white transition-all sm:p-2 sm:py-2 sm:text-base md:p-2 md:py-1 md:text-base md:hover:bg-maincolor-200 md:hover:text-black lg:mt-4 lg:hover:bg-maincolor-200 lg:hover:text-black"
+                className="border-maincolor-200 bg-hanarogreen/75 md:hover:bg-maincolor-200 lg:hover:bg-maincolor-200 box-border rounded-md border-2 border-solid p-4 text-xl text-white transition-all sm:p-2 sm:py-2 sm:text-base md:p-2 md:py-1 md:text-base md:hover:text-black lg:mt-4 lg:hover:text-black"
                 to={"/thehanaro"}
               >
                 담당한 업무 확인하기
@@ -487,7 +487,7 @@ export default function Screen03Project({
             : (context?.activeSection ?? 0) > 2
               ? "md:-translate-y-24 md:opacity-0 lg:-translate-y-24 lg:opacity-0"
               : "md:translate-y-24 md:opacity-0 lg:translate-y-24 lg:opacity-0"
-        } transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-[750ms] sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[1vw]`}
+        } transition-[transform, opacity] relative mb-32 flex items-start gap-8 duration-750 sm:w-full sm:flex-col sm:gap-2 md:flex-wrap md:justify-center md:gap-2 lg:mx-[1vw]`}
       >
         <div className="flex items-start gap-6 sm:w-full sm:flex-col sm:gap-2 md:mt-4 md:flex-col md:gap-2">
           <div className="flex flex-col items-start gap-8 sm:gap-2 md:gap-2">
@@ -499,7 +499,7 @@ export default function Screen03Project({
                 <span className="text-5xl font-bold sm:text-2xl md:text-3xl">
                   날씨 앱
                 </span>
-                <span className="rounded-md bg-maincolor-200 p-1.5 text-sm text-black md:text-xs">
+                <span className="bg-maincolor-200 rounded-md p-1.5 text-sm text-black md:text-xs">
                   웹
                 </span>
                 <div className="flex items-center justify-self-end">
@@ -531,7 +531,7 @@ export default function Screen03Project({
                 <a
                   href="https://floriansacc.github.io/News-weather"
                   target="_blank"
-                  className="box-border rounded-md border-2 border-solid border-maincolor-200 bg-maincolor-800/75 p-4 py-2 text-xl text-white transition-all sm:p-2 sm:py-2 sm:text-base md:p-2 md:py-1 md:text-base md:hover:bg-maincolor-200 md:hover:text-black lg:hover:bg-maincolor-200 lg:hover:text-black"
+                  className="border-maincolor-200 bg-maincolor-800/75 md:hover:bg-maincolor-200 lg:hover:bg-maincolor-200 box-border rounded-md border-2 border-solid p-4 py-2 text-xl text-white transition-all sm:p-2 sm:py-2 sm:text-base md:p-2 md:py-1 md:text-base md:hover:text-black lg:hover:text-black"
                 >
                   앱 열기
                 </a>
@@ -552,7 +552,7 @@ export default function Screen03Project({
             loop
             muted
             playsInline
-            className="relative m-2 flex min-h-[400px] min-w-[300px] max-w-[400px] flex-[1_2_0%] flex-col items-center self-start overflow-hidden rounded-md bg-maincolor-700 sm:m-0 sm:mt-2 sm:min-h-[300px] sm:w-full sm:min-w-0 sm:max-w-full sm:items-end md:mt-10 md:min-h-[300px] md:items-end"
+            className="bg-maincolor-700 relative m-2 flex min-h-[400px] max-w-[400px] min-w-[300px] flex-[1_2_0%] flex-col items-center self-start overflow-hidden rounded-md sm:m-0 sm:mt-2 sm:min-h-[300px] sm:w-full sm:max-w-full sm:min-w-0 sm:items-end md:mt-10 md:min-h-[300px] md:items-end"
           >
             <source
               type="video/mp4"
@@ -560,7 +560,7 @@ export default function Screen03Project({
             />
           </video>
         </div>
-        <div className="flex min-w-[250px] max-w-[350px] flex-[1_1_0%] flex-col sm:mt-2 sm:w-full sm:min-w-0 sm:max-w-full sm:self-center sm:px-4 lg:mt-16">
+        <div className="flex max-w-[350px] min-w-[250px] flex-[1_1_0%] flex-col sm:mt-2 sm:w-full sm:max-w-full sm:min-w-0 sm:self-center sm:px-4 lg:mt-16">
           <img
             className="mb-1 aspect-auto w-full rounded-xl"
             src="/assets/allowed/images/project_2_image.jpeg"

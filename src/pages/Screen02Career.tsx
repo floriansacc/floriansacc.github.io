@@ -148,12 +148,12 @@ export default function Screen02Career({ screenRef, ...props }: Screen02Props) {
   return (
     <div
       ref={screenRef}
-      className="flex h-fit min-h-screen w-full flex-col items-center justify-start bg-bgcolor p-4 sm:justify-start sm:px-2 sm:py-4 sm:pt-10"
+      className="bg-bgcolor flex h-fit min-h-screen w-full flex-col items-center justify-start p-4 sm:justify-start sm:px-2 sm:py-4 sm:pt-10"
       {...props}
     >
       <div
         style={{ "--color": "white" } as React.CSSProperties}
-        className="gradient-border-to-right h-[2px] w-[98%] bg-line"
+        className="gradient-border-to-right bg-line h-[2px] w-[98%]"
       ></div>
       <div className="mt-10 self-start pl-10 text-[70px] font-bold sm:mb-8 sm:text-[40px]">
         Career
@@ -173,8 +173,8 @@ export default function Screen02Career({ screenRef, ...props }: Screen02Props) {
               context?.activeSection === 1
                 ? "md:translate-y-0 md:opacity-100 lg:translate-y-0 lg:opacity-100"
                 : (context?.activeSection ?? 0) > 1
-                  ? "md:-translate-y-[var(--anim-index)] md:opacity-0 lg:-translate-y-[var(--anim-index)] lg:opacity-0"
-                  : `md:translate-y-[var(--anim-index)] md:opacity-0 lg:translate-y-[var(--anim-index)] lg:opacity-0`
+                  ? "md:-translate-y-(--anim-index) md:opacity-0 lg:-translate-y-(--anim-index) lg:opacity-0"
+                  : `md:translate-y-(--anim-index) md:opacity-0 lg:translate-y-(--anim-index) lg:opacity-0`
             } transition-[transform, opacity] flex-col items-start duration-1000 ease-in-out sm:w-full md:w-[45%] md:min-w-[500px] md:flex-1 lg:min-h-[430px] lg:w-[45%]`}
           >
             <span className="ml-4 text-[18px] sm:ml-0 sm:self-center sm:text-base">

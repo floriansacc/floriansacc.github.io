@@ -58,13 +58,13 @@ export default function Screen04Education({
     <div
       ref={screenRef}
       {...props}
-      className="relative flex h-fit min-h-screen w-full flex-col items-start justify-start bg-bgcolor p-4 sm:justify-start sm:px-2 sm:py-4 sm:pt-10 md:items-center"
+      className="bg-bgcolor relative flex h-fit min-h-screen w-full flex-col items-start justify-start p-4 sm:justify-start sm:px-2 sm:py-4 sm:pt-10 md:items-center"
     >
       <div
         style={{ "--color": "white" } as React.CSSProperties}
-        className="gradient-border-to-right h-[2px] w-[98%] bg-line"
+        className="gradient-border-to-right bg-line h-[2px] w-[98%]"
       ></div>
-      <div className="mb-20 mt-10 self-start pl-10 text-[70px] font-bold sm:text-[40px]">
+      <div className="mt-10 mb-20 self-start pl-10 text-[70px] font-bold sm:text-[40px]">
         Education
       </div>
       <div className={`relative flex w-full justify-end`}>
@@ -83,18 +83,18 @@ export default function Screen04Education({
                 context?.activeSection === 3
                   ? "md:translate-y-0 md:opacity-100 lg:translate-y-0 lg:opacity-100"
                   : (context?.activeSection ?? 0) > 3
-                    ? "md:-translate-y-[var(--anim-index)] md:opacity-0 lg:-translate-y-[var(--anim-index)] lg:opacity-0"
-                    : "md:translate-y-[var(--anim-index)] md:opacity-0 lg:translate-y-[var(--anim-index)] lg:opacity-0"
+                    ? "md:-translate-y-(--anim-index) md:opacity-0 lg:-translate-y-(--anim-index) lg:opacity-0"
+                    : "md:translate-y-(--anim-index) md:opacity-0 lg:translate-y-(--anim-index) lg:opacity-0"
               } academic-box transition-[transform, opacity] h-fit duration-1000 ease-in-out sm:w-full md:w-[45%] md:min-w-[500px] md:flex-1 lg:min-h-[430px] lg:w-[45%]`}
             >
               <img
                 src={e.image}
-                className={`${e.isDarkIcon ? "rounded-md bg-white p-2" : ""} absolute right-2 top-2 aspect-auto h-14 rounded-md sm:h-11`}
+                className={`${e.isDarkIcon ? "rounded-md bg-white p-2" : ""} absolute top-2 right-2 aspect-auto h-14 rounded-md sm:h-11`}
               />
               <span className="ml-4 text-[18px] sm:ml-0 sm:self-center sm:text-base">
                 {e.date}
               </span>
-              <div className="mb-4 mt-8 flex w-full items-center justify-between gap-4 sm:flex-col sm:items-start md:flex-wrap">
+              <div className="mt-8 mb-4 flex w-full items-center justify-between gap-4 sm:flex-col sm:items-start md:flex-wrap">
                 <span className="sm:text-1xl text-3xl font-bold md:text-xl">
                   {e.univName} - {e.country}
                 </span>
@@ -103,7 +103,7 @@ export default function Screen04Education({
               <span className="mb-4 text-2xl font-bold sm:text-xl md:text-xl">
                 {e.department}
               </span>
-              <div className="sm:text-md mb-4 flex gap-4 text-xl font-normal text-maincolor-100">
+              <div className="sm:text-md text-maincolor-100 mb-4 flex gap-4 text-xl font-normal">
                 <span>학위: {e.degree}</span>
                 <span>학점: {e.score}</span>
               </div>

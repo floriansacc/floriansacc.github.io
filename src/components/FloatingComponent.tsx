@@ -9,7 +9,7 @@ export default function FloatingComponent({
           index === 0
             ? "animate-[wave-1_25s_linear_infinite]"
             : "animate-[wave-2_25s_linear_infinite]"
-        } relative flex h-fit w-max flex-row gap-5 transition-[transform,opacity] duration-[1000ms] sm:w-full`}
+        } relative flex h-fit w-max flex-row gap-5 transition-[transform,opacity] duration-1000 sm:w-full`}
       >
         {imageBox1.map((e, i) => (
           <div
@@ -36,7 +36,7 @@ export default function FloatingComponent({
           index === 0
             ? "animate-[wave-1_25s_linear_infinite]"
             : "animate-[wave-2_25s_linear_infinite]"
-        } relative flex h-fit w-max flex-row gap-5 transition-[transform,opacity] duration-[1000ms] sm:w-full`}
+        } relative flex h-fit w-max flex-row gap-5 transition-[transform,opacity] duration-1000 sm:w-full`}
       >
         {imageBox2.map((e, i) => (
           <div
