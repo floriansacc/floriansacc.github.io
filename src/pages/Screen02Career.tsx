@@ -23,6 +23,8 @@ const careerInfo: CareerModel[] = [
     name: "(주)플래어",
     role: "프론트엔드 개발 (모바일 및 웹)",
     skillsImage: [logoList.flutter, logoList.nextJs],
+    bgImage:
+      "/assets/disallowed/images/lockup_flutter_vertical.a9d6ce81aee44ae017ee.png",
     details: [
       <ul
         key="career-2-details-1"
@@ -73,6 +75,8 @@ const careerInfo: CareerModel[] = [
     date: "2024-03 ~ 2025.02",
     name: "(주)위릿 (Wiilit)",
     role: "프론트엔드 개발 (모바일 및 웹)",
+    bgImage:
+      "/assets/disallowed/images/lockup_flutter_vertical.a9d6ce81aee44ae017ee.png",
     skillsImage: [
       logoList.flutter,
       logoList.react,
@@ -166,6 +170,8 @@ export default function Screen02Career({ screenRef, ...props }: Screen02Props) {
             key={`career-${i}`}
             style={
               {
+                "--imagebg": `url(${e.bgImage})`,
+                "--opacitybg": "0.04",
                 "--anim-index": `${i * 50 + 50}px`,
               } as React.CSSProperties
             }
@@ -175,6 +181,8 @@ export default function Screen02Career({ screenRef, ...props }: Screen02Props) {
                 : (context?.activeSection ?? 0) > 1
                   ? "md:-translate-y-[var(--anim-index)] md:opacity-0 lg:-translate-y-[var(--anim-index)] lg:opacity-0"
                   : `md:translate-y-[var(--anim-index)] md:opacity-0 lg:translate-y-[var(--anim-index)] lg:opacity-0`
+            } ${
+              e.bgImage ? "academic-box" : ""
             } transition-[transform, opacity] flex-col items-start duration-1000 ease-in-out sm:w-full md:w-[45%] md:min-w-[500px] md:flex-1 lg:min-h-[430px] lg:w-[45%]`}
           >
             <span className="ml-4 text-[18px] sm:ml-0 sm:self-center sm:text-base">
@@ -211,4 +219,5 @@ interface CareerModel {
   role: string;
   skillsImage: LogoModel[];
   details: JSX.Element[];
+  bgImage?: string;
 }
