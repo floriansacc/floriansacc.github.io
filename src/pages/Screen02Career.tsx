@@ -19,7 +19,7 @@ const logoList: { [key: string]: LogoModel } = {
 
 const careerInfo: CareerModel[] = [
   {
-    date: "2025.02 ~ 현재",
+    date: "2025.02 ~ 2025.09",
     name: "(주)플래어",
     role: "프론트엔드 개발 (모바일 및 웹)",
     skillsImage: [logoList.flutter, logoList.nextJs],
