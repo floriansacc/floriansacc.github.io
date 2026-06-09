@@ -1,0 +1,32 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+@import "tailwindcss";
+
+@theme {
+  --color-text-normal: #222222;
+}
+
+:root {
+  font-family: "Pretendard" sans-serif;
+  color: var(--color-text-normal);
+
+  margin: 0;
+  padding: 0;
+
+  interpolate-size: allow-keywords;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
