@@ -1,0 +1,11 @@
+{
+  "navigation": {
+    "about": "About",
+    "career": "Career",
+    "projects": "Projects",
+    "education": "Education"
+  },
+  "message": {
+    "portfolio": "PORTFOLIO"
+  }
+}

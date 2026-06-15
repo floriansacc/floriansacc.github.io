@@ -3,12 +3,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-text-normal: #222222;
+  --color-label-normal: #222222;
+  --color-label-alternative: #878787;
+  --color-label-hover: #7d7d7d;
+
+  --color-line-strong: #dedede;
 }
 
 :root {
   font-family: "Pretendard" sans-serif;
-  color: var(--color-text-normal);
+  color: var(--color-label-normal);
 
   margin: 0;
   padding: 0;
