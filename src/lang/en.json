@@ -7,5 +7,12 @@
   },
   "message": {
     "portfolio": "PORTFOLIO"
+  },
+  "name": "Florian SACCHETTI",
+  "learnMore": "Learn More",
+  "intro": {
+    "fullStackDeveloper": "Full-Stack Developer",
+    "subtitle": "Software Engineer working on Web and Mobile applications.\nFrom Lyon, France, and based in South Korea, Seoul.",
+    "viewProjects": "View Projects"
   }
 }

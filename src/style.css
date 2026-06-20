@@ -5,7 +5,10 @@
 @theme {
   --color-label-normal: #222222;
   --color-label-alternative: #878787;
+  --color-label-grey: #717182;
   --color-label-hover: #7d7d7d;
+
+  --color-bg-alternative: #dadada;
 
   --color-line-strong: #dedede;
 }
