@@ -9,6 +9,8 @@
   --color-label-hover: #7d7d7d;
 
   --color-bg-alternative: #dadada;
+  --color-bg-muted: oklch(98.4% 0.003 247.858);
+  --color-muted: oklch(92.9% 0.013 255.508);
 
   --color-line-strong: #dedede;
 }
@@ -36,4 +38,12 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.variables {
+  @apply bg-bg-muted text-label-normal border-muted inline-block rounded-md border border-solid px-1.5 py-0.5 font-mono text-sm font-medium;
+}
+
+.title-mono {
+  @apply text-label-alternative font-mono tracking-wider uppercase;
 }

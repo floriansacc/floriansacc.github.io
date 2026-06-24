@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="border-line-strong sticky top-0 z-49 flex h-14 items-center justify-between border-b border-solid bg-white/50 px-5 py-2 backdrop-blur-lg transition-colors"
+    class="border-line-strong sticky top-0 z-49 flex h-14 items-center justify-between border-b border-solid bg-white/50 px-5 py-2 backdrop-blur-md transition-colors"
   >
     <div>
       <p class="font-mono font-semibold tracking-wider uppercase">

@@ -1,6 +1,6 @@
 <template>
   <section
-    class="flex min-h-screen w-full flex-col items-center justify-start self-center px-2 md:justify-center md:px-[2vw] xl:px-[5vw]"
+    class="flex min-h-screen w-full flex-col items-center justify-start px-2 md:justify-center md:px-[2vw] xl:px-[5vw]"
   >
     <div
       class="flex w-full flex-col flex-wrap items-start justify-center gap-y-12 px-4 pt-4 md:flex-row md:justify-evenly md:gap-8 md:px-0 lg:pt-0 xl:gap-4"
@@ -8,9 +8,7 @@
       <div
         class="flex flex-col gap-4 self-start justify-self-start pt-4 sm:gap-0 xl:self-auto"
       >
-        <p
-          class="text-label-alternative font-mono tracking-wider uppercase sm:mb-4"
-        >
+        <p class="title-mono sm:mb-4">
           {{ $t("intro.fullStackDeveloper") }}
         </p>
         <h1 class="text-4xl sm:mb-6 md:text-5xl lg:text-6xl">
@@ -37,7 +35,9 @@
             {{ $t("learnMore") }}
           </CustomButton>
         </div>
-        <div class="mt-4 flex items-center gap-2 self-center sm:self-auto">
+        <div
+          class="mt-4 flex items-center gap-2 self-center sm:mt-8 sm:self-auto"
+        >
           <a
             :href="myInfo.github"
             target="_blank"
