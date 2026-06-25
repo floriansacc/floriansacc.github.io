@@ -1,11 +1,13 @@
 <template>
-  <section class="flex min-h-screen flex-col px-2 md:px-[2vw] xl:px-[5vw]">
+  <section
+    class="flex min-h-screen flex-col px-2 pt-20 md:px-[2vw] xl:px-[5vw]"
+  >
     <div
       class="grid w-full grid-cols-1 justify-center gap-y-4 px-4 sm:gap-x-6 md:grid-cols-2 md:flex-row md:justify-evenly lg:gap-x-16"
     >
       <div>
         <p class="title-mono mb-4">
-          {{ $t("about.aboutMe").toUpperCase() }}
+          {{ $t("about.aboutMeTitle").toUpperCase() }}
         </p>
         <h3 class="text-3xl sm:mb-6 md:text-4xl">
           {{ $t("about.title") }}

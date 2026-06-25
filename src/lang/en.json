@@ -16,7 +16,7 @@
     "viewProjects": "View Projects"
   },
   "about": {
-    "aboutMe": "01 - About Me",
+    "aboutMeTitle": "01 - About Me",
     "title": "Crafting Mobile and Web Application with Passion",
     "descriptionPart1": " Originally aspiring Electrical Engineer, I developed a passion for Web Development. Starting from {javascript}, I developed Web Applications thorough my work experiences and my free time using various technologies such as SPA with {react} and {vue}, and SSR built with {next} and {nuxt} more recently.",
     "descriptionPart2": "I also worked on Mobile Applications from various sector, all built with {flutter} and currently live on Google Play Store and App Store",
@@ -28,14 +28,65 @@
     "typescript": "TypeScript",
     "flutter": "Flutter",
     "react": "React",
-    "next": "Next",
+    "next": "Next.js",
     "vue": "Vue",
-    "nuxt": "Nuxt",
+    "nuxt": "Nuxt.js",
     "node": "Node.js",
     "docker": "Docker",
     "figma": "Figma",
     "tailwind": "Tailwind CSS",
     "aws": "AWS",
-    "sql": "SQL"
+    "sql": "SQL",
+    "mariaDb": "MariaDB"
+  },
+  "career": {
+    "careerTitle": "02 - Career",
+    "professionalJourney": "Professional Journey",
+    "career": [
+      {
+        "period": "2025.09 - Present",
+        "title": "Full-Stack Developer (Mobile & Web)",
+        "company": "SmileMoa Inc.",
+        "description": "In charge of Front-end and Backend development of Smile Checkup (Eye surgery, Beauty and Orthodontist reservation)",
+        "part": [
+          "{flutter} mobile application: from all-app refactoring, routing and middleware, to production development and maintenance",
+          "Management of {mariaDb} database, table design, migration using Sequelize",
+          "Designed {aws} environment for production, {node} Express backend",
+          "{nuxt} Web Application and {vue} SPA Backoffice",
+          "Design and implement Analytics system, session tracking"
+        ]
+      },
+      {
+        "period": "2025.02 - 2025.09",
+        "title": "Front-end Developer (Mobile & Web)",
+        "company": "Plare Inc.",
+        "description": "Development of Locaplace (Housing Application)",
+        "part": [
+          "Development and deployment of {flutter} mobile application from first step to live deployment",
+          "Design and implementation of automatic live translation (English/Korean)",
+          "Real-time chatting system, , map-based search in-app payment functionality.",
+          "Korean phone verification system",
+          "Built {next} Backoffice and {react} SPA landing page."
+        ]
+      },
+      {
+        "period": "2024.03 - 2025.02",
+        "title": "Front-end Developer (Mobile & Web)",
+        "company": "Willit Inc.",
+        "description": "Development of The Hanaro and refactoring of MyOneCare (Healthcare Applications)",
+        "part": [
+          "{flutter} mobile application",
+          "In-app database (SQLite)",
+          "{react} Backoffice and Analytics",
+          "Landing page"
+        ]
+      },
+      {
+        "period": "2023.11 - 2024.03",
+        "title": "Climate Change Lab - Researcher",
+        "company": "Weatherpia Co,.Ltd",
+        "description": "Establishment/management of Domestic and International climate change projects (GCF, CTCN, Meteorological Agency, etc.)"
+      }
+    ]
   }
 }

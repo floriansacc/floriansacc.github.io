@@ -45,5 +45,9 @@ body {
 }
 
 .title-mono {
-  @apply text-label-alternative font-mono tracking-wider uppercase;
+  @apply text-label-alternative font-mono text-base tracking-wider uppercase;
+}
+
+.subtitle-mono {
+  @apply text-label-grey font-mono text-sm tracking-wider;
 }
