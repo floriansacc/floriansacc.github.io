@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="flex min-h-screen flex-col px-2 pt-20 md:px-[2vw] xl:px-[5vw]"
-  >
+  <SectionLayout>
     <div
       class="grid w-full grid-cols-1 justify-center gap-y-4 px-4 sm:gap-x-6 md:grid-cols-2 md:flex-row md:justify-evenly lg:gap-x-16"
     >
@@ -98,10 +96,12 @@
         </div>
       </div>
     </div>
-  </section>
+  </SectionLayout>
 </template>
 
 <script setup lang="ts">
+import SectionLayout from "../../layout/SectionLayout.vue";
+
 //TODO add logo
 const techologyList: { key: string; logo: string }[] = [
   { key: "javascript", logo: "assets/non-allowed/svg/icon_javascript.svg" },

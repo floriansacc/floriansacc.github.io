@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="flex h-fit min-h-screen flex-col px-2 pt-20 md:px-[2vw] xl:px-[5vw]"
-  >
+  <SectionLayout>
     <div class="mb-5 px-4">
       <p class="title-mono mb-4">
         {{ $t("career.careerTitle").toUpperCase() }}
@@ -82,7 +80,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </SectionLayout>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SectionLayout from "../../layout/SectionLayout.vue";
+</script>

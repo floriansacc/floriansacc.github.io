@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="flex min-h-screen w-full flex-col items-center justify-start px-2 md:justify-center md:px-[2vw] xl:px-[5vw]"
-  >
+  <SectionLayout class="items-center justify-start pt-0! md:justify-center">
     <div
       class="flex w-full flex-col flex-wrap items-start justify-center gap-y-12 px-4 pt-4 md:flex-row md:justify-evenly md:gap-8 md:px-0 lg:pt-0 xl:gap-4"
     >
@@ -84,7 +82,7 @@
         <SelfImage class="hidden sm:block" />
       </div>
     </div>
-  </section>
+  </SectionLayout>
 </template>
 
 <script setup lang="ts">
@@ -92,4 +90,5 @@ import { ArrowRight, Mail, Smartphone } from "@lucide/vue";
 import CustomButton from "../../components/buttons/CustomButton.vue";
 import SelfImage from "../../components/images/SelfImage.vue";
 import { myInfo } from "../../utils/public_constants.ts";
+import SectionLayout from "../../layout/SectionLayout.vue";
 </script>
