@@ -44,8 +44,8 @@
 
 <script setup lang="ts">
 import { Menu, X } from "@lucide/vue";
-import { navigationItems } from "../utils/public_constants";
 import MobileMenu from "./MobileMenu.vue";
+import { navigationItems } from "@/utils/public_constants.ts";
 
 const props = defineProps<{
   isMenuOpen: boolean;

@@ -20,8 +20,14 @@
         <p class="pb-0.5 text-xl font-semibold md:pb-1 md:text-2xl">
           {{ item.title }}
         </p>
-        <p class="text-label-grey pb-4 text-base italic">
-          {{ item.company }}
+        <p class="text-label-grey pb-4 text-base">
+          <span class="italic">
+            {{ item.company }}
+          </span>
+          <span>{{ " " }}-{{ " " }}</span>
+          <span class="text-label-alternative">
+            {{ item.country }}
+          </span>
         </p>
 
         <div
@@ -32,6 +38,7 @@
           <ul class="list-inside list-disc">
             <i18n-t
               v-for="(_, j) in item.part"
+              :key="`carreer-parts-${i}-${j}`"
               :keypath="`career.career[${i}].part[${j}]`"
               tag="li"
             >
@@ -84,5 +91,5 @@
 </template>
 
 <script setup lang="ts">
-import SectionLayout from "../../layout/SectionLayout.vue";
+import SectionLayout from "@/layout/SectionLayout.vue";
 </script>

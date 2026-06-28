@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { navigationItems } from "../utils/public_constants";
+import { navigationItems } from "@/utils/public_constants";
 
 defineProps<{
   isMenuOpen: boolean;

@@ -47,6 +47,7 @@
         "period": "2025.09 - Present",
         "title": "Full-Stack Developer (Mobile & Web)",
         "company": "Smilemoa Inc.",
+        "country": "Seoul, South Korea",
         "description": "In charge of Front-end and Backend development of Smile Checkup (Eye surgery, Beauty and Orthodontist reservation)",
         "part": [
           "{flutter} mobile application: from all-app refactoring, routing and middleware, to production development and maintenance",
@@ -60,6 +61,7 @@
         "period": "2025.02 - 2025.09",
         "title": "Front-end Developer (Mobile & Web)",
         "company": "Plare Inc.",
+        "country": "Seoul, South Korea",
         "description": "Development of Locaplace (Housing Application)",
         "part": [
           "Development and deployment of {flutter} mobile application from first step to live deployment",
@@ -73,6 +75,7 @@
         "period": "2024.03 - 2025.02",
         "title": "Front-end Developer (Mobile & Web)",
         "company": "wiilit inc.",
+        "country": "Seoul, South Korea",
         "description": "Development of The Hanaro and refactoring of MyOneCare (Healthcare Applications)",
         "part": [
           "{flutter} mobile application",
@@ -85,7 +88,55 @@
         "period": "2023.11 - 2024.03",
         "title": "Climate Change Lab - Researcher",
         "company": "Weatherpia Co,.Ltd",
+        "country": "Seoul, South Korea",
         "description": "Establishment/management of Domestic and International climate change projects (GCF, CTCN, Meteorological Agency, etc.)"
+      }
+    ]
+  },
+  "school": {
+    "schoolTitle": "04 - Education",
+    "education": "Education",
+    "gpa": "GPA",
+    "details": [
+      {
+        "period": "2021-2023",
+        "schoolName": "Jeonbuk National University",
+        "country": "Jeonju, South Korea",
+        "department": "Environment and Energy",
+        "degree": "Master's Degree",
+        "grade": "4.45 / 4.5",
+        "part": [
+          "Research on Carbon Dioxyde Storage",
+          "Reservoir Simulation",
+          "Carbon Neutral",
+          "Engineering Programming (Matlab, Python)",
+          "Basics of Web Programming (HTML/CSS, JavaScript)"
+        ]
+      },
+      {
+        "period": "2017-2021",
+        "schoolName": "University of Technology of Belfort-Montbeliard",
+        "country": "Belfort, France",
+        "department": "Electrical Engineering",
+        "degree": "Master's Degree",
+        "grade": "3.31 / 4.00",
+        "part": [
+          "Programming with Matlab and Simulink",
+          "Study on Fuel Cell and Battery",
+          "Electric Power Quality, Power Electronics",
+          "Renewable Energies"
+        ]
+      },
+      {
+        "period": "2015-2017",
+        "schoolName": "University Claude Bernard Lyon 1",
+        "country": "Lyon, France",
+        "department": "Maintenance Engineering",
+        "degree": "Bachelor Degree",
+        "grade": "3.35 / 4.00",
+        "part": [
+          "Basics of Electricity, Electronics, Thermodynamic,Mechanical and Maintenance Engineering"
+        ]
       }
     ]
   }

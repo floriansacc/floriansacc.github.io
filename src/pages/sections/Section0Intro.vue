@@ -87,8 +87,8 @@
 
 <script setup lang="ts">
 import { ArrowRight, Mail, Smartphone } from "@lucide/vue";
-import CustomButton from "../../components/buttons/CustomButton.vue";
-import SelfImage from "../../components/images/SelfImage.vue";
-import { myInfo } from "../../utils/public_constants.ts";
-import SectionLayout from "../../layout/SectionLayout.vue";
+import CustomButton from "@/components/buttons/CustomButton.vue";
+import SelfImage from "@/components/images/SelfImage.vue";
+import { myInfo } from "@/utils/public_constants";
+import SectionLayout from "@/layout/SectionLayout.vue";
 </script>

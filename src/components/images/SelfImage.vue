@@ -7,7 +7,8 @@
   >
     <img
       src="/assets/allowed/images/profile_picture.jpeg"
-      class="no-translate-sm rounded-lg"
+      class="no-translate-sm rounded-lg select-none"
+      :draggable="false"
       :style="{
         transform: `translate(-${randomTranslation.randX}px, -${randomTranslation.randY}px)`,
       }"

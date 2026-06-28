@@ -1,3 +1,7 @@
-<template></template>
+<template>
+  <SectionLayout></SectionLayout>
+</template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SectionLayout from "@/layout/SectionLayout.vue";
+</script>

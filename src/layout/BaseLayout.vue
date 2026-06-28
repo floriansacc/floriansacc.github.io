@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import NavigationBar from "../components/NavigationBar.vue";
+import NavigationBar from "@/components/NavigationBar.vue";
 
 const isMenuOpen = ref<boolean>(false);
 </script>
