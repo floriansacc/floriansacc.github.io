@@ -70,7 +70,7 @@
         "part": [
           "Development and deployment of {flutter} mobile application from first step to live deployment",
           "Design and implementation of automatic live translation (English/Korean)",
-          "Real-time chatting system, , map-based search in-app payment functionality.",
+          "Real-time chatting system, map-based search ,in-app payment functionality.",
           "Korean phone verification system",
           "Built {next} Backoffice and {react} SPA landing page."
         ]
@@ -117,7 +117,7 @@
         "stacks": ["flutter", "react", "tailwind", "javascript", "figma"]
       },
       {
-        "title": "Weather App",
+        "title": "Weather App (Side Project)",
         "description": "Weather Web Application providing weather and air quality information, using API of the Korea Meteorological Administration and the Korea Environment Corporation.",
         "stacks": ["react", "javascript", "tailwind"]
       }
@@ -147,7 +147,7 @@
         "period": "2017-2021",
         "schoolName": "University of Technology of Belfort-Montbeliard",
         "country": "Belfort, France",
-        "department": "Electrical Engineering",
+        "department": "Energy/Electrical Engineering",
         "degree": "Master's Degree",
         "grade": "3.31 / 4.00",
         "part": [

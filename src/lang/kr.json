@@ -1,5 +1,172 @@
 {
+  "navigation": {
+    "about": "About",
+    "career": "Career",
+    "projects": "Projects",
+    "education": "Education"
+  },
   "message": {
-    "portfolio": "포트폴리오"
+    "portfolio": "PORTFOLIO"
+  },
+  "name": "사체티 플로리안",
+  "learnMore": "더 보기",
+  "contactMe": "문의사항 시 언제든 연락 주세요",
+  "github": "Github",
+  "email": "Email",
+  "linkedIn": "LinkedIn",
+  "intro": {
+    "softwareDeveloper": "스포트웨어 개발자",
+    "subtitle": "웹 및 모바일 애플리케이션을 개발하는 소프트웨어 엔지니어입니다.\n프랑스 리옹 출신이며 현재 대한민국 서울에서 활동하고 있습니다.",
+    "viewProjects": "프로젝트 보기"
+  },
+  "about": {
+    "aboutMeTitle": "01 - 소개",
+    "title": "열정으로 만드는 웹과 모바일 애플리케이션",
+    "descriptionPart1": "원래는 전기공학 엔지니어를 목표로 했지만, 웹 개발에 매력을 느끼게 되었습니다. {javascript}부터 시작하여 다양한 실무 경험과 개인 프로젝트를 통해 웹 애플리케이션을 개발해 왔으며, {react}, {vue} 기반의 SPA와 최근에는 {next}, {nuxt}를 활용한 SSR 애플리케이션까지 폭넓게 개발해 왔습니다.",
+    "descriptionPart2": "또한 다양한 분야의 모바일 애플리케이션을 {flutter}로 개발했으며, 현재 Google Play Store와 App Store에서 서비스되고 있습니다.",
+    "descriptionPart3": "경력을 쌓아오면서 {node}를 활용한 백엔드 개발과 데이터베이스 관리({sql}), 그리고 {aws}를 이용한 인프라 구축 및 배포 경험도 쌓았습니다.",
+    "coreSkills": "핵심 기술"
+  },
+  "technology": {
+    "javascript": "JavaScript",
+    "typescript": "TypeScript",
+    "flutter": "Flutter",
+    "react": "React",
+    "next": "Next.js",
+    "vue": "Vue",
+    "nuxt": "Nuxt.js",
+    "node": "Node.js",
+    "docker": "Docker",
+    "figma": "Figma",
+    "tailwind": "Tailwind CSS",
+    "aws": "AWS",
+    "sql": "SQL",
+    "mariaDb": "MariaDB"
+  },
+
+  "career": {
+    "careerTitle": "02 - 경력",
+    "professionalJourney": "경력 사항",
+    "career": [
+      {
+        "period": "2025.09 - 현재",
+        "title": "풀스택 개발자 (모바일 & 웹)",
+        "company": "Smilemoa Inc.",
+        "country": "대한민국 서울",
+        "description": "스마일검진(안과 스마일라식 백내장수술, 치과, 성형피부과 예약)의 프론트엔드 및 백엔드 개발 담당",
+        "part": [
+          "{flutter} 모바일 애플리케이션 제작, 라우팅 및 미들웨어 구축, 운영 및 유지보수",
+          "{mariaDb} 데이터베이스 관리, 테이블 설계 및 Sequelize를 이용한 마이그레이션",
+          "{aws} 운영 환경 설계 및 {node} Express 백엔드 개발",
+          "{nuxt} 웹 애플리케이션 및 {vue} SPA 백오피스 개발",
+          "Analytics 시스템 설계 및 구현, 세션 추적 기능 개발"
+        ]
+      },
+      {
+        "period": "2025.02 - 2025.09",
+        "title": "프론트엔드 개발자 (모바일 & 웹)",
+        "company": "Plare Inc.",
+        "country": "대한민국 서울",
+        "description": "Locaplace(주거 플랫폼) 개발",
+        "part": [
+          "{flutter} 모바일 애플리케이션 기획부터 배포까지 전체 개발",
+          "실시간 자동 번역 기능(한국어/영어) 설계 및 구현",
+          "실시간 채팅 시스템, 지도 기반 검색 및 인앱 결제 기능 개발",
+          "본인 인증(휴대폰 인증) 시스템 구축",
+          "{next} 기반 백오피스 및 {react} SPA 랜딩 페이지 개발"
+        ]
+      },
+      {
+        "period": "2024.03 - 2025.02",
+        "title": "프론트엔드 개발자 (모바일 & 웹)",
+        "company": "wiilit inc.",
+        "country": "대한민국 서울",
+        "description": "The Hanaro 개발 및 MyOneCare(헬스케어 서비스) 리팩토링",
+        "part": [
+          "{flutter} 모바일 애플리케이션 개발",
+          "앱 내 데이터베이스(SQLite) 구축",
+          "{react} 기반 백오피스 및 Analytics 개발",
+          "랜딩 페이지 개발"
+        ]
+      },
+      {
+        "period": "2023.11 - 2024.03",
+        "title": "기후변화연구소 연구원",
+        "company": "Weatherpia Co., Ltd.",
+        "country": "대한민국 서울",
+        "description": "국내 및 국제 기후변화 사업 구축/관리 (GCF, CTCN, 기상청 등)"
+      }
+    ]
+  },
+  "project": {
+    "projectTitle": "03 - 프로젝트",
+    "mobileAndWeb": "모바일 & 웹",
+    "projects": [
+      {
+        "title": "스마일검진",
+        "description": "할인이벤트 빠른비교, 안과 스마일라식 백내장수술, 치과, 성형피부과 예약. Analytics, 일반 관리자 및 병원 관리자 시스템 구축했습니다.",
+        "stacks": ["flutter", "nuxt", "vue", "typescript", "docker", "node"]
+      },
+      {
+        "title": "로카플레이스",
+        "description": "위치 기반 주거 모바일 애플리케이션으로, 본인 인증, 결제, 실시간 채팅 기능 설계했습니다.",
+        "stacks": ["flutter", "next", "react", "typescript", "figma"]
+      },
+      {
+        "title": "더 하나로",
+        "description": "{flutter}로 개발한 헬스케어 모바일 애플리케이션으로, 관리자 페이지와 Analytics 백오피스를 함께 구축했습니다.",
+        "stacks": ["flutter", "react", "tailwind", "javascript", "figma"]
+      },
+      {
+        "title": "날씨 앱 (개인 프로젝트)",
+        "description": "기상청과 한국환경공단 API를 활용하여 날씨와 대기질 정보를 제공하는 웹 애플리케이션입니다.",
+        "stacks": ["react", "javascript", "tailwind"]
+      }
+    ]
+  },
+  "school": {
+    "schoolTitle": "04 - 학력",
+    "education": "Education",
+    "gpa": "학점",
+    "details": [
+      {
+        "period": "2021-2023",
+        "schoolName": "전북대학교",
+        "country": "대한민국 전주",
+        "department": "환경에너지융합학과",
+        "degree": "석사",
+        "grade": "4.45 / 4.5",
+        "part": [
+          "이산화탄소지중저장 연구",
+          "저류층 시뮬레이션",
+          "탄소중립",
+          "공대 프로그래밍 (Matlab, Python)",
+          "웹 개발 기초 (HTML/CSS, JavaScript)"
+        ]
+      },
+      {
+        "period": "2017-2021",
+        "schoolName": "University of Technology of Belfort-Montbeliard",
+        "country": "프랑스 벨포르",
+        "department": "에너지/전자공학과",
+        "degree": "석사",
+        "grade": "3.31 / 4.00",
+        "part": [
+          "Matlab 및 Simulink우로 프로그래밍",
+          "연료전지 및 배터리 설계",
+          "전력 전자, 전력 품질",
+          "재생 에너지"
+        ]
+      },
+      {
+        "period": "2015-2017",
+        "schoolName": "University Claude Bernard Lyon 1",
+        "country": "프랑스 리옹",
+        "department": "산업공학 및 유지관리 공학",
+        "degree": "학사",
+        "grade": "3.35 / 4.00",
+        "part": ["전기, 전자, 열역학, 기계공학 기초 교육"]
+      }
+    ]
   }
 }

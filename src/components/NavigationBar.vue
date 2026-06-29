@@ -16,7 +16,11 @@
           {{ $t(`navigation.${item.key}`) }}
         </p>
       </div>
-      <select v-model="$i18n.locale">
+      <select
+        v-model="$i18n.locale"
+        class="border-line-strong rounded-lg border border-solid p-1"
+        @change="saveLocal"
+      >
         <option
           v-for="locale in $i18n.availableLocales"
           :key="`locale-${locale}`"
@@ -46,6 +50,7 @@
 import { Menu, X } from "@lucide/vue";
 import MobileMenu from "./MobileMenu.vue";
 import { navigationItems } from "@/utils/public_constants.ts";
+import useMachineLocal from "@/composables/useMachineLocale.ts";
 
 const props = defineProps<{
   isMenuOpen: boolean;
@@ -54,4 +59,6 @@ const props = defineProps<{
 const emit = defineEmits<{
   menuClick: [value: boolean];
 }>();
+
+const { saveLocal } = useMachineLocal();
 </script>
