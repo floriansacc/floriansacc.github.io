@@ -81,22 +81,11 @@
           {{ $t("about.coreSkills").toUpperCase() }}
         </p>
         <div class="flex flex-wrap gap-2">
-          <div
-            v-for="(item, i) in techologyList"
-            :key="`about-techno-${i}`"
-            class="border-line-strong text-label-normal hover:bg-bg-muted group flex items-center justify-center gap-2 border border-solid px-3 py-2 transition-colors"
-          >
-            <img
-              class="h-4.5 w-auto select-none sm:h-5.5"
-              :draggable="false"
-              :src="item.logo"
-            />
-            <p
-              class="transition-transform duration-300 ease-out select-none group-hover:brightness-110"
-            >
-              {{ $t(`technology.${item.key}`) }}
-            </p>
-          </div>
+          <StackIcon
+            v-for="(stack, i) in techologyList"
+            :key="`about-stack-${stack.key}-${i}`"
+            :stack="stack.key"
+          />
         </div>
       </div>
     </div>
@@ -104,20 +93,7 @@
 </template>
 
 <script setup lang="ts">
+import StackIcon from "@/components/StackIcon.vue";
 import SectionLayout from "@/layout/SectionLayout.vue";
-
-//TODO add logo
-const techologyList: { key: string; logo: string }[] = [
-  { key: "javascript", logo: "assets/non-allowed/svg/icon_javascript.svg" },
-  { key: "typescript", logo: "assets/non-allowed/svg/icon_typescript.svg" },
-  { key: "react", logo: "assets/non-allowed/svg/icon_react.svg" },
-  { key: "next", logo: "assets/non-allowed/svg/icon_next.svg" },
-  { key: "vue", logo: "assets/non-allowed/svg/icon_vue.svg" },
-  { key: "nuxt", logo: "assets/non-allowed/svg/icon_nuxt.svg" },
-  { key: "flutter", logo: "assets/non-allowed/svg/icon_flutter.svg" },
-  { key: "node", logo: "assets/non-allowed/svg/icon_node.svg" },
-  { key: "docker", logo: "assets/non-allowed/svg/icon_docker.svg" },
-  { key: "figma", logo: "assets/non-allowed/svg/icon_figma.svg" },
-  { key: "tailwind", logo: "assets/non-allowed/svg/icon_tailwind.svg" },
-];
+import { techologyList } from "@/utils/public_constants";
 </script>

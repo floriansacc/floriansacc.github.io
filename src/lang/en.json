@@ -15,7 +15,7 @@
   "email": "Email",
   "linkedIn": "LinkedIn",
   "intro": {
-    "fullStackDeveloper": "Full-Stack Developer",
+    "softwareDeveloper": "Software Developer",
     "subtitle": "Software Engineer working on Web and Mobile applications.\nFrom Lyon, France, and based in South Korea, Seoul.",
     "viewProjects": "View Projects"
   },
@@ -94,6 +94,32 @@
         "company": "Weatherpia Co,.Ltd",
         "country": "Seoul, South Korea",
         "description": "Establishment/management of Domestic and International climate change projects (GCF, CTCN, Meteorological Agency, etc.)"
+      }
+    ]
+  },
+  "project": {
+    "projectTitle": "03 - Projects",
+    "mobileAndWeb": "Mobile & Web",
+    "projects": [
+      {
+        "title": "Smile Checkup",
+        "description": "Event-based Health care platform for eye surgery reservation, hospital comparisons and nearby hospital search. Admin and analytics page separating admins and hospital admins",
+        "stacks": ["flutter", "nuxt", "vue", "typescript", "docker", "node"]
+      },
+      {
+        "title": "Locaplace",
+        "description": "Location-based housing mobile application, with identity verification, payments, real-time chatting.",
+        "stacks": ["flutter", "next", "react", "typescript", "figma"]
+      },
+      {
+        "title": "The Hanaro",
+        "description": "Health care mobile Application built in Flutter, with admin and analytics backoffice",
+        "stacks": ["flutter", "react", "tailwind", "javascript", "figma"]
+      },
+      {
+        "title": "Weather App",
+        "description": "Weather Web Application providing weather and air quality information, using API of the Korea Meteorological Administration and the Korea Environment Corporation.",
+        "stacks": ["react", "javascript", "tailwind"]
       }
     ]
   },

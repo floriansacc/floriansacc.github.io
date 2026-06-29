@@ -1,7 +1,48 @@
 <template>
-  <SectionLayout></SectionLayout>
+  <SectionLayout>
+    <div class="mb-5 px-4">
+      <p class="title-mono mb-4">
+        {{ $t("project.projectTitle").toUpperCase() }}
+      </p>
+      <h3 class="text-3xl sm:mb-6 md:text-4xl">
+        {{ $t("project.mobileAndWeb") }}
+      </h3>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      <div
+        v-for="(item, i) in $tm('project.projects')"
+        :key="`project-info-${i}`"
+        :class="[
+          'group border-line-strong sm:hover:border-label-alternative flex cursor-pointer flex-col gap-4 rounded-sm border border-solid p-8 shadow-xs transition-colors',
+        ]"
+      >
+        <div class="flex justify-between">
+          <h4 class="text-label-normal text-lg font-semibold md:text-xl">
+            {{ item.title }}
+          </h4>
+          <ArrowUpRight
+            class="size-6.5 transition-transform sm:group-hover:translate-x-1.5 sm:group-hover:-translate-y-1.5"
+          />
+        </div>
+        <p class="text-label-alternative text-sm md:text-base">
+          {{ item.description }}
+        </p>
+
+        <div class="flex flex-wrap gap-2">
+          <StackIcon
+            v-for="(stack, j) in item.stacks"
+            :key="`project-stack-${stack.key}-${i}-${j}`"
+            :stack="stack"
+          />
+        </div>
+      </div>
+    </div>
+  </SectionLayout>
 </template>
 
 <script setup lang="ts">
+import StackIcon from "@/components/StackIcon.vue";
 import SectionLayout from "@/layout/SectionLayout.vue";
+import { ArrowUpRight } from "@lucide/vue";
 </script>

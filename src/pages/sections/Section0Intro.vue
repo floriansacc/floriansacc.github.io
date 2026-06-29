@@ -7,7 +7,7 @@
         class="flex flex-col gap-4 self-start justify-self-start pt-4 sm:gap-0 xl:self-auto"
       >
         <p class="title-mono sm:mb-4">
-          {{ $t("intro.fullStackDeveloper") }}
+          {{ $t("intro.softwareDeveloper") }}
         </p>
         <h1 class="text-4xl sm:mb-6 md:text-5xl lg:text-6xl">
           {{ $t("name") }}
