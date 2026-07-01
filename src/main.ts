@@ -9,7 +9,9 @@ const savedLocale =
   localStorage.getItem("lang") || navigator.language?.split("-")[0] || "en";
 
 const i18n = createI18n({
-  locale: savedLocale,
+  locale: Object.keys(languages).find((e) => e === savedLocale)
+    ? savedLocale
+    : "en",
   fallbackLocale: "en",
   messages: Object.assign(languages),
 });

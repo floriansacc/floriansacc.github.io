@@ -1,11 +1,11 @@
 import en from "./en.json";
-import kr from "./kr.json";
+import ko from "./ko.json";
 import fr from "./fr.json";
 
-export const defaultLocale = "kr";
+export const defaultLocale = "ko";
 
 export const languages = {
   en: en,
-  kr: kr,
+  ko: ko,
   fr: fr,
 };

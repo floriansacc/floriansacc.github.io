@@ -22,7 +22,7 @@
       </div>
       <select
         v-model="$i18n.locale"
-        class="border-line-strong min-w-10 rounded-lg border border-solid p-1"
+        class="border-line-strong subtitle-mono min-w-10 rounded-lg border border-solid p-1"
         @change="saveLocal"
       >
         <option
@@ -30,7 +30,7 @@
           :key="`locale-${locale}`"
           :value="locale"
         >
-          {{ locale }}
+          {{ locale.toUpperCase() }}
         </option>
       </select>
 

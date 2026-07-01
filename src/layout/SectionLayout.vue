@@ -2,7 +2,7 @@
   <section class="flex w-full flex-col">
     <div v-if="withLine" class="bg-line-strong h-px w-full"></div>
     <div
-      class="flex h-fit min-h-screen w-full flex-col px-2 pt-20 pb-20 md:px-[2vw] xl:px-[5vw]"
+      class="flex h-fit min-h-screen w-full flex-col px-2 pt-10 pb-10 md:px-[2vw] md:pt-20 xl:px-[5vw] xl:pb-20"
     >
       <slot />
     </div>

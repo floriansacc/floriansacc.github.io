@@ -79,7 +79,7 @@ const universityImages = computed<string[]>(() => {
   ];
 
   const jbnuImg =
-    locale.value === "kr"
+    locale.value === "ko"
       ? "/assets/non-allowed/images/jbnu_logo_kr.png"
       : "/assets/non-allowed/images/jbnu_logo_en.png";
 
