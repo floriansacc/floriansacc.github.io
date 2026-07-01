@@ -10,8 +10,12 @@
     <div class="flex gap-2">
       <div class="hidden items-center gap-2 select-none sm:flex">
         <p
-          v-for="item in navigationItems"
-          class="sm:hover:text-label-hover cursor-pointer p-1 font-medium transition-colors"
+          v-for="(item, i) in navigationItems"
+          @click="scrollToIndex(i)"
+          :class="[
+            'sm:hover:text-label-hover cursor-pointer p-1 font-medium transition-colors',
+            activeIndex === i ? 'text-blue-400' : '',
+          ]"
         >
           {{ $t(`navigation.${item.key}`) }}
         </p>
@@ -41,6 +45,8 @@
 
     <MobileMenu
       :is-menu-open="isMenuOpen"
+      :active-index="activeIndex"
+      :scroll-to-index="scrollToIndex"
       @menu-click="emit('menuClick', $event)"
     />
   </nav>
@@ -54,6 +60,8 @@ import useMachineLocal from "@/composables/useMachineLocale.ts";
 
 const props = defineProps<{
   isMenuOpen: boolean;
+  activeIndex: number;
+  scrollToIndex: (index: number) => void;
 }>();
 
 const emit = defineEmits<{

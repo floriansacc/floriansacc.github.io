@@ -1,6 +1,7 @@
 <template>
   <SectionLayout>
     <div
+      :ref="sectionRef"
       class="grid w-full grid-cols-1 justify-center gap-y-4 px-4 sm:gap-x-6 md:grid-cols-2 md:flex-row md:justify-evenly lg:gap-x-16"
     >
       <div>
@@ -93,7 +94,12 @@
 </template>
 
 <script setup lang="ts">
-import StackIcon from "@/components/StackIcon.vue";
+import { ComponentPublicInstance } from "vue";
 import SectionLayout from "@/layout/SectionLayout.vue";
+import StackIcon from "@/components/StackIcon.vue";
 import { techologyList } from "@/utils/public_constants";
+
+defineProps<{
+  sectionRef?: (el: Element | ComponentPublicInstance | null) => void;
+}>();
 </script>

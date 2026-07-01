@@ -1,6 +1,6 @@
 <template>
   <SectionLayout>
-    <div class="mb-5 px-4">
+    <div :ref="sectionRef" class="mb-5 px-4">
       <p class="title-mono mb-4">
         {{ $t("school.schoolTitle").toUpperCase() }}
       </p>
@@ -63,10 +63,14 @@
 
 <script setup lang="ts">
 import SectionLayout from "@/layout/SectionLayout.vue";
-import { computed } from "vue";
+import { ComponentPublicInstance, computed } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { locale } = useI18n();
+
+const props = defineProps<{
+  sectionRef?: (el: Element | ComponentPublicInstance | null) => void;
+}>();
 
 const universityImages = computed<string[]>(() => {
   const list = [

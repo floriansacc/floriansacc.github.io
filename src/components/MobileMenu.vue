@@ -4,19 +4,23 @@
       <div
         v-show="isMenuOpen"
         :data-state="isMenuOpen ? 'open' : 'closed'"
-        class="fixed inset-0 z-50 bg-black/50 transition-all"
+        class="fixed inset-0 z-50 bg-black/60 transition-all"
         role="dialog"
         aria-modal="true"
         @click="emit('menuClick', false)"
       >
         <div class="mt-20 flex w-full flex-col gap-1 p-5">
-          <div class="flex flex-col items-center gap-2 select-none">
-            <p
-              v-for="item in navigationItems"
-              class="cursor-pointer p-1 font-medium text-white transition-colors"
+          <div class="flex flex-col items-start gap-2 select-none">
+            <div
+              v-for="(item, i) in navigationItems"
+              @click="scrollToIndex(i)"
+              :class="[
+                'w-full cursor-pointer rounded-md border-2 border-solid p-1 font-medium text-white transition-colors',
+                activeIndex === i ? 'border-white' : 'border-transparent',
+              ]"
             >
-              {{ $t(`navigation.${item.key}`) }}
-            </p>
+              <span>{{ $t(`navigation.${item.key}`) }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -29,6 +33,8 @@ import { navigationItems } from "@/utils/public_constants";
 
 defineProps<{
   isMenuOpen: boolean;
+  activeIndex: number;
+  scrollToIndex: (index: number) => void;
 }>();
 
 const emit = defineEmits<{

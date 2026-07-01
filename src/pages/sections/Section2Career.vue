@@ -1,6 +1,6 @@
 <template>
   <SectionLayout>
-    <div class="mb-5 px-4">
+    <div :ref="sectionRef" class="mb-5 px-4">
       <p class="title-mono mb-4">
         {{ $t("career.careerTitle").toUpperCase() }}
       </p>
@@ -91,5 +91,10 @@
 </template>
 
 <script setup lang="ts">
+import { ComponentPublicInstance } from "vue";
 import SectionLayout from "@/layout/SectionLayout.vue";
+
+defineProps<{
+  sectionRef?: (el: Element | ComponentPublicInstance | null) => void;
+}>();
 </script>

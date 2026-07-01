@@ -23,13 +23,13 @@
 
         <div class="flex items-center gap-2 self-center sm:self-auto">
           <!-- // TODO add redirect -->
-          <CustomButton class="group">
+          <CustomButton @click="scrollToIndex(2)" class="group">
             {{ $t("intro.viewProjects") }}
             <ArrowRight
               class="size-5 transition-transform group-hover:translate-x-1 group-hover:-rotate-45"
             />
           </CustomButton>
-          <CustomButton button-type="outline-primary">
+          <CustomButton @click="scrollToIndex(0)" button-type="outline-primary">
             {{ $t("learnMore") }}
           </CustomButton>
         </div>
@@ -91,4 +91,8 @@ import CustomButton from "@/components/buttons/CustomButton.vue";
 import SelfImage from "@/components/images/SelfImage.vue";
 import { myInfo } from "@/utils/public_constants";
 import SectionLayout from "@/layout/SectionLayout.vue";
+
+const props = defineProps<{
+  scrollToIndex: (index: number) => void;
+}>();
 </script>

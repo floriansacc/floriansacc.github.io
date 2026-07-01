@@ -1,6 +1,6 @@
 <template>
   <SectionLayout>
-    <div class="mb-5 px-4">
+    <div :ref="sectionRef" class="mb-5 px-4">
       <p class="title-mono mb-4">
         {{ $t("project.projectTitle").toUpperCase() }}
       </p>
@@ -42,7 +42,12 @@
 </template>
 
 <script setup lang="ts">
+import { ComponentPublicInstance } from "vue";
 import StackIcon from "@/components/StackIcon.vue";
 import SectionLayout from "@/layout/SectionLayout.vue";
 import { ArrowUpRight } from "@lucide/vue";
+
+defineProps<{
+  sectionRef?: (el: Element | ComponentPublicInstance | null) => void;
+}>();
 </script>
