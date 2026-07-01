@@ -10,19 +10,19 @@
   },
   "name": "Florian SACCHETTI",
   "learnMore": "Learn More",
-  "contactMe": "Feel free to contact me",
+  "contactMe": "Feel free to contact me :)",
   "github": "Github",
   "email": "Email",
   "linkedIn": "LinkedIn",
   "intro": {
     "softwareDeveloper": "Software Developer",
-    "subtitle": "Software Engineer working on Web and Mobile applications.\nFrom Lyon, France, and based in South Korea, Seoul.",
+    "subtitle": "Software Engineer working on Web and Mobile applications.\nFrom Lyon, France, and based in Seoul, South Korea.",
     "viewProjects": "View Projects"
   },
   "about": {
     "aboutMeTitle": "01 - About Me",
     "title": "Crafting Mobile and Web Application with Passion",
-    "descriptionPart1": " Originally aspiring Electrical Engineer, I developed a passion for Web Development. Starting from {javascript}, I developed Web Applications thorough my work experiences and my free time using various technologies such as SPA with {react} and {vue}, and SSR built with {next} and {nuxt} more recently.",
+    "descriptionPart1": "Originally aspiring Electrical Engineer, I developed a passion for Web Development. Starting from {javascript}, I developed Web Applications thorough my work experiences and my free time using various technologies such as SPA with {react} and {vue}, and SSR built with {next} and {nuxt} more recently.",
     "descriptionPart2": "I also worked on Mobile Applications from various sector, all built with {flutter} and currently live on Google Play Store and App Store",
     "descriptionPart3": "Career path led me to experience Backend Development with {node}, as well as Database Management, {sql}, and to manage environments and deployment through {aws}.",
     "coreSkills": "Core Skills"

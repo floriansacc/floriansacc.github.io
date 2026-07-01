@@ -33,11 +33,17 @@
         <div
           class="text-label-grey flex flex-col gap-2 text-sm whitespace-pre-wrap sm:text-base"
         >
-          <i18n-t :keypath="item.description" tag="p"> </i18n-t>
+          <i18n-t
+            scope="global"
+            :keypath="`career.career[${i}].description`"
+            tag="p"
+          >
+          </i18n-t>
 
           <ul class="list-inside list-disc">
             <i18n-t
               v-for="(_, j) in item.part"
+              scope="global"
               :key="`carreer-parts-${i}-${j}`"
               :keypath="`career.career[${i}].part[${j}]`"
               tag="li"

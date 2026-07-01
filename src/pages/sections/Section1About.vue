@@ -1,5 +1,5 @@
 <template>
-  <SectionLayout>
+  <SectionLayout :with-line="false">
     <div
       :ref="sectionRef"
       class="grid w-full grid-cols-1 justify-center gap-y-4 px-4 sm:gap-x-6 md:grid-cols-2 md:flex-row md:justify-evenly lg:gap-x-16"
@@ -16,7 +16,7 @@
         <div
           class="text-label-grey ext-sm whitespace-break-spaces sm:text-base"
         >
-          <i18n-t keypath="about.descriptionPart1" tag="p">
+          <i18n-t scope="global" keypath="about.descriptionPart1" tag="p">
             <template v-slot:javascript>
               <span class="variables">
                 {{ $t("technology.javascript") }}
@@ -48,7 +48,7 @@
         <div
           class="text-label-grey ext-sm whitespace-break-spaces sm:text-base"
         >
-          <i18n-t keypath="about.descriptionPart2" tag="p">
+          <i18n-t scope="global" keypath="about.descriptionPart2" tag="p">
             <template v-slot:flutter>
               <span class="variables">
                 {{ $t("technology.flutter") }}
@@ -59,7 +59,7 @@
         <div
           class="text-label-grey ext-sm whitespace-break-spaces sm:text-base"
         >
-          <i18n-t keypath="about.descriptionPart3" tag="p">
+          <i18n-t scope="global" keypath="about.descriptionPart3" tag="p">
             <template v-slot:node>
               <span class="variables">
                 {{ $t("technology.node") }}

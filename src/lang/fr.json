@@ -1,1 +1,173 @@
-{}
+{
+  "navigation": {
+    "about": "À propos",
+    "career": "Parcours",
+    "projects": "Projets",
+    "education": "Formation"
+  },
+  "message": {
+    "portfolio": "PORTFOLIO"
+  },
+  "name": "Florian SACCHETTI",
+  "learnMore": "En savoir plus",
+  "contactMe": "N'hésitez pas à me contacter :)",
+  "github": "GitHub",
+  "email": "E-mail",
+  "linkedIn": "LinkedIn",
+  "intro": {
+    "softwareDeveloper": "Développeur Logiciel",
+    "subtitle": "Ingénieur logiciel spécialisé dans le développement d'applications Web et Mobile.\nOriginaire de Lyon, France, et actuellement basé à Séoul, Corée du Sud.",
+    "viewProjects": "Voir les projets"
+  },
+  "about": {
+    "aboutMeTitle": "01 - À propos",
+    "title": "Créer des applications Web et Mobile avec passion",
+    "descriptionPart1": "Initialement destiné à une carrière d'Ingénieur en Génie Electrique, j'ai développé une véritable passion pour le développement Web. En commençant par {javascript}, j'ai conçu des applications Web au fil de mes expériences professionnelles et de mes projets personnels, en utilisant diverses technologies telles que les SPA avec {react} et {vue}, ainsi que des applications SSR développées avec {next} et {nuxt}.",
+    "descriptionPart2": "J'ai également participé au développement d'applications mobiles dans différents secteurs, toutes développées avec {flutter}, et actuellement disponibles sur le Google Play Store et l'App Store.",
+    "descriptionPart3": "Mon parcours professionnel m'a également permis d'acquérir de l'expérience en développement Backend avec {node}, en gestion de bases de données avec {sql}, ainsi qu'en administration d'environnements et déploiement d'applications sur {aws}.",
+    "coreSkills": "Compétences principales"
+  },
+  "technology": {
+    "javascript": "JavaScript",
+    "typescript": "TypeScript",
+    "flutter": "Flutter",
+    "react": "React",
+    "next": "Next.js",
+    "vue": "Vue",
+    "nuxt": "Nuxt.js",
+    "node": "Node.js",
+    "docker": "Docker",
+    "figma": "Figma",
+    "tailwind": "Tailwind CSS",
+    "aws": "AWS",
+    "sql": "SQL",
+    "mariaDb": "MariaDB"
+  },
+  "career": {
+    "careerTitle": "02 - Parcours",
+    "professionalJourney": "Parcours professionnel",
+    "career": [
+      {
+        "period": "2025.09 - Aujourd'hui",
+        "title": "Développeur Full-Stack (Mobile & Web)",
+        "company": "Smilemoa Inc.",
+        "country": "Séoul, Corée du Sud",
+        "description": "Responsable du développement Front-end et Backend de Smile Checkup (Plateforme de réservation pour chirurgie réfractive, esthétique et orthodontie).",
+        "part": [
+          "Application mobile {flutter} : refonte complète, architecture, routage, middleware, développement et maintenance en production.",
+          "Gestion de la base de données {mariaDb}, conception des tables et migrations avec Sequelize.",
+          "Conception de l'infrastructure de production sur {aws} et développement du backend {node} Express.",
+          "Développement de l'application Web {nuxt} et du système administrateur SPA en {vue}.",
+          "Conception et mise en place d'un système d'Analytics et de suivi des sessions."
+        ]
+      },
+      {
+        "period": "2025.02 - 2025.09",
+        "title": "Développeur Front-end (Mobile & Web)",
+        "company": "Plare Inc.",
+        "country": "Séoul, Corée du Sud",
+        "description": "Développement de Locaplace (Application immobilière).",
+        "part": [
+          "Développement et déploiement de l'application mobile {flutter}, de sa conception jusqu'à sa mise en production.",
+          "Conception et mise en œuvre d'un système de traduction automatique en temps réel (anglais/coréen).",
+          "Développement d'un système de messagerie instantanée, recherche par carte et paiement intégré.",
+          "Mise en place du système de vérification des numéros de téléphone coréens.",
+          "Développement du Backoffice avec {next} et de la landing page SPA avec {react}."
+        ]
+      },
+      {
+        "period": "2024.03 - 2025.02",
+        "title": "Développeur Front-end (Mobile & Web)",
+        "company": "wiilit inc.",
+        "country": "Séoul, Corée du Sud",
+        "description": "Développement de The Hanaro et refonte de MyOneCare (Applications de santé).",
+        "part": [
+          "Développement d'applications mobiles avec {flutter}.",
+          "Gestion d'une base de données embarquée (SQLite).",
+          "Développement du Backoffice et du système Analytics avec {react}.",
+          "Développement de la landing page."
+        ]
+      },
+      {
+        "period": "2023.11 - 2024.03",
+        "title": "Chercheur - Laboratoire sur le changement climatique",
+        "company": "Weatherpia Co., Ltd.",
+        "country": "Séoul, Corée du Sud",
+        "description": "Mise en place et gestion de projets nationaux et internationaux liés au changement climatique (GCF, CTCN, Agence météorologique coréenne, etc.)."
+      }
+    ]
+  },
+  "project": {
+    "projectTitle": "03 - Projets",
+    "mobileAndWeb": "Mobile & Web",
+    "projects": [
+      {
+        "title": "Smile Checkup",
+        "description": "Plateforme de santé proposant la réservation d'interventions ophtalmologiques, la comparaison d'hôpitaux et la recherche d'établissements à proximité. Développement d'un système d'administration et d'Analytics distinguant administrateurs et administrateurs hôpitaux.",
+        "stacks": ["flutter", "nuxt", "vue", "typescript", "docker", "node"]
+      },
+      {
+        "title": "Locaplace",
+        "description": "Application mobile immobilière basée sur la localisation, intégrant la vérification d'identité, les paiements et une messagerie instantanée.",
+        "stacks": ["flutter", "next", "react", "typescript", "figma"]
+      },
+      {
+        "title": "The Hanaro",
+        "description": "Application mobile de santé développée avec Flutter, accompagnée d'un Backoffice d'administration et d'Analytics.",
+        "stacks": ["flutter", "react", "tailwind", "javascript", "figma"]
+      },
+      {
+        "title": "Weather App (Projet personnel)",
+        "description": "Application Web météo fournissant les prévisions météorologiques et les informations sur la qualité de l'air grâce aux API de l'Administration météorologique coréenne et de la Korea Environment Corporation.",
+        "stacks": ["react", "javascript", "tailwind"]
+      }
+    ]
+  },
+  "school": {
+    "schoolTitle": "04 - Formation",
+    "education": "Formation",
+    "gpa": "Moyenne",
+    "details": [
+      {
+        "period": "2021-2023",
+        "schoolName": "Université Nationale de Jeonbuk",
+        "country": "Jeonju, Corée du Sud",
+        "department": "Environnement et Énergie",
+        "degree": "Master",
+        "grade": "4.45 / 4.5",
+        "part": [
+          "Recherche sur le stockage du dioxyde de carbone.",
+          "Simulation de réservoirs.",
+          "Neutralité carbone.",
+          "Programmation scientifique (Matlab, Python).",
+          "Bases du développement Web (HTML/CSS, JavaScript)."
+        ]
+      },
+      {
+        "period": "2017-2021",
+        "schoolName": "Université de Technologie de Belfort-Montbéliard",
+        "country": "Belfort, France",
+        "department": "Énergie / Génie Électrique",
+        "degree": "Diplôme d'Ingénieur (accrédités CTI)",
+        "grade": "3.31 / 4.00",
+        "part": [
+          "Programmation avec Matlab et Simulink.",
+          "Étude des piles à combustible et des batteries.",
+          "Qualité de l'énergie électrique et électronique de puissance.",
+          "Énergies renouvelables."
+        ]
+      },
+      {
+        "period": "2015-2017",
+        "schoolName": "Université Claude Bernard Lyon 1",
+        "country": "Lyon, France",
+        "department": "Génie de la Maintenance",
+        "degree": "BUT (anciennement DUT)",
+        "grade": "3.35 / 4.00",
+        "part": [
+          "Bases en électricité, électronique, thermodynamique, mécanique et maintenance industrielle."
+        ]
+      }
+    ]
+  }
+}

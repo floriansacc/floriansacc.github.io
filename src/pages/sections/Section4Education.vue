@@ -66,7 +66,7 @@ import SectionLayout from "@/layout/SectionLayout.vue";
 import { ComponentPublicInstance, computed } from "vue";
 import { useI18n } from "vue-i18n";
 
-const { locale } = useI18n();
+const { locale } = useI18n({ useScope: "global" });
 
 const props = defineProps<{
   sectionRef?: (el: Element | ComponentPublicInstance | null) => void;
