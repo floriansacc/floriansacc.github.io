@@ -13,7 +13,7 @@
           <div class="flex flex-col items-start gap-2 select-none">
             <div
               v-for="(item, i) in navigationItems"
-              @click="scrollToIndex(i)"
+              @click="withNavigation ? navigate(i) : scrollToIndex(i)"
               :class="[
                 'w-full cursor-pointer rounded-md border-2 border-solid p-1 font-medium text-white transition-colors',
                 activeIndex === i ? 'border-white' : 'border-transparent',
@@ -29,12 +29,16 @@
 </template>
 
 <script setup lang="ts">
+import useNavigateToSection from "@/composables/useNavigateToSection";
 import { navigationItems } from "@/utils/public_constants";
+
+const { navigate } = useNavigateToSection();
 
 defineProps<{
   isMenuOpen: boolean;
-  activeIndex: number;
-  scrollToIndex: (index: number) => void;
+  activeIndex?: number;
+  scrollToIndex?: (index: number) => void;
+  withNavigation?: boolean;
 }>();
 
 const emit = defineEmits<{

@@ -1,5 +1,5 @@
 <template>
-  <SectionLayout>
+  <SectionLayout id="section-3">
     <div :ref="sectionRef" class="mb-5 px-4">
       <p class="title-mono mb-4">
         {{ $t("school.schoolTitle").toUpperCase() }}

@@ -1,5 +1,9 @@
 <template>
-  <SectionLayout>
+  <SectionLayout
+    id="section-2"
+    :with-line="withLine"
+    :padding-top-class="paddingTopClass"
+  >
     <div :ref="sectionRef" class="mb-5 px-4">
       <p class="title-mono mb-4">
         {{ $t("project.projectTitle").toUpperCase() }}
@@ -16,6 +20,11 @@
         :class="[
           'group border-line-strong sm:hover:border-label-alternative flex cursor-pointer flex-col gap-4 rounded-sm border border-solid p-8 shadow-xs transition-colors',
         ]"
+        @click="
+          typeof i === 'number'
+            ? $router.push({ name: projectRoutes.at(i) })
+            : undefined
+        "
       >
         <div class="flex justify-between">
           <h4 class="text-label-normal text-lg font-semibold md:text-xl">
@@ -47,7 +56,17 @@ import StackIcon from "@/components/StackIcon.vue";
 import SectionLayout from "@/layout/SectionLayout.vue";
 import { ArrowUpRight } from "@lucide/vue";
 
-defineProps<{
-  sectionRef?: (el: Element | ComponentPublicInstance | null) => void;
-}>();
+withDefaults(
+  defineProps<{
+    sectionRef?: (el: Element | ComponentPublicInstance | null) => void;
+    withLine?: boolean;
+    paddingTopClass?: string;
+  }>(),
+  {
+    withLine: true,
+    paddingTopClass: "pt-10 md:pt-20",
+  },
+);
+
+const projectRoutes = ["smile", "place", "hanaro", "weather"];
 </script>

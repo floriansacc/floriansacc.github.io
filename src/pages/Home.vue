@@ -1,22 +1,20 @@
 <template>
   <BaseLayout :scroll-to-index="scrollToIndex" :active-index="activeIndex">
-    <main class="w-full">
-      <Section0Intro :scroll-to-index="scrollToIndex" />
-      <Section1About
-        :section-ref="(el) => (sectionRefs[0] = el as HTMLElement)"
-      />
-      <Section2Career
-        :section-ref="(el) => (sectionRefs[1] = el as HTMLElement)"
-      />
-      <Section3Project
-        :section-ref="(el) => (sectionRefs[2] = el as HTMLElement)"
-      />
-      <Section4Education
-        :section-ref="(el) => (sectionRefs[3] = el as HTMLElement)"
-      />
+    <Section0Intro :scroll-to-index="scrollToIndex" />
+    <Section1About
+      :section-ref="(el) => (sectionRefs[0] = el as HTMLElement)"
+    />
+    <Section2Career
+      :section-ref="(el) => (sectionRefs[1] = el as HTMLElement)"
+    />
+    <Section3Project
+      :section-ref="(el) => (sectionRefs[2] = el as HTMLElement)"
+    />
+    <Section4Education
+      :section-ref="(el) => (sectionRefs[3] = el as HTMLElement)"
+    />
 
-      <Footer />
-    </main>
+    <Footer />
   </BaseLayout>
 </template>
 

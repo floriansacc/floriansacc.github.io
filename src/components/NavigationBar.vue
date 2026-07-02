@@ -11,7 +11,7 @@
       <div class="hidden items-center gap-2 select-none sm:flex">
         <p
           v-for="(item, i) in navigationItems"
-          @click="scrollToIndex(i)"
+          @click="withNavigation ? navigate(i) : scrollToIndex(i)"
           :class="[
             'sm:hover:text-label-hover cursor-pointer p-1 font-medium transition-colors',
             activeIndex === i ? 'text-blue-400' : '',
@@ -44,6 +44,7 @@
     </div>
 
     <MobileMenu
+      :with-navigation="withNavigation"
       :is-menu-open="isMenuOpen"
       :active-index="activeIndex"
       :scroll-to-index="scrollToIndex"
@@ -53,20 +54,24 @@
 </template>
 
 <script setup lang="ts">
-import { Menu, X } from "@lucide/vue";
-import MobileMenu from "./MobileMenu.vue";
-import { navigationItems } from "@/utils/public_constants.ts";
 import useMachineLocal from "@/composables/useMachineLocale.ts";
+import useNavigateToSection from "@/composables/useNavigateToSection.ts";
+import { navigationItems } from "@/utils/public_constants.ts";
+import MobileMenu from "@/components/MobileMenu.vue";
+import { Menu, X } from "@lucide/vue";
+
+const { saveLocal } = useMachineLocal();
+
+const { navigate } = useNavigateToSection();
 
 const props = defineProps<{
   isMenuOpen: boolean;
-  activeIndex: number;
-  scrollToIndex: (index: number) => void;
+  activeIndex?: number;
+  scrollToIndex?: (index: number) => void;
+  withNavigation?: boolean;
 }>();
 
 const emit = defineEmits<{
   menuClick: [value: boolean];
 }>();
-
-const { saveLocal } = useMachineLocal();
 </script>

@@ -2,10 +2,10 @@
   <div class="min-h-dvh min-w-0 flex-1">
     <NavigationBar
       :is-menu-open="isMenuOpen"
-      :scroll-to-index="scrollToIndex"
-      :active-index="activeIndex"
+      with-navigation
       @menu-click="(e) => (isMenuOpen = e)"
     />
+
     <main :class="['relative flex w-full flex-1 flex-col']">
       <slot />
     </main>
@@ -17,9 +17,4 @@ import { ref } from "vue";
 import NavigationBar from "@/components/NavigationBar.vue";
 
 const isMenuOpen = ref<boolean>(false);
-
-const props = defineProps<{
-  activeIndex: number;
-  scrollToIndex: (index: number) => void;
-}>();
 </script>

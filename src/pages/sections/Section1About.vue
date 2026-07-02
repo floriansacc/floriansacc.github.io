@@ -1,5 +1,5 @@
 <template>
-  <SectionLayout :with-line="false">
+  <SectionLayout id="section-0" :with-line="false">
     <div
       :ref="sectionRef"
       class="grid w-full grid-cols-1 justify-center gap-y-4 px-4 sm:gap-x-6 md:grid-cols-2 md:flex-row md:justify-evenly lg:gap-x-16"
