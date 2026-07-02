@@ -32,5 +32,6 @@ import useScrollIndex from "@/composables/useScrollIndex";
 
 const { sectionRefs, activeIndex, scrollToIndex } = useScrollIndex({
   indexNumber: 4,
+  offset: 40,
 });
 </script>
