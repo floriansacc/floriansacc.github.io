@@ -44,7 +44,6 @@
     "sql": "SQL",
     "mariaDb": "MariaDB"
   },
-
   "career": {
     "careerTitle": "02 - 경력",
     "professionalJourney": "경력 사항",
@@ -98,6 +97,21 @@
         "description": "국내 및 국제 기후변화 사업 구축/관리 (GCF, CTCN, 기상청 등)"
       }
     ]
+  },
+  "routeName": {
+    "smile": "스마일검진",
+    "place": "로카플레이스",
+    "hanaro": "더 하나로",
+    "weather": "날씨 앱",
+    "project": "프로젝트"
+  },
+  "menu": "메뉴",
+  "selectProject": "프로젝트",
+  "projectName": {
+    "smile": "스마일검진",
+    "place": "로카플레이스",
+    "hanaro": "더 하나로",
+    "weather": "날씨 앱"
   },
   "project": {
     "projectTitle": "03 - 프로젝트",

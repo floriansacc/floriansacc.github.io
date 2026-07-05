@@ -98,6 +98,21 @@
       }
     ]
   },
+  "routeName": {
+    "smile": "Smile Checkup",
+    "place": "Locaplace",
+    "hanaro": "The Hanaro",
+    "weather": "Météo",
+    "project": "Projets"
+  },
+  "menu": "Menu",
+  "selectProject": "Projets",
+  "projectName": {
+    "smile": "Smile Checkup",
+    "place": "Locaplace",
+    "hanaro": "The Hanaro",
+    "weather": "Météo"
+  },
   "project": {
     "projectTitle": "03 - Projets",
     "mobileAndWeb": "Mobile & Web",
@@ -118,7 +133,7 @@
         "stacks": ["flutter", "react", "tailwind", "javascript", "figma"]
       },
       {
-        "title": "Weather App (Projet personnel)",
+        "title": "Application Météo (Projet personnel)",
         "description": "Application Web météo fournissant les prévisions météorologiques et les informations sur la qualité de l'air grâce aux API de l'Administration météorologique coréenne et de la Korea Environment Corporation.",
         "stacks": ["react", "javascript", "tailwind"]
       }

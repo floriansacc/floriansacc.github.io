@@ -55,6 +55,7 @@ import { ComponentPublicInstance } from "vue";
 import StackIcon from "@/components/StackIcon.vue";
 import SectionLayout from "@/layout/SectionLayout.vue";
 import { ArrowUpRight } from "@lucide/vue";
+import { projectRoutes } from "@/utils/public_constants";
 
 withDefaults(
   defineProps<{
@@ -67,6 +68,4 @@ withDefaults(
     paddingTopClass: "pt-10 md:pt-20",
   },
 );
-
-const projectRoutes = ["smile", "place", "hanaro", "weather"];
 </script>

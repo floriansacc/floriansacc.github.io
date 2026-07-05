@@ -9,19 +9,39 @@
         aria-modal="true"
         @click="emit('menuClick', false)"
       >
-        <div class="mt-20 flex w-full flex-col gap-1 p-5">
-          <div class="flex flex-col items-start gap-2 select-none">
-            <div
+        <div class="mt-14 flex w-full flex-col gap-1 p-5 text-white">
+          <p class="pt-4 text-lg font-semibold">
+            {{ $t("menu") }}
+          </p>
+          <ul class="flex flex-col items-start gap-2 pl-4 select-none">
+            <li
               v-for="(item, i) in navigationItems"
               @click="withNavigation ? navigate(i) : scrollToIndex(i)"
               :class="[
-                'w-full cursor-pointer rounded-md border-2 border-solid p-1 font-medium text-white transition-colors',
+                'w-full cursor-pointer rounded-md border-2 border-solid p-1 text-sm font-medium transition-colors',
                 activeIndex === i ? 'border-white' : 'border-transparent',
               ]"
             >
               <span>{{ $t(`navigation.${item.key}`) }}</span>
-            </div>
-          </div>
+            </li>
+          </ul>
+
+          <p class="pt-4 text-lg font-semibold">
+            {{ $t("selectProject") }}
+          </p>
+
+          <ul class="pl-4">
+            <li
+              v-for="project in projectRoutes"
+              :key="`${project}-mobile`"
+              :class="[
+                'w-full cursor-pointer rounded-md border-2 border-solid border-transparent p-1 text-sm font-medium transition-colors',
+              ]"
+              @click="$router.push({ name: project })"
+            >
+              {{ $t(`projectName.${project}`) }}
+            </li>
+          </ul>
         </div>
       </div>
     </Transition>
@@ -30,7 +50,7 @@
 
 <script setup lang="ts">
 import useNavigateToSection from "@/composables/useNavigateToSection";
-import { navigationItems } from "@/utils/public_constants";
+import { navigationItems, projectRoutes } from "@/utils/public_constants";
 
 const { navigate } = useNavigateToSection();
 

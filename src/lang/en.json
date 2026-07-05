@@ -98,6 +98,21 @@
       }
     ]
   },
+  "routeName": {
+    "smile": "Smile Checkup",
+    "place": "Locaplace",
+    "hanaro": "The Hanaro",
+    "weather": "Weather App",
+    "project": "Projects"
+  },
+  "menu": "Menu",
+  "selectProject": "Projects",
+  "projectName": {
+    "smile": "Smile Checkup",
+    "place": "Locaplace",
+    "hanaro": "The Hanaro",
+    "weather": "Weather App"
+  },
   "project": {
     "projectTitle": "03 - Projects",
     "mobileAndWeb": "Mobile & Web",

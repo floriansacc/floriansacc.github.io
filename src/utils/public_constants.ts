@@ -25,3 +25,5 @@ export const techologyList: { key: string; logo: string }[] = [
   { key: "figma", logo: "assets/non-allowed/svg/icon_figma.svg" },
   { key: "tailwind", logo: "assets/non-allowed/svg/icon_tailwind.svg" },
 ];
+
+export const projectRoutes = ["smile", "place", "hanaro", "weather"];

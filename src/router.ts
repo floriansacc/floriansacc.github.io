@@ -11,11 +11,12 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/",
     component: Home,
+    name: "name",
   },
   {
     path: "/project",
     children: [
-      { path: "", component: ProjectView },
+      { path: "", component: ProjectView, name: "project" },
       { path: "smile", component: SmilePage, name: "smile" },
       { path: "place", component: PlacePage, name: "place" },
       { path: "hanaro", component: HanaroPage, name: "hanaro" },

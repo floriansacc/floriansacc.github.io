@@ -1,8 +1,5 @@
 <template>
   <ProjectLayout>
-    <div class="w-fit px-6 pt-5 sm:px-10">
-      <BackButton to="/" />
-    </div>
     <Section3Project :with-line="false" padding-top-class="pt-10" />
   </ProjectLayout>
 </template>
