@@ -31,7 +31,7 @@
         </p>
 
         <div
-          class="text-label-grey flex flex-col gap-2 text-sm whitespace-pre-wrap sm:text-base"
+          class="text-label-grey flex flex-col gap-2 text-justify text-sm whitespace-pre-wrap sm:text-base md:text-left"
         >
           <i18n-t
             scope="global"
