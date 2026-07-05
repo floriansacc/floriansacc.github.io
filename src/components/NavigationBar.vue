@@ -1,13 +1,13 @@
 <template>
   <nav
-    class="border-line-strong sticky top-0 z-49 flex h-14 items-center justify-between border-b border-solid bg-white/50 px-5 py-2 backdrop-blur-md transition-colors"
+    class="border-line-strong bg-bg-claude/50 sticky top-0 z-49 flex h-14 items-center justify-between border-b border-solid px-5 py-2 backdrop-blur-sm transition-colors"
   >
     <div>
       <p class="font-mono font-semibold tracking-wider uppercase">
         {{ $t("message.portfolio") }}
       </p>
     </div>
-    <div class="flex gap-2">
+    <div class="flex md:gap-4 lg:gap-8">
       <div class="hidden items-center gap-2 select-none sm:flex">
         <p
           v-for="(item, i) in navigationItems"
@@ -22,7 +22,7 @@
       </div>
       <select
         v-model="$i18n.locale"
-        class="border-line-strong subtitle-mono min-w-10 rounded-lg border border-solid p-1"
+        class="border-line-strong subtitle-mono min-w-10 rounded-lg border border-solid bg-white p-1"
         @change="saveLocal"
       >
         <option
