@@ -13,7 +13,7 @@
           <p class="pt-4 text-lg font-semibold">
             {{ $t("menu") }}
           </p>
-          <ul class="flex flex-col items-start gap-2 pl-4 select-none">
+          <ul class="flex flex-col items-start gap-1.5 pt-1 pl-4 select-none">
             <li
               v-for="(item, i) in navigationItems"
               @click="withNavigation ? navigate(i) : scrollToIndex(i)"
@@ -30,12 +30,13 @@
             {{ $t("selectProject") }}
           </p>
 
-          <ul class="pl-4">
+          <ul class="flex flex-col items-start gap-1.5 pt-1 pl-4 select-none">
             <li
               v-for="project in projectRoutes"
               :key="`${project}-mobile`"
               :class="[
                 'w-full cursor-pointer rounded-md border-2 border-solid border-transparent p-1 text-sm font-medium transition-colors',
+                $route.name === project ? 'border-white' : 'border-transparent',
               ]"
               @click="$router.push({ name: project })"
             >

@@ -28,15 +28,20 @@
       <span v-if="withNavigation && currentRouteName">/</span>
       <p
         v-if="withNavigation && currentRouteName"
-        class="font-medium tracking-wider uppercase"
+        class="text-xs font-medium tracking-wider uppercase sm:text-sm lg:text-base"
       >
         {{ currentRouteName }}
       </p>
 
-      <div ref="dropdownRef" class="relative inline-block">
+      <!-- // project selector -->
+      <div
+        v-if="withNavigation"
+        ref="dropdownRef"
+        class="relative hidden md:inline-block"
+      >
         <button
           @click="toggle"
-          class="select-mono sm:hover:bg-bg-alternative/70 hidden rounded-md p-1 text-base transition-colors md:block"
+          class="select-mono sm:hover:bg-bg-alternative/70 rounded-md p-1 text-base transition-colors"
         >
           <ChevronDownIcon class="h-4 w-4" />
         </button>
@@ -49,7 +54,12 @@
             <li
               v-for="project in projectRoutes"
               :key="project"
-              class="cursor-pointer px-4 py-2 whitespace-pre transition-colors sm:hover:bg-gray-100"
+              :class="[
+                'cursor-pointer px-4 py-2 whitespace-pre transition-colors',
+                $route.name === project
+                  ? 'bg-bg-muted'
+                  : 'sm:hover:bg-gray-100',
+              ]"
               @click="$router.push({ name: project })"
             >
               {{ $t(`projectName.${project}`) }}
