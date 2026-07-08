@@ -185,5 +185,57 @@
         ]
       }
     ]
+  },
+
+  "role": "Role",
+  "year": "Year",
+  "duration": "Duration",
+  "team": "team",
+  "viewWebsite": "Live site",
+
+  "overviewTitle": "01 - Overview",
+  "stackTitle": "02 - Stack",
+  "galleryTitle": "03 - Gallery",
+  "theProblemAndSolution": "The Problem & Solution",
+  "technologyUsed": "Technologies Used",
+  "keyScreens": "Key Screens",
+  "frontend": "Frontend",
+  "backend": "Backend",
+  "infrastructure": "Infrastructure",
+  "disclaimerImage": "The above images are owned by {company} and will not be used for commercial purposes, and will only be used for reference and personal purposes.",
+
+  "smileProject": {
+    "title": "03 - Projects / Smile Checkup",
+    "name": "Smile Checkup",
+    "conpany": "SmileMoa",
+    "description": "Event-based Health care platform for eye surgery reservation, hospital comparisons and nearby hospital search. Admin and analytics page separating admins and hospital admins",
+    "role": "Full-Stack Developer",
+    "year": "2025-2026",
+    "duration": "1 year (on progress)",
+    "team": "Company",
+    "problemAndSolution": "Although the mobile application had already been developed before I joined the project, its architecture lacked proper state management, reusable components, and a clear separation of business logic. As a result, the codebase was difficult to maintain and extend.\n\nAfter gaining a thorough understanding of the application's core features, I began a complete refactoring of the project. This included redesigning the state management architecture, improving the routing structure, separating UI from business logic, and introducing reusable components. Within approximately three months, the application had been fully refactored into a maintainable codebase, allowing new features to be developed more efficiently.\n\nThe backend and database schema were also redesigned to improve scalability and support future feature development. On the administrative side, I implemented a clear separation between system administrators and hospital administrators, along with a content approval workflow to validate uploaded content before publication. Finally, I designed and developed a dashboard and analytics system to provide insights into user behavior and application usage, enabling more informed product decisions.",
+    "frontendStack": [
+      "Flutter",
+      "Bloc",
+      "Nuxt",
+      "Vue (SPA)",
+      "Chart.js",
+      "Tailwind"
+    ],
+    "backendStack": [
+      "Node.js",
+      "Docker",
+      "Sequelize",
+      "Cron scheduler",
+      "WebSocket",
+      "SQL (MariaDB)",
+      "Firebase FCM & Analytics"
+    ],
+    "infrastructureStack": [
+      "AWS",
+      "Private EC2",
+      "S3",
+      "Elastic Container Registry"
+    ]
   }
 }

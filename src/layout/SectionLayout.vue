@@ -3,8 +3,9 @@
     <div v-if="withLine" class="bg-line-strong h-px w-full"></div>
     <div
       :class="[
-        'flex h-fit min-h-screen w-full flex-col px-2 pb-10 md:px-[2vw] xl:px-[5vw] xl:pb-20',
+        'flex h-fit w-full flex-col px-2 pb-10 md:px-[2vw] xl:px-[5vw] xl:pb-20',
         paddingTopClass,
+        minHClass,
       ]"
     >
       <slot />
@@ -17,10 +18,12 @@ withDefaults(
   defineProps<{
     withLine?: boolean;
     paddingTopClass?: string;
+    minHClass?: string;
   }>(),
   {
     withLine: true,
     paddingTopClass: "pt-10 md:pt-20",
+    minHClass: "min-h-screen",
   },
 );
 </script>
