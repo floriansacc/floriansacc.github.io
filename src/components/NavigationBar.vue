@@ -25,13 +25,6 @@
           {{ $t("message.portfolio") }}
         </p>
       </RouterLink>
-      <span v-if="withNavigation && currentRouteName">/</span>
-      <p
-        v-if="withNavigation && currentRouteName"
-        class="text-xs font-medium tracking-wider uppercase sm:text-sm lg:text-base"
-      >
-        {{ currentRouteName }}
-      </p>
 
       <!-- // project selector -->
       <div
@@ -39,12 +32,23 @@
         ref="dropdownRef"
         class="relative hidden md:inline-block"
       >
-        <button
+        <div
+          class="group flex cursor-pointer items-center gap-1.5"
           @click="toggle"
-          class="select-mono sm:hover:bg-bg-alternative/70 rounded-md p-1 text-base transition-colors"
         >
-          <ChevronDownIcon class="h-4 w-4" />
-        </button>
+          <span v-if="withNavigation && currentRouteName">/</span>
+          <p
+            v-if="withNavigation && currentRouteName"
+            class="text-xs font-medium sm:text-sm lg:text-base"
+          >
+            {{ currentRouteName.toUpperCase() }}
+          </p>
+          <button
+            class="select-mono sm:group-hover:bg-bg-alternative/70 cursor-pointer rounded-md p-1 text-base transition-colors"
+          >
+            <ChevronDownIcon class="h-4 w-4" />
+          </button>
+        </div>
 
         <div
           v-show="isOpen"
