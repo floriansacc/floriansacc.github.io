@@ -233,7 +233,7 @@
     ],
     "infrastructureStack": [
       "AWS",
-      "Private EC2",
+      "Load Balancer, Private VPC, EC2",
       "S3",
       "Elastic Container Registry"
     ]

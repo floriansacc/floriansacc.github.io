@@ -183,5 +183,57 @@
         "part": ["전기, 전자, 열역학, 기계공학 기초 교육"]
       }
     ]
+  },
+
+  "role": "역할",
+  "year": "연도",
+  "duration": "기간",
+  "team": "팀",
+  "viewWebsite": "라이브 사이트",
+
+  "overviewTitle": "01 - 개요",
+  "stackTitle": "02 - 스택",
+  "galleryTitle": "03 - 갤러리",
+  "theProblemAndSolution": "문제점 및 해결방안",
+  "technologyUsed": "활용한 기술",
+  "keyScreens": "주요 화면",
+  "frontend": "프론트엔드",
+  "backend": "백엔드",
+  "infrastructure": "인프라",
+  "disclaimerImage": "위 이미지는 {company}의 소유이며, 상업적 목적으로 사용하지 않을 것이며, 오직 참고 및 개인적인 용도로만 활용할 것입니다.",
+
+  "smileProject": {
+    "title": "03 - 프로젝트 / 스마일검진",
+    "name": "스마일검진",
+    "conpany": "스마일모아",
+    "description": "할인이벤트 빠른비교, 안과 스마일라식 백내장수술, 치과, 성형피부과 예약. Analytics, 일반 관리자 및 병원 관리자 시스템 구축했습니다.",
+    "role": "풀스택 개발자",
+    "year": "2025-2026",
+    "duration": "1년 (진행중)",
+    "team": "회사",
+    "problemAndSolution": "프로젝트에 합류하기 전 모바일 어플리케이션은 어느 정도 개발되어 있었지만, 상태 관리 구조가 체계적이지 않았으며 재사용 가능한 컴포넌트와 비즈니스 로직의 명확한 분리가 이루어지지 않아서 코드의 유지보수와 확장성이 크게 떨어지는 상태였습니다.\n\n먼저 어플리케이션의 핵심 기능을 충분히 분석하고 이해한 후, 프로젝트 전반에 리팩토링을 진행했습니다. 상태 관리 구조를 새롭게 설계하고, 라우팅 구조를 개선했으며, UI와 비즈니스 로직을 분리하고 재사용 가능한 컴포넌트를 도입했습니다. 약 3개월에 걸쳐 전체 코드베이스를 유지보수하기 쉬운 구조로 개선했으며, 이후에는 새로운 기능을 보다 효율적으로 개발할 수 있는 기반을 마련했습니다.\n\n또한 향후 기능 확장성과 안정성을 고려하여 백엔드와 데이터베이스 스키마를 재설계했습니다. 관리자 페이지에서는 일반 관리자와 병원 관리자의 권한을 명확히 분리하고, 업로드된 콘텐츠를 게시 전에 검수할 수 있는 승인 프로세스를 구축했습니다. 마지막으로 사용자 행동과 서비스 이용 현황을 분석할 수 있는 대시보드와 Analytics 시스템을 설계 및 개발하여, 데이터 기반의 의사결정을 지원할 수 있도록 했습니다.",
+    "frontendStack": [
+      "Flutter",
+      "Bloc",
+      "Nuxt",
+      "Vue (SPA)",
+      "Chart.js",
+      "Tailwind"
+    ],
+    "backendStack": [
+      "Node.js",
+      "Docker",
+      "Sequelize",
+      "Cron scheduler",
+      "WebSocket",
+      "SQL (MariaDB)",
+      "Firebase FCM & Analytics"
+    ],
+    "infrastructureStack": [
+      "AWS",
+      "Load Balancer, Private VPC, EC2",
+      "S3",
+      "Elastic Container Registry"
+    ]
   }
 }
