@@ -185,5 +185,56 @@
         ]
       }
     ]
+  },
+
+  "role": "Rôle",
+  "year": "Année",
+  "duration": "Période",
+  "team": "Équipe",
+  "viewWebsite": "Voir le site",
+
+  "overviewTitle": "01 - Général",
+  "stackTitle": "02 - Stack",
+  "galleryTitle": "03 - Gallerie",
+  "theProblemAndSolution": "Problèmes & Solutions",
+  "technologyUsed": "Technologies utilisées",
+  "keyScreens": "Key Screens",
+  "frontend": "Frontend",
+  "backend": "Backend",
+  "infrastructure": "Infrastructure",
+  "disclaimerImage": "The above images are owned by {company} and will not be used for commercial purposes, and will only be used for reference and personal purposes.",
+
+  "smileProject": {
+    "title": "03 - Projects / Smile Checkup",
+    "name": "Smile Checkup",
+    "conpany": "SmileMoa",
+    "description": "Smile Checkup est une plateforme de santé permettant aux utilisateurs de découvrir et de comparer des services médicaux ainsi que des offres promotionnelles dans différents domaines, notamment l'ophtalmologie (LASIK, LASEK, chirurgie de la cataracte), la dentisterie, la dermatologie, la chirurgie esthétique et les bilans de santé complets. L'application propose également des fonctionnalités telles que la recherche d'établissements médicaux à proximité, la comparaison entre hôpitaux et cliniques, les notifications des événements des établissements favoris, ainsi que les demandes de bilans de santé destinés aux entreprises.",
+    "year": "2025-2026",
+    "duration": "1 an (en cours)",
+    "team": "Entreprise",
+    "problemAndSolution": "Lorsque j'ai rejoint le projet, l'application mobile était déjà en partie développée, mais son architecture ne reposait pas sur une gestion d'état adaptée, des composants réutilisables ou une séparation claire de la logique métier. Par conséquent, j'ai jugé le code difficile à maintenir et à faire évoluer.pour la suite\n\nAprès avoir acquis une compréhension approfondie des fonctionnalités principales de l'application, j'ai entrepris une refonte complète du projet. Celle-ci a consisté à repenser l'architecture de gestion d'état, améliorer le système de navigation, séparer l'interface utilisateur de la logique métier et introduire des composants réutilisables. Environ trois mois ont été nécessaires pour transformer l'application en une base de code propre et maintenable, permettant ensuite le développement de nouvelles fonctionnalités de manière beaucoup plus efficace.\n\nLe backend ainsi que le schéma de la base de données ont également été repensés afin d'améliorer leur évolutivité et de faciliter l'ajout de futures fonctionnalités. Côté administration, j'ai mis en place une séparation claire entre les administrateurs de la plateforme et les administrateurs des hôpitaux, accompagnée d'un processus de validation des contenus avant leur publication. Enfin, j'ai conçu et développé un tableau de bord ainsi qu'un système d'analytique permettant de mieux comprendre le comportement des utilisateurs et l'utilisation de l'application, afin de favoriser une prise de décision fondée sur les données.",
+    "frontendStack": [
+      "Flutter",
+      "Bloc",
+      "Nuxt",
+      "Vue (SPA)",
+      "Chart.js",
+      "Tailwind"
+    ],
+    "backendStack": [
+      "Node.js",
+      "Docker",
+      "Sequelize",
+      "Cron scheduler",
+      "WebSocket",
+      "SQL (MariaDB)",
+      "Firebase FCM & Analytics"
+    ],
+    "infrastructureStack": [
+      "AWS",
+      "Load Balancer, Private VPC, EC2",
+      "S3",
+      "Elastic Container Registry"
+    ]
   }
 }
