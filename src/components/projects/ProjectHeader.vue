@@ -57,13 +57,17 @@
   </SectionLayout>
 
   <!-- // 01 -->
-  <SectionLayout min-h-class="min-h-fit" class="mb-10 md:mb-16">
+  <SectionLayout
+    v-if="withOverview"
+    min-h-class="min-h-fit"
+    class="mb-10 md:mb-16"
+  >
     <div
       class="grid items-start gap-y-4 md:grid-cols-2 md:gap-x-6 md:px-5 lg:gap-x-10 xl:gap-x-12"
     >
       <div class="mb-5 px-4">
         <p class="title-mono mb-4">
-          {{ $t("overviewTitle").toUpperCase() }}
+          01 - {{ $t("overviewTitle").toUpperCase() }}
         </p>
         <h3 class="text-3xl sm:mb-6 md:text-4xl">
           {{ $t("theProblemAndSolution") }}
@@ -83,6 +87,7 @@
     <div class="flex flex-col items-start gap-y-4 md:px-5">
       <div class="mb-5 px-4">
         <p class="title-mono mb-4">
+          {{ withOverview ? "02 - " : "01 - " }}
           {{ $t("stackTitle").toUpperCase() }}
         </p>
         <h3 class="text-3xl sm:mb-6 md:text-4xl">
@@ -117,6 +122,7 @@
     <div class="flex flex-col items-start gap-y-4 md:px-5">
       <div class="mb-5 px-4">
         <p class="title-mono mb-4">
+          {{ withOverview ? "03 - " : "02 - " }}
           {{ $t("galleryTitle").toUpperCase() }}
         </p>
         <h3 class="text-3xl sm:mb-6 md:text-4xl">
@@ -124,24 +130,9 @@
         </h3>
       </div>
 
-      <div class="grid w-full gap-4 md:grid-cols-2">
-        <div
-          v-for="(screen, i) in keyScreenUrlList"
-          :key="`${screen}-${i}`"
-          :class="[
-            'bg-bg-alternative border-line-strong flex shrink-0 overflow-hidden border border-solid',
-            i === 1 ? 'row-span-2 aspect-[1/1]' : 'aspect-[16/9]',
-          ]"
-        >
-          <img
-            v-for="value in screen"
-            :src="value"
-            :alt="value"
-            class="h-full w-full object-cover object-top"
-          />
-        </div>
-      </div>
-      <p class="text-label-alternative text-sm! italic">
+      <slot name="gallery"></slot>
+
+      <p v-if="withDisclaimer" class="text-label-alternative text-sm! italic">
         *{{
           $t("disclaimerImage", { company: $t(`${projecKeyI18n}.conpany`) })
         }}
@@ -154,19 +145,22 @@
 import { ExternalLink } from "@lucide/vue";
 import CustomButton from "../buttons/CustomButton.vue";
 import SectionLayout from "@/layout/SectionLayout.vue";
+import { StackStype } from "@/models/stack_type.ts";
 
 const gridItemList = ["role", "year", "duration", "team"];
-
-const stackList = ["frontend", "backend", "infrastructure"];
 
 withDefaults(
   defineProps<{
     projecKeyI18n: string;
     siteUrl?: string | null;
-    keyScreenUrlList: string[][];
+    withOverview?: boolean;
+    withDisclaimer?: boolean;
+    stackList: StackStype[];
   }>(),
   {
     siteUrl: null,
+    withOverview: true,
+    withDisclaimer: true,
   },
 );
 </script>

@@ -3,8 +3,29 @@
     <ProjectHeader
       projec-key-i18n="smileProject"
       site-url="https://smile-checkup.com"
-      :key-screen-url-list="keyScreenUrlList"
-    />
+      :with-overview="false"
+      :stack-list="['frontend', 'backend', 'infrastructure']"
+    >
+      <template #gallery>
+        <div class="grid w-full gap-4 md:grid-cols-2">
+          <div
+            v-for="(screen, i) in keyScreenUrlList"
+            :key="`${screen}-${i}`"
+            :class="[
+              'bg-bg-alternative border-line-strong flex shrink-0 overflow-hidden border border-solid',
+              i === 1 ? 'row-span-2 aspect-[1/1]' : 'aspect-[16/9]',
+            ]"
+          >
+            <img
+              v-for="value in screen"
+              :src="value"
+              :alt="value"
+              class="h-full w-full object-cover object-top"
+            />
+          </div>
+        </div>
+      </template>
+    </ProjectHeader>
     <Footer />
   </ProjectLayout>
 </template>

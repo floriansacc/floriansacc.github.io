@@ -114,7 +114,7 @@
     "weather": "Weather App"
   },
   "project": {
-    "projectTitle": "03 - Projects",
+    "projectTitle": "Projects",
     "mobileAndWeb": "Mobile & Web",
     "projects": [
       {
@@ -193,9 +193,9 @@
   "team": "team",
   "viewWebsite": "Live site",
 
-  "overviewTitle": "01 - Overview",
-  "stackTitle": "02 - Stack",
-  "galleryTitle": "03 - Gallery",
+  "overviewTitle": "Overview",
+  "stackTitle": "Stack",
+  "galleryTitle": "Gallery",
   "theProblemAndSolution": "The Problems & Solutions",
   "technologyUsed": "Technologies Used",
   "keyScreens": "Key Screens",
@@ -205,11 +205,11 @@
   "disclaimerImage": "The above images are owned by {company} and will not be used for commercial purposes, and will only be used for reference and personal purposes.",
 
   "smileProject": {
-    "title": "03 - Projects / Smile Checkup",
+    "title": "Projects / Smile Checkup",
     "name": "Smile Checkup",
     "conpany": "SmileMoa",
     "description": "Smile Checkup is a healthcare platform that allows users to discover and compare medical services and promotional offers across various specialties, including ophthalmology (LASIK, LASEK, cataract surgery, etc..), dentistry, dermatology, plastic surgery, and comprehensive health checkups. The application provides features such as nearby hospital search, hospital comparison, notifications for bookmarked hospital events, and corporate health checkup inquiries.",
-    "role": "Full-Stack Developer",
+    "role": "Full-Stack Development",
     "year": "2025-2026",
     "duration": "1 year (on progress)",
     "team": "Company",
@@ -237,5 +237,20 @@
       "S3",
       "Elastic Container Registry"
     ]
+  },
+
+  "weather": {
+    "title": "Projects / Weather App",
+    "name": "Weather App",
+    "conpany": "Side-project",
+    "description": "Weather Web Application providing weather and air quality information, using API of the Korea Meteorological Administration and the Korea Environment Corporation.",
+    "role": "Front-end Development",
+    "year": "2023-09 ~ 2024-04",
+    "duration": "7 months",
+    "team": "Self",
+    "problemAndSolution": "",
+    "frontendStack": ["React", "Html", "CSS", "Chart.js", "REST API"],
+    "backendStack": [],
+    "infrastructureStack": []
   }
 }

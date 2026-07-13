@@ -114,7 +114,7 @@
     "weather": "Météo"
   },
   "project": {
-    "projectTitle": "03 - Projets",
+    "projectTitle": "03 Projets",
     "mobileAndWeb": "Mobile & Web",
     "projects": [
       {
@@ -193,9 +193,9 @@
   "team": "Équipe",
   "viewWebsite": "Voir le site",
 
-  "overviewTitle": "01 - Général",
-  "stackTitle": "02 - Stack",
-  "galleryTitle": "03 - Gallerie",
+  "overviewTitle": "Général",
+  "stackTitle": "Stack",
+  "galleryTitle": "Gallerie",
   "theProblemAndSolution": "Problèmes & Solutions",
   "technologyUsed": "Technologies utilisées",
   "keyScreens": "Key Screens",
@@ -205,10 +205,11 @@
   "disclaimerImage": "The above images are owned by {company} and will not be used for commercial purposes, and will only be used for reference and personal purposes.",
 
   "smileProject": {
-    "title": "03 - Projects / Smile Checkup",
+    "title": "Projects / Smile Checkup",
     "name": "Smile Checkup",
     "conpany": "SmileMoa",
     "description": "Smile Checkup est une plateforme de santé permettant aux utilisateurs de découvrir et de comparer des services médicaux ainsi que des offres promotionnelles dans différents domaines, notamment l'ophtalmologie (LASIK, LASEK, chirurgie de la cataracte), la dentisterie, la dermatologie, la chirurgie esthétique et les bilans de santé complets. L'application propose également des fonctionnalités telles que la recherche d'établissements médicaux à proximité, la comparaison entre hôpitaux et cliniques, les notifications des événements des établissements favoris, ainsi que les demandes de bilans de santé destinés aux entreprises.",
+    "role": "Full-Stack Dévelopement",
     "year": "2025-2026",
     "duration": "1 an (en cours)",
     "team": "Entreprise",
