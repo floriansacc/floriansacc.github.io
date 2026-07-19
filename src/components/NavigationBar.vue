@@ -79,8 +79,10 @@
           v-for="(item, i) in navigationItems"
           @click="withNavigation ? navigate(i) : scrollToIndex(i)"
           :class="[
-            'sm:hover:text-label-hover cursor-pointer p-1 text-base font-medium transition-colors',
-            activeIndex === i ? 'text-blue-400' : '',
+            'cursor-pointer p-1 text-base font-medium transition-colors',
+            activeIndex === i
+              ? 'text-blue-400 sm:hover:text-blue-600'
+              : 'sm:hover:text-label-hover',
           ]"
         >
           {{ $t(`navigation.${item.key}`) }}
