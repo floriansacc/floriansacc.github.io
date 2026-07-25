@@ -23,13 +23,13 @@
           {{ $t(`${projecKeyI18n}.description`) }}
         </p>
 
-        <div>
+        <div class="group">
           <a v-if="siteUrl" :href="siteUrl" target="_blank">
             <CustomButton>
               {{ $t("viewWebsite") }}
 
               <ExternalLink
-                class="size-5 transition-transform group-hover:translate-x-1 group-hover:-rotate-45"
+                class="size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-110"
               />
             </CustomButton>
           </a>

@@ -26,7 +26,7 @@
           <CustomButton @click="scrollToIndex(2)" class="group">
             {{ $t("intro.viewProjects") }}
             <ArrowRight
-              class="size-5 transition-transform group-hover:translate-x-1 group-hover:-rotate-45"
+              class="size-5 transition-transform group-hover:translate-x-1 group-hover:rotate-90"
             />
           </CustomButton>
           <CustomButton @click="scrollToIndex(0)" button-type="outline-primary">
