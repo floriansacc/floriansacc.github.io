@@ -19,7 +19,7 @@ const routes: RouteRecordRaw[] = [
       { path: "", component: ProjectView, name: "project" },
       { path: "smile", component: SmilePage, name: "smile" },
       { path: "place", component: PlacePage, name: "place" },
-      { path: "hanaro", component: HanaroPage, name: "hanaro" },
+      { path: "naro", component: HanaroPage, name: "naro" },
       { path: "weather", component: WeatherPage, name: "weather" },
     ],
   },

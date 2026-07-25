@@ -101,7 +101,7 @@
   "routeName": {
     "smile": "Smile Checkup",
     "place": "Locaplace",
-    "hanaro": "The Hanaro",
+    "naro": "The Hanaro",
     "weather": "Météo",
     "project": "Projets"
   },
@@ -110,7 +110,7 @@
   "projectName": {
     "smile": "Smile Checkup",
     "place": "Locaplace",
-    "hanaro": "The Hanaro",
+    "naro": "The Hanaro",
     "weather": "Météo"
   },
   "project": {

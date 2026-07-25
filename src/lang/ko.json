@@ -81,7 +81,7 @@
         "title": "프론트엔드 개발자 (모바일 & 웹)",
         "company": "wiilit inc.",
         "country": "대한민국 서울",
-        "description": "The Hanaro 개발 및 MyOneCare(헬스케어 서비스) 리팩토링",
+        "description": "'더 하나로'앱 개발 개발 및 마이원케어(헬스케어 서비스) 리팩토링",
         "part": [
           "{flutter} 모바일 어플리케이션 개발",
           "앱 내 데이터베이스(SQLite) 구축",
@@ -101,7 +101,7 @@
   "routeName": {
     "smile": "스마일검진",
     "place": "로카플레이스",
-    "hanaro": "더 하나로",
+    "naro": "더 하나로",
     "weather": "날씨 앱",
     "project": "프로젝트"
   },
@@ -110,7 +110,7 @@
   "projectName": {
     "smile": "스마일검진",
     "place": "로카플레이스",
-    "hanaro": "더 하나로",
+    "naro": "더 하나로",
     "weather": "날씨 앱"
   },
   "project": {
