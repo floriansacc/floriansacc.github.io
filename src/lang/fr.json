@@ -134,7 +134,7 @@
       },
       {
         "title": "Application Météo (Projet personnel)",
-        "description": "Application Web météo fournissant les prévisions météorologiques et les informations sur la qualité de l'air grâce aux API de l'Administration météorologique coréenne et de la Korea Environment Corporation.",
+        "description": "Application Web météo fournissant les prévisions météorologiques et les informations sur la qualité de l'air en Corée du Sud, grâce aux API de l'Administration météorologique coréenne et de la Korea Environment Corporation.",
         "stacks": ["react", "javascript", "tailwind"]
       }
     ]
@@ -205,7 +205,7 @@
   "disclaimerImage": "The above images are owned by {company} and will not be used for commercial purposes, and will only be used for reference and personal purposes.",
 
   "smileProject": {
-    "title": "Projects / Smile Checkup",
+    "title": "Projets / Smile Checkup",
     "name": "Smile Checkup",
     "conpany": "SmileMoa",
     "description": "Smile Checkup est une plateforme de santé permettant aux utilisateurs de découvrir et de comparer des services médicaux ainsi que des offres promotionnelles dans différents domaines, notamment l'ophtalmologie (LASIK, LASEK, chirurgie de la cataracte), la dentisterie, la dermatologie, la chirurgie esthétique et les bilans de santé complets. L'application propose également des fonctionnalités telles que la recherche d'établissements médicaux à proximité, la comparaison entre hôpitaux et cliniques, les notifications des événements des établissements favoris, ainsi que les demandes de bilans de santé destinés aux entreprises.",
@@ -237,5 +237,20 @@
       "S3",
       "Elastic Container Registry"
     ]
+  },
+
+  "weather": {
+    "title": "Projets / Application Météo",
+    "name": "Application Météo",
+    "conpany": "Projet Personnel",
+    "description": "Application Web météo fournissant les prévisions météorologiques et les informations sur la qualité de l'air en Corée du Sud, grâce aux API de l'Administration météorologique coréenne et de la Korea Environment Corporation.",
+    "role": "Front-end Développement",
+    "year": "2023-09 ~ 2024-04",
+    "duration": "7 mois",
+    "team": "Personnel",
+    "problemAndSolution": "",
+    "frontendStack": ["React", "Html", "CSS", "Chart.js", "REST API"],
+    "backendStack": [],
+    "infrastructureStack": []
   }
 }

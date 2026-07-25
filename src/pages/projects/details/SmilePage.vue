@@ -35,7 +35,7 @@ import Footer from "@/components/Footer.vue";
 import ProjectHeader from "@/components/projects/ProjectHeader.vue";
 import ProjectLayout from "@/layout/ProjectLayout.vue";
 
-const keyScreenUrlList = [
+const keyScreenUrlList: string[][] = [
   ["/assets/non-allowed/images/smile/dashboard.png"],
   [
     "/assets/non-allowed/images/smile/map_1.jpg",

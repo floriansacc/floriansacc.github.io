@@ -235,5 +235,20 @@
       "S3",
       "Elastic Container Registry"
     ]
+  },
+
+  "weather": {
+    "title": "프로젝트 / 날싸 앱",
+    "name": "날씨 앱",
+    "conpany": "사이드 프로젝트",
+    "description": "기상청과 한국환경공단 API를 활용하여 날씨와 대기질 정보를 제공하는 웹 어플리케이션입니다.",
+    "role": "프론트앤드 개발",
+    "year": "2023-09 ~ 2024-04",
+    "duration": "7 개월",
+    "team": "개인",
+    "problemAndSolution": "",
+    "frontendStack": ["React", "Html", "CSS", "Chart.js", "REST API"],
+    "backendStack": [],
+    "infrastructureStack": []
   }
 }
