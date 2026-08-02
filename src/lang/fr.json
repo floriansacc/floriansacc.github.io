@@ -125,7 +125,14 @@
       {
         "title": "Locaplace",
         "description": "Application mobile immobilière basée sur la localisation, intégrant la vérification d'identité, les paiements et une messagerie instantanée.",
-        "stacks": ["flutter", "next", "react", "typescript", "figma"]
+        "stacks": [
+          "flutter",
+          "next",
+          "react",
+          "typescript",
+          "figma",
+          "tailwind"
+        ]
       },
       {
         "title": "The Hanaro",
@@ -193,11 +200,15 @@
   "team": "Équipe",
   "viewWebsite": "Voir le site",
 
+  "mobile": "Mobile",
+  "web": "Web",
   "overviewTitle": "Général",
+  "featureTitle": "Fonctionnalité",
   "stackTitle": "Stack",
   "galleryTitle": "Gallerie",
   "theProblemAndSolution": "Problèmes & Solutions",
   "technologyUsed": "Technologies utilisées",
+  "featureDeveloped": "Principales Fonctionnalités Développé",
   "keyScreens": "Key Screens",
   "frontend": "Frontend",
   "backend": "Backend",
@@ -239,6 +250,34 @@
     ]
   },
 
+  "naro": {
+    "title": "Projets / The Hanaro",
+    "name": "The Hanaro v2",
+    "conpany": "wiilit",
+    "description": "Application mobile de santé développée avec Flutter, accompagnée d'un Backoffice d'administration et d'Analytics.",
+    "role": "Front-end Dévelopement",
+    "year": "2024-03 ~ 2025-02",
+    "duration": "11 mois",
+    "team": "Entreprise",
+    "problemAndSolution": "TODO",
+    "frontendStack": ["React", "Figma", "Html", "CSS", "Chart.js", "REST API"],
+    "mobileFeature": [
+      "Accès aux applications de santé (Google Fit, Samsung Health, iOS Santé) pour afficher le nombre de pas, les calories consommées ainsi que l'activités",
+      "Test InBody et affichage des resultats par connexion Bluetooth a une balance Xiaomi",
+      "Création de graphique pour affichage de données par semaines et mois (Fl Chart)",
+      "Base de données SQLite dans l'application",
+      "Implémentation de Firebase Messaging",
+      "Configuration de WebView dans l'application",
+      "Gestion des versions de l'application sur le store"
+    ],
+    "webFeature": [
+      "Analytics (Chart.js)",
+      "Download graph to specified image size",
+      "Convert data to Excel",
+      "Optimize React re-rendering"
+    ]
+  },
+
   "weather": {
     "title": "Projets / Application Météo",
     "name": "Application Météo",
@@ -249,8 +288,6 @@
     "duration": "7 mois",
     "team": "Personnel",
     "problemAndSolution": "",
-    "frontendStack": ["React", "Html", "CSS", "Chart.js", "REST API"],
-    "backendStack": [],
-    "infrastructureStack": []
+    "frontendStack": ["React", "Html", "CSS", "Chart.js", "REST API"]
   }
 }

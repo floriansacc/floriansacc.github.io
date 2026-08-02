@@ -13,17 +13,17 @@ export const myInfo = {
 };
 
 export const techologyList: { key: string; logo: string }[] = [
-  { key: "javascript", logo: "assets/non-allowed/svg/icon_javascript.svg" },
-  { key: "typescript", logo: "assets/non-allowed/svg/icon_typescript.svg" },
-  { key: "react", logo: "assets/non-allowed/svg/icon_react.svg" },
-  { key: "next", logo: "assets/non-allowed/svg/icon_next.svg" },
-  { key: "vue", logo: "assets/non-allowed/svg/icon_vue.svg" },
-  { key: "nuxt", logo: "assets/non-allowed/svg/icon_nuxt.svg" },
-  { key: "flutter", logo: "assets/non-allowed/svg/icon_flutter.svg" },
-  { key: "node", logo: "assets/non-allowed/svg/icon_node.svg" },
-  { key: "docker", logo: "assets/non-allowed/svg/icon_docker.svg" },
-  { key: "figma", logo: "assets/non-allowed/svg/icon_figma.svg" },
-  { key: "tailwind", logo: "assets/non-allowed/svg/icon_tailwind.svg" },
+  { key: "javascript", logo: "/assets/non-allowed/svg/icon_javascript.svg" },
+  { key: "typescript", logo: "/assets/non-allowed/svg/icon_typescript.svg" },
+  { key: "react", logo: "/assets/non-allowed/svg/icon_react.svg" },
+  { key: "next", logo: "/assets/non-allowed/svg/icon_next.svg" },
+  { key: "vue", logo: "/assets/non-allowed/svg/icon_vue.svg" },
+  { key: "nuxt", logo: "/assets/non-allowed/svg/icon_nuxt.svg" },
+  { key: "flutter", logo: "/assets/non-allowed/svg/icon_flutter.svg" },
+  { key: "node", logo: "/assets/non-allowed/svg/icon_node.svg" },
+  { key: "docker", logo: "/assets/non-allowed/svg/icon_docker.svg" },
+  { key: "figma", logo: "/assets/non-allowed/svg/icon_figma.svg" },
+  { key: "tailwind", logo: "/assets/non-allowed/svg/icon_tailwind.svg" },
 ];
 
 export const projectRoutes = ["smile", "place", "naro", "weather"];

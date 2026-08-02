@@ -125,11 +125,18 @@
       {
         "title": "로카플레이스",
         "description": "위치 기반 주거 모바일 어플리케이션으로, 본인 인증, 결제, 실시간 채팅 기능 설계했습니다.",
-        "stacks": ["flutter", "next", "react", "typescript", "figma"]
+        "stacks": [
+          "flutter",
+          "next",
+          "react",
+          "typescript",
+          "figma",
+          "tailwind"
+        ]
       },
       {
         "title": "더 하나로",
-        "description": "Flutter 로 개발한 헬스케어 모바일 어플리케이션으로, 관리자 페이지와 Analytics 백오피스를 함께 구축했습니다.",
+        "description": "Flutter로 개발한 헬스케어 모바일 어플리케이션으로, 관리자 페이지와 Analytics 백오피스를 함께 구축했습니다.",
         "stacks": ["flutter", "react", "tailwind", "javascript", "figma"]
       },
       {
@@ -191,11 +198,15 @@
   "team": "팀",
   "viewWebsite": "라이브 사이트",
 
+  "mobile": "모바일",
+  "web": "웹",
   "overviewTitle": "개요",
   "stackTitle": "스택",
+  "featureTitle": "기능",
   "galleryTitle": "갤러리",
   "theProblemAndSolution": "문제점 및 해결방안",
   "technologyUsed": "활용한 기술",
+  "featureDeveloped": "개발한 주요 기능",
   "keyScreens": "주요 화면",
   "frontend": "프론트엔드",
   "backend": "백엔드",
@@ -205,7 +216,7 @@
   "smileProject": {
     "title": "프로젝트 / 스마일검진",
     "name": "스마일검진",
-    "conpany": "스마일모아",
+    "conpany": "(주)스마일모아",
     "description": "스마일검진은 안과(라식·라섹 등), 치과, 피부·성형, 종합건강검진 등 의료 서비스와 이벤트를 비교·탐색할 수 있는 헬스케어 플랫폼입니다. 앱에서는 가까운 병의원 찾기, 병의원 간 비교, 찜한 병의원 이벤트 알림, 기업 단체 건강검진 문의 같은 기능을 제공한다고 안내합니다.",
     "role": "풀스택 개발",
     "year": "2025-2026",
@@ -237,6 +248,34 @@
     ]
   },
 
+  "naro": {
+    "title": "프로젝트 / 더 하나로",
+    "name": "더 하나로 v2",
+    "conpany": "(주)위릿",
+    "description": "Flutter로 개발한 헬스케어 모바일 어플리케이션으로, 관리자 페이지와 Analytics 백오피스를 함께 구축했습니다.",
+    "role": "프론트엔드 개발",
+    "year": "2024-03 ~ 2025-02",
+    "duration": "11개월",
+    "team": "회사",
+    "problemAndSolution": "TODO",
+    "frontendStack": ["React", "Figma", "Html", "CSS", "Chart.js", "REST API"],
+    "mobileFeature": [
+      "건강 앱(Google Fit, Samsung Health, iOS Health)과 연동하여 걸음수, 칼로리 소모 및 활동 어네지 표시",
+      "블루투스르 이용하여 샤오미 체중계를 통한 InBody 측정 및 결과 보기",
+      "주간 및 월간 그래프 제작 (Fl Chart)",
+      "온디바이스 SQLite 데이터베이스",
+      "Firebase Messaging 구현",
+      "인앱 웹뷰 구성",
+      "스토어 버전 관리"
+    ],
+    "webFeature": [
+      "통계 (Chart.js)",
+      "원하는 이미지 사이즈로 통계 그래프 다운로드",
+      "데이터 엑셀화",
+      "React re-rendering 최적화"
+    ]
+  },
+
   "weather": {
     "title": "프로젝트 / 날싸 앱",
     "name": "날씨 앱",
@@ -244,11 +283,9 @@
     "description": "기상청과 한국환경공단 API를 활용하여 날씨와 대기질 정보를 제공하는 웹 어플리케이션입니다.",
     "role": "프론트앤드 개발",
     "year": "2023-09 ~ 2024-04",
-    "duration": "7 개월",
+    "duration": "7개월",
     "team": "개인",
     "problemAndSolution": "",
-    "frontendStack": ["React", "Html", "CSS", "Chart.js", "REST API"],
-    "backendStack": [],
-    "infrastructureStack": []
+    "frontendStack": ["React", "Html", "CSS", "Chart.js", "REST API"]
   }
 }

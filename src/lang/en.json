@@ -125,7 +125,14 @@
       {
         "title": "Locaplace",
         "description": "Location-based housing mobile application, with identity verification, payments, real-time chatting.",
-        "stacks": ["flutter", "next", "react", "typescript", "figma"]
+        "stacks": [
+          "flutter",
+          "next",
+          "react",
+          "typescript",
+          "figma",
+          "tailwind"
+        ]
       },
       {
         "title": "The Hanaro",
@@ -193,11 +200,15 @@
   "team": "team",
   "viewWebsite": "Live site",
 
+  "mobile": "Mobile",
+  "web": "Web",
   "overviewTitle": "Overview",
   "stackTitle": "Stack",
+  "featureTitle": "Feature",
   "galleryTitle": "Gallery",
   "theProblemAndSolution": "The Problems & Solutions",
   "technologyUsed": "Technologies Used",
+  "featureDeveloped": "Main Feature Developed",
   "keyScreens": "Key Screens",
   "frontend": "Frontend",
   "backend": "Backend",
@@ -239,6 +250,34 @@
     ]
   },
 
+  "naro": {
+    "title": "Projects / The Hanaro",
+    "name": "The Hanaro v2",
+    "conpany": "wiilit",
+    "description": "Health care mobile Application built in Flutter, with admin and analytics backoffice",
+    "role": "Front-end Development",
+    "year": "2024-03 ~ 2025-02",
+    "duration": "11 months",
+    "team": "Company",
+    "problemAndSolution": "TODO",
+    "frontendStack": ["React", "Figma", "Html", "CSS", "Chart.js", "REST API"],
+    "mobileFeature": [
+      "Acces to Mobile Health Data (Google Fit, Samsung Health, iOS Health) to show step count, calorie burned and fitness activities",
+      "Bluetooth connection to Xiaomi scale for InBody test and result",
+      "Weekly and monthy graph data creation (Fl Chart)",
+      "On-device SQLite database",
+      "Firebase Messaging implementation",
+      "In-app WebView configuration",
+      "Store version management"
+    ],
+    "webFeature": [
+      "Analytics (Chart.js)",
+      "Download graph to specified image size",
+      "Convert data to Excel",
+      "Optimize React re-rendering"
+    ]
+  },
+
   "weather": {
     "title": "Projects / Weather App",
     "name": "Weather App",
@@ -249,8 +288,6 @@
     "duration": "7 months",
     "team": "Self",
     "problemAndSolution": "",
-    "frontendStack": ["React", "Html", "CSS", "Chart.js", "REST API"],
-    "backendStack": [],
-    "infrastructureStack": []
+    "frontendStack": ["React", "Html", "CSS", "Chart.js", "REST API"]
   }
 }

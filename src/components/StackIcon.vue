@@ -1,7 +1,10 @@
 <template>
   <div
     v-if="stackItem"
-    class="border-line-strong text-label-normal hover:bg-bg-muted group flex items-center justify-center gap-2 border border-solid px-3 py-2 transition-colors"
+    :class="[
+      'border-line-strong text-label-normal hover:bg-bg-muted group flex items-center justify-center gap-2 border border-solid px-3 py-2 transition-colors',
+      composition === 'vertical' ? 'flex-col' : '',
+    ]"
   >
     <img
       class="h-4.5 w-auto select-none sm:h-5.5"
@@ -20,9 +23,15 @@
 import { techologyList } from "@/utils/public_constants";
 import { computed } from "vue";
 
-const props = defineProps<{
-  stack: string;
-}>();
+const props = withDefaults(
+  defineProps<{
+    stack: string;
+    composition?: "horizontal" | "vertical";
+  }>(),
+  {
+    composition: "horizontal",
+  },
+);
 
 const stackItem = computed(() => {
   return techologyList.find((e) => e.key === props.stack) ?? null;

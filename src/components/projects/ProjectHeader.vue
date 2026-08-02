@@ -118,11 +118,50 @@
   </SectionLayout>
 
   <!-- // 03 -->
-  <SectionLayout min-h-class="min-h-fit" class="mb-10 md:mb-16">
+  <SectionLayout
+    v-if="featureList && featureList.length > 0"
+    min-h-class="min-h-fit"
+    class="mb-10 md:mb-16"
+  >
     <div class="flex flex-col items-start gap-y-4 md:px-5">
       <div class="mb-5 px-4">
         <p class="title-mono mb-4">
           {{ withOverview ? "03 - " : "02 - " }}
+          {{ $t("featureTitle").toUpperCase() }}
+        </p>
+        <h3 class="text-3xl sm:mb-6 md:text-4xl">
+          {{ $t("featureDeveloped") }}
+        </h3>
+      </div>
+
+      <div
+        class="border-line-strong grid w-full rounded-sm border border-solid md:grid-cols-3"
+      >
+        <div
+          v-for="main in featureList"
+          class="border-line-strong border-b px-8 py-6 last:border-b-0 md:border-r md:border-b-0 md:py-8 md:last:border-r-0"
+        >
+          <p class="subtitle-mono mb-6">
+            {{ $t(`${main}`).toUpperCase() }}
+          </p>
+
+          <ul
+            v-for="item in $tm(`${projecKeyI18n}.${main}Feature`)"
+            class="text-label-normal list-inside list-disc text-base md:text-lg"
+          >
+            <li class="py-1">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </SectionLayout>
+
+  <!-- // 04 -->
+  <SectionLayout min-h-class="min-h-fit" class="mb-10 md:mb-16">
+    <div class="flex flex-col items-start gap-y-4 md:px-5">
+      <div class="mb-5 px-4">
+        <p class="title-mono mb-4">
+          {{ withOverview ? "04 - " : "03 - " }}
           {{ $t("galleryTitle").toUpperCase() }}
         </p>
         <h3 class="text-3xl sm:mb-6 md:text-4xl">
@@ -143,9 +182,10 @@
 
 <script setup lang="ts">
 import { ExternalLink } from "@lucide/vue";
-import CustomButton from "../buttons/CustomButton.vue";
 import SectionLayout from "@/layout/SectionLayout.vue";
 import { StackStype } from "@/models/stack_type.ts";
+import { FeatureType } from "@/models/feature_type.ts";
+import CustomButton from "@/components/buttons/CustomButton.vue";
 
 const gridItemList = ["role", "year", "duration", "team"];
 
@@ -156,6 +196,7 @@ withDefaults(
     withOverview?: boolean;
     withDisclaimer?: boolean;
     stackList: StackStype[];
+    featureList?: FeatureType[];
   }>(),
   {
     siteUrl: null,
