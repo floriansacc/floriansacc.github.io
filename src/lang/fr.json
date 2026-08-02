@@ -118,31 +118,24 @@
     "mobileAndWeb": "Mobile & Web",
     "projects": [
       {
+        "name": "smile",
         "title": "Smile Checkup",
-        "description": "Plateforme de santé proposant la réservation d'interventions ophtalmologiques, la comparaison d'hôpitaux et la recherche d'établissements à proximité. Développement d'un système d'administration et d'Analytics distinguant administrateurs et administrateurs hôpitaux.",
-        "stacks": ["flutter", "nuxt", "vue", "typescript", "docker", "node"]
+        "description": "Plateforme de santé proposant la réservation d'interventions ophtalmologiques, la comparaison d'hôpitaux et la recherche d'établissements à proximité. Développement d'un système d'administration et d'Analytics distinguant administrateurs et administrateurs hôpitaux."
       },
       {
+        "name": "place",
         "title": "Locaplace",
-        "description": "Application mobile immobilière basée sur la localisation, intégrant la vérification d'identité, les paiements et une messagerie instantanée.",
-        "stacks": [
-          "flutter",
-          "next",
-          "react",
-          "typescript",
-          "figma",
-          "tailwind"
-        ]
+        "description": "Application mobile immobilière basée sur la localisation, intégrant la vérification d'identité, les paiements et une messagerie instantanée."
       },
       {
+        "name": "naro",
         "title": "The Hanaro",
-        "description": "Application mobile de santé développée avec Flutter, accompagnée d'un Backoffice d'administration et d'Analytics.",
-        "stacks": ["flutter", "react", "tailwind", "javascript", "figma"]
+        "description": "Application mobile de santé développée avec Flutter, accompagnée d'un Backoffice d'administration et d'Analytics."
       },
       {
+        "name": "weather",
         "title": "Application Météo (Projet personnel)",
-        "description": "Application Web météo fournissant les prévisions météorologiques et les informations sur la qualité de l'air en Corée du Sud, grâce aux API de l'Administration météorologique coréenne et de la Korea Environment Corporation.",
-        "stacks": ["react", "javascript", "tailwind"]
+        "description": "Application Web météo fournissant les prévisions météorologiques et les informations sur la qualité de l'air en Corée du Sud, grâce aux API de l'Administration météorologique coréenne et de la Korea Environment Corporation."
       }
     ]
   },

@@ -118,31 +118,24 @@
     "mobileAndWeb": "모바일 & 웹",
     "projects": [
       {
+        "name": "smile",
         "title": "스마일검진",
-        "description": "할인이벤트 빠른비교, 안과 스마일라식 백내장수술, 치과, 성형피부과 예약. Analytics, 일반 관리자 및 병원 관리자 시스템 구축했습니다.",
-        "stacks": ["flutter", "nuxt", "vue", "typescript", "docker", "node"]
+        "description": "할인이벤트 빠른비교, 안과 스마일라식 백내장수술, 치과, 성형피부과 예약. Analytics, 일반 관리자 및 병원 관리자 시스템 구축했습니다."
       },
       {
+        "name": "place",
         "title": "로카플레이스",
-        "description": "위치 기반 주거 모바일 어플리케이션으로, 본인 인증, 결제, 실시간 채팅 기능 설계했습니다.",
-        "stacks": [
-          "flutter",
-          "next",
-          "react",
-          "typescript",
-          "figma",
-          "tailwind"
-        ]
+        "description": "위치 기반 주거 모바일 어플리케이션으로, 본인 인증, 결제, 실시간 채팅 기능 설계했습니다."
       },
       {
+        "name": "naro",
         "title": "더 하나로",
-        "description": "Flutter로 개발한 헬스케어 모바일 어플리케이션으로, 관리자 페이지와 Analytics 백오피스를 함께 구축했습니다.",
-        "stacks": ["flutter", "react", "tailwind", "javascript", "figma"]
+        "description": "Flutter로 개발한 헬스케어 모바일 어플리케이션으로, 관리자 페이지와 Analytics 백오피스를 함께 구축했습니다."
       },
       {
+        "name": "weather",
         "title": "날씨 앱 (개인 프로젝트)",
-        "description": "기상청과 한국환경공단 API를 활용하여 날씨와 대기질 정보를 제공하는 웹 어플리케이션입니다.",
-        "stacks": ["react", "javascript", "tailwind"]
+        "description": "기상청과 한국환경공단 API를 활용하여 날씨와 대기질 정보를 제공하는 웹 어플리케이션입니다."
       }
     ]
   },

@@ -27,3 +27,10 @@ export const techologyList: { key: string; logo: string }[] = [
 ];
 
 export const projectRoutes = ["smile", "place", "naro", "weather"];
+
+export const stacksPerProjects: Record<string, string[]> = {
+  smile: ["flutter", "nuxt", "vue", "typescript", "docker", "node"],
+  place: ["flutter", "next", "react", "typescript", "figma", "tailwind"],
+  naro: ["flutter", "react", "tailwind", "javascript", "figma"],
+  weather: ["react", "javascript", "tailwind"],
+};

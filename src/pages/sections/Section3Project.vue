@@ -40,8 +40,8 @@
 
         <div class="flex flex-wrap gap-2">
           <StackIcon
-            v-for="(stack, j) in item.stacks"
-            :key="`project-stack-${stack.key}-${i}-${j}`"
+            v-for="(stack, j) in stacksPerProjects[item.name]"
+            :key="`project-stack-${stack}-${i}-${j}`"
             :stack="stack"
           />
         </div>
@@ -68,4 +68,11 @@ withDefaults(
     paddingTopClass: "pt-10 md:pt-20",
   },
 );
+
+const stacksPerProjects: Record<string, string[]> = {
+  smile: ["flutter", "nuxt", "vue", "typescript", "docker", "node"],
+  place: ["flutter", "next", "react", "typescript", "figma", "tailwind"],
+  naro: ["flutter", "react", "tailwind", "javascript", "figma"],
+  weather: ["react", "javascript", "tailwind"],
+};
 </script>

@@ -118,31 +118,24 @@
     "mobileAndWeb": "Mobile & Web",
     "projects": [
       {
+        "name": "smile",
         "title": "Smile Checkup",
-        "description": "Event-based Health care platform for eye surgery reservation, hospital comparisons and nearby hospital search. Admin and analytics page separating admins and hospital admins",
-        "stacks": ["flutter", "nuxt", "vue", "typescript", "docker", "node"]
+        "description": "Event-based Health care platform for eye surgery reservation, hospital comparisons and nearby hospital search. Admin and analytics page separating admins and hospital admins"
       },
       {
+        "name": "place",
         "title": "Locaplace",
-        "description": "Location-based housing mobile application, with identity verification, payments, real-time chatting.",
-        "stacks": [
-          "flutter",
-          "next",
-          "react",
-          "typescript",
-          "figma",
-          "tailwind"
-        ]
+        "description": "Location-based housing mobile application, with identity verification, payments, real-time chatting."
       },
       {
+        "name": "naro",
         "title": "The Hanaro",
-        "description": "Health care mobile Application built in Flutter, with admin and analytics backoffice",
-        "stacks": ["flutter", "react", "tailwind", "javascript", "figma"]
+        "description": "Health care mobile Application built in Flutter, with admin and analytics backoffice"
       },
       {
+        "name": "weather",
         "title": "Weather App (Side Project)",
-        "description": "Weather Web Application providing weather and air quality information, using API of the Korea Meteorological Administration and the Korea Environment Corporation.",
-        "stacks": ["react", "javascript", "tailwind"]
+        "description": "Weather Web Application providing weather and air quality information, using API of the Korea Meteorological Administration and the Korea Environment Corporation."
       }
     ]
   },
