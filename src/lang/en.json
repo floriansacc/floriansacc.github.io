@@ -252,7 +252,7 @@
     "year": "2024-03 ~ 2025-02",
     "duration": "11 months",
     "team": "Company",
-    "problemAndSolution": "TODO",
+    "problemAndSolution": "One of the biggest challenges was developing a cross-platform healthcare application while accommodating the differences between Android and iOS. During development, Google deprecated the Google Fit API, requiring a redesign of the health data integration using Health Connect on Android while maintaining compatibility with iOS. This involved implementing different permission flows, data processing logic, and extensive testing across multiple devices.\n\nTo improve maintainability, I standardized API models and communication with the backend team, I built reusable components for features such as graphs and in-app mission systems, and continuously refactored the codebase using modern Flutter versions patterns. I also enhanced the application's reliability by implementing error handling for internal API responses, local database, Firebase Messaging, social login, deep links, and KakaoTalk Share functionality.\n\nFinally, I prepared the application for production by organizing platform-specific permissions, AndroidManifest and Info.plist configurations, managing TestFlight releases, and resolving app review requirements, resulting in a smooth App Store approval process.",
     "frontendStack": ["React", "Figma", "Html", "CSS", "Chart.js", "REST API"],
     "mobileFeature": [
       "Acces to Mobile Health Data (Google Fit, Samsung Health, iOS Health) to show step count, calorie burned and fitness activities",

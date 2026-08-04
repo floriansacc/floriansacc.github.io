@@ -250,7 +250,7 @@
     "year": "2024-03 ~ 2025-02",
     "duration": "11개월",
     "team": "회사",
-    "problemAndSolution": "TODO",
+    "problemAndSolution": "가장 큰 과제 중 하나는 Android와 iOS의 플랫폼별 차이를 고려하면서 크로스 플랫폼 헬스케어 어플리케이션을 개발하는 것이었습니다. 개발 과정에서 Google Fit API가 지원 종료(deprecated)됨에 따라 Android에서는 Health Connect를 활용한 건강 데이터 연동 방식을 새롭게 설계하고, 동시에 iOS와의 호환성도 유지해야 했습니다. 이를 위해 플랫폼별 권한 처리, 데이터 처리 방식 등을 각각 구현하고 다양한 기기에서 충분한 테스트를 진행했습니다.\n\n또한 유지보수 높이기 위해 백엔드 팀과 협의하여 API 모델과 통신 방식을 표준화했으며, 그래프와 앱 내 미션 시스템 등에서 재사용 가능한 컴포넌트를 개발했습니다. 아울러 최신 Flutter 개발 방식에 맞춰 지속적인 리팩토링을 수행했습니다. 또한 API 응답에 대한 에러 처리, 로컬 데이터베이스 개선 구현, Firebase Messaging, 소셜 로그인, 딥링크, 카카오톡 공유 기능 등을 구현하여 어플리케이션의 안정성과 완성도를 향상시켰습니다.\n\n마지막으로 플랫폼별 권한 설정, AndroidManifest 및 Info.plist 구성, TestFlight 배포 관리, 그리고 앱 심사 요구 사항을 대응하여 어플리케이션의 출시를 준비했으며, 그 결과 원활하게 App Store 심사를 통과할 수 있었습니다.",
     "frontendStack": ["React", "Figma", "Html", "CSS", "Chart.js", "REST API"],
     "mobileFeature": [
       "건강 앱(Google Fit, Samsung Health, iOS Health)과 연동하여 걸음수, 칼로리 소모 및 활동 어네지 표시",

@@ -22,7 +22,6 @@
         </h5>
 
         <div class="flex items-center gap-2 self-center sm:self-auto">
-          <!-- // TODO add redirect -->
           <CustomButton @click="scrollToIndex(2)" class="group">
             {{ $t("intro.viewProjects") }}
             <ArrowRight
