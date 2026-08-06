@@ -135,7 +135,10 @@
       </div>
 
       <div
-        class="border-line-strong grid w-full rounded-sm border border-solid md:grid-cols-3"
+        :class="[
+          'border-line-strong grid w-full rounded-sm border border-solid',
+          `md:grid-cols-${featureList.length || 1}`,
+        ]"
       >
         <div
           v-for="main in featureList"
@@ -173,7 +176,7 @@
 
       <p v-if="withDisclaimer" class="text-label-alternative text-sm! italic">
         *{{
-          $t("disclaimerImage", { company: $t(`${projecKeyI18n}.conpany`) })
+          $t("disclaimerImage", { company: $t(`${projecKeyI18n}.company`) })
         }}
       </p>
     </div>

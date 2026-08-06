@@ -2,6 +2,7 @@
   <ProjectLayout>
     <ProjectHeader
       projec-key-i18n="naro"
+      site-url="https://thehanaro.com/"
       :stack-list="['frontend']"
       :feature-list="['mobile', 'web']"
     >

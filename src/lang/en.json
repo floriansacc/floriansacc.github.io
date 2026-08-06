@@ -211,7 +211,7 @@
   "smileProject": {
     "title": "Projects / Smile Checkup",
     "name": "Smile Checkup",
-    "conpany": "SmileMoa",
+    "company": "Smilemoa Inc.",
     "description": "Smile Checkup is a healthcare platform that allows users to discover and compare medical services and promotional offers across various specialties, including ophthalmology (LASIK, LASEK, cataract surgery, etc..), dentistry, dermatology, plastic surgery, and comprehensive health checkups. The application provides features such as nearby hospital search, hospital comparison, notifications for bookmarked hospital events, and corporate health checkup inquiries.",
     "role": "Full-Stack Development",
     "year": "2025-2026",
@@ -223,8 +223,10 @@
       "Bloc",
       "Nuxt",
       "Vue (SPA)",
+      "TypeScript",
       "Chart.js",
-      "Tailwind"
+      "Tailwind",
+      "Figma"
     ],
     "backendStack": [
       "Node.js",
@@ -243,17 +245,58 @@
     ]
   },
 
+  "place": {
+    "title": "Projects / Locaplace",
+    "name": "Locaplace",
+    "company": "Plare Inc.",
+    "description": "Location-based housing mobile application, with identity verification, payments, real-time chatting.",
+    "role": "Front-end Development",
+    "year": "2025-02 ~ 2026-09",
+    "duration": "7 months",
+    "team": "Company",
+    "problemAndSolution": "TODO",
+    "frontendStack": [
+      "Flutter",
+      "Next",
+      "React (SPA)",
+      "TypeScript",
+      "Tailwind",
+      "Figma"
+    ],
+    "mobileFeature": [
+      "Location-based reservation search system (Kakao API)",
+      "English/Korean multilanguage app with automatic Translation (Papago API)",
+      "Payment System Integration (iOS and Android made separately)",
+      "Realtime chatting system (Firebase Firestore)",
+      "Korean Phone verification and Account verification system (NICE API)",
+      "Push Notification and UI updated according to",
+      "App Management, deployment and update on App Store / Google Play Store"
+    ],
+    "webFeature": [
+      "Building and development of Backoffice with Next (SSR)",
+      "Creation of App Landing page"
+    ]
+  },
+
   "naro": {
     "title": "Projects / The Hanaro",
     "name": "The Hanaro v2",
-    "conpany": "wiilit",
+    "company": "wiilit",
     "description": "Health care mobile Application built in Flutter, with admin and analytics backoffice",
     "role": "Front-end Development",
     "year": "2024-03 ~ 2025-02",
     "duration": "11 months",
     "team": "Company",
     "problemAndSolution": "One of the biggest challenges was developing a cross-platform healthcare application while accommodating the differences between Android and iOS. During development, Google deprecated the Google Fit API, requiring a redesign of the health data integration using Health Connect on Android while maintaining compatibility with iOS. This involved implementing different permission flows, data processing logic, and extensive testing across multiple devices.\n\nTo improve maintainability, I standardized API models and communication with the backend team, I built reusable components for features such as graphs and in-app mission systems, and continuously refactored the codebase using modern Flutter versions patterns. I also enhanced the application's reliability by implementing error handling for internal API responses, local database, Firebase Messaging, social login, deep links, and KakaoTalk Share functionality.\n\nFinally, I prepared the application for production by organizing platform-specific permissions, AndroidManifest and Info.plist configurations, managing TestFlight releases, and resolving app review requirements, resulting in a smooth App Store approval process.",
-    "frontendStack": ["React", "Figma", "Html", "CSS", "Chart.js", "REST API"],
+    "frontendStack": [
+      "React (Laravel)",
+      "JavaScript",
+      "Figma",
+      "Html",
+      "CSS",
+      "Chart.js",
+      "REST API"
+    ],
     "mobileFeature": [
       "Acces to Mobile Health Data (Google Fit, Samsung Health, iOS Health) to show step count, calorie burned and fitness activities",
       "Bluetooth connection to Xiaomi scale for InBody test and result",
@@ -274,13 +317,20 @@
   "weather": {
     "title": "Projects / Weather App",
     "name": "Weather App",
-    "conpany": "Side-project",
+    "company": "Side-project",
     "description": "Weather Web Application providing weather and air quality information, using API of the Korea Meteorological Administration and the Korea Environment Corporation.",
     "role": "Front-end Development",
     "year": "2023-09 ~ 2024-04",
     "duration": "7 months",
     "team": "Self",
     "problemAndSolution": "",
-    "frontendStack": ["React", "Html", "CSS", "Chart.js", "REST API"]
+    "frontendStack": [
+      "React (Create React App)",
+      "JavaScript",
+      "Html",
+      "CSS",
+      "Chart.js",
+      "REST API"
+    ]
   }
 }

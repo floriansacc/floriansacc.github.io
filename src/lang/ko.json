@@ -209,7 +209,7 @@
   "smileProject": {
     "title": "프로젝트 / 스마일검진",
     "name": "스마일검진",
-    "conpany": "(주)스마일모아",
+    "company": "(주)스마일모아",
     "description": "스마일검진은 안과(라식·라섹 등), 치과, 피부·성형, 종합건강검진 등 의료 서비스와 이벤트를 비교·탐색할 수 있는 헬스케어 플랫폼입니다. 앱에서는 가까운 병의원 찾기, 병의원 간 비교, 찜한 병의원 이벤트 알림, 기업 단체 건강검진 문의 같은 기능을 제공한다고 안내합니다.",
     "role": "풀스택 개발",
     "year": "2025-2026",
@@ -241,10 +241,43 @@
     ]
   },
 
+  "place": {
+    "title": "프로젝트 / 로카플레이스",
+    "name": "로카플레이스",
+    "company": "(주)플래어",
+    "description": "위치 기반 주거 모바일 어플리케이션으로, 본인 인증, 결제, 실시간 채팅 기능 설계했습니다.",
+    "role": "프론트엔드 개발",
+    "year": "2025-02 ~ 2026-09",
+    "duration": "7개월",
+    "team": "회사",
+    "problemAndSolution": "TODO",
+    "frontendStack": [
+      "Flutter",
+      "Next",
+      "React (SPA)",
+      "TypeScript",
+      "Tailwind",
+      "Figma"
+    ],
+    "mobileFeature": [
+      "카카오맵 API를 활용한 지도 기반 공간 탐색",
+      "다국어 지원: 한/영 앱 구성 및 자동 번역 (파파고 API)",
+      "결제 시스템 구현/연동 (웹뷰 기반, iOS/Android 각각 대응)",
+      "Firebase Firestore 기반 실시간 채팅 기능 구현",
+      "본인 인증(NICE) 및 계좌 인증 기능 개발",
+      "Firebase 메시징을 통한 푸시 알림 및 이에 대한 라우팅, UI 업데이트",
+      "App Store / Google Play Store 관리, 배포 및 업데이트"
+    ],
+    "webFeature": [
+      "Next.js 기반 SSR 관리자 웹페이지 설계 및 개발",
+      "랜딩 페이지 제작 및 개발"
+    ]
+  },
+
   "naro": {
     "title": "프로젝트 / 더 하나로",
     "name": "더 하나로 v2",
-    "conpany": "(주)위릿",
+    "company": "(주)위릿",
     "description": "Flutter로 개발한 헬스케어 모바일 어플리케이션으로, 관리자 페이지와 Analytics 백오피스를 함께 구축했습니다.",
     "role": "프론트엔드 개발",
     "year": "2024-03 ~ 2025-02",
@@ -272,7 +305,7 @@
   "weather": {
     "title": "프로젝트 / 날싸 앱",
     "name": "날씨 앱",
-    "conpany": "사이드 프로젝트",
+    "company": "사이드 프로젝트",
     "description": "기상청과 한국환경공단 API를 활용하여 날씨와 대기질 정보를 제공하는 웹 어플리케이션입니다.",
     "role": "프론트앤드 개발",
     "year": "2023-09 ~ 2024-04",

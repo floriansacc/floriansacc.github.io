@@ -211,7 +211,7 @@
   "smileProject": {
     "title": "Projets / Smile Checkup",
     "name": "Smile Checkup",
-    "conpany": "SmileMoa",
+    "company": "SmileMoa",
     "description": "Smile Checkup est une plateforme de santé permettant aux utilisateurs de découvrir et de comparer des services médicaux ainsi que des offres promotionnelles dans différents domaines, notamment l'ophtalmologie (LASIK, LASEK, chirurgie de la cataracte), la dentisterie, la dermatologie, la chirurgie esthétique et les bilans de santé complets. L'application propose également des fonctionnalités telles que la recherche d'établissements médicaux à proximité, la comparaison entre hôpitaux et cliniques, les notifications des événements des établissements favoris, ainsi que les demandes de bilans de santé destinés aux entreprises.",
     "role": "Full-Stack Dévelopement",
     "year": "2025-2026",
@@ -243,10 +243,43 @@
     ]
   },
 
+  "place": {
+    "title": "Projects / Locaplace",
+    "name": "Locaplace",
+    "company": "Plare Inc.",
+    "description": "Application mobile immobilière basée sur la localisation, intégrant la vérification d'identité, les paiements et une messagerie instantanée.",
+    "role": "Front-end Dévelopement",
+    "year": "2025-02 ~ 2026-09",
+    "duration": "11 mois",
+    "team": "Entreprise",
+    "problemAndSolution": "TODO",
+    "frontendStack": [
+      "Flutter",
+      "Next",
+      "React (SPA)",
+      "TypeScript",
+      "Tailwind",
+      "Figma"
+    ],
+    "mobileFeature": [
+      "Recherche de logement basée sur la localisation (Kakao API)",
+      "Application multilangue Anglais/Coréen avec traduction automatique (Papago API)",
+      "Integration d'un système de paiement (different pour iOS at Android)",
+      "Système de chat en temps réel (Firebase Firestore)",
+      "Vérification d'identité par télephone et compte bancaire coréen (NICE API)",
+      "Push Notification et modification de l'UI accordément",
+      "Management de l'application, du déploiement et des mises à jour sur l'App Store / Google Play Store"
+    ],
+    "webFeature": [
+      "Développement d'un Backoffice avec Next (SSR)",
+      "Création d'une page de presentation pour l'application"
+    ]
+  },
+
   "naro": {
     "title": "Projets / The Hanaro",
     "name": "The Hanaro v2",
-    "conpany": "wiilit",
+    "company": "wiilit",
     "description": "Application mobile de santé développée avec Flutter, accompagnée d'un Backoffice d'administration et d'Analytics.",
     "role": "Front-end Dévelopement",
     "year": "2024-03 ~ 2025-02",
@@ -274,7 +307,7 @@
   "weather": {
     "title": "Projets / Application Météo",
     "name": "Application Météo",
-    "conpany": "Projet Personnel",
+    "company": "Projet Personnel",
     "description": "Application Web météo fournissant les prévisions météorologiques et les informations sur la qualité de l'air en Corée du Sud, grâce aux API de l'Administration météorologique coréenne et de la Korea Environment Corporation.",
     "role": "Front-end Développement",
     "year": "2023-09 ~ 2024-04",
