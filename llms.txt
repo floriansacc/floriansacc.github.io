@@ -1,0 +1,25 @@
+# Florian Sacchetti Portfolio
+
+> Portfolio of Florian Sacchetti, a Software Engineer specializing in web and mobile application development. The portfolio presents his professional experience, education, technical skills, and selected projects. The website is available in English, French, and Korean.
+
+## About
+
+Overview of Florian Sacchetti's background, software engineering experience, and core technical skills, including web and mobile development.
+
+## Career
+
+Professional experience in mobile, web, and full-stack development, including work with Flutter, Vue, Nuxt, React, Node.js, databases, AWS, analytics, and application architecture.
+
+## Projects
+
+Selected mobile and web projects, including healthcare, housing, and other applications. Each project includes its purpose, technologies used, features, and technical challenges and solutions.
+
+## Education
+
+Academic background in engineering, including a Master's degree in Environment and Energy from Jeonbuk National University in South Korea and engineering studies in Electrical Engineering in France.
+
+## Contact & Profiles
+
+* [GitHub](https://github.com/floriansacc)
+* [LinkedIn](https://fr.linkedin.com/in/florian-sacchetti-34ba59191/)
+* Email: [florian.sacchetti@gmail.com](mailto:florian.sacchetti@gmail.com)
