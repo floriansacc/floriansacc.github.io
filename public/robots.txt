@@ -1,10 +1,10 @@
 User-agent: *
 Allow: /
 
-Disallow: /assets/disallowed/images/
+Disallow: /assets/non-allowed/
 
 User-agent: Googlebot-Image
 Disallow: /
 
 
-Sitemap: https://floriansacc.dev/
+Sitemap: https://floriansacc.com/

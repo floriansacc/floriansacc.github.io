@@ -4,7 +4,7 @@
       <div
         v-show="isMenuOpen"
         :data-state="isMenuOpen ? 'open' : 'closed'"
-        class="fixed inset-0 z-50 bg-black/60 transition-all"
+        class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs transition-all"
         role="dialog"
         aria-modal="true"
         @click="emit('menuClick', false)"
