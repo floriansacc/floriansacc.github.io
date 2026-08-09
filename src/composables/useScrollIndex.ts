@@ -2,11 +2,9 @@ import { onMounted, onUnmounted, Ref, ref } from "vue";
 
 export default function useScrollIndex({
   indexNumber,
-  offset = 0,
   containerRef,
 }: {
   indexNumber: number;
-  offset?: number;
   containerRef?: Ref<HTMLElement | null>;
 }) {
   const activeIndex = ref<number>(0);
