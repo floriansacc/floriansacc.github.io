@@ -1,9 +1,8 @@
 {
   "name": "floriansacc-github-io",
   "compatibility_date": "2026-08-09",
-  "main": "src/main.ts",
   "assets": {
-    "directory": "./public/",
+    "directory": "./dist/",
     "not_found_handling": "single-page-application",
   },
 }
