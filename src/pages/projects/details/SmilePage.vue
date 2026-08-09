@@ -3,7 +3,7 @@
     <ProjectHeader
       projec-key-i18n="smileProject"
       site-url="https://smile-checkup.com"
-      :with-overview="false"
+      :with-overview="true"
       :stack-list="['frontend', 'backend', 'infrastructure']"
     >
       <template #gallery>
