@@ -3,9 +3,10 @@
     id="section-2"
     :with-line="withLine"
     :padding-top-class="paddingTopClass"
+    :mobile-title="$t('project.projectTitle').toUpperCase()"
   >
     <div :ref="sectionRef" class="mb-5 px-4">
-      <p class="title-mono mb-4">
+      <p class="title-mono mb-4 hidden md:block">
         {{ $t("project.projectTitle").toUpperCase() }}
       </p>
       <h2 class="text-3xl sm:mb-6 md:text-4xl">

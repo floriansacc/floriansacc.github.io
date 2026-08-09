@@ -3,7 +3,7 @@
     class="mb-10 md:mb-16"
     :with-line="false"
     min-h-class="min-h-fit"
-    padding-top-class="pt-20  md:pt-32"
+    padding-top-class="pt-20 md:pt-32"
   >
     <p class="title-mono mb-4 md:px-5 md:text-lg!">
       {{ $t(`${projecKeyI18n}.title`).toUpperCase() }}

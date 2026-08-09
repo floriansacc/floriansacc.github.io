@@ -1,7 +1,10 @@
 <template>
-  <SectionLayout id="section-1">
+  <SectionLayout
+    id="section-1"
+    :mobileTitle="$t('career.careerTitle').toUpperCase()"
+  >
     <div :ref="sectionRef" class="mb-5 px-4">
-      <p class="title-mono mb-4">
+      <p class="title-mono mb-4 hidden md:block">
         {{ $t("career.careerTitle").toUpperCase() }}
       </p>
       <h2 class="text-3xl sm:mb-6 md:text-4xl">

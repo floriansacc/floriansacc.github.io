@@ -1,11 +1,15 @@
 <template>
-  <SectionLayout id="section-0" :with-line="false">
+  <SectionLayout
+    id="section-0"
+    :with-line="false"
+    :mobile-title="$t(`about.aboutMeTitle`).toUpperCase()"
+  >
     <div
       :ref="sectionRef"
       class="grid w-full grid-cols-1 justify-center gap-y-4 px-4 sm:gap-x-6 md:grid-cols-2 md:flex-row md:justify-evenly lg:gap-x-16"
     >
       <div>
-        <p class="title-mono mb-4">
+        <p class="title-mono mb-4 hidden md:block">
           {{ $t("about.aboutMeTitle").toUpperCase() }}
         </p>
         <h2 class="text-3xl sm:mb-6 md:text-4xl">
