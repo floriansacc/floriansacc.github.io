@@ -23,7 +23,7 @@ export default function useScrollIndex({
       : (scrollTarget?.scrollTop ?? 0);
 
   const handleScroll = () => {
-    const scrollY = getScrollTop() + offset;
+    const scrollY = getScrollTop() + 120;
 
     for (let i = sectionRefs.value.length - 1; i >= 0; i--) {
       const el = sectionRefs.value[i];
@@ -43,7 +43,7 @@ export default function useScrollIndex({
     if (!el) return;
 
     scrollTarget.scrollTo({
-      top: el.offsetTop - offset + 20,
+      top: el.offsetTop - 80,
       behavior: "smooth",
     });
   };
