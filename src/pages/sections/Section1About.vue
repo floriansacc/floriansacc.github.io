@@ -8,9 +8,9 @@
         <p class="title-mono mb-4">
           {{ $t("about.aboutMeTitle").toUpperCase() }}
         </p>
-        <h3 class="text-3xl sm:mb-6 md:text-4xl">
+        <h2 class="text-3xl sm:mb-6 md:text-4xl">
           {{ $t("about.title") }}
-        </h3>
+        </h2>
       </div>
       <div class="flex flex-col gap-y-4">
         <div

@@ -8,9 +8,9 @@
       <p class="title-mono mb-4">
         {{ $t("project.projectTitle").toUpperCase() }}
       </p>
-      <h3 class="text-3xl sm:mb-6 md:text-4xl">
+      <h2 class="text-3xl sm:mb-6 md:text-4xl">
         {{ $t("project.mobileAndWeb") }}
-      </h3>
+      </h2>
     </div>
 
     <div class="grid gap-8 md:grid-cols-2">
@@ -27,9 +27,9 @@
         "
       >
         <div class="flex justify-between">
-          <h4 class="text-label-normal text-lg font-semibold md:text-xl">
+          <h3 class="text-label-normal text-lg font-semibold md:text-xl">
             {{ item.title }}
-          </h4>
+          </h3>
           <ArrowUpRight
             class="size-6.5 transition-transform sm:group-hover:translate-x-1.5 sm:group-hover:-translate-y-1.5"
           />

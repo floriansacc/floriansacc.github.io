@@ -4,9 +4,9 @@
       <p class="title-mono mb-4">
         {{ $t("career.careerTitle").toUpperCase() }}
       </p>
-      <h3 class="text-3xl sm:mb-6 md:text-4xl">
+      <h2 class="text-3xl sm:mb-6 md:text-4xl">
         {{ $t("career.professionalJourney") }}
-      </h3>
+      </h2>
     </div>
     <div
       v-for="(item, i) in $tm('career.career')"

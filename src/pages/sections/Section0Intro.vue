@@ -17,9 +17,9 @@
           class="mt-4 mb-4 block self-center sm:mt-0 sm:mb-6 sm:hidden"
         />
 
-        <h5 class="text-label-grey text-xl whitespace-pre-line sm:mb-6">
+        <h2 class="text-label-grey text-xl whitespace-pre-line sm:mb-6">
           {{ $t("intro.subtitle") }}
-        </h5>
+        </h2>
 
         <div class="flex items-center gap-2 self-center sm:self-auto">
           <CustomButton @click="scrollToIndex(2)" class="group">

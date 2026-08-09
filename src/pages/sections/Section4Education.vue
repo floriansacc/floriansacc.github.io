@@ -4,9 +4,9 @@
       <p class="title-mono mb-4">
         {{ $t("school.schoolTitle").toUpperCase() }}
       </p>
-      <h3 class="text-3xl sm:mb-6 md:text-4xl">
+      <h2 class="text-3xl sm:mb-6 md:text-4xl">
         {{ $t("school.education") }}
-      </h3>
+      </h2>
     </div>
 
     <div

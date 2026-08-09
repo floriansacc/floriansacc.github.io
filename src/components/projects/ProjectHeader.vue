@@ -70,9 +70,9 @@
           {{ "01 - " }}
           {{ $t("featureTitle").toUpperCase() }}
         </p>
-        <h3 class="text-3xl sm:mb-6 md:text-4xl">
+        <h2 class="text-3xl sm:mb-6 md:text-4xl">
           {{ $t("featureDeveloped") }}
-        </h3>
+        </h2>
       </div>
 
       <div
@@ -110,9 +110,9 @@
           {{ featureList && featureList.length > 0 ? "02 - " : "01 - " }}
           {{ $t("stackTitle").toUpperCase() }}
         </p>
-        <h3 class="text-3xl sm:mb-6 md:text-4xl">
+        <h2 class="text-3xl sm:mb-6 md:text-4xl">
           {{ $t("technologyUsed") }}
-        </h3>
+        </h2>
       </div>
 
       <div
@@ -156,9 +156,9 @@
           {{ `${getLastNumber.problems} - ` }}
           {{ $t("overviewTitle").toUpperCase() }}
         </p>
-        <h3 class="text-3xl sm:mb-6 md:text-4xl">
+        <h2 class="text-3xl sm:mb-6 md:text-4xl">
           {{ $t("theProblemAndSolution") }}
-        </h3>
+        </h2>
       </div>
 
       <div
@@ -179,9 +179,9 @@
           {{ `${getLastNumber.keyScreen} - ` }}
           {{ $t("galleryTitle").toUpperCase() }}
         </p>
-        <h3 class="text-3xl sm:mb-6 md:text-4xl">
+        <h2 class="text-3xl sm:mb-6 md:text-4xl">
           {{ $t("keyScreens") }}
-        </h3>
+        </h2>
       </div>
 
       <slot name="gallery"></slot>
