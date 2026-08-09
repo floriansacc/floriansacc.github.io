@@ -65,12 +65,12 @@
     v-if="featureList && featureList.length > 0"
     min-h-class="min-h-fit"
     class="mb-10 md:mb-16"
+    :mobile-title="titleBuilder.mainFeature"
   >
     <div class="flex flex-col items-start gap-y-4 md:px-5">
       <div class="mb-5 px-4">
-        <p class="title-mono mb-4">
-          {{ "01 - " }}
-          {{ $t("featureTitle").toUpperCase() }}
+        <p class="title-mono mb-4 hidden md:block">
+          {{ titleBuilder.mainFeature }}
         </p>
         <h2 class="text-3xl sm:mb-6 md:text-4xl">
           {{ $t("featureDeveloped") }}
@@ -105,12 +105,15 @@
   <!-- ------------------ -->
   <!-- // technology used -->
   <!-- ------------------ -->
-  <SectionLayout min-h-class="min-h-fit" class="mb-10 md:mb-16">
+  <SectionLayout
+    min-h-class="min-h-fit"
+    class="mb-10 md:mb-16"
+    :mobile-title="titleBuilder.technologyUsed"
+  >
     <div class="flex flex-col items-start gap-y-4 md:px-5">
       <div class="mb-5 px-4">
-        <p class="title-mono mb-4">
-          {{ featureList && featureList.length > 0 ? "02 - " : "01 - " }}
-          {{ $t("stackTitle").toUpperCase() }}
+        <p class="title-mono mb-4 hidden md:block">
+          {{ titleBuilder.technologyUsed }}
         </p>
         <h2 class="text-3xl sm:mb-6 md:text-4xl">
           {{ $t("technologyUsed") }}
@@ -149,14 +152,14 @@
     v-if="withOverview"
     min-h-class="min-h-fit"
     class="mb-10 md:mb-16"
+    :mobile-title="titleBuilder.problemsAndSolutions"
   >
     <div
       class="grid items-start gap-y-4 md:grid-cols-2 md:gap-x-6 md:px-5 lg:gap-x-10 xl:gap-x-12"
     >
       <div class="mb-5 px-4">
-        <p class="title-mono mb-4">
-          {{ `${getLastNumber.problems} - ` }}
-          {{ $t("overviewTitle").toUpperCase() }}
+        <p class="title-mono mb-4 hidden md:block">
+          {{ titleBuilder.problemsAndSolutions }}
         </p>
         <h2 class="text-3xl sm:mb-6 md:text-4xl">
           {{ $t("theProblemAndSolution") }}
@@ -174,12 +177,15 @@
   <!-- -------------- -->
   <!-- // key screens -->
   <!-- -------------- -->
-  <SectionLayout min-h-class="min-h-fit" class="mb-10 md:mb-16">
+  <SectionLayout
+    min-h-class="min-h-fit"
+    class="mb-10 md:mb-16"
+    :mobile-title="titleBuilder.keyScreens"
+  >
     <div class="flex flex-col items-start gap-y-4 md:px-5">
       <div class="mb-5 px-4">
-        <p class="title-mono mb-4">
-          {{ `${getLastNumber.keyScreen} - ` }}
-          {{ $t("galleryTitle").toUpperCase() }}
+        <p class="title-mono mb-4 hidden md:block">
+          {{ titleBuilder.keyScreens }}
         </p>
         <h2 class="text-3xl sm:mb-6 md:text-4xl">
           {{ $t("keyScreens") }}
@@ -204,6 +210,9 @@ import { StackStype } from "@/models/stack_type.ts";
 import { FeatureType } from "@/models/feature_type.ts";
 import CustomButton from "@/components/buttons/CustomButton.vue";
 import { computed } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const gridItemList = ["role", "year", "duration", "team"];
 
@@ -237,6 +246,15 @@ const getLastNumber = computed(() => {
   return {
     problems: (number - 1).toString().padStart(2, "0"),
     keyScreen: number.toString().padStart(2, "0"),
+  };
+});
+
+const titleBuilder = computed(() => {
+  return {
+    mainFeature: `01 - ${t("featureTitle").toUpperCase()}`,
+    technologyUsed: `${props.featureList && props.featureList.length > 0 ? "02 - " : "01 - "}${t("stackTitle").toUpperCase()}`,
+    problemsAndSolutions: `${getLastNumber.value.problems} - ${t("overviewTitle").toUpperCase()}`,
+    keyScreens: `${getLastNumber.value.keyScreen} - ${t("galleryTitle").toUpperCase()}`,
   };
 });
 </script>
