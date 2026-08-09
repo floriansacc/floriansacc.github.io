@@ -18,9 +18,9 @@
             ]"
           >
             <img
-              v-for="value in screen"
+              v-for="(value, i) in screen"
               :src="value"
-              :alt="value"
+              :alt="`smile-image=${i + 1}`"
               class="h-full w-full object-cover object-top"
             />
           </div>

@@ -88,7 +88,9 @@
           {{ $t(`navigation.${item.key}`) }}
         </p>
       </div>
+      <label for="language-selector" class="sr-only">언어 선택</label>
       <select
+        id="language-selector"
         v-model="$i18n.locale"
         class="border-line-strong select-mono min-w-10 rounded-lg border border-solid bg-white p-1 text-sm sm:text-base"
         @change="saveLocal"

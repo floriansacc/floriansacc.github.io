@@ -16,7 +16,7 @@
             >
               <img
                 :src="keyScreenUrlList[0]"
-                :alt="keyScreenUrlList[0]"
+                alt="keyScreenUrlList[0]"
                 class="h-full w-full object-cover object-top"
               />
             </div>
@@ -25,7 +25,7 @@
             >
               <img
                 :src="keyScreenUrlList[1]"
-                :alt="keyScreenUrlList[1]"
+                alt="keyScreenUrlList[1]"
                 class="h-full w-full object-cover object-top"
               />
             </div>

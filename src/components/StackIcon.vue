@@ -10,6 +10,7 @@
       class="h-4.5 w-auto select-none sm:h-5.5"
       :draggable="false"
       :src="stackItem.logo"
+      :alt="`stack-${stackItem.key}`"
     />
     <p
       class="transition-transform duration-300 ease-out select-none group-hover:brightness-110"

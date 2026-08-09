@@ -38,17 +38,20 @@
           <a
             :href="myInfo.github"
             target="_blank"
+            aria-label="Github Link"
             class="cursor-pointer p-1 transition-opacity sm:hover:opacity-85"
           >
             <img
               src="/assets/allowed/svg/icon_github.svg"
-              class="text-label-normal size-7"
+              alt="github-logo"
+              class="text-label-normal h-7 w-auto"
             />
           </a>
 
           <a
             :href="`mailto:${myInfo.email}`"
             target="_top"
+            aria-label="Mail Link"
             class="cursor-pointer p-1 transition-opacity sm:hover:opacity-90"
           >
             <Mail class="text-label-normal size-7" />
@@ -57,10 +60,12 @@
           <a
             :href="myInfo.linkedin"
             target="_blank"
+            aria-label="LinkedIn Link"
             class="cursor-pointer p-1 transition-opacity sm:hover:opacity-85"
           >
             <img
               src="/assets/allowed/images/in_image.png"
+              alt="linkedin-logo"
               class="text-label-normal size-7"
             />
           </a>
@@ -68,6 +73,7 @@
           <a
             :href="`tel:${myInfo.tel}`"
             target="_top"
+            aria-label="Phone Link"
             class="cursor-pointer p-1 transition-opacity sm:hover:opacity-90"
           >
             <Smartphone class="text-label-normal size-7" />

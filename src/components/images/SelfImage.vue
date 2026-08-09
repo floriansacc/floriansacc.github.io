@@ -7,6 +7,7 @@
   >
     <img
       src="/assets/allowed/images/profile_picture.jpeg"
+      alt="profile-picture"
       class="no-translate-sm rounded-lg select-none"
       :draggable="false"
       :style="{

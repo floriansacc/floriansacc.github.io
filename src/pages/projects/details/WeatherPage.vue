@@ -11,7 +11,7 @@
         <div class="grid w-full gap-4 sm:justify-items-center md:grid-cols-2">
           <img
             :src="imageUrl"
-            :alt="imageUrl"
+            alt="weather-image"
             class="bg-bg-alternative border-line-strong flex aspect-auto w-full flex-1 shrink-0 overflow-hidden rounded-md border border-solid sm:max-h-[70vh] sm:w-auto md:justify-self-end"
           />
 

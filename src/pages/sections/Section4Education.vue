@@ -23,6 +23,7 @@
           :src="universityImages?.[i]"
           class="h-8 w-auto select-none md:h-auto md:w-4/6"
           :draggable="false"
+          :alt="`universityimage-${i}`"
         />
       </div>
       <div class="flex flex-col items-start md:col-span-3">
