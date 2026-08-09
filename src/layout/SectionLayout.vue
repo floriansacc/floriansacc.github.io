@@ -3,7 +3,7 @@
     <div v-if="withLine" class="bg-line-strong h-px w-full"></div>
     <div
       :class="[
-        'flex h-fit w-full flex-col px-2 pb-10 md:px-[2vw] xl:px-[5vw] xl:pb-20',
+        'flex h-fit w-full flex-col px-5 pb-10 md:px-[2vw] xl:px-[5vw] xl:pb-20',
         paddingTopClass,
         minHClass,
       ]"

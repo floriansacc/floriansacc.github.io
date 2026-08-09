@@ -3,7 +3,7 @@
     class="mb-10 md:mb-16"
     :with-line="false"
     min-h-class="min-h-fit"
-    padding-top-class="pt-20 px-5 md:px-0 md:pt-32"
+    padding-top-class="pt-20  md:pt-32"
   >
     <p class="title-mono mb-4 md:px-5 md:text-lg!">
       {{ $t(`${projecKeyI18n}.title`).toUpperCase() }}
@@ -38,18 +38,20 @@
     </div>
 
     <div
-      class="border-line-strong mt-10 grid grid-cols-2 rounded-sm border border-solid md:mt-20 md:grid-cols-4"
+      class="border-line-strong bg-line-strong mt-10 grid grid-cols-2 gap-px rounded-sm border border-solid md:mt-20 md:grid-cols-4"
     >
       <div
         v-for="(item, i) in gridItemList"
         :key="`${projecKeyI18n}-${item}-${i}`"
-        class="border-foreground/10 border-line-strong flex flex-col items-start gap-2 border-r border-b px-8 py-6 last:border-r-0 md:border-b-0"
+        class="flex flex-col items-start gap-2 bg-white px-5 py-6 md:px-8"
       >
         <p class="text-label-alternative font-mono text-sm">
           {{ $t(item).toUpperCase() }}
         </p>
 
-        <p class="text-label-normal text-lg sm:text-base">
+        <p
+          class="text-label-normal self-center text-base sm:self-auto sm:text-base md:text-lg"
+        >
           {{ $t(`${projecKeyI18n}.${item}`) }}
         </p>
       </div>
@@ -83,7 +85,7 @@
       >
         <div
           v-for="main in featureList"
-          class="border-line-strong border-b px-8 py-6 last:border-b-0 md:border-r md:border-b-0 md:py-8 md:last:border-r-0"
+          class="border-line-strong border-b px-5 py-6 last:border-b-0 md:border-r md:border-b-0 md:px-8 md:py-8 md:last:border-r-0"
         >
           <p class="subtitle-mono mb-6">
             {{ $t(`${main}`).toUpperCase() }}
@@ -123,7 +125,7 @@
       >
         <div
           v-for="main in stackList"
-          class="border-line-strong border-b px-8 py-6 last:border-b-0 md:border-r md:border-b-0 md:py-8 md:last:border-r-0"
+          class="border-line-strong border-b px-5 py-6 last:border-b-0 md:border-r md:border-b-0 md:px-8 md:py-8 md:last:border-r-0"
         >
           <p class="subtitle-mono mb-6">
             {{ $t(`${main}`).toUpperCase() }}
@@ -131,7 +133,7 @@
 
           <ul
             v-for="item in $tm(`${projecKeyI18n}.${main}Stack`)"
-            class="text-label-normal list-inside list-disc text-base md:text-lg"
+            class="text-label-normal w-full list-inside list-disc text-base md:text-lg"
           >
             <li class="py-1">{{ item }}</li>
           </ul>
@@ -162,7 +164,7 @@
       </div>
 
       <div
-        class="text-label-alternative px-5 text-justify text-base whitespace-pre-line md:px-0"
+        class="text-label-grey text-justify text-base whitespace-pre-line md:px-0"
       >
         {{ $t(`${projecKeyI18n}.problemAndSolution`) }}
       </div>
