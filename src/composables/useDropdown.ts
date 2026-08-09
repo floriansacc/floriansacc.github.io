@@ -8,6 +8,7 @@ export const useDropdown = () => {
   const close = () => (isOpen.value = false);
 
   const onClickOutside = (e: MouseEvent) => {
+    console.log(dropdownRef.value);
     if (dropdownRef.value && !dropdownRef.value.contains(e.target as Node)) {
       close();
     }

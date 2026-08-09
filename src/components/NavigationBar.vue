@@ -29,7 +29,7 @@
       <!-- // project selector -->
       <div
         v-if="withNavigation"
-        ref="dropdownRef"
+        :ref="(el) => (dropdownRef = el as HTMLElement)"
         class="relative hidden md:inline-block"
       >
         <div

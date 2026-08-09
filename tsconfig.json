@@ -7,8 +7,9 @@
 
   "compilerOptions": {
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
+    "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
     "strict": true,

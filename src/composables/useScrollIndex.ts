@@ -12,7 +12,7 @@ export default function useScrollIndex({
   const activeIndex = ref<number>(0);
 
   const sectionRefs = ref<(HTMLElement | null)[]>(
-    Array.from({ length: indexNumber }, () => null),
+    Array.from({ length: indexNumber }, (): HTMLElement | null => null),
   );
 
   let scrollTarget: HTMLElement | Window | null = null;
