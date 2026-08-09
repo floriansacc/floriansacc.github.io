@@ -6,7 +6,7 @@
     class="relative w-[200px] rounded-xl border-2 border-solid border-white bg-contain md:w-60 lg:w-80"
   >
     <img
-      src="/assets/allowed/images/profile_picture.jpeg"
+      src="/assets/allowed/images/profile_picture.jpg"
       alt="profile-picture"
       class="no-translate-sm rounded-lg select-none"
       :draggable="false"
