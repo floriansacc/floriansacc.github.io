@@ -240,6 +240,31 @@
       "Load Balancer, Private VPC, EC2",
       "S3",
       "Elastic Container Registry"
+    ],
+    "mobileFeature": [
+      "Recherche d'événements basée sur la localisation",
+      "Connexion via les réseaux sociaux avec gestion des sessions (tokens d'accès et de rafraîchissement)",
+      "Intégration d'Analytics avec Firebase et développement d'un système de suivi personnalisé (temps passé sur les écrans, suivi des sessions)",
+      "Routage, deep linking et contrôle d'accès aux routes publiques/privées",
+      "Base de données SQLite locale",
+      "Vérification du numéro de téléphone coréen (API KCP)",
+      "Gestion des versions sur l'App Store et Google Play"
+    ],
+    "webFeature": [
+      "Backoffice avec tableau de bord et Analytics (Chart.js)",
+      "Gestion des sessions basée sur les cookies",
+      "Pages de détail avec rendu côté serveur",
+      "Deep linking du Web vers l'application",
+      "Optimisation SEO"
+    ],
+    "backendFeature": [
+      "Déploiement basé sur Docker (production/développement/local)",
+      "Workflow de déploiement automatisé avec AWS",
+      "Migration et gestion de la base de données",
+      "Vérification des tokens JWT via middleware",
+      "Système d'enchères en temps réel avec WebSocket",
+      "Recherche d'hôpitaux et d'événements basée sur les coordonnées",
+      "Vérification côté serveur du numéro de téléphone coréen (API KCP)"
     ]
   },
 

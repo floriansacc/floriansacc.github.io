@@ -1,1 +1,1 @@
-export type FeatureType = "mobile" | "web";
+export type FeatureType = "mobile" | "web" | "backend";

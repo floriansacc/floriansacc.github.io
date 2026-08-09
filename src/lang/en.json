@@ -242,6 +242,32 @@
       "Load Balancer, Private VPC, EC2",
       "S3",
       "Elastic Container Registry"
+    ],
+    "mobileFeature": [
+      "Location-based event search",
+      "Location-based hospital advertising system",
+      "Social login with session management (access/refresh tokens)",
+      "Analytics integration with Firebase and custom-built tracking (screen time, session tracking)",
+      "Routing, deep linking, and public/private route protection",
+      "On-device SQLite database",
+      "Korean phone verification (KCP API)",
+      "App Store and Google Play version management"
+    ],
+    "webFeature": [
+      "Backoffice dashboard and analytics (Chart.js)",
+      "Cookie-based session management",
+      "Server-side rendered detail pages",
+      "Web-to-app linking",
+      "SEO optimization"
+    ],
+    "backendFeature": [
+      "Docker-based deployment (production/development/local)",
+      "Automated deployment workflow with AWS",
+      "Database migration and management",
+      "JWT token verification via middleware",
+      "Real-time auction system using WebSocket",
+      "Coordinate-based hospital and event search",
+      "Server-side Korean phone verification (KCP API)"
     ]
   },
 

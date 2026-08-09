@@ -238,6 +238,32 @@
       "Load Balancer, Private VPC, EC2",
       "S3",
       "Elastic Container Registry"
+    ],
+    "mobileFeature": [
+      "위치 기반 이벤트 검색",
+      "위치 기반 병원 광고 시스템",
+      "세션 관리가 적용된 소셜 로그인 (Access/Refresh Token)",
+      "Analytics 연동 (Firebase 및 자체 개발 추적 기능: 화면 체류 시간, 세션 추적)",
+      "라우팅, 딥링크 및 공개/비공개 라우트 접근 제어",
+      "디바이스 내 SQLite 데이터베이스",
+      "한국 휴대폰 본인인증 (KCP API)",
+      "App Store 및 Google Play 버전 관리"
+    ],
+    "webFeature": [
+      "관리자 페이지 대시보드 및 Analytics (Chart.js)",
+      "쿠키 기반 세션 관리",
+      "서버 사이드 렌더링 상세 페이지",
+      "웹에서 앱으로 연결되는 딥링크",
+      "SEO 최적화"
+    ],
+    "backendFeature": [
+      "Docker 기반 배포 환경 구축 (운영/개발/로컬)",
+      "AWS를 활용한 자동 배포 워크플로우",
+      "데이터베이스 마이그레이션 및 관리",
+      "Middleware를 통한 JWT 토큰 검증",
+      "WebSocket을 활용한 실시간 경매 시스템",
+      "좌표 기반 병원 및 이벤트 검색",
+      "서버 사이드 한국 휴대폰 본인인증 (KCP API)"
     ]
   },
 

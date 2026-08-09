@@ -5,6 +5,7 @@
       site-url="https://smile-checkup.com"
       :with-overview="true"
       :stack-list="['frontend', 'backend', 'infrastructure']"
+      :feature-list="['mobile', 'web', 'backend']"
     >
       <template #gallery>
         <div class="grid w-full gap-4 md:grid-cols-2">
