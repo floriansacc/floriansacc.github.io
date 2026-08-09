@@ -2,6 +2,7 @@
   "name": "floriansacc-github-io",
   "compatibility_date": "2025-08-19",
   "assets": {
+    "directory": "./public/",
     "not_found_handling": "single-page-application",
   },
 }
