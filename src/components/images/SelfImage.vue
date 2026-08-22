@@ -3,7 +3,7 @@
     :style="{
       backgroundImage: `url('/assets/allowed/svg/france_flag.svg')`,
     }"
-    class="relative mt-4 mb-4 flex h-[350px] w-full self-center overflow-hidden rounded-xl border-2 border-solid border-white bg-contain sm:mt-0 sm:mb-6 sm:h-auto sm:w-60 lg:w-80"
+    class="border-line-self relative mt-4 mb-4 flex h-[350px] w-full self-center overflow-hidden rounded-xl border-2 border-solid bg-contain sm:mt-0 sm:mb-6 sm:h-auto sm:w-60 lg:w-80"
   >
     <img
       src="/assets/allowed/images/profile_picture.jpg"

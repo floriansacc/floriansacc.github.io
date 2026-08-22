@@ -17,6 +17,7 @@
   --color-muted: var(--muted);
 
   --color-line-strong: var(--line-strong);
+  --color-line-self: var(--line-self);
 }
 
 :root {
@@ -39,6 +40,7 @@
   --muted: oklch(92.9% 0.013 255.508);
 
   --line-strong: #dedede;
+  --line-self: #dedede;
 }
 
 .dark {
@@ -55,6 +57,7 @@
   --muted: oklch(30% 0.008 250);
 
   --line-strong: #353532;
+  --line-self: #f5f5f3;
 }
 
 body {
