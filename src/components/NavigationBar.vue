@@ -52,7 +52,7 @@
 
         <div
           v-show="isOpen"
-          class="bg-bg-basic absolute z-10 mt-1 w-fit min-w-40 overflow-hidden rounded border shadow"
+          class="bg-bg-basic border-label-normal absolute z-10 mt-1 w-fit min-w-40 overflow-hidden rounded border border-solid shadow"
         >
           <ul>
             <li

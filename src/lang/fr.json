@@ -15,6 +15,12 @@
   "github": "GitHub",
   "email": "E-mail",
   "linkedIn": "LinkedIn",
+  "theme": {
+    "theme": "Thème",
+    "system": "Systèmm",
+    "light": "Clair",
+    "dark": "Sombre"
+  },
   "intro": {
     "softwareDeveloper": "Développeur Logiciel",
     "subtitle": "Ingénieur logiciel spécialisé dans le développement d'applications Web et Mobile.\nOriginaire de Lyon, France, et actuellement basé à Séoul, en Corée du Sud.",

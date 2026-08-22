@@ -1,3 +1,6 @@
+import { LucideMoon, LucideSun, LucideSunMoon } from "@lucide/vue";
+import { Component } from "vue";
+
 export const navigationItems = [
   { key: "about", to: "/about" },
   { key: "career", to: "/career" },
@@ -35,4 +38,8 @@ export const stacksPerProjects: Record<string, string[]> = {
   weather: ["react", "javascript", "tailwind"],
 };
 
-export const availableTheme: string[] = ["system", "dark", "light"];
+export const availableTheme: { theme: string; icon: Component }[] = [
+  { theme: "system", icon: LucideSunMoon },
+  { theme: "dark", icon: LucideMoon },
+  { theme: "light", icon: LucideSun },
+];

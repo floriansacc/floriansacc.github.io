@@ -15,6 +15,12 @@
   "github": "Github",
   "email": "Email",
   "linkedIn": "LinkedIn",
+  "theme": {
+    "theme": "Theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
   "intro": {
     "softwareDeveloper": "Software Developer",
     "subtitle": "Software Engineer working on Web and Mobile applications.\nFrom Lyon, France, and based in Seoul, South Korea.",

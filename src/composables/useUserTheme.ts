@@ -16,17 +16,21 @@ export default function useUserTheme() {
     }
   };
 
-  const updateTheme = (newValue: string) => {
-    if (!availableTheme.includes(newValue)) {
+  const updateTheme = (newVal: string) => {
+    if (!availableTheme.find((e) => e.theme === newVal)) {
       return;
     }
+
+    const newValue = newVal as "system" | "dark" | "light";
+
+    preferedTheme.value = newValue;
 
     const media = window.matchMedia("(prefers-color-scheme: dark)");
 
     localStorage.setItem("theme", newValue);
 
     if (newValue !== "system") {
-      _switchTheme(newValue as "dark" | "light");
+      _switchTheme(newValue);
       return;
     }
 
@@ -50,7 +54,7 @@ export default function useUserTheme() {
     const previousTheme: string | null = localStorage.getItem("theme") ?? null;
 
     if (previousTheme) {
-      if (availableTheme.includes(previousTheme)) {
+      if (availableTheme.find((e) => e.theme === previousTheme)) {
         preferedTheme.value = previousTheme as "system" | "light" | "dark";
       }
 

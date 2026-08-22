@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="['h-full w-full perspective-[1000px] transform-3d']"
+    :class="['h-full w-full cursor-pointer perspective-[1000px] transform-3d']"
     @click="isReversed = !isReversed"
   >
     <div

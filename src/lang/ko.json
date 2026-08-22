@@ -15,6 +15,12 @@
   "github": "Github",
   "email": "Email",
   "linkedIn": "LinkedIn",
+  "theme": {
+    "theme": "테마",
+    "system": "시스템",
+    "light": "라이트",
+    "dark": "다크"
+  },
   "intro": {
     "softwareDeveloper": "스포트웨어 개발자",
     "subtitle": "웹 및 모바일 어플리케이션을 개발하는 소프트웨어 엔지니어입니다.\n프랑스 리옹 출신이며 현재 대한민국 서울에서 활동하고 있습니다.",
