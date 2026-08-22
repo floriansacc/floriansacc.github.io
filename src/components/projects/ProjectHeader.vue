@@ -43,7 +43,7 @@
       <div
         v-for="(item, i) in gridItemList"
         :key="`${projecKeyI18n}-${item}-${i}`"
-        class="flex flex-col items-start gap-2 bg-white px-5 py-6 md:px-8"
+        class="bg-bg-basic flex flex-col items-start gap-2 px-5 py-6 md:px-8"
       >
         <p class="text-label-alternative font-mono text-sm">
           {{ $t(item).toUpperCase() }}

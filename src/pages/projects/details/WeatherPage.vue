@@ -26,12 +26,14 @@
         </div>
       </template>
     </ProjectHeader>
+    <Footer />
   </ProjectLayout>
 </template>
 
 <script setup lang="ts">
 import ProjectHeader from "@/components/projects/ProjectHeader.vue";
 import ProjectLayout from "@/layout/ProjectLayout.vue";
+import Footer from "@/components/Footer.vue";
 
 const imageUrl: string = "/assets/allowed/images/project_2_image.jpeg";
 

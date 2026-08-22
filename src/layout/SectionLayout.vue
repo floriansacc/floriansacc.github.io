@@ -4,7 +4,7 @@
     <p
       v-if="mobileTitle"
       :class="[
-        'title-mono sticky top-6 z-45 mb-4 block w-full bg-white/50 px-9 pt-10 backdrop-blur-sm md:hidden',
+        'title-mono bg-bg-basic/50 sticky top-6 z-45 mb-4 block w-full px-9 pt-10 backdrop-blur-sm md:hidden',
       ]"
     >
       {{ mobileTitle }}

@@ -27,7 +27,7 @@
         <img
           :src="imageList.front"
           alt="imageList.front"
-          class="h-full w-full bg-taupe-400 object-cover object-top"
+          class="bg-bg-alternative h-full w-full object-cover object-top"
           :draggable="false"
         />
       </div>
@@ -38,7 +38,7 @@
         <img
           :src="imageList.back"
           alt="imageList.back"
-          class="h-full w-full bg-taupe-400 object-cover object-top"
+          class="bg-bg-alternative h-full w-full object-cover object-top"
           :draggable="false"
         />
       </div>

@@ -1,6 +1,6 @@
 <template>
   <CustomButton
-    button-type="white"
+    button-type="reverse"
     is-small
     class="group"
     @click="handleGoBack"

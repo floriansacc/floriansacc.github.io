@@ -30,9 +30,35 @@
         <p>{{ $t("linkedIn") }}</p>
       </a>
     </div>
+    <label for="language-selector" class="sr-only">언어 선택</label>
+    <select
+      id="language-selector"
+      v-model="preferedTheme"
+      class="border-line-strong select-mono bg-bg-basic min-w-10 self-end rounded-lg border border-solid p-1 text-sm sm:text-base"
+      @change.prevent="
+        (e) => {
+          const target = e.target as HTMLSelectElement;
+
+          updateTheme(target.value);
+        }
+      "
+    >
+      <option
+        v-for="theme in availableTheme"
+        :key="`theme-${theme}`"
+        :value="theme"
+      >
+        {{ theme.toUpperCase() }}
+      </option>
+    </select>
   </div>
 </template>
 
 <script setup lang="ts">
-import { myInfo } from "@/utils/public_constants";
+import { availableTheme, myInfo } from "@/utils/public_constants";
+
+import { inject } from "vue";
+import { themeInjectionKey } from "@/utils/injection";
+
+const { preferedTheme, updateTheme } = inject(themeInjectionKey);
 </script>

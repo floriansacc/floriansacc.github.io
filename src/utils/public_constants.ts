@@ -34,3 +34,5 @@ export const stacksPerProjects: Record<string, string[]> = {
   naro: ["flutter", "react", "tailwind", "javascript", "figma"],
   weather: ["react", "javascript", "tailwind"],
 };
+
+export const availableTheme: string[] = ["system", "dark", "light"];

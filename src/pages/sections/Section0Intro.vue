@@ -42,7 +42,7 @@
             class="cursor-pointer p-1 transition-opacity sm:hover:opacity-85"
           >
             <img
-              src="/assets/allowed/svg/icon_github.svg"
+              :src="`/assets/non-allowed/svg/icon_github_${theme || 'light'}.svg`"
               alt="github-logo"
               class="text-label-normal h-7 w-auto"
             />
@@ -64,7 +64,7 @@
             class="cursor-pointer p-1 transition-opacity sm:hover:opacity-85"
           >
             <img
-              src="/assets/allowed/images/in_image.png"
+              :src="`/assets/allowed/images/in_image_${theme || 'light'}.png`"
               alt="linkedin-logo"
               class="text-label-normal size-7"
             />
@@ -91,11 +91,15 @@
 </template>
 
 <script setup lang="ts">
+import { inject } from "vue";
 import { ArrowRight, Mail, Smartphone } from "@lucide/vue";
 import CustomButton from "@/components/buttons/CustomButton.vue";
 import SelfImage from "@/components/images/SelfImage.vue";
 import { myInfo } from "@/utils/public_constants";
 import SectionLayout from "@/layout/SectionLayout.vue";
+import { themeInjectionKey } from "@/utils/injection";
+
+const { theme } = inject(themeInjectionKey);
 
 const props = defineProps<{
   scrollToIndex: (index: number) => void;

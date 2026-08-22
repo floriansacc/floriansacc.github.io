@@ -42,12 +42,14 @@
         </div>
       </template>
     </ProjectHeader>
+    <Footer />
   </ProjectLayout>
 </template>
 
 <script setup lang="ts">
 import ProjectHeader from "@/components/projects/ProjectHeader.vue";
 import ProjectLayout from "@/layout/ProjectLayout.vue";
+import Footer from "@/components/Footer.vue";
 
 // const keyScreenUrlList: { front: string; back: string } = {
 //   front: "/assets/non-allowed/images/place/place_app_image_1.png",

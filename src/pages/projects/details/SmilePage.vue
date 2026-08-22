@@ -32,9 +32,9 @@
 </template>
 
 <script setup lang="ts">
-import Footer from "@/components/Footer.vue";
 import ProjectHeader from "@/components/projects/ProjectHeader.vue";
 import ProjectLayout from "@/layout/ProjectLayout.vue";
+import Footer from "@/components/Footer.vue";
 
 const keyScreenUrlList: string[][] = [
   ["/assets/non-allowed/images/smile/dashboard.png"],

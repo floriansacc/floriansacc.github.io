@@ -2,33 +2,70 @@
 
 @import "tailwindcss";
 
-@theme {
-  --color-label-normal: #222222;
-  --color-label-alternative: #878787;
-  --color-label-grey: #717182;
-  --color-label-hover: #7d7d7d;
-  --color-bg-claude: #f8f8f6;
+@custom-variant dark (&:is(.dark *));
 
-  --color-bg-alternative: #dadada;
-  --color-bg-muted: oklch(98.4% 0.003 247.858);
-  --color-muted: oklch(92.9% 0.013 255.508);
+@theme inline {
+  --color-label-normal: var(--label-normal);
+  --color-label-alternative: var(--label-alternative);
+  --color-label-grey: var(--label-grey);
+  --color-label-hover: var(--label-hover);
+  --color-bg-claude: var(--bg-claude);
 
-  --color-line-strong: #dedede;
+  --color-bg-basic: var(--bg-basic);
+  --color-bg-alternative: var(--bg-alternative);
+  --color-bg-muted: var(--bg-muted);
+  --color-muted: var(--muted);
+
+  --color-line-strong: var(--line-strong);
 }
 
 :root {
   font-family: "Pretendard" sans-serif;
-  color: var(--color-label-normal);
 
   margin: 0;
   padding: 0;
 
   interpolate-size: allow-keywords;
+
+  --label-normal: #222222;
+  --label-alternative: #878787;
+  --label-grey: #717182;
+  --label-hover: #7d7d7d;
+  --bg-claude: #f8f8f6;
+
+  --bg-basic: #f8f8f6;
+  --bg-alternative: #dadada;
+  --bg-muted: oklch(98.4% 0.003 247.858);
+  --muted: oklch(92.9% 0.013 255.508);
+
+  --line-strong: #dedede;
+}
+
+.dark {
+  --label-normal: #f5f5f3;
+  --label-alternative: #a8a8a3;
+  --label-grey: #8d8d95;
+  --label-hover: #c2c2bc;
+
+  --bg-claude: #1c1c1a;
+  --bg-basic: #1c1c1a;
+  --bg-alternative: #2a2a27;
+
+  --bg-muted: oklch(23% 0.005 250);
+  --muted: oklch(30% 0.008 250);
+
+  --line-strong: #353532;
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+@layer base {
+  body {
+    @apply text-label-normal bg-bg-basic scheme-dark dark:scheme-dark;
+  }
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -51,4 +88,16 @@ body {
 
 .subtitle-mono {
   @apply text-label-grey font-mono text-sm tracking-wider;
+}
+
+.custom-button-primary {
+  @apply bg-label-normal border-label-normal text-bg-basic cursor-pointer border border-solid transition-opacity sm:hover:opacity-90;
+}
+
+.custom-button-outline {
+  @apply bg-bg-basic border-label-normal text-label-normal sm:hover:bg-bg-alternative cursor-pointer border border-solid transition-colors;
+}
+
+.custom-button-reverse {
+  @apply bg-bg-basic text-label-normal sm:hover:bg-bg-alternative cursor-pointer border border-solid border-white transition-colors;
 }

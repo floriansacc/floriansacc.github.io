@@ -15,7 +15,7 @@ import { computed, type ClassValue } from "vue";
 
 const props = withDefaults(
   defineProps<{
-    buttonType?: "primary" | "outline-primary" | "white";
+    buttonType?: "primary" | "outline-primary" | "reverse";
     isSmall?: boolean;
   }>(),
   {
@@ -27,13 +27,13 @@ const props = withDefaults(
 const getColor = computed<ClassValue>(() => {
   switch (props.buttonType) {
     case "primary":
-      return "bg-label-normal border border-solid border-label-normal text-white sm:hover:opacity-90 cursor-pointer transition-opacity";
+      return "custom-button-primary";
 
     case "outline-primary":
-      return "bg-white border border-solid border-label-normal text-label-normal sm:hover:bg-bg-alternative cursor-pointer transition-colors";
+      return "custom-button-outline";
 
-    case "white":
-      return "bg-white border border-solid border-white text-label-normal sm:hover:bg-bg-alternative cursor-pointer transition-colors";
+    case "reverse":
+      return "custom-button-reverse";
 
     default:
       return "";

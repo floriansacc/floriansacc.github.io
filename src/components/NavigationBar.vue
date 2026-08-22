@@ -52,7 +52,7 @@
 
         <div
           v-show="isOpen"
-          class="absolute z-10 mt-1 w-fit min-w-40 overflow-hidden rounded border bg-white shadow"
+          class="bg-bg-basic absolute z-10 mt-1 w-fit min-w-40 overflow-hidden rounded border shadow"
         >
           <ul>
             <li
@@ -62,7 +62,7 @@
                 'cursor-pointer px-4 py-2 whitespace-pre transition-colors',
                 $route.name === project
                   ? 'bg-bg-muted'
-                  : 'sm:hover:bg-gray-100',
+                  : 'sm:hover:bg-bg-alternative',
               ]"
               @click="$router.push({ name: project })"
             >
@@ -85,6 +85,7 @@
               : 'sm:hover:text-label-hover',
           ]"
         >
+          <!-- TODO change blue -->
           {{ $t(`navigation.${item.key}`) }}
         </p>
       </div>
@@ -92,7 +93,7 @@
       <select
         id="language-selector"
         v-model="$i18n.locale"
-        class="border-line-strong select-mono min-w-10 rounded-lg border border-solid bg-white p-1 text-sm sm:text-base"
+        class="border-line-strong select-mono bg-bg-basic min-w-10 rounded-lg border border-solid p-1 text-sm sm:text-base"
         @change="saveLocal"
       >
         <option
