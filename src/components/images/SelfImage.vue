@@ -3,12 +3,12 @@
     :style="{
       backgroundImage: `url('/assets/allowed/svg/france_flag.svg')`,
     }"
-    class="relative w-[200px] rounded-xl border-2 border-solid border-white bg-contain md:w-60 lg:w-80"
+    class="relative h-[350px] rounded-xl border-2 border-solid border-white bg-contain md:h-auto md:w-60 lg:w-80"
   >
     <img
       src="/assets/allowed/images/profile_picture.jpg"
       alt="profile-picture"
-      class="no-translate-sm rounded-lg select-none"
+      class="no-translate-sm h-full w-full rounded-lg select-none"
       :draggable="false"
       :style="{
         transform: `translate(-${randomTranslation.randX}px, -${randomTranslation.randY}px)`,
