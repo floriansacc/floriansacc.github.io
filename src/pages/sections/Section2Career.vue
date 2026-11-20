@@ -51,6 +51,11 @@
               :keypath="`career.career[${i}].part[${j}]`"
               tag="li"
             >
+              <template v-slot:ai_agentic>
+                <span class="variables">
+                  {{ $t("technology.ai_agentic") }}
+                </span>
+              </template>
               <template v-slot:react>
                 <span class="variables">
                   {{ $t("technology.react") }}

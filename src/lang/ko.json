@@ -38,6 +38,7 @@
     "javascript": "JavaScript",
     "typescript": "TypeScript",
     "flutter": "Flutter",
+    "ai_agentic": "AI Agentic",
     "react": "React",
     "next": "Next.js",
     "vue": "Vue",
@@ -61,6 +62,7 @@
         "country": "대한민국 서울",
         "description": "스마일검진(안과 스마일라식 백내장수술, 치과, 성형피부과 예약)의 프론트엔드 및 백엔드 개발 담당",
         "part": [
+          "사내 {ai_agentic} 워크플로우 설계 및 개발로",
           "{flutter} 모바일 어플리케이션 제작, 라우팅 및 미들웨어 구축, 운영 및 유지보수",
           "{mariaDb} 데이터베이스 관리, 테이블 설계 및 Sequelize를 이용한 마이그레이션",
           "{aws} 운영 환경 설계 및 {node} Express 백엔드 개발",

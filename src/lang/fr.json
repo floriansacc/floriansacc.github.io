@@ -38,6 +38,7 @@
     "javascript": "JavaScript",
     "typescript": "TypeScript",
     "flutter": "Flutter",
+    "ai_agentic": "AI Agentic",
     "react": "React",
     "next": "Next.js",
     "vue": "Vue",
@@ -61,6 +62,7 @@
         "country": "Séoul, Corée du Sud",
         "description": "Responsable du développement Front-end et Backend de Smile Checkup (Plateforme de réservation pour chirurgie réfractive, esthétique et orthodontie).",
         "part": [
+          "Développement et intégration de workflow {ai_agentic} au sein de l'entreprise",
           "Application mobile {flutter} : refonte complète, architecture, routage, middleware, développement et maintenance en production.",
           "Gestion de la base de données {mariaDb}, conception des tables et migrations avec Sequelize.",
           "Conception de l'infrastructure de production sur {aws} et développement du backend {node} Express.",

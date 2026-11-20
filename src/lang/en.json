@@ -38,6 +38,7 @@
     "javascript": "JavaScript",
     "typescript": "TypeScript",
     "flutter": "Flutter",
+    "ai_agentic": "AI Agentic",
     "react": "React",
     "next": "Next.js",
     "vue": "Vue",
@@ -61,6 +62,7 @@
         "country": "Seoul, South Korea",
         "description": "In charge of Front-end and Backend development of Smile Checkup (Eye surgery, Beauty and Orthodontist reservation)",
         "part": [
+          "Development and integration of in-company {ai_agentic} workflow",
           "{flutter} mobile application: from all-app refactoring, routing and middleware, to production development and maintenance",
           "Management of {mariaDb} database, table design, migration using Sequelize",
           "Designed {aws} environment for production, {node} Express backend",
